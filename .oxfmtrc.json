@@ -1,0 +1,23 @@
+{
+	"$schema": "./node_modules/oxfmt/configuration_schema.json",
+	"ignorePatterns": [
+		".react-router/**",
+		"node_modules/**",
+		"web-build/**",
+		".history/**",
+		"android/**",
+		"public/**",
+		"build/**",
+		"dist/**",
+		"ios/**"
+	],
+	"insertFinalNewline": true,
+	"jsxSingleQuote": false,
+	"arrowParens": "always",
+	"bracketSpacing": true,
+	"trailingComma": "all",
+	"printWidth": 80,
+	"useTabs": true,
+	"tabWidth": 2,
+	"semi": true
+}

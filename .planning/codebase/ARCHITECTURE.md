@@ -1,4 +1,5 @@
 <!-- refreshed: 2025-05-15 -->
+
 # Architecture
 
 **Analysis Date:** 2025-05-15
@@ -31,18 +32,19 @@
 
 ## Component Responsibilities
 
-| Component | Responsibility | File |
-|-----------|----------------|------|
-| Router | Central navigation and URL state management | `src/router.tsx` |
-| Root Route | Layout, global styles, and search param validation | `src/routes/__root.tsx` |
-| UI Components | Atomic, reusable design elements | `src/components/ui/` |
-| Context Stores | Persistent local state (e.g., settings) | `src/contexts/` |
+| Component      | Responsibility                                     | File                    |
+| -------------- | -------------------------------------------------- | ----------------------- |
+| Router         | Central navigation and URL state management        | `src/router.tsx`        |
+| Root Route     | Layout, global styles, and search param validation | `src/routes/__root.tsx` |
+| UI Components  | Atomic, reusable design elements                   | `src/components/ui/`    |
+| Context Stores | Persistent local state (e.g., settings)            | `src/contexts/`         |
 
 ## Pattern Overview
 
 **Overall:** URL-Driven State Architecture
 
 **Key Characteristics:**
+
 - **URL as Source of Truth:** Application state (like selected units, values to convert) is primarily stored in URL search parameters.
 - **Type-Safe Routing:** Uses TanStack Router for end-to-end type safety from links to search param validation.
 - **Atomic UI:** Uses Shadcn-inspired components built on Tailwind CSS 4 for a consistent design system.
@@ -50,6 +52,7 @@
 ## Layers
 
 **Routing Layer:**
+
 - Purpose: Handles navigation and validates URL state.
 - Location: `src/routes/`
 - Contains: Route definitions, layouts, and search parameter schemas.
@@ -57,12 +60,14 @@
 - Used by: Entire application for navigation.
 
 **State Management Layer:**
+
 - Purpose: Manages transient and persistent client-side state.
 - Location: `src/contexts/`, `src/hooks/`
 - Contains: Zustand stores, custom hooks.
 - Depends on: Zustand.
 
 **Integrations Layer:**
+
 - Purpose: Configures third-party services and shared clients.
 - Location: `src/integrations/`
 - Contains: TanStack Query client, PostHog provider.
@@ -86,6 +91,7 @@
 ## Key Abstractions
 
 **Search Param Validation:**
+
 - Purpose: Ensures URL state is always valid according to a schema.
 - Examples: `globalSearchSchema` in `src/routes/__root.tsx`.
 - Pattern: Zod schema parsing within `validateSearch`.
@@ -93,11 +99,13 @@
 ## Entry Points
 
 **Main Entry:**
+
 - Location: `src/start.ts`
 - Triggers: Application initialization.
 - Responsibilities: Configures the start instance and middleware.
 
 **Router Entry:**
+
 - Location: `src/router.tsx`
 - Responsibilities: Creates the router instance, integrates plugins (PostHog, Query SSR).
 
@@ -116,4 +124,4 @@
 
 ---
 
-*Architecture analysis: 2025-05-15*
+_Architecture analysis: 2025-05-15_

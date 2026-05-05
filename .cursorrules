@@ -1,0 +1,38 @@
+# shadcn instructions
+
+Use the latest version of Shadcn to install new components, like this command to add a button component:
+
+```bash
+bunx --bun shadcn@latest add button
+```
+
+## Others
+
+1. Always run `bun run lint:all` after a task is done. Always use bun/bunx, never npm/npmx/pnpm/yarn.
+2. For testing, use clerk credentials:
+	2.1 Email: `your_email+clerk_test@example.com`. Example: `jabalidivertido+clerk_test@gmail.com`. You'll have to click. "Use another method" -> click button to send code to email, then use code `424242`. Phone number: `+15555550100`
+3. For global settings/values, use `generalContextStore` from `src/contexts/general-ctx/general-context.ts`. Create component-level stores like in `src/features/example-suspense/contexts/example-component-store.ts`.
+4. Look at `src/features/example-suspense/hooks` to see how to fetch data. Strive to always use suspense with boundary.
+5. Use vertical codebase, each feature isolated in `src/features` to make it very modular in a way we can delete/add/modify a single folder.
+6. For every form, use Tan Stack Form with Shadcn (https://ui.shadcn.com/docs/forms/tanstack-form). Use error messages on the form instead of on a toast; in fact, never use toasts.
+7. For every screen, use shadcn components available at `src/components/ui`. For select components, prefere native-select. Check docs on usage and exemples at `https://ui.shadcn.com/docs/components/base/<insert-component-file-name>`.
+8. When building react components that are not simple, use the composition pattern shadcn uses.
+9. Only use `useEffect` for what it should be used for. You can use `<div ref={(ref) => { return () => {} }}>` or `useQuery` for computations.
+10. Functions instead of arrow functions for components.
+11. Do not export as default if not required by framework.
+12. Use the `cn()` utility from shadcn for conditional classes that can be added from the component that will use it. For local conditinal classes, use native `data-` attributes and target them with tailwind on classname.
+13. When building pages/components, look at DESIGN.md and follow its rules.
+
+<!-- gsd-workflow-start source:GSD defaults -->
+## GSD Workflow Enforcement
+
+Before using Edit, Write, or other file-changing tools, start work through a GSD command so planning artifacts and execution context stay in sync.
+
+Use these entry points:
+
+- `/gsd-quick` for small fixes, doc updates, and ad-hoc tasks
+- `/gsd-debug` for investigation and bug fixing
+- `/gsd-execute-phase` for planned phase work
+
+Do not make direct repo edits outside a GSD workflow unless the user explicitly asks to bypass it.
+<!-- gsd-workflow-end -->

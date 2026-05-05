@@ -9,12 +9,12 @@ The application should follow a **URL-as-State** pattern, where the browser's ad
 
 ### Component Boundaries
 
-| Component | Responsibility | Communicates With |
-|-----------|---------------|-------------------|
-| `UnitConverter` | Main Layout & Logic orchestration. | `ConverterForm`, `ResultDisplay` |
-| `ConverterForm` | Inputs for Amount, From, To units. | TanStack Router (Search Params) |
-| `ResultDisplay` | Formats and displays the converted value. | `useConverter` hook |
-| `CategoryNav` | Switches between Length, Mass, etc. | TanStack Router (Pathname) |
+| Component       | Responsibility                            | Communicates With                |
+| --------------- | ----------------------------------------- | -------------------------------- |
+| `UnitConverter` | Main Layout & Logic orchestration.        | `ConverterForm`, `ResultDisplay` |
+| `ConverterForm` | Inputs for Amount, From, To units.        | TanStack Router (Search Params)  |
+| `ResultDisplay` | Formats and displays the converted value. | `useConverter` hook              |
+| `CategoryNav`   | Switches between Length, Mass, etc.       | TanStack Router (Pathname)       |
 
 ### Data Flow
 
@@ -27,48 +27,53 @@ The application should follow a **URL-as-State** pattern, where the browser's ad
 ## Patterns to Follow
 
 ### Pattern 1: Validated Search Params
+
 **What:** Use Zod schemas in the route definition to ensure URL state is always clean.
 **When:** Always.
 **Example:**
+
 ```typescript
 const searchSchema = z.object({
-  amount: z.coerce.number().catch(1),
-  from: z.string().catch('meter'),
-  to: z.string().catch('foot'),
-})
+	amount: z.coerce.number().catch(1),
+	from: z.string().catch("meter"),
+	to: z.string().catch("foot"),
+});
 ```
 
 ### Pattern 2: Headless Conversion Hook
+
 **What:** Encapsulate the `convert` library logic in a custom hook.
 **Example:**
+
 ```typescript
 function useConversion() {
-  const { amount, from, to } = Route.useSearch();
-  const result = useMemo(() => {
-    try {
-      return convert(amount, from).to(to);
-    } catch {
-      return null;
-    }
-  }, [amount, from, to]);
-  
-  return { result };
+	const { amount, from, to } = Route.useSearch();
+	const result = useMemo(() => {
+		try {
+			return convert(amount, from).to(to);
+		} catch {
+			return null;
+		}
+	}, [amount, from, to]);
+
+	return { result };
 }
 ```
 
 ## Anti-Patterns to Avoid
 
 ### Anti-Pattern 1: Redundant Local State
-**What:** Keeping a `useState` for the amount *and* syncing it to the URL.
+
+**What:** Keeping a `useState` for the amount _and_ syncing it to the URL.
 **Why bad:** Creates two sources of truth; leads to "flicker" or desync issues.
 **Instead:** Use the URL state directly as the input value. Use debouncing only if typing performance lags.
 
 ## Scalability Considerations
 
-| Concern | At 100 units | At 10K units |
-|---------|--------------|--------------|
-| **Unit Selection** | Simple dropdown is fine. | Needs searchable combobox/virtualized list. |
-| **Logic Size** | `convert` library is tiny. | May need code-splitting for specialized categories (e.g., Engineering). |
+| Concern            | At 100 units               | At 10K units                                                            |
+| ------------------ | -------------------------- | ----------------------------------------------------------------------- |
+| **Unit Selection** | Simple dropdown is fine.   | Needs searchable combobox/virtualized list.                             |
+| **Logic Size**     | `convert` library is tiny. | May need code-splitting for specialized categories (e.g., Engineering). |
 
 ## Sources
 
