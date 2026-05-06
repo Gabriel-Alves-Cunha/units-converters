@@ -15,4 +15,4 @@ export function Loader({ className = "" }: Props) {
 	);
 }
 
-export const LOADER = <Loader className="size-4 flex-none border-t-primary" />;
+export const LOADER = <Loader className="" />;

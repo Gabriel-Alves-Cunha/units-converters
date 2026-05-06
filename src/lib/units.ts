@@ -1,356 +1,1077 @@
 import { Decimal } from "decimal.js";
-import z from "zod";
+import * as v from "valibot";
 
 export type UnitDefinition = {
 	symbol: string;
-	def(input: Decimal): Decimal; // function to convert from this unit to the base unit (e.g., meter for length)
+	fromBaseUnit(input: Decimal): Decimal; // function to convert from the base unit to this unit
+	toBaseUnit(input: Decimal): Decimal; // function to convert from this unit to the base unit (e.g., meter for length)
 };
 
 export const units = {
 	Length: {
 		"Planck Length": {
 			symbol: "lₚ",
-			def(input: Decimal) {
-				return Decimal.mul(input, Decimal.pow(10, -35)); // relative to meter
+			toBaseUnit(input: Decimal) {
+				return Decimal.mul(input, Decimal.pow(10, -35));
+			},
+			fromBaseUnit(input: Decimal) {
+				return Decimal.mul(input, Decimal.pow(10, 35));
 			},
 		},
 
 		Yoctometre: {
 			symbol: "ym",
-			def(input: Decimal) {
-				return Decimal.mul(input, Decimal.pow(10, -24)); // relative to meter
+			toBaseUnit(input: Decimal) {
+				return Decimal.mul(input, Decimal.pow(10, -24));
+			},
+			fromBaseUnit(input: Decimal) {
+				return Decimal.mul(input, Decimal.pow(10, 24));
 			},
 		},
 
 		Zeptometre: {
 			symbol: "zm",
-			def(input: Decimal) {
-				return Decimal.mul(input, Decimal.pow(10, -21)); // relative to meter
+			toBaseUnit(input: Decimal) {
+				return Decimal.mul(input, Decimal.pow(10, -21));
+			},
+			fromBaseUnit(input: Decimal) {
+				return Decimal.mul(input, Decimal.pow(10, 21));
 			},
 		},
 
 		Attometre: {
 			symbol: "am",
-			def(input: Decimal) {
-				return Decimal.mul(input, Decimal.pow(10, -18)); // relative to meter
+			toBaseUnit(input: Decimal) {
+				return Decimal.mul(input, Decimal.pow(10, -18));
+			},
+			fromBaseUnit(input: Decimal) {
+				return Decimal.mul(input, Decimal.pow(10, 18));
 			},
 		},
 
 		Femtometre: {
 			symbol: "fm",
-			def(input: Decimal) {
-				return Decimal.mul(input, Decimal.pow(10, -15)); // relative to meter
+			toBaseUnit(input: Decimal) {
+				return Decimal.mul(input, Decimal.pow(10, -15));
+			},
+			fromBaseUnit(input) {
+				return Decimal.mul(input, Decimal.pow(10, 15));
 			},
 		},
 
 		Picometre: {
 			symbol: "pm",
-			def(input: Decimal) {
-				return Decimal.mul(input, Decimal.pow(10, -12)); // relative to meter
+			toBaseUnit(input: Decimal) {
+				return Decimal.mul(input, Decimal.pow(10, -12));
+			},
+			fromBaseUnit(input) {
+				return Decimal.mul(input, Decimal.pow(10, 12));
 			},
 		},
 
 		Bohr: {
 			symbol: "a₀",
-			def(input: Decimal) {
+			toBaseUnit(input: Decimal) {
 				return Decimal.mul(
 					input,
 					Decimal.mul(5.291_772_106_712_12, Decimal.pow(10, -11)),
-				); // relative to meter
+				);
+			},
+			fromBaseUnit(input) {
+				return Decimal.div(
+					input,
+					Decimal.mul(5.291_772_106_712_12, Decimal.pow(10, -11)),
+				);
 			},
 		},
 
 		Ångström: {
 			symbol: "Å",
-			def(input: Decimal) {
-				return Decimal.mul(input, Decimal.pow(10, -10)); // relative to meter
+			toBaseUnit(input: Decimal) {
+				return Decimal.mul(input, Decimal.pow(10, -10));
+			},
+			fromBaseUnit(input) {
+				return Decimal.mul(input, Decimal.pow(10, 10));
 			},
 		},
 
 		Nanometre: {
 			symbol: "nm",
-			def(input: Decimal) {
-				return Decimal.mul(input, Decimal.pow(10, -9)); // relative to meter
+			toBaseUnit(input: Decimal) {
+				return Decimal.mul(input, Decimal.pow(10, -9));
+			},
+			fromBaseUnit(input) {
+				return Decimal.mul(input, Decimal.pow(10, 9));
 			},
 		},
 
 		Micrometre: {
 			symbol: "µm",
-			def(input: Decimal) {
-				return Decimal.mul(input, Decimal.pow(10, -6)); // relative to meter
+			toBaseUnit(input: Decimal) {
+				return Decimal.mul(input, Decimal.pow(10, -6));
+			},
+			fromBaseUnit(input) {
+				return Decimal.mul(input, Decimal.pow(10, 6));
 			},
 		},
 
 		Millimetre: {
 			symbol: "mm",
-			def(input: Decimal) {
-				return Decimal.mul(input, 0.001); // relative to meter
+			toBaseUnit(input: Decimal) {
+				return Decimal.mul(input, 0.001);
+			},
+			fromBaseUnit(input) {
+				return Decimal.mul(input, 1_000);
 			},
 		},
 
 		Barleycorn: {
 			symbol: "",
-			def(input: Decimal) {
-				return Decimal.mul(input, Decimal.div(254, 30_000)); // relative to meter
+			toBaseUnit(input: Decimal) {
+				return Decimal.mul(input, Decimal.div(254, 30_000));
+			},
+			fromBaseUnit(input) {
+				return Decimal.mul(input, Decimal.div(30_000, 254));
 			},
 		},
 
 		Centimetre: {
 			symbol: "cm",
-			def(input: Decimal) {
-				return Decimal.mul(input, Decimal.pow(10, -2)); // relative to meter
+			toBaseUnit(input: Decimal) {
+				return Decimal.mul(input, Decimal.pow(10, -2));
+			},
+			fromBaseUnit(input) {
+				return Decimal.mul(input, Decimal.pow(10, 2));
 			},
 		},
 
 		"Inch (International)": {
 			symbol: "in",
-			def(input: Decimal) {
-				return Decimal.mul(input, 0.0254); // relative to meter
+			toBaseUnit(input: Decimal) {
+				return Decimal.mul(input, 0.0254);
+			},
+			fromBaseUnit(input) {
+				return Decimal.mul(input, Decimal.div(1, 0.0254));
 			},
 		},
 
 		Decimetre: {
 			symbol: "dm",
-			def(input: Decimal) {
-				return Decimal.mul(input, 0.1); // relative to meter
+			toBaseUnit(input: Decimal) {
+				return Decimal.mul(input, 0.1);
+			},
+			fromBaseUnit(input) {
+				return Decimal.mul(input, 10);
 			},
 		},
 
 		"Foot (International)": {
 			symbol: "ft",
-			def(input: Decimal) {
-				return Decimal.mul(input, 0.3048); // relative to meter
+			toBaseUnit(input: Decimal) {
+				return Decimal.mul(input, 0.3048);
+			},
+			fromBaseUnit(input) {
+				return Decimal.mul(input, Decimal.div(1, 0.3048));
 			},
 		},
 
 		Cubit: {
 			symbol: "",
-			def(input: Decimal) {
-				return Decimal.mul(input, 0.4572); // relative to meter
+			toBaseUnit(input: Decimal) {
+				return Decimal.mul(input, 0.4572);
+			},
+			fromBaseUnit(input) {
+				return Decimal.mul(input, Decimal.div(1, 0.4572));
 			},
 		},
 
 		"Yard (International)": {
 			symbol: "yd",
-			def(input: Decimal) {
-				return Decimal.mul(input, 0.9144); // relative to meter
+			toBaseUnit(input: Decimal) {
+				return Decimal.mul(input, 0.9144);
+			},
+			fromBaseUnit(input) {
+				return Decimal.mul(input, Decimal.div(1, 0.9144));
 			},
 		},
 
 		Meter: {
 			symbol: "m",
-			def(input: Decimal) {
+			toBaseUnit(input: Decimal) {
+				return input; // base unit
+			},
+			fromBaseUnit(input) {
 				return input; // base unit
 			},
 		},
 
 		Ell: {
 			symbol: "ell",
-			def(input: Decimal) {
-				return Decimal.mul(input, 1.143); // relative to meter
+			toBaseUnit(input: Decimal) {
+				return Decimal.mul(input, 1.143);
+			},
+			fromBaseUnit(input) {
+				return Decimal.mul(input, Decimal.div(1, 1.143));
 			},
 		},
 
 		Fathom: {
 			symbol: "ftm",
-			def(input: Decimal) {
-				return Decimal.mul(input, 1.8288); // relative to meter
+			toBaseUnit(input: Decimal) {
+				return Decimal.mul(input, 1.8288);
+			},
+			fromBaseUnit(input) {
+				return Decimal.mul(input, Decimal.div(1, 1.8288));
 			},
 		},
 
 		Decametre: {
 			symbol: "dam",
-			def(input: Decimal) {
-				return Decimal.mul(input, 10); // relative to meter
+			toBaseUnit(input: Decimal) {
+				return Decimal.mul(input, 10);
+			},
+			fromBaseUnit(input) {
+				return Decimal.mul(input, Decimal.div(1, 10));
 			},
 		},
 
 		Chain: {
 			symbol: "ch",
-			def(input: Decimal) {
-				return Decimal.mul(input, Decimal.div(79_200, 3_937)); // relative to meter
+			toBaseUnit(input: Decimal) {
+				return Decimal.mul(input, Decimal.div(79_200, 3_937));
+			},
+			fromBaseUnit(input) {
+				return Decimal.mul(input, Decimal.div(3_937, 79_200));
 			},
 		},
 
 		Hectometre: {
 			symbol: "hm",
-			def(input: Decimal) {
-				return Decimal.mul(input, 100); // relative to meter
+			toBaseUnit(input: Decimal) {
+				return Decimal.mul(input, 100);
+			},
+			fromBaseUnit(input) {
+				return Decimal.mul(input, Decimal.div(1, 100));
 			},
 		},
 
 		"Cable Length (International)": {
 			symbol: "",
-			def(input: Decimal) {
-				return Decimal.mul(input, 185.2); // relative to meter
+			toBaseUnit(input: Decimal) {
+				return Decimal.mul(input, 185.2);
+			},
+			fromBaseUnit(input) {
+				return Decimal.mul(input, Decimal.div(1, 185.2));
 			},
 		},
 
 		Kilometre: {
 			symbol: "km",
-			def(input: Decimal) {
-				return Decimal.mul(input, 1_000); // relative to meter
+			toBaseUnit(input: Decimal) {
+				return Decimal.mul(input, 1_000);
+			},
+			fromBaseUnit(input) {
+				return Decimal.mul(input, Decimal.div(1, 1_000));
 			},
 		},
 
 		"Mile (International)": {
 			symbol: "mi",
-			def(input: Decimal) {
-				return Decimal.mul(input, 1609.344); // relative to meter
+			toBaseUnit(input: Decimal) {
+				return Decimal.mul(input, 1_609.344);
+			},
+			fromBaseUnit(input) {
+				return Decimal.mul(input, Decimal.div(1, 1_609.344));
 			},
 		},
 
 		"Nautical Mile (International)": {
 			symbol: "nmi",
-			def(input: Decimal) {
-				return Decimal.mul(input, 1852); // relative to meter
+			toBaseUnit(input: Decimal) {
+				return Decimal.mul(input, 1_852);
+			},
+			fromBaseUnit(input) {
+				return Decimal.mul(input, Decimal.div(1, 1_852));
 			},
 		},
 
 		Megametre: {
 			symbol: "Mm",
-			def(input: Decimal) {
-				return Decimal.mul(input, Decimal.pow(10, 6)); // relative to meter
+			toBaseUnit(input: Decimal) {
+				return Decimal.mul(input, Decimal.pow(10, 6));
+			},
+			fromBaseUnit(input) {
+				return Decimal.mul(input, Decimal.div(1, Decimal.pow(10, 6)));
 			},
 		},
 
 		Gigametre: {
 			symbol: "Gm",
-			def(input: Decimal) {
-				return Decimal.mul(input, Decimal.pow(10, 9)); // relative to meter
+			toBaseUnit(input: Decimal) {
+				return Decimal.mul(input, Decimal.pow(10, 9));
+			},
+			fromBaseUnit(input) {
+				return Decimal.mul(input, Decimal.div(1, Decimal.pow(10, 9)));
 			},
 		},
 
 		"Light Second": {
 			symbol: "",
-			def(input: Decimal) {
-				return Decimal.mul(input, 299792458); // relative to meter
+			toBaseUnit(input: Decimal) {
+				return Decimal.mul(input, 299792458);
+			},
+			fromBaseUnit(input) {
+				return Decimal.mul(input, Decimal.div(1, 299792458));
 			},
 		},
 
 		"Light Minute": {
 			symbol: "",
-			def(input: Decimal) {
-				return Decimal.mul(input, 17987547480); // relative to meter
+			toBaseUnit(input: Decimal) {
+				return Decimal.mul(input, 17987547480);
+			},
+			fromBaseUnit(input) {
+				return Decimal.mul(input, Decimal.div(1, 17987547480));
 			},
 		},
 
 		"Astronomical Unit": {
 			symbol: "au",
-			def(input: Decimal) {
-				return Decimal.mul(input, 149_597_870_700); // relative to meter
+			toBaseUnit(input: Decimal) {
+				return Decimal.mul(input, 149_597_870_700);
+			},
+			fromBaseUnit(input) {
+				return Decimal.mul(input, Decimal.div(1, 149_597_870_700));
 			},
 		},
 
 		"Light Hour": {
 			symbol: "",
-			def(input: Decimal) {
-				return Decimal.mul(input, 1079252848800); // relative to meter
+			toBaseUnit(input: Decimal) {
+				return Decimal.mul(input, 1079252848800);
+			},
+			fromBaseUnit(input) {
+				return Decimal.mul(input, Decimal.div(1, 1079252848800));
 			},
 		},
 
 		"Light Day": {
 			symbol: "",
-			def(input: Decimal) {
-				return Decimal.mul(input, 25902068371200); // relative to meter
+			toBaseUnit(input: Decimal) {
+				return Decimal.mul(input, 25902068371200);
+			},
+			fromBaseUnit(input) {
+				return Decimal.mul(input, Decimal.div(1, 25902068371200));
 			},
 		},
 
 		"Light Year": {
 			symbol: "ly",
-			def(input: Decimal) {
-				return Decimal.mul(input, Decimal("9460730472580800")); // relative to meter
+			toBaseUnit(input: Decimal) {
+				return Decimal.mul(input, Decimal("9460730472580800"));
+			},
+			fromBaseUnit(input) {
+				return Decimal.mul(input, Decimal.div(1, Decimal("9460730472580800")));
 			},
 		},
 
 		Parsec: {
 			symbol: "pc",
-			def(input: Decimal) {
+			toBaseUnit(input: Decimal) {
 				return Decimal.mul(
 					input,
 					Decimal("3.085677581").mul(Decimal.pow(10, 16)),
-				); // relative to meter
+				);
+			},
+			fromBaseUnit(input) {
+				return Decimal.mul(
+					input,
+					Decimal.div(1, Decimal("3.085677581").mul(Decimal.pow(10, 16))),
+				);
 			},
 		},
 
 		Zettametre: {
 			symbol: "Zm",
-			def(input: Decimal) {
-				return Decimal.mul(input, Decimal.pow(10, 21)); // relative to meter
+			toBaseUnit(input: Decimal) {
+				return Decimal.mul(input, Decimal.pow(10, 21));
+			},
+			fromBaseUnit(input) {
+				return Decimal.mul(input, Decimal.div(1, Decimal.pow(10, 21)));
 			},
 		},
 
 		Yottametre: {
 			symbol: "Ym",
-			def(input: Decimal) {
-				return Decimal.mul(input, Decimal.pow(10, 24)); // relative to meter
+			toBaseUnit(input: Decimal) {
+				return Decimal.mul(input, Decimal.pow(10, 24));
+			},
+			fromBaseUnit(input) {
+				return Decimal.mul(input, Decimal.div(1, Decimal.pow(10, 24)));
 			},
 		},
 
 		"Hubble Length": {
 			symbol: "",
-			def(input: Decimal) {
-				return Decimal.mul(input, 1.322_4e26); // relative to meter
+			toBaseUnit(input: Decimal) {
+				return Decimal.mul(input, 1.322_4e26);
+			},
+			fromBaseUnit(input) {
+				return Decimal.mul(input, Decimal.div(1, 1.322_4e26));
 			},
 		},
-	} satisfies Record<LengthUnitName, UnitDefinition>,
-	Temperature: {} satisfies Record<TemperatureUnitName, UnitDefinition>,
+	} satisfies Record<keyof typeof LengthUnitNameEnum, UnitDefinition>,
+	Temperature: {
+		Celsius: {
+			symbol: "°C",
+			toBaseUnit(input: Decimal) {
+				return input.add(273.15); // Convert Celsius to Kelvin (base unit)
+			},
+			fromBaseUnit(input: Decimal) {
+				return input.sub(273.15); // Convert Kelvin to Celsius
+			},
+		},
+
+		Fahrenheit: {
+			symbol: "°F",
+			toBaseUnit(input: Decimal) {
+				return input.add(459.67).mul(5).div(9); // Convert Fahrenheit to Kelvin (base unit)
+			},
+			fromBaseUnit(input: Decimal) {
+				return input.mul(9).div(5).sub(459.67); // Convert Kelvin to Fahrenheit
+			},
+		},
+
+		Kelvin: {
+			symbol: "K",
+			toBaseUnit(input: Decimal) {
+				return input; // Base unit
+			},
+			fromBaseUnit(input: Decimal) {
+				return input; // Base unit
+			},
+		},
+
+		Newton: {
+			symbol: "°N",
+			toBaseUnit(input: Decimal) {
+				return input.mul(100).div(33).add(273.15); // Convert Newton to Kelvin (base unit)
+			},
+			fromBaseUnit(input: Decimal) {
+				return input.sub(273.15).mul(33).div(100); // Convert Kelvin to Newton
+			},
+		},
+	} satisfies Record<keyof typeof TemperatureUnitNameEnum, UnitDefinition>,
+	Area: {
+		Barn: {
+			symbol: "b",
+			toBaseUnit(input: Decimal) {
+				return input.mul(Decimal.pow(10, -28));
+			},
+			fromBaseUnit(input: Decimal) {
+				return input.div(Decimal.pow(10, -28));
+			},
+		},
+
+		"Square Nanometre": {
+			symbol: "nm²",
+			toBaseUnit(input: Decimal) {
+				return input.mul(Decimal.pow(10, -18));
+			},
+			fromBaseUnit(input: Decimal) {
+				return input.div(Decimal.pow(10, -18));
+			},
+		},
+
+		"Square Micrometre": {
+			symbol: "μm²",
+			toBaseUnit(input: Decimal) {
+				return input.mul(Decimal.pow(10, -12));
+			},
+			fromBaseUnit(input: Decimal) {
+				return input.div(Decimal.pow(10, -12));
+			},
+		},
+
+		"Square Millimetre": {
+			symbol: "mm²",
+			toBaseUnit(input: Decimal) {
+				return input.mul(Decimal.pow(10, 6));
+			},
+			fromBaseUnit(input: Decimal) {
+				return input.div(Decimal.pow(10, 6));
+			},
+		},
+
+		"Square Centimetre": {
+			symbol: "cm²",
+			toBaseUnit(input: Decimal) {
+				return input.mul(Decimal.pow(10, 4));
+			},
+			fromBaseUnit(input: Decimal) {
+				return input.div(Decimal.pow(10, 4));
+			},
+		},
+
+		"Square Inch": {
+			symbol: "sq in",
+			toBaseUnit(input: Decimal) {
+				return input.mul(Decimal("0.00064516"));
+			},
+			fromBaseUnit(input: Decimal) {
+				return input.div(Decimal("0.00064516"));
+			},
+		},
+
+		"Square Decimetre": {
+			symbol: "dm²",
+			toBaseUnit(input: Decimal) {
+				return input.mul(Decimal.pow(10, 2));
+			},
+			fromBaseUnit(input: Decimal) {
+				return input.div(Decimal.pow(10, 2));
+			},
+		},
+
+		"Square Foot": {
+			symbol: "sq ft",
+			toBaseUnit(input: Decimal) {
+				return input.mul(Decimal("0.09290304"));
+			},
+			fromBaseUnit(input: Decimal) {
+				return input.div(Decimal("0.09290304"));
+			},
+		},
+
+		"Square Yard": {
+			symbol: "sq yd",
+			toBaseUnit(input: Decimal) {
+				return input.mul(Decimal("0.83612736"));
+			},
+			fromBaseUnit(input: Decimal) {
+				return input.div(Decimal("0.83612736"));
+			},
+		},
+
+		"Square Metre": {
+			symbol: "m²",
+			toBaseUnit(input: Decimal) {
+				return input; // base unit
+			},
+			fromBaseUnit(input: Decimal) {
+				return input; // base unit
+			},
+		},
+
+		Are: {
+			symbol: "a",
+			toBaseUnit(input: Decimal) {
+				return input.mul(Decimal(100));
+			},
+			fromBaseUnit(input: Decimal) {
+				return input.div(Decimal(100));
+			},
+		},
+
+		Acre: {
+			symbol: "ac",
+			toBaseUnit(input: Decimal) {
+				return input.mul(Decimal("4046.8564224"));
+			},
+			fromBaseUnit(input: Decimal) {
+				return input.div(Decimal("4046.8564224"));
+			},
+		},
+
+		Hectare: {
+			symbol: "ha",
+			toBaseUnit(input: Decimal) {
+				return input.mul(Decimal("10000"));
+			},
+			fromBaseUnit(input: Decimal) {
+				return input.div(Decimal("10000"));
+			},
+		},
+
+		"Square Kilometre": {
+			symbol: "km²",
+			toBaseUnit(input: Decimal) {
+				return input.mul(Decimal.pow(10, 6));
+			},
+			fromBaseUnit(input: Decimal) {
+				return input.div(Decimal.pow(10, 6));
+			},
+		},
+
+		"Square Mile": {
+			symbol: "sq mi",
+			toBaseUnit(input: Decimal) {
+				return input.mul(Decimal("2.589988110336").mul(Decimal.pow(10, 6)));
+			},
+			fromBaseUnit(input: Decimal) {
+				return input.div(Decimal("2.589988110336").mul(Decimal.pow(10, 6)));
+			},
+		},
+
+		Board: {
+			symbol: "bd",
+			toBaseUnit(input: Decimal) {
+				return input.mul(Decimal("0.00774192"));
+			},
+			fromBaseUnit(input: Decimal) {
+				return input.div(Decimal("0.00774192"));
+			},
+		},
+
+		"Circular Inch": {
+			symbol: "circ in",
+			toBaseUnit(input: Decimal) {
+				return input.mul(Decimal("5.06707479097498").mul(Decimal.pow(10, -4)));
+			},
+			fromBaseUnit(input: Decimal) {
+				return input.div(Decimal("5.06707479097498").mul(Decimal.pow(10, -4)));
+			},
+		},
+
+		"Circular Mil": {
+			symbol: "circ mil",
+			toBaseUnit(input: Decimal) {
+				return input.mul(Decimal("5.06707479097498").mul(Decimal.pow(10, -10)));
+			},
+			fromBaseUnit(input: Decimal) {
+				return input.div(Decimal("5.06707479097498").mul(Decimal.pow(10, -10)));
+			},
+		},
+	} satisfies Record<keyof typeof AreaUnitNameEnum, UnitDefinition>,
+	Volume: {
+		"Cubic Nanometre": {
+			symbol: "nm³",
+			toBaseUnit(input: Decimal) {
+				return input.mul(Decimal.pow(10, -27));
+			},
+			fromBaseUnit(input: Decimal) {
+				return input.div(Decimal.pow(10, -27));
+			},
+		},
+
+		"Cubic Micrometre": {
+			symbol: "μm³",
+			toBaseUnit(input: Decimal) {
+				return input.mul(Decimal.pow(10, -18));
+			},
+			fromBaseUnit(input: Decimal) {
+				return input.div(Decimal.pow(10, -18));
+			},
+		},
+
+		Picolitre: {
+			symbol: "pL",
+			toBaseUnit(input: Decimal) {
+				return input.mul(Decimal.pow(10, -12));
+			},
+			fromBaseUnit(input: Decimal) {
+				return input.div(Decimal.pow(10, -12));
+			},
+		},
+
+		Lambda: {
+			symbol: "λ",
+			toBaseUnit(input: Decimal) {
+				return input.mul(Decimal.pow(10, -9));
+			},
+			fromBaseUnit(input: Decimal) {
+				return input.div(Decimal.pow(10, -9));
+			},
+		},
+
+		Microlitre: {
+			symbol: "μL",
+			toBaseUnit(input: Decimal) {
+				return input.mul(Decimal("0.000000001"));
+			},
+			fromBaseUnit(input: Decimal) {
+				return input.div(Decimal("0.000000001"));
+			},
+		},
+
+		"Cubic Millimetre": {
+			symbol: "mm³",
+			toBaseUnit(input: Decimal) {
+				return input.mul(Decimal("0.000000001"));
+			},
+			fromBaseUnit(input: Decimal) {
+				return input.div(Decimal("0.000000001"));
+			},
+		},
+
+		Drop: {
+			symbol: "gtt (metric)",
+			toBaseUnit(input: Decimal) {
+				return input.mul(Decimal("0.00000005"));
+			},
+			fromBaseUnit(input: Decimal) {
+				return input.div(Decimal("0.00000005"));
+			},
+		},
+
+		Millimetre: {
+			symbol: "mL",
+			toBaseUnit(input: Decimal) {
+				return input.mul(Decimal("0.000001"));
+			},
+			fromBaseUnit(input: Decimal) {
+				return input.div(Decimal("0.000001"));
+			},
+		},
+
+		"Cubic Centimetre": {
+			symbol: "cm³",
+			toBaseUnit(input: Decimal) {
+				return input.mul(Decimal("0.000001"));
+			},
+			fromBaseUnit(input: Decimal) {
+				return input.div(Decimal("0.000001"));
+			},
+		},
+
+		Centilitre: {
+			symbol: "cL",
+			toBaseUnit(input: Decimal) {
+				return input.mul(Decimal("0.00001"));
+			},
+			fromBaseUnit(input: Decimal) {
+				return input.div(Decimal("0.00001"));
+			},
+		},
+
+		Decilitre: {
+			symbol: "dL",
+			toBaseUnit(input: Decimal) {
+				return input.mul(Decimal("0.0001"));
+			},
+			fromBaseUnit(input: Decimal) {
+				return input.div(Decimal("0.0001"));
+			},
+		},
+
+		"Teaspoon (Metric)": {
+			symbol: "tsp (metric)",
+			toBaseUnit(input: Decimal) {
+				return input.mul(Decimal("5").mul(Decimal.pow(10, -6)));
+			},
+			fromBaseUnit(input: Decimal) {
+				return input.div(Decimal("5").mul(Decimal.pow(10, -6)));
+			},
+		},
+
+		"Acre Foot": {
+			symbol: "ac ft",
+			toBaseUnit(input: Decimal) {
+				return input.mul(Decimal("1233.48183754752"));
+			},
+			fromBaseUnit(input: Decimal) {
+				return input.div(Decimal("1233.48183754752"));
+			},
+		},
+
+		"Acre Inch": {
+			symbol: "ac in",
+			toBaseUnit(input: Decimal) {
+				return input.mul(Decimal("102.79015312896"));
+			},
+			fromBaseUnit(input: Decimal) {
+				return input.div(Decimal("102.79015312896"));
+			},
+		},
+
+		"Board Foot": {
+			symbol: "bd ft",
+			toBaseUnit(input: Decimal) {
+				return input.mul(Decimal("2.359737216").mul(Decimal.pow(10, -3)));
+			},
+			fromBaseUnit(input: Decimal) {
+				return input.div(Decimal("2.359737216").mul(Decimal.pow(10, -3)));
+			},
+		},
+
+		"Cubic Decimetre": {
+			symbol: "dm³",
+			toBaseUnit(input: Decimal) {
+				return input.mul(Decimal("0.001"));
+			},
+			fromBaseUnit(input: Decimal) {
+				return input.div(Decimal("0.001"));
+			},
+		},
+
+		"Cubic Dekametre": {
+			symbol: "dam³",
+			toBaseUnit(input: Decimal) {
+				return input.mul(Decimal("1000"));
+			},
+			fromBaseUnit(input: Decimal) {
+				return input.div(Decimal("1000"));
+			},
+		},
+
+		"Cubic Fathom": {
+			symbol: "cu fm",
+			toBaseUnit(input: Decimal) {
+				return input.mul(Decimal("6.116438863872"));
+			},
+			fromBaseUnit(input: Decimal) {
+				return input.div(Decimal("6.116438863872"));
+			},
+		},
+
+		"Cubic Foot": {
+			symbol: "cu ft",
+			toBaseUnit(input: Decimal) {
+				return input.mul(Decimal("0.028316846592"));
+			},
+			fromBaseUnit(input: Decimal) {
+				return input.div(Decimal("0.028316846592"));
+			},
+		},
+
+		"Cubic Hectometre": {
+			symbol: "hm³",
+			toBaseUnit(input: Decimal) {
+				return input.mul(Decimal("1000000"));
+			},
+			fromBaseUnit(input: Decimal) {
+				return input.div(Decimal("1000000"));
+			},
+		},
+
+		"Cubic Inch": {
+			symbol: "cu in",
+			toBaseUnit(input: Decimal) {
+				return input.mul(Decimal("1.6387064").mul(Decimal.pow(10, -5)));
+			},
+			fromBaseUnit(input: Decimal) {
+				return input.div(Decimal("1.6387064").mul(Decimal.pow(10, -5)));
+			},
+		},
+
+		"Cubic Kilometre": {
+			symbol: "km³",
+			toBaseUnit(input: Decimal) {
+				return input.mul(Decimal("1000000000"));
+			},
+			fromBaseUnit(input: Decimal) {
+				return input.div(Decimal("1000000000"));
+			},
+		},
+
+		"Cubic Metre": {
+			symbol: "m³",
+			toBaseUnit(input: Decimal) {
+				return input;
+			},
+			fromBaseUnit(input: Decimal) {
+				return input;
+			},
+		},
+
+		"Cubic Mile": {
+			symbol: "cu mi",
+			toBaseUnit(input: Decimal) {
+				return input.mul(Decimal("4.16818182544058").mul(Decimal.pow(10, -9)));
+			},
+			fromBaseUnit(input: Decimal) {
+				return input.div(Decimal("2.3991275857893").mul(Decimal.pow(10, -10)));
+			},
+		},
+
+		"Cubic Yard": {
+			symbol: "cu yd",
+			toBaseUnit(input: Decimal) {
+				return input.mul(Decimal("0.764554857984"));
+			},
+			fromBaseUnit(input: Decimal) {
+				return input.div(Decimal("0.764554857984"));
+			},
+		},
+
+		Cup: {
+			symbol: "c",
+			toBaseUnit(input: Decimal) {
+				return input.mul(Decimal("0.00025"));
+			},
+			fromBaseUnit(input: Decimal) {
+				return input.div(Decimal("0.00025"));
+			},
+		},
+
+		Dekalitre: {
+			symbol: "daL",
+			toBaseUnit(input: Decimal) {
+				return input.mul(Decimal("0.01"));
+			},
+			fromBaseUnit(input: Decimal) {
+				return input.div(Decimal("0.01"));
+			},
+		},
+
+		Hectolitre: {
+			symbol: "hL",
+			toBaseUnit(input: Decimal) {
+				return input.mul(Decimal("0.1"));
+			},
+			fromBaseUnit(input: Decimal) {
+				return input.div(Decimal("0.1"));
+			},
+		},
+
+		"Tablespoon (Metric)": {
+			symbol: "tbsp (metric)",
+			toBaseUnit(input: Decimal) {
+				return input.mul(Decimal("1.5").mul(Decimal.pow(10, -5)));
+			},
+			fromBaseUnit(input: Decimal) {
+				return input.div(Decimal("1.5").mul(Decimal.pow(10, -5)));
+			},
+		},
+
+		Litre: {
+			symbol: "L",
+			toBaseUnit(input: Decimal) {
+				return input.mul(Decimal("0.001"));
+			},
+			fromBaseUnit(input: Decimal) {
+				return input.div(Decimal("0.001"));
+			},
+		},
+	} satisfies Record<keyof typeof VolumeUnitNameEnum, UnitDefinition>,
 } as const;
 
-export const LengthUnitNames = z.enum([
-	"Meter",
-	"Ångström",
-	"Astronomical Unit",
-	"Attometre",
-	"Barleycorn",
-	"Bohr",
-	"Cable Length (International)",
-	"Chain",
-	"Cubit",
-	"Ell",
-	"Fathom",
-	"Foot (International)",
-	"Inch (International)",
-	"Hubble Length",
-	"Decimetre",
-	"Decametre",
-	"Gigametre",
-	"Femtometre",
-	"Centimetre",
-	"Millimetre",
-	"Hectometre",
-	"Kilometre",
-	"Light Day",
-	"Light Hour",
-	"Light Minute",
-	"Light Second",
-	"Light Year",
-	"Megametre",
-	"Mile (International)",
-	"Micrometre",
-	"Nanometre",
-	"Nautical Mile (International)",
-	"Parsec",
-	"Picometre",
-	"Yoctometre",
-	"Zeptometre",
-	"Zettametre",
-	"Planck Length",
-	"Yard (International)",
-	"Yottametre",
-]);
-export type LengthUnitName = z.infer<typeof LengthUnitNames>;
+const LengthUnitNameEnum = {
+	Meter: "Meter",
+	Ångström: "Ångström",
+	"Astronomical Unit": "Astronomical Unit",
+	Attometre: "Attometre",
+	Barleycorn: "Barleycorn",
+	Bohr: "Bohr",
+	"Cable Length (International)": "Cable Length (International)",
+	Chain: "Chain",
+	Cubit: "Cubit",
+	Ell: "Ell",
+	Fathom: "Fathom",
+	"Foot (International)": "Foot (International)",
+	"Inch (International)": "Inch (International)",
+	"Hubble Length": "Hubble Length",
+	Decimetre: "Decimetre",
+	Decametre: "Decametre",
+	Gigametre: "Gigametre",
+	Femtometre: "Femtometre",
+	Centimetre: "Centimetre",
+	Millimetre: "Millimetre",
+	Hectometre: "Hectometre",
+	Kilometre: "Kilometre",
+	"Light Day": "Light Day",
+	"Light Hour": "Light Hour",
+	"Light Minute": "Light Minute",
+	"Light Second": "Light Second",
+	"Light Year": "Light Year",
+	Megametre: "Megametre",
+	"Mile (International)": "Mile (International)",
+	Micrometre: "Micrometre",
+	Nanometre: "Nanometre",
+	"Nautical Mile (International)": "Nautical Mile (International)",
+	Parsec: "Parsec",
+	Picometre: "Picometre",
+	Yoctometre: "Yoctometre",
+	Zeptometre: "Zeptometre",
+	Zettametre: "Zettametre",
+	"Planck Length": "Planck Length",
+	"Yard (International)": "Yard (International)",
+	Yottametre: "Yottametre",
+} as const;
 
-export const TemperatureUnitNames = z.enum([]);
-export type TemperatureUnitName = z.infer<typeof TemperatureUnitNames>;
+const TemperatureUnitNameEnum = {
+	Celsius: "Celsius",
+	Fahrenheit: "Fahrenheit",
+	Kelvin: "Kelvin",
+	Newton: "Newton",
+} as const;
 
-export const UnitNameSchema = z.enum([
-	...LengthUnitNames.options,
-	...TemperatureUnitNames.options,
-]);
+const AreaUnitNameEnum = {
+	Acre: "Acre",
+	Are: "Are",
+	Barn: "Barn",
+	Board: "Board",
+	"Circular Inch": "Circular Inch",
+	"Circular Mil": "Circular Mil",
+	Hectare: "Hectare",
+	"Square Foot": "Square Foot",
+	"Square Inch": "Square Inch",
+	"Square Kilometre": "Square Kilometre",
+	"Square Centimetre": "Square Centimetre",
+	"Square Decimetre": "Square Decimetre",
+	"Square Millimetre": "Square Millimetre",
+	"Square Micrometre": "Square Micrometre",
+	"Square Nanometre": "Square Nanometre",
+	"Square Metre": "Square Metre",
+	"Square Mile": "Square Mile",
+	"Square Yard": "Square Yard",
+} as const;
 
-export type UnitName = z.infer<typeof UnitNameSchema>;
+const VolumeUnitNameEnum = {
+	"Acre Foot": "Acre Foot",
+	"Acre Inch": "Acre Inch",
+	"Board Foot": "Board Foot",
+	"Cubic Fathom": "Cubic Fathom",
+	Centilitre: "Centilitre",
+	"Cubic Foot": "Cubic Foot",
+	"Cubic Metre": "Cubic Metre",
+	"Cubic Kilometre": "Cubic Kilometre",
+	"Cubic Decimetre": "Cubic Decimetre",
+	"Cubic Centimetre": "Cubic Centimetre",
+	"Cubic Dekametre": "Cubic Dekametre",
+	"Cubic Millimetre": "Cubic Millimetre",
+	"Cubic Hectometre": "Cubic Hectometre",
+	"Cubic Micrometre": "Cubic Micrometre",
+	"Cubic Nanometre": "Cubic Nanometre",
+	"Cubic Inch": "Cubic Inch",
+	"Cubic Mile": "Cubic Mile",
+	"Cubic Yard": "Cubic Yard",
+	Dekalitre: "Dekalitre",
+	Decilitre: "Decilitre",
+	Hectolitre: "Hectolitre",
+	Microlitre: "Microlitre",
+	Picolitre: "Picolitre",
+	Cup: "Cup",
+	Drop: "Drop",
+	Lambda: "Lambda",
+	Litre: "Litre",
+	Millimetre: "Millimetre",
+	"Tablespoon (Metric)": "Tablespoon (Metric)",
+	"Teaspoon (Metric)": "Teaspoon (Metric)",
+} as const;
 
-export const QuantitySchema = z.enum(["Length"]);
+export const UnitNameEnum = {
+	...TemperatureUnitNameEnum,
+	...LengthUnitNameEnum,
+	...VolumeUnitNameEnum,
+	...AreaUnitNameEnum,
+} as const;
 
-export type Quantity = z.infer<typeof QuantitySchema>;
+export const UnitNameSchema = v.enum(UnitNameEnum);
+
+export type UnitName =
+	| keyof typeof AreaUnitNameEnum
+	| keyof typeof LengthUnitNameEnum
+	| keyof typeof VolumeUnitNameEnum
+	| keyof typeof TemperatureUnitNameEnum;
+
+export const Quantity = {
+	Temperature: "Temperature",
+	Volume: "Volume",
+	Length: "Length",
+	Area: "Area",
+} as const;
+
+export const QuantitySchema = v.enum(Quantity);
+
+export type Quantity = keyof typeof Quantity;

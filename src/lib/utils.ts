@@ -33,3 +33,13 @@ export function prettyBytes(bytes: number) {
 
 	return `${(bytes / Math.pow(1024, Math.floor(number))).toFixed(2)} ${UNITS[number]}`;
 }
+
+export function getFirstKeyOfRecord<T extends Record<string, unknown>>(
+	record: T,
+): keyof T | undefined {
+	for (const key in record) {
+		return key;
+	}
+
+	return undefined;
+}

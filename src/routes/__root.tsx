@@ -1,34 +1,31 @@
 import { TanStackDevtools } from "@tanstack/react-devtools";
-import type { QueryClient } from "@tanstack/react-query";
 import {
 	HeadContent,
 	Scripts,
 	createRootRouteWithContext,
 } from "@tanstack/react-router";
 import { TanStackRouterDevtoolsPanel } from "@tanstack/react-router-devtools";
+import { safeParse } from "valibot";
 
 import {
 	defaultSearchParams,
 	globalSearchSchema,
 } from "#/lib/global-search-params";
-import TanStackQueryDevtools from "../integrations/tanstack-query/devtools";
 import appCss from "../styles.css?url";
 
-interface MyRouterContext {
-	queryClient: QueryClient;
-}
+interface MyRouterContext {}
 
 export const Route = createRootRouteWithContext<MyRouterContext>()({
 	validateSearch(rawSearch) {
-		const parsed = globalSearchSchema.safeParse(rawSearch);
+		const parsed = safeParse(globalSearchSchema, rawSearch);
 
 		if (!parsed.success) {
-			console.error("Invalid search params", parsed.error);
+			console.error("Invalid search params", parsed.issues);
 
 			return defaultSearchParams;
 		}
 
-		return parsed.data;
+		return parsed.output;
 	},
 	head: () => ({
 		meta: [
@@ -93,7 +90,6 @@ function RootDocument({ children }: React.PropsWithChildren) {
 							name: "Tanstack Router",
 							render: <TanStackRouterDevtoolsPanel />,
 						},
-						TanStackQueryDevtools,
 					]}
 				/>
 

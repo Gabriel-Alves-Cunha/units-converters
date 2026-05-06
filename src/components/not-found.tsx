@@ -24,7 +24,7 @@ export function NotFound({ children }: React.PropsWithChildren) {
 				<div className="grid grid-cols-2 gap-2">
 					<Button onClick={() => window.history.back()}>Go back</Button>
 
-					<Button variant="outline">
+					<Button>
 						<Link search={defaultSearchParams} to="/">
 							Back to home page
 						</Link>

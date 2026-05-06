@@ -44,6 +44,9 @@
 	--radius-2xl: calc(var(--radius) * 1.8);
 	--radius-3xl: calc(var(--radius) * 2.2);
 	--radius-4xl: calc(var(--radius) * 2.6);
+
+	--color-button-active: rgb(0 0 0 / 20%);
+	--color-button-hover: rgb(0 0 0 / 10%);
 }
 
 :root {
@@ -82,6 +85,9 @@
 
 	--simple-scrollbar-thumb-color: oklch(0.556 0 0);
 	--simple-scrollbar-active-thumb-color: oklch(0.439 0 0);
+
+	--color-button-active: rgb(0 0 0 / 20%);
+	--color-button-hover: rgb(0 0 0 / 10%);
 }
 
 .dark {
@@ -119,6 +125,9 @@
 
 	--simple-scrollbar-thumb-color: oklch(0.556 0 0);
 	--simple-scrollbar-active-thumb-color: oklch(0.439 0 0);
+
+	--color-button-active: color-mix(in oklab, #fff 20%, transparent);
+	--color-button-hover: color-mix(in oklab, #fff 10%, transparent);
 }
 
 @layer base {
@@ -165,6 +174,10 @@
 			@apply scroll-m-20 text-3xl font-semibold tracking-tight first:mt-0;
 		}
 	}
+}
+
+@utility button-hover {
+	@apply hover:bg-button-hover active:bg-button-active disabled:opacity-50;
 }
 
 @utility font-features-inter {
@@ -246,4 +259,37 @@
 
 @utility scrollbar-width-small {
 	--simple-scrollbar-width: 6px;
+}
+
+@utility converter-grid {
+	--gap: calc(var(--spacing) * 4); /* gap-4 */
+	--full: minmax(0, 1fr);
+	--content: calc(((min(52rem, 100% - var(--gap) * 4)) / 2) - (var(--gap) / 2));
+	--parallel: minmax(0, 1fr);
+
+	@apply mobile:[--gap:6px] @max-[32rem]:[--gap:6px];
+
+	display: grid;
+
+	grid-template-columns:
+		[full-start] var(--full) [parallel-one-start] var(--parallel)
+		[content-start] var(--content) [parallel-one-end gap-start] var(--gap)
+		[gap-end parallel-two-start] var(--content)
+		[content-end] var(--parallel) [parallel-two-end] var(--full) [full-end];
+}
+
+@utility converter-content {
+	grid-column: content-start / content-end;
+}
+@utility converter-parallel-one {
+	grid-column: parallel-one-start / parallel-one-end;
+}
+@utility converter-parallel-two {
+	grid-column: parallel-two-start / parallel-two-end;
+}
+@utility converter-parallel-msgs {
+	grid-column: parallel-one-start / parallel-two-end;
+}
+@utility converter-full {
+	grid-column: full-start / full-end;
 }

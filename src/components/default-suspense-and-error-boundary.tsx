@@ -1,4 +1,3 @@
-import { QueryErrorResetBoundary } from "@tanstack/react-query";
 import {
 	memo,
 	Suspense,
@@ -112,13 +111,9 @@ export function LoadError({
 			</details>
 
 			<div className="flex gap-2">
-				<Button onClick={retryFromScratch} size="sm">
-					Retry from scratch
-				</Button>
+				<Button onClick={retryFromScratch}>Retry from scratch</Button>
 
-				<Button onClick={resetBoundary} size="sm">
-					Retry
-				</Button>
+				<Button onClick={resetBoundary}>Retry</Button>
 			</div>
 		</div>
 	);
@@ -165,25 +160,20 @@ export const DefaultSuspenseAndErrorBoundary = memo(
 					/>
 				}
 			>
-				<QueryErrorResetBoundary>
-					{({ reset }) => (
-						<ErrorBoundary
-							fallback={
-								<LoadError
-									failedClassName={failedClassName}
-									zustandStores={zustandStores}
-									fallbackFor={fallbackFor}
-									failedText={failedText}
-									error={error}
-								/>
-							}
-							onError={(error) => setError(error as Error)}
-							onReset={reset}
-						>
-							{children}
-						</ErrorBoundary>
-					)}
-				</QueryErrorResetBoundary>
+				<ErrorBoundary
+					fallback={
+						<LoadError
+							failedClassName={failedClassName}
+							zustandStores={zustandStores}
+							fallbackFor={fallbackFor}
+							failedText={failedText}
+							error={error}
+						/>
+					}
+					onError={(error) => setError(error as Error)}
+				>
+					{children}
+				</ErrorBoundary>
 			</Suspense>
 		);
 	},

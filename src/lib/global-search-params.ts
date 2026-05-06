@@ -1,12 +1,12 @@
-import z from "zod";
+import * as v from "valibot";
 
 import { QuantitySchema, UnitNameSchema } from "./units";
 
-export const globalSearchSchema = z.object({
-	quantity: QuantitySchema.optional().default("Length"),
-	to: UnitNameSchema.optional().default("Kilometre"),
-	from: UnitNameSchema.optional().default("Meter"),
-	fromValue: z.string().optional().default("1"),
+export const globalSearchSchema = v.object({
+	quantity: v.optional(QuantitySchema, "Length"),
+	to: v.optional(UnitNameSchema, "Kilometre"),
+	from: v.optional(UnitNameSchema, "Meter"),
+	fromValue: v.optional(v.string(), "1"),
 });
 
-export const defaultSearchParams = globalSearchSchema.parse({});
+export const defaultSearchParams = v.parse(globalSearchSchema, {});
