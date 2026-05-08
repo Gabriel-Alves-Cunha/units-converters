@@ -3,19 +3,28 @@ import { devtools } from "@tanstack/devtools-vite";
 import { tanstackStart } from "@tanstack/react-start/plugin/vite";
 import viteReact from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
-import { nitro } from "nitro/vite";
+import { cloudflare } from "@cloudflare/vite-plugin";
 
 const config = defineConfig({
 	resolve: { tsconfigPaths: true },
 	plugins: [
 		devtools(),
-		nitro({ rollupConfig: { external: [/^@sentry\//] } }),
 		tailwindcss(),
+		cloudflare({
+			viteEnvironment: {
+				name: "ssr",
+			},
+		}),
 		tanstackStart({
 			importProtection: {
 				behavior: "error",
 				enabled: true,
 				log: "always",
+			},
+			prerender: {
+				failOnError: true,
+				crawlLinks: true,
+				enabled: true,
 			},
 		}),
 		viteReact(),

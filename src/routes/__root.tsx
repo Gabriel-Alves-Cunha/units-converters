@@ -7,25 +7,27 @@ import {
 import { TanStackRouterDevtoolsPanel } from "@tanstack/react-router-devtools";
 import { safeParse } from "valibot";
 
+import { FeedbackSection } from "#/components/feedback-section";
+import { WebsiteDescription } from "#/components/website-description";
 import {
 	defaultSearchParams,
-	globalSearchSchema,
-} from "#/lib/global-search-params";
+	globalSearchParamsSchema,
+} from "#/lib/global-params-params";
 import appCss from "../styles.css?url";
+import { CommonConversions } from "#/components/common-conversions";
+import { Footer } from "#/components/footer";
 
 interface MyRouterContext {}
 
 export const Route = createRootRouteWithContext<MyRouterContext>()({
-	validateSearch(rawSearch) {
-		const parsed = safeParse(globalSearchSchema, rawSearch);
+	validateSearch(search) {
+		const result = safeParse(globalSearchParamsSchema, search);
 
-		if (!parsed.success) {
-			console.error("Invalid search params", parsed.issues);
-
+		if (!result.success) {
 			return defaultSearchParams;
 		}
 
-		return parsed.output;
+		return result.output;
 	},
 	head: () => ({
 		meta: [
@@ -74,10 +76,30 @@ function RootDocument({ children }: React.PropsWithChildren) {
 				) : null}
 			</head>
 
-			<body className="flex flex-col h-svh w-svw overflow-hidden">
+			<body className="flex flex-col h-svh w-svw simple-scrollbar scrollbar-stable">
 				<div className="h-(--safe-top) flex-none bg-black w-full"></div>
 
-				{children}
+				<header className="bg-accent text-accent-foreground h-16 flex text-center items-center justify-center">
+					<h1 className="p-2">Units Converter</h1>
+				</header>
+
+				<div className="w-full h-svh grid converter-grid gap-16">
+					{children}
+
+					<hr className="converter-content" />
+
+					<CommonConversions />
+
+					<hr className="converter-content" />
+
+					<WebsiteDescription />
+
+					<hr className="converter-content" />
+
+					<FeedbackSection />
+
+					<Footer />
+				</div>
 
 				<div className="h-(--safe-bottom) flex-none w-full bg-notebook"></div>
 

@@ -43,3 +43,11 @@ export function getFirstKeyOfRecord<T extends Record<string, unknown>>(
 
 	return undefined;
 }
+
+export const numberFormatter = new Intl.NumberFormat(undefined, {
+	maximumFractionDigits: 100,
+	compactDisplay: "long",
+	notation: "standard",
+	useGrouping: true,
+	style: "decimal",
+});

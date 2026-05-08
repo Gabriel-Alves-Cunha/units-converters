@@ -1,5 +1,5 @@
 {
-	"name": "fe",
+	"name": "units-converters",
 	"private": true,
 	"type": "module",
 	"imports": {
@@ -7,9 +7,11 @@
 	},
 	"scripts": {
 		"lint:all": "bun run format && bun run lint && bun run typecheck",
-		"dev": "vite dev --port 3000",
+		"deploy": "bun run build && wrangler deploy",
+		"dev": "portless units-converters vite dev",
+		"preview": "bun run build && wrangler dev",
+		"cf-typegen": "wrangler types",
 		"format": "oxfmt --write",
-		"preview": "vite preview",
 		"build": "vite build",
 		"typecheck": "tsc",
 		"lint": "oxlint"
@@ -20,13 +22,12 @@
 		"@tanstack/react-devtools": "^0.10.2",
 		"@tanstack/react-router": "^1.169.2",
 		"@tanstack/react-router-devtools": "^1.166.13",
-		"@tanstack/react-start": "^1.167.64",
-		"@tanstack/router-plugin": "^1.167.34",
+		"@tanstack/react-start": "^1.167.65",
+		"@tanstack/router-plugin": "^1.167.35",
 		"class-variance-authority": "^0.7.1",
 		"clsx": "^2.1.1",
 		"decimal.js": "^10.6.0",
 		"lucide-react": "^1.14.0",
-		"nitro": "^3.0.260429-beta",
 		"posthog-js": "^1.372.9",
 		"react": "^19.2.6",
 		"react-dom": "^19.2.6",
@@ -37,7 +38,8 @@
 		"zustand": "^5.0.13"
 	},
 	"devDependencies": {
-		"@rsbuild/core": "^2.0.4",
+		"@cloudflare/vite-plugin": "^1.36.2",
+		"@rsbuild/core": "^2.0.5",
 		"@tanstack/devtools-vite": "^0.6.0",
 		"@types/node": "^25.6.0",
 		"@types/react": "^19.2.14",
@@ -47,10 +49,8 @@
 		"oxlint": "^1.63.0",
 		"type-fest": "^5.6.0",
 		"typescript": "^6.0.3",
-		"vite": "^8.0.10"
-	},
-	"resolutions": {
-		"@tanstack/query-core": "5.100.5"
+		"vite": "^8.0.11",
+		"wrangler": "^4.89.1"
 	},
 	"pnpm": {
 		"onlyBuiltDependencies": [

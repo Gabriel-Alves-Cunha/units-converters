@@ -8,61 +8,97 @@
 // You should NOT make any changes in this file as it will be overwritten.
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
-import { Route as rootRouteImport } from './routes/__root'
-import { Route as IndexRouteImport } from './routes/index'
+import { Route as rootRouteImport } from "./routes/__root";
+import { Route as PrivacyPolicyRouteImport } from "./routes/privacy-policy";
+import { Route as IndexRouteImport } from "./routes/index";
+import { Route as ConvertQuantityFromToToRouteImport } from "./routes/convert.$quantity.$from.to.$to";
 
+const PrivacyPolicyRoute = PrivacyPolicyRouteImport.update({
+	id: "/privacy-policy",
+	path: "/privacy-policy",
+	getParentRoute: () => rootRouteImport,
+} as any);
 const IndexRoute = IndexRouteImport.update({
-  id: '/',
-  path: '/',
-  getParentRoute: () => rootRouteImport,
-} as any)
+	id: "/",
+	path: "/",
+	getParentRoute: () => rootRouteImport,
+} as any);
+const ConvertQuantityFromToToRoute = ConvertQuantityFromToToRouteImport.update({
+	id: "/convert/$quantity/$from/to/$to",
+	path: "/convert/$quantity/$from/to/$to",
+	getParentRoute: () => rootRouteImport,
+} as any);
 
 export interface FileRoutesByFullPath {
-  '/': typeof IndexRoute
+	"/": typeof IndexRoute;
+	"/privacy-policy": typeof PrivacyPolicyRoute;
+	"/convert/$quantity/$from/to/$to": typeof ConvertQuantityFromToToRoute;
 }
 export interface FileRoutesByTo {
-  '/': typeof IndexRoute
+	"/": typeof IndexRoute;
+	"/privacy-policy": typeof PrivacyPolicyRoute;
+	"/convert/$quantity/$from/to/$to": typeof ConvertQuantityFromToToRoute;
 }
 export interface FileRoutesById {
-  __root__: typeof rootRouteImport
-  '/': typeof IndexRoute
+	__root__: typeof rootRouteImport;
+	"/": typeof IndexRoute;
+	"/privacy-policy": typeof PrivacyPolicyRoute;
+	"/convert/$quantity/$from/to/$to": typeof ConvertQuantityFromToToRoute;
 }
 export interface FileRouteTypes {
-  fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
-  fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
-  fileRoutesById: FileRoutesById
+	fileRoutesByFullPath: FileRoutesByFullPath;
+	fullPaths: "/" | "/privacy-policy" | "/convert/$quantity/$from/to/$to";
+	fileRoutesByTo: FileRoutesByTo;
+	to: "/" | "/privacy-policy" | "/convert/$quantity/$from/to/$to";
+	id: "__root__" | "/" | "/privacy-policy" | "/convert/$quantity/$from/to/$to";
+	fileRoutesById: FileRoutesById;
 }
 export interface RootRouteChildren {
-  IndexRoute: typeof IndexRoute
+	IndexRoute: typeof IndexRoute;
+	PrivacyPolicyRoute: typeof PrivacyPolicyRoute;
+	ConvertQuantityFromToToRoute: typeof ConvertQuantityFromToToRoute;
 }
 
-declare module '@tanstack/react-router' {
-  interface FileRoutesByPath {
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-  }
+declare module "@tanstack/react-router" {
+	interface FileRoutesByPath {
+		"/privacy-policy": {
+			id: "/privacy-policy";
+			path: "/privacy-policy";
+			fullPath: "/privacy-policy";
+			preLoaderRoute: typeof PrivacyPolicyRouteImport;
+			parentRoute: typeof rootRouteImport;
+		};
+		"/": {
+			id: "/";
+			path: "/";
+			fullPath: "/";
+			preLoaderRoute: typeof IndexRouteImport;
+			parentRoute: typeof rootRouteImport;
+		};
+		"/convert/$quantity/$from/to/$to": {
+			id: "/convert/$quantity/$from/to/$to";
+			path: "/convert/$quantity/$from/to/$to";
+			fullPath: "/convert/$quantity/$from/to/$to";
+			preLoaderRoute: typeof ConvertQuantityFromToToRouteImport;
+			parentRoute: typeof rootRouteImport;
+		};
+	}
 }
 
 const rootRouteChildren: RootRouteChildren = {
-  IndexRoute: IndexRoute,
-}
+	IndexRoute: IndexRoute,
+	PrivacyPolicyRoute: PrivacyPolicyRoute,
+	ConvertQuantityFromToToRoute: ConvertQuantityFromToToRoute,
+};
 export const routeTree = rootRouteImport
-  ._addFileChildren(rootRouteChildren)
-  ._addFileTypes<FileRouteTypes>()
+	._addFileChildren(rootRouteChildren)
+	._addFileTypes<FileRouteTypes>();
 
-import type { getRouter } from './router.tsx'
-import type { createStart } from '@tanstack/react-start'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-  }
+import type { getRouter } from "./router.tsx";
+import type { createStart } from "@tanstack/react-start";
+declare module "@tanstack/react-start" {
+	interface Register {
+		ssr: true;
+		router: Awaited<ReturnType<typeof getRouter>>;
+	}
 }

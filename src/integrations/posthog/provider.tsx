@@ -16,5 +16,9 @@ interface PostHogProviderProps {
 }
 
 export default function PostHogProvider({ children }: PostHogProviderProps) {
-	return <BasePostHogProvider client={posthog}>{children}</BasePostHogProvider>;
+	return import.meta.env.DEV ? (
+		children
+	) : (
+		<BasePostHogProvider client={posthog}>{children}</BasePostHogProvider>
+	);
 }

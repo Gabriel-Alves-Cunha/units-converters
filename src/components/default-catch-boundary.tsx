@@ -1,4 +1,4 @@
-import { defaultSearchParams } from "#/lib/global-search-params";
+import type { ErrorComponentProps } from "@tanstack/react-router";
 import {
 	ErrorComponent,
 	Link,
@@ -6,7 +6,8 @@ import {
 	useMatch,
 	useRouter,
 } from "@tanstack/react-router";
-import type { ErrorComponentProps } from "@tanstack/react-router";
+
+import { defaultSearchParams } from "#/lib/global-params-params";
 
 export function DefaultCatchBoundary({ error }: ErrorComponentProps) {
 	const router = useRouter();

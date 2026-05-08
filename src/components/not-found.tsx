@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 
+import { defaultSearchParams } from "#/lib/global-params-params";
 import { Button } from "./ui/button";
-import { defaultSearchParams } from "#/lib/global-search-params";
 
 export function NotFound({ children }: React.PropsWithChildren) {
 	return (
