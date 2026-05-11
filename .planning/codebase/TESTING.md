@@ -1,68 +1,49 @@
 # Testing Patterns
 
-**Analysis Date:** 2025-05-02
+**Analysis Date:** 2025-05-14
 
 ## Test Framework
 
 **Runner:**
-
-- Vitest (`^4.1.5`)
-- Config: Integrated in `vite.config.ts` (or using default settings as no `vitest.config.ts` exists).
+- Not detected. No automated unit or integration test runner (like Vitest or Jest) is configured in `package.json`.
 
 **Assertion Library:**
-
-- Vitest's built-in `expect` (compatible with Jest).
+- Not applicable (no test runner detected).
 
 **Run Commands:**
-
 ```bash
-bun run test           # Run all tests using Vitest
+# No test scripts defined in package.json
 ```
 
 ## Test File Organization
 
 **Location:**
-
-- Not currently established in the source tree (`src/`).
-- Patterns suggest tests should likely be co-located or placed in a `tests/` directory at the root.
+- Not established. No test files (`*.test.ts`, `*.spec.ts`) found in the `src/` directory.
 
 **Naming:**
-
-- Expected pattern: `*.test.ts` or `*.test.tsx`.
+- Not applicable.
 
 ## Test Structure
 
 **Suite Organization:**
-
-```typescript
-import { describe, it, expect } from "vitest";
-import { myUtility } from "./my-utility";
-
-describe("myUtility", () => {
-	it("should perform expected behavior", () => {
-		expect(myUtility()).toBe(true);
-	});
-});
-```
+- Not applicable.
 
 **Patterns:**
-
-- No established patterns for React component testing found in the codebase.
+- The codebase relies on **Static Analysis** and **Runtime Validation** rather than automated unit tests.
+- **Static Analysis:** Strict TypeScript configuration (`tsconfig.json`) and `oxlint` provide compile-time safety.
+- **Runtime Validation:** `valibot` is used to validate route parameters and external data inputs (`src/routes/$lang/convert.$quantity.$from.to.$to.tsx`).
 
 ## Mocking
 
-**Framework:** Vitest built-in `vi`.
+**Framework:** Not applicable.
 
-**What to Mock:**
-
-- API calls (PostHog, TanStack Query).
-- Browser-specific globals (if testing in Node environment).
+**Patterns:**
+- No mocking patterns established.
 
 ## Fixtures and Factories
 
 **Test Data:**
-
-- No established pattern found.
+- Not applicable.
 
 ## Coverage
 
@@ -71,28 +52,26 @@ describe("myUtility", () => {
 ## Test Types
 
 **Unit Tests:**
-
-- Targeted for utility functions in `src/lib/utils.ts`.
+- Not implemented.
 
 **Integration Tests:**
-
-- Targeted for Zustand stores and TanStack Router context.
+- Not implemented.
 
 **E2E Tests:**
-
-- **Framework:** Playwright CLI (available via `.agents/skills/playwright-cli`).
-- **Approach:** Interactive browser automation and snapshot-based testing.
+- **Framework:** Playwright CLI (available via project skills in `.agents/skills/playwright-cli/`).
+- **Approach:** The project has access to browser automation tools for manual or scripted end-to-end testing, although no persistent E2E test suite was found in the repository.
 
 ## Common Patterns
 
 **Search Param Validation:**
+- Uses `valibot` schemas (`globalParamsSchema` in `src/lib/global-params-params.ts`) to ensure URL state is valid at runtime. This acts as a defensive programming layer.
 
-- Uses `zod` in `src/routes/__root.tsx` to validate and transform search parameters at runtime, acting as a "live" test for URL state.
+**TypeScript Strictness:**
+- The `tsconfig.json` uses highly strict flags (`noUncheckedIndexedAccess: true`, `verbatimModuleSyntax: true`, etc.), which serves as a primary quality assurance mechanism.
 
-**Static Analysis:**
-
-- The project relies heavily on strict TypeScript configuration (`tsconfig.json`) to catch quality issues at compile-time.
+**Linting:**
+- `oxlint` with multiple plugins ensures adherence to best practices for React, TypeScript, and performance.
 
 ---
 
-_Testing analysis: 2025-05-02_
+*Testing analysis: 2025-05-14*

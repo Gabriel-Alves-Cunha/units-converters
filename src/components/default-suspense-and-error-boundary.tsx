@@ -6,6 +6,7 @@ import {
 	type PropsWithChildren,
 } from "react";
 import { ErrorBoundary, useErrorBoundary } from "react-error-boundary";
+import { Trans } from "@lingui/react/macro";
 
 import { Button } from "#/components/ui/button";
 import { generalContextStore } from "#/contexts/general-ctx/general-context";
@@ -28,7 +29,7 @@ export function FallbackLoader({
 	...rest
 }: DivProps & {
 	fallbackTextClassName?: string | undefined;
-	fallbackText?: string | undefined;
+	fallbackText?: React.ReactNode | undefined;
 	withLoader?: boolean | undefined;
 	fallbackFor: string;
 }) {
@@ -111,9 +112,13 @@ export function LoadError({
 			</details>
 
 			<div className="flex gap-2">
-				<Button onClick={retryFromScratch}>Retry from scratch</Button>
+				<Button onClick={retryFromScratch}>
+					<Trans>Retry from scratch</Trans>
+				</Button>
 
-				<Button onClick={resetBoundary}>Retry</Button>
+				<Button onClick={resetBoundary}>
+					<Trans>Try again</Trans>
+				</Button>
 			</div>
 		</div>
 	);

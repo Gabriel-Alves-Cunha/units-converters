@@ -1,3 +1,4 @@
+import { Trans } from "@lingui/react/macro";
 import { useState } from "react";
 
 export function FeedbackSection() {
@@ -10,32 +11,35 @@ export function FeedbackSection() {
 			return;
 		}
 
-		const formData = new FormData(e.currentTarget);
+		const form = e.currentTarget;
+		const formData = new FormData(form);
 
 		const description = formData.get("description") as string;
 
-		if (!description) {
+		if (description.length < 10) {
+			alert("Description is too short.");
+
 			return;
 		}
 
 		try {
 			setIsSending(true);
 
-			// Replace with your chosen service endpoint
-			const response = await fetch("https://formspree.io/f/your-id", {
-				headers: { Accept: "application/json" },
-				method: "POST",
-				body: formData,
+			const emailjs = await import("@emailjs/browser");
+
+			emailjs.init("T5a1tVm8R0SAqTsCs");
+
+			await emailjs.send("service_fno0j57", "template_07drjao", {
+				description,
 			});
 
-			if (response.ok) {
-				alert("Thanks for the feedback!");
-				(e.target as HTMLFormElement).reset();
-			}
+			alert("Thanks for the feedback!");
 
-			e.currentTarget.reset();
+			form.reset();
 		} catch (error) {
 			console.error(error);
+		} finally {
+			setIsSending(false);
 		}
 	}
 
@@ -43,7 +47,7 @@ export function FeedbackSection() {
 		<form className="converter-content h-[50svh]" onSubmit={handleSubmit}>
 			<div className="mb-10 text-center mobile:mt-4 px-4">
 				<h5 className="text-2xl font-bold text-foreground">
-					How could this website improve?
+					<Trans>How could this website improve?</Trans>
 				</h5>
 
 				<p className="text-muted-foreground">
@@ -52,8 +56,8 @@ export function FeedbackSection() {
 
 				<p className="text-xs text-muted-foreground mt-1">
 					Support email:{" "}
-					<a className="link" href="mailto:team@">
-						team@
+					<a className="link" href="mailto:voyagertecnologias@gmail.com">
+						voyagertecnologias@gmail.com
 					</a>
 				</p>
 			</div>
@@ -69,6 +73,7 @@ export function FeedbackSection() {
 				<textarea
 					className="flex field-sizing-content w-full rounded-lg border border-input bg-transparent px-2.5 py-2 text-base outline-none placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 disabled:cursor-not-allowed disabled:bg-input/50 disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-3 aria-invalid:ring-destructive/20 md:text-sm dark:bg-input/30 dark:disabled:bg-input/80 dark:aria-invalid:border-destructive/50 dark:aria-invalid:ring-destructive/40 min-h-44"
 					placeholder="Please provide as much detail as possible…"
+					disabled={isSending}
 					name="description"
 					id="description"
 					required

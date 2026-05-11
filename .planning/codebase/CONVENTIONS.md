@@ -1,107 +1,85 @@
 # Coding Conventions
 
-**Analysis Date:** 2025-05-02
+**Analysis Date:** 2025-05-14
 
 ## Naming Patterns
 
 **Files:**
-
-- Kebab-case for general files: `package.json`, `tsconfig.json`, `routeTree.gen.ts`.
-- React components in `src/components/ui/` use kebab-case: `button.tsx`, `alert-dialog.tsx`.
-- Special TanStack Router files use specific naming: `__root.tsx`, `index.tsx`, `router.tsx`.
-- Path alias `#/` points to `src/` (configured in `package.json` and `tsconfig.json`).
+- Kebab-case for general files and components: `package.json`, `tsconfig.json`, `button.tsx`, `common-conversions.tsx`.
+- Special TanStack Router files: `__root.tsx`, `index.tsx`, `routeTree.gen.ts`.
+- Directory names are kebab-case: `common-ctx`, `ui`, `i18n`.
 
 **Functions:**
-
-- CamelCase for general functions: `isValidNumber`, `prettyBytes`.
-- PascalCase for React components, but defined using `function` keyword: `function Button(...)`.
-- Named exports are preferred over default exports for components and utilities.
+- camelCase for utility functions and hooks: `cn`, `isValidNumber`, `prettyBytes`, `useWithGeneralStoreNotebookId`.
+- PascalCase for React components, typically defined with the `function` keyword: `export function Button(...)`.
 
 **Variables:**
-
-- CamelCase for local variables and props.
-- UpperCase with underscores for constants: `UNITS`, `MATH_LOG_1024`.
-- Component variants defined as constants: `buttonVariants`.
+- camelCase for local variables, props, and state.
+- SCREAMING_SNAKE_CASE for constants: `UNITS`, `MATH_LOG_1024`.
 
 **Types:**
-
-- PascalCase for interfaces and type aliases: `MyRouterContext`, `PostHogProviderProps`.
-- Context-specific store types: `ZustandContextStore<T>`.
+- PascalCase for interfaces and type aliases: `UnitDefinition`, `Quantity`, `Props`.
+- Context-specific types often end in `Props` or `Context`.
 
 ## Code Style
 
 **Formatting:**
-
-- **Tool:** `oxfmt` (Oxlint formatter).
-- **Settings:**
-  - `useTabs: true` (Tab width: 2)
-  - `semi: true`
-  - `trailingComma: "all"`
-  - `jsxSingleQuote: false`
-  - `printWidth: 80`
-- **CSS:** Tailwind v4 using `oklch` colors and CSS variables.
+- **Tool:** `oxfmt` (integrated in `package.json` as `bun run format`).
+- **Settings:** Uses tabs for indentation, semicolons, and trailing commas (observed in `src/lib/utils.ts` and `src/routes/__root.tsx`).
 
 **Linting:**
-
-- **Tool:** `oxlint`.
-- **TypeScript:** Extremely strict configuration in `tsconfig.json` (`strict: true`, `noUncheckedIndexedAccess: true`, `noImplicitReturns: true`, `verbatimModuleSyntax: true`).
+- **Tool:** `oxlint` (integrated in `package.json` as `bun run lint`).
+- **Plugins:** `eslint`, `typescript`, `unicorn`, `react`, `react-perf`, `oxc`, `promise`, `import` (configured in `oxlint.config.ts`).
 
 ## Import Organization
 
 **Order:**
-
-1. External libraries (e.g., `react`, `@tanstack/react-router`).
-2. Internal absolute imports using `#/` alias (e.g., `#/lib/utils`).
-3. Relative imports (e.g., `./components/not-found`).
-4. Styles (e.g., `../styles.css?url`).
+1. React and core libraries (e.g., `react`, `@tanstack/react-router`).
+2. External dependencies (e.g., `decimal.js`, `valibot`).
+3. Internal absolute imports using `#/*` alias (e.g., `#/components/ui/input`, `#/lib/units`).
+4. Relative imports (e.g., `./components/not-found`).
 
 **Path Aliases:**
-
-- `#/`: Maps to `./src/*`.
+- `#/*`: Maps to `./src/*` (configured in `package.json` and `tsconfig.json`).
 
 ## Error Handling
 
 **Patterns:**
-
-- Use `react-error-boundary` for component-level errors.
-- `DefaultCatchBoundary` (`src/components/default-catch-boundary.tsx`) used as the default error component in TanStack Router.
-- `NotFound` component for 404s.
+- **Component Level:** Uses `react-error-boundary` and TanStack Router's `errorComponent`.
+- **Global:** `DefaultCatchBoundary` (`src/components/default-catch-boundary.tsx`) provides a fallback for route-level errors.
+- **Validation:** Uses `valibot`'s `safeParse` for runtime validation, throwing errors with descriptive causes when validation fails (`src/routes/$lang/convert.$quantity.$from.to.$to.tsx`).
 
 ## Logging
 
-**Framework:** PostHog for analytics and session tracking (`src/integrations/posthog/provider.tsx`).
+**Framework:** PostHog for analytics and session tracking.
 
 **Patterns:**
-
-- `PostHogProvider` wraps the application in `src/router.tsx`.
-- Dev-only scripts (e.g., `react-scan`) are injected conditionally in `__root.tsx`.
+- `PostHogProvider` wraps the app (`src/integrations/posthog/provider.tsx`).
+- `console.error` is used for reporting validation failures during route parsing.
 
 ## Comments
 
 **When to Comment:**
-
-- To explain complex type logic (e.g., in `src/contexts/create-zustand-provider.tsx`).
-- To provide reasoning for specific configuration choices (e.g., `strict: false` in search params).
+- To explain complex logic or ignore specific linting/type rules (e.g., `// @ts-ignore` in `src/routes/$lang/convert.$quantity.$from.to.$to.tsx`).
+- Docstrings are not extensively used in the current codebase.
 
 ## Function Design
 
-**Size:** Small, focused utility functions.
+**Size:** Focused, single-responsibility functions (e.g., utilities in `src/lib/utils.ts`).
 
-**Parameters:** Destructured props with default values for React components.
+**Parameters:** Destructured props are preferred for React components.
 
-**Return Values:** Explicit return types for utilities; inferred for React components.
+**Return Values:** Explicit return types are common in utility functions; inferred for React components.
 
 ## Module Design
 
 **Exports:**
-
-- Named exports for components and variants to facilitate IDE discovery and tree-shaking.
-- `export default` is used occasionally for providers (e.g., `PostHogProvider`).
+- Named exports are strongly preferred for components and utilities to improve discoverability and tree-shaking.
+- Default exports are used for route definitions (`src/routes/index.ts`) and configuration files (`vite.config.ts`, `oxlint.config.ts`).
 
 **Barrel Files:**
-
-- Not extensively used; direct imports from file paths are preferred.
+- Used sparingly; most imports are direct from the implementation file.
 
 ---
 
-_Convention analysis: 2025-05-02_
+*Convention analysis: 2025-05-14*

@@ -1,0 +1,40 @@
+msgid ""
+msgstr ""
+"POT-Creation-Date: 2026-05-11 11:15-0300\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: @lingui/cli\n"
+"Language: en\n"
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Plural-Forms: \n"
+
+#. js-lingui-explicit-id
+#: src/components/feedback-section.tsx:50
+#~ msgid "im"
+#~ msgstr "im"
+
+#. placeholder {0}: Object.keys(units[quantity]).slice(0, 3).join(", ")
+#: src/routes/$lang/index.tsx:66
+msgid "Convert {0} and more."
+msgstr "Convert {0} and more."
+
+#: src/components/feedback-section.tsx:50
+msgid "How could this website improve?"
+msgstr "How could this website improve?"
+
+#: src/routes/$lang/index.tsx:33
+msgid "Simple, fast, and scientific-grade precision. Convert anything from nanometres to light years in seconds."
+msgstr "Simple, fast, and scientific-grade precision. Convert anything from nanometres to light years in seconds."
+
+#: src/routes/$lang/index.tsx:29
+msgid "The Only Unit Converter You'll Ever Need"
+msgstr "The Only Unit Converter You'll Ever Need"
+
+#: src/routes/__root.tsx:138
+msgid "Units Converters"
+msgstr "Units Converters"

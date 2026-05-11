@@ -6,7 +6,7 @@
 		"#/*": "./src/*"
 	},
 	"scripts": {
-		"lint:all": "bun run format && bun run lint && bun run typecheck",
+		"lint:all": "bun run format && bun run lint && bun run typecheck && bunx lingui extract && bunx lingui compile",
 		"deploy": "bun run build && wrangler deploy",
 		"dev": "portless units-converters vite dev",
 		"preview": "bun run build && wrangler dev",
@@ -17,40 +17,44 @@
 		"lint": "oxlint"
 	},
 	"dependencies": {
+		"@emailjs/browser": "^4.4.1",
+		"@lingui/react": "^6.0.1",
+		"@lingui/swc-plugin": "^6.0.0",
+		"@lingui/vite-plugin": "^6.0.1",
 		"@posthog/react": "^1.9.0",
-		"@tailwindcss/vite": "^4.2.4",
-		"@tanstack/react-devtools": "^0.10.2",
+		"@tailwindcss/vite": "^4.3.0",
+		"@tanstack/react-devtools": "^0.10.3",
 		"@tanstack/react-router": "^1.169.2",
 		"@tanstack/react-router-devtools": "^1.166.13",
 		"@tanstack/react-start": "^1.167.65",
 		"@tanstack/router-plugin": "^1.167.35",
+		"@vitejs/plugin-react-swc": "^4.3.0",
 		"class-variance-authority": "^0.7.1",
 		"clsx": "^2.1.1",
 		"decimal.js": "^10.6.0",
 		"lucide-react": "^1.14.0",
-		"posthog-js": "^1.372.9",
+		"posthog-js": "^1.372.10",
 		"react": "^19.2.6",
 		"react-dom": "^19.2.6",
 		"react-error-boundary": "^6.1.1",
-		"tailwind-merge": "^3.5.0",
-		"tailwindcss": "^4.2.4",
+		"tailwind-merge": "^3.6.0",
+		"tailwindcss": "^4.3.0",
 		"valibot": "^1.4.0",
 		"zustand": "^5.0.13"
 	},
 	"devDependencies": {
-		"@cloudflare/vite-plugin": "^1.36.2",
+		"@cloudflare/vite-plugin": "^1.36.3",
 		"@rsbuild/core": "^2.0.5",
 		"@tanstack/devtools-vite": "^0.6.0",
-		"@types/node": "^25.6.0",
+		"@types/node": "^25.6.2",
 		"@types/react": "^19.2.14",
 		"@types/react-dom": "^19.2.3",
-		"@vitejs/plugin-react": "^6.0.1",
 		"oxfmt": "^0.48.0",
 		"oxlint": "^1.63.0",
 		"type-fest": "^5.6.0",
 		"typescript": "^6.0.3",
-		"vite": "^8.0.11",
-		"wrangler": "^4.89.1"
+		"vite": "^8.0.12",
+		"wrangler": "^4.90.0"
 	},
 	"pnpm": {
 		"onlyBuiltDependencies": [

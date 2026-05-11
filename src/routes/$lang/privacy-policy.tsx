@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 
-export const Route = createFileRoute("/privacy-policy")({
+export const Route = createFileRoute("/$lang/privacy-policy")({
 	component: RouteComponent,
 });
 

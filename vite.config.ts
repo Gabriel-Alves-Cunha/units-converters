@@ -1,9 +1,10 @@
 import { defineConfig } from "vite";
 import { devtools } from "@tanstack/devtools-vite";
 import { tanstackStart } from "@tanstack/react-start/plugin/vite";
-import viteReact from "@vitejs/plugin-react";
+import react from "@vitejs/plugin-react-swc";
 import tailwindcss from "@tailwindcss/vite";
 import { cloudflare } from "@cloudflare/vite-plugin";
+import { lingui } from "@lingui/vite-plugin";
 
 const config = defineConfig({
 	resolve: { tsconfigPaths: true },
@@ -22,12 +23,16 @@ const config = defineConfig({
 				log: "always",
 			},
 			prerender: {
+				autoStaticPathsDiscovery: true,
 				failOnError: true,
 				crawlLinks: true,
 				enabled: true,
 			},
 		}),
-		viteReact(),
+		react({
+			plugins: [["@lingui/swc-plugin", {}]],
+		}),
+		lingui(),
 	],
 
 	build: {

@@ -1,95 +1,105 @@
 # Codebase Structure
 
-**Analysis Date:** 2025-05-15
+**Analysis Date:** 2025-05-14
 
 ## Directory Layout
 
-```
-src/
-├── components/     # UI components and layout elements
-│   └── ui/         # Atomic design components (Shadcn)
-├── contexts/       # Zustand stores and global state providers
-├── features/       # Feature-specific logic and components
-├── hooks/          # Shared React hooks
-├── integrations/   # External service configurations (Query, PostHog)
-├── lib/            # Utility functions and constants
-├── routes/         # TanStack Router file-based routing
-└── types/          # Shared TypeScript type definitions
+```text
+[project-root]/
+├── src/                # Application source code
+│   ├── components/     # React components
+│   │   └── ui/         # Base UI components (shadcn/ui style)
+│   ├── contexts/       # Global state (Zustand) and React contexts
+│   ├── features/       # Feature-specific logic (currently empty/minimal)
+│   ├── hooks/          # Custom React hooks
+│   ├── integrations/   # External service configurations (i18n, posthog)
+│   ├── lib/            # Core logic, utilities, and validation schemas
+│   ├── locales/        # Translation files (PO and compiled JS)
+│   ├── routes/         # Page components and TanStack Router definitions
+│   ├── types/          # Shared TypeScript type definitions
+│   ├── router.tsx      # Router initialization
+│   └── styles.css      # Global CSS (Tailwind)
+├── public/             # Static assets (favicons, manifest)
+├── dist/               # Build output
+└── [config files]      # Vite, Wrangler, Lingui, etc.
 ```
 
 ## Directory Purposes
 
 **src/routes/:**
+- Purpose: Defines the application's URL structure and associated UI.
+- Contains: TanStack Router route files (`__root.tsx`, `$lang/`, etc.).
+- Key files: `src/routes/$lang/convert.$quantity.$from.to.$to.tsx` (Main conversion page).
 
-- Purpose: Defines the application's pages and navigation structure.
-- Contains: Route files (`.tsx`) that handle search param validation and page layouts.
-- Key files: `__root.tsx` (Root layout/global state), `index.tsx` (Home page).
+**src/lib/:**
+- Purpose: Shared logic and domain models.
+- Contains: Unit conversion math, utility functions, and Valibot schemas for data validation.
+- Key files: `src/lib/units.ts` (Conversion engine).
 
 **src/components/ui/:**
-
-- Purpose: Contains the base design system components.
-- Contains: Reusable components like `button.tsx`, `input.tsx`, `select.tsx`.
-- Key files: `input.tsx`, `select.tsx`, `card.tsx`.
+- Purpose: Atomic UI building blocks.
+- Contains: Styled inputs, buttons, and loaders.
+- Key files: `src/components/ui/input.tsx`.
 
 **src/integrations/:**
-
-- Purpose: Setup and configuration for 3rd party libraries.
-- Contains: Query Client setup, analytics providers.
-- Key files: `tanstack-query/root-provider.tsx`.
+- Purpose: Third-party service integration code.
+- Contains: Analytics providers and internationalization setup.
+- Key files: `src/integrations/i18n/load-catalog.ts`.
 
 ## Key File Locations
 
 **Entry Points:**
-
-- `src/start.ts`: App startup configuration.
-- `src/router.tsx`: TanStack Router instance creation and configuration.
+- `src/router.tsx`: Bootstraps the TanStack Router.
+- `src/routes/__root.tsx`: Top-level layout and providers.
 
 **Configuration:**
-
-- `package.json`: Dependencies and scripts.
-- `vite.config.ts`: Build and development server configuration.
-- `tsconfig.json`: TypeScript configuration.
+- `vite.config.ts`: Build and development server config.
+- `wrangler.jsonc`: Cloudflare Pages deployment configuration.
+- `lingui.config.js`: Internationalization settings.
 
 **Core Logic:**
+- `src/lib/units.ts`: All unit conversion logic and unit definitions.
 
-- `src/routes/__root.tsx`: Defines global URL search params schema.
-- `src/lib/utils.ts`: General helper functions.
+**Testing:**
+- Not detected in `src/` (Check for `.test.ts` or similar; none found in initial scan).
 
 ## Naming Conventions
 
 **Files:**
-
-- Components: kebab-case or PascalCase (usually kebab-case for Shadcn: `button.tsx`).
-- Routes: kebab-case (matches URL).
-- Hooks: `use-` prefix (`use-local-storage.ts`).
+- React components: `kebab-case.tsx` (e.g., `feedback-section.tsx`).
+- Routes: TanStack Router convention (e.g., `$lang.tsx`, `convert.$quantity.tsx`).
+- Utilities/Logic: `kebab-case.ts` (e.g., `units.ts`).
 
 **Directories:**
-
-- Feature folders: kebab-case.
+- Feature/Category based: `kebab-case` (e.g., `general-ctx`).
 
 ## Where to Add New Code
 
-**New Conversion Page:**
-
-- Primary code: Add a new file in `src/routes/` (e.g., `src/routes/length.tsx`).
-- Search Params: Define the schema in the new route file using `validateSearch`.
+**New Conversion Category:**
+- Implementation: Add to the `units` object in `src/lib/units.ts`.
+- Validation: Ensure `QuantitySchema` and `UnitName` in `src/lib/units.ts` are updated.
 
 **New UI Component:**
+- Implementation: `src/components/ui/` if generic; `src/components/` if project-specific.
 
-- Implementation: `src/components/ui/` if it's a generic primitive.
+**New Page/Route:**
+- Implementation: Create a new file in `src/routes/` following TanStack Router conventions.
 
-**Business Logic (Units Math):**
-
-- Implementation: `src/lib/converters/` (to be created) or within a feature folder if specific to one unit type.
+**New Translation:**
+- Implementation: Use `<Trans>` macro in components, then run `bunx lingui extract`. Files live in `src/locales/`.
 
 ## Special Directories
 
-**src/routeTree.gen.ts:**
+**src/locales/:**
+- Purpose: Contains translation catalogs.
+- Generated: `.js` files are generated from `.po` files.
+- Committed: Yes.
 
-- Purpose: Automatically generated route tree for TanStack Router.
-- Generated: Yes
-- Committed: Yes
+**src/routeTree.gen.ts:**
+- Purpose: Auto-generated route tree for TanStack Router.
+- Generated: Yes.
+- Committed: Yes.
 
 ---
 
-_Structure analysis: 2025-05-15_
+*Structure analysis: 2025-05-14*

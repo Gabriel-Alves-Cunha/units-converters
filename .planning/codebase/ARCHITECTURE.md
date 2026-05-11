@@ -1,127 +1,138 @@
-<!-- refreshed: 2025-05-15 -->
-
+<!-- refreshed: 2025-05-14 -->
 # Architecture
 
-**Analysis Date:** 2025-05-15
+**Analysis Date:** 2025-05-14
 
 ## System Overview
 
 ```text
 ┌─────────────────────────────────────────────────────────────┐
-│                       Presentation Layer                    │
-│           (React 19 + Tailwind CSS 4 + Shadcn UI)           │
+│                      Routing & Layout                        │
+│         `src/routes/` & `src/routes/__root.tsx`              │
 ├──────────────────┬──────────────────┬───────────────────────┤
-│    Components    │      Routes      │        Features       │
-│ `src/components` │   `src/routes`   │     `src/features`    │
+│    I18n Layer    │   State (URL)    │   UI Components       │
+│`src/integrations`│ `TanStack Router`│   `src/components/`   │
 └────────┬─────────┴────────┬─────────┴──────────┬────────────┘
          │                  │                     │
          ▼                  ▼                     ▼
 ┌─────────────────────────────────────────────────────────────┐
-│                    Application Logic Layer                   │
-│          (TanStack Router + TanStack Query + Zustand)       │
-│         `src/router.tsx`, `src/hooks`, `src/contexts`       │
+│                    Core Conversion Logic                     │
+│         `src/lib/units.ts` & `decimal.js`                    │
 └─────────────────────────────────────────────────────────────┘
          │
          ▼
 ┌─────────────────────────────────────────────────────────────┐
-│                   External Integrations                     │
-│               (PostHog, TanStack Query Client)              │
-│                  `src/integrations`                         │
+│  Infrastructure (Cloudflare Workers / Pages)                 │
+│  `wrangler.jsonc` & `vite.config.ts`                         │
 └─────────────────────────────────────────────────────────────┘
 ```
 
 ## Component Responsibilities
 
-| Component      | Responsibility                                     | File                    |
-| -------------- | -------------------------------------------------- | ----------------------- |
-| Router         | Central navigation and URL state management        | `src/router.tsx`        |
-| Root Route     | Layout, global styles, and search param validation | `src/routes/__root.tsx` |
-| UI Components  | Atomic, reusable design elements                   | `src/components/ui/`    |
-| Context Stores | Persistent local state (e.g., settings)            | `src/contexts/`         |
+| Component | Responsibility | File |
+|-----------|----------------|------|
+| Conversion Engine | Central logic for unit calculations using `decimal.js` | `src/lib/units.ts` |
+| Route Definitions | File-based routing and page layout | `src/routes/` |
+| I18n Manager | Locale validation and message catalog loading | `src/integrations/i18n/` |
+| UI Kit | Reusable, atomic UI components (inputs, buttons) | `src/components/ui/` |
+| Analytics | User tracking and event logging via PostHog | `src/integrations/posthog/` |
 
 ## Pattern Overview
 
-**Overall:** URL-Driven State Architecture
+**Overall:** Client-side React Application with File-based Routing and Localized URL Segments.
 
 **Key Characteristics:**
-
-- **URL as Source of Truth:** Application state (like selected units, values to convert) is primarily stored in URL search parameters.
-- **Type-Safe Routing:** Uses TanStack Router for end-to-end type safety from links to search param validation.
-- **Atomic UI:** Uses Shadcn-inspired components built on Tailwind CSS 4 for a consistent design system.
+- **URL-Driven State:** The primary state of the application (selected units, quantity, language) is stored in the URL path and search parameters.
+- **Precision-First:** Uses `decimal.js` for all math to prevent floating-point errors in scientific conversions.
+- **Progressive Localization:** Language is part of the URL path (`/$lang/`), and translations are loaded dynamically.
 
 ## Layers
 
 **Routing Layer:**
-
-- Purpose: Handles navigation and validates URL state.
+- Purpose: Handles navigation, URL parsing, and top-level layout.
 - Location: `src/routes/`
-- Contains: Route definitions, layouts, and search parameter schemas.
-- Depends on: TanStack Router, Zod.
-- Used by: Entire application for navigation.
+- Contains: TanStack Router route definitions and page-level components.
+- Depends on: `src/lib/units.ts`, `src/integrations/i18n/`
+- Used by: React Entry point
 
-**State Management Layer:**
+**Domain Layer:**
+- Purpose: Defines the business logic for unit conversions.
+- Location: `src/lib/units.ts`
+- Contains: Unit definitions, base unit conversion functions, and validation schemas.
+- Depends on: `decimal.js`, `valibot`
 
-- Purpose: Manages transient and persistent client-side state.
-- Location: `src/contexts/`, `src/hooks/`
-- Contains: Zustand stores, custom hooks.
-- Depends on: Zustand.
-
-**Integrations Layer:**
-
-- Purpose: Configures third-party services and shared clients.
+**Integration Layer:**
+- Purpose: Connects the application to external services and cross-cutting concerns.
 - Location: `src/integrations/`
-- Contains: TanStack Query client, PostHog provider.
+- Contains: PostHog setup, Lingui i18n configuration.
 
 ## Data Flow
 
-### URL-Based State Flow
+### Primary Request Path (Conversion)
 
-1. **User Action:** User interacts with a unit selector or input field.
-2. **Navigation:** Component calls `useNavigate` or uses a `<Link>` with updated `search` parameters.
-3. **Validation:** TanStack Router's `validateSearch` in `src/routes/__root.tsx` (or specific routes) parses and validates the new URL.
-4. **Re-render:** Components subscribed via `Route.useSearch()` receive the updated, validated values and re-render the UI.
+1. **Route Entry:** User visits `/$lang/convert/$quantity/$from/to/$to?fromValue=10` (`src/routes/$lang/convert.$quantity.$from.to.$to.tsx`)
+2. **Param Validation:** `parseParams` uses Valibot to validate units and quantity (`src/lib/global-params-params.ts`)
+3. **Locale Loading:** `beforeLoad` in parent route `/$lang` loads the translation catalog (`src/routes/$lang/route.tsx`)
+4. **Logic Execution:** `Converter` component reads params and calls conversion logic in `src/lib/units.ts`
+5. **UI Rendering:** The result is rendered using `src/components/ui/input.tsx`
 
-### Server Data Flow (TanStack Query)
-
-1. **Query Hook:** Component uses a hook from `src/hooks/` or direct `useQuery`.
-2. **Cache Check:** TanStack Query checks if data is fresh.
-3. **Fetch:** If stale, it fetches data using defined integration clients.
-4. **Update:** Cache is updated, triggering re-renders in dependent components.
+### State Management:
+- **URL State:** Handled by TanStack Router (params and search params).
+- **Global UI State:** Minimal state managed by Zustand (`src/contexts/general-ctx/general-context.ts`).
+- **Persistence:** Zustand state is persisted to `localStorage`.
 
 ## Key Abstractions
 
-**Search Param Validation:**
+**UnitDefinition:**
+- Purpose: Defines how a specific unit (e.g., Meter) relates to its category's base unit.
+- Examples: `src/lib/units.ts`
+- Pattern: Strategy pattern for conversion logic (`toBaseUnit`, `fromBaseUnit`).
 
-- Purpose: Ensures URL state is always valid according to a schema.
-- Examples: `globalSearchSchema` in `src/routes/__root.tsx`.
-- Pattern: Zod schema parsing within `validateSearch`.
+**Route Context:**
+- Purpose: Shared data available to all routes.
+- Examples: `src/routes/__root.tsx`
 
 ## Entry Points
 
 **Main Entry:**
-
-- Location: `src/start.ts`
-- Triggers: Application initialization.
-- Responsibilities: Configures the start instance and middleware.
-
-**Router Entry:**
-
-- Location: `src/router.tsx`
-- Responsibilities: Creates the router instance, integrates plugins (PostHog, Query SSR).
+- Location: `src/router.tsx` (and implicit Vite entry)
+- Triggers: Browser page load.
+- Responsibilities: Initializes TanStack Router and renders the application root.
 
 ## Architectural Constraints
 
-- **Single-Source of Truth (URL):** UI state that should be shareable/bookmarkable MUST live in the URL search parameters.
-- **Zod for Validation:** All external data and URL parameters must be validated using Zod schemas.
+- **Threading:** Single-threaded (standard browser environment).
+- **Global state:** Minimal use of Zustand; preference for URL state to ensure shareable links.
+- **Precision:** All math MUST use `Decimal` from `decimal.js` to avoid IEEE 754 precision issues.
 
 ## Anti-Patterns
 
-### State Duplication
+### Floating Point Math
 
-**What happens:** Storing the same value in both a local `useState` and the URL.
-**Why it's wrong:** Leads to synchronization issues and breaks "back button" expectations.
-**Do this instead:** Use `Route.useSearch()` to read and `navigate({ search: ... })` to write.
+**What happens:** Using standard JavaScript `number` for unit conversions.
+**Why it's wrong:** Causes rounding errors (e.g., `0.1 + 0.2 !== 0.3`) which is unacceptable for a precision tool.
+**Do this instead:** Always use `Decimal` from `src/lib/units.ts`.
+
+### Prop Drilling Locale
+
+**What happens:** Passing language or translation functions through many component layers.
+**Why it's wrong:** Unnecessary complexity.
+**Do this instead:** Use Lingui's `<Trans>` macro or `useLingui` hook.
+
+## Error Handling
+
+**Strategy:** Declarative error boundaries and route-level error components.
+
+**Patterns:**
+- **Route Error Components:** Defined in `src/routes/` to handle invalid params or failed loads.
+- **Default Catch Boundary:** `src/components/default-catch-boundary.tsx` for unexpected runtime errors.
+
+## Cross-Cutting Concerns
+
+**Logging:** Handled via PostHog (`src/integrations/posthog/`).
+**Validation:** Centralized in `src/lib/` using Valibot schemas.
+**Authentication:** Not applicable (public tool).
 
 ---
 
-_Architecture analysis: 2025-05-15_
+*Architecture analysis: 2025-05-14*

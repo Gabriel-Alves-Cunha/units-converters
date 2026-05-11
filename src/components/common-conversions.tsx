@@ -1,6 +1,6 @@
 import { defaultSearchParams } from "#/lib/global-params-params";
 import { type Quantity, type UnitName } from "#/lib/units";
-import { Link } from "@tanstack/react-router";
+import { Link, useParams } from "@tanstack/react-router";
 
 const commonConversions: Array<{
 	quantity: Quantity;
@@ -97,6 +97,8 @@ function scrollPageToTop() {
 }
 
 export function CommonConversions() {
+	const { lang } = useParams({ from: "/$lang" });
+
 	return (
 		<div className="flex flex-col gap-4 converter-content">
 			<h3 className="text-2xl font-semibold">Common conversions</h3>
@@ -105,11 +107,14 @@ export function CommonConversions() {
 				{commonConversions.map((cv, index) => (
 					<li key={index}>
 						<Link
-							to="/convert/$quantity/$from/to/$to"
+							to="/$lang/convert/$quantity/$from/to/$to"
 							search={defaultSearchParams}
 							className="link underline"
 							onClick={scrollPageToTop}
-							params={cv}
+							params={{
+								...cv,
+								lang,
+							}}
 						>
 							{`${cv.from} to ${cv.to}`}
 						</Link>

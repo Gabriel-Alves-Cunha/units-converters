@@ -1,82 +1,52 @@
 # Codebase Concerns
 
-**Analysis Date:** 2026-05-01
+**Analysis Date:** 2025-03-03
 
 ## Tech Debt
 
-**Broken URL Search Validation:**
+**Monolithic Units Definition:**
+- Issue: `src/lib/units.ts` is a massive file (1000+ lines) containing all unit definitions, symbols, and conversion functions.
+- Files: `src/lib/units.ts`
+- Impact: Poor maintainability and readability. Difficult to add new unit categories without increasing the complexity of this single file.
+- Fix approach: Split the `units` object into separate files by category (e.g., `src/lib/units/length.ts`, `src/lib/units/mass.ts`) and re-export them.
 
-- Issue: In `src/routes/__root.tsx`, the `validateSearch` function attempts to access `organizationId` from `search.data`, but `organizationId` is not defined in `globalSearchSchema`. This will cause runtime `undefined` values and potentially TypeScript errors if strict mode is enabled.
-- Files: `src/routes/__root.tsx`
-- Impact: Inconsistent URL state handling; search parameters intended for the root route (like `organizationId`) are not properly validated or typed.
-- Fix approach: Update `globalSearchSchema` to include `organizationId: z.string().optional()` or remove the legacy validation logic.
-
-**Missing Critical Dependency:**
-
-- Issue: `src/start.ts` imports and uses `clerkMiddleware` from `@clerk/tanstack-react-start/server`, but this package is not listed in `package.json`.
-- Files: `src/start.ts`, `package.json`
-- Impact: Application will fail to start in production or during a clean `bun install` as the dependency is missing.
-- Fix approach: Install `@clerk/tanstack-react-start` and add it to `package.json` dependencies.
-
-**Experimental/Non-existent Package Versions:**
-
-- Issue: `package.json` lists versions that are ahead of current stable releases (e.g., `vite: ^8.0.10`, `typescript: ^6.0.3`, `zod: "^4.4.2"`).
-- Files: `package.json`
-- Impact: High risk of instability, missing documentation for features, and potential breaking changes in "future" versions that don't match reality.
-- Fix approach: Downgrade dependencies to stable, verified versions (e.g., Vite 6.x, TS 5.x, Zod 3.x).
-
-## Known Bugs
-
-**PrettyBytes Calculation Error:**
-
-- Issue: `prettyBytes(0)` will likely return `"NaN undefined"` because `Math.log(0)` is `-Infinity`, leading to an invalid index for the `UNITS` array and a division by zero in `Math.pow(1024, -Infinity)`.
-- Files: `src/lib/utils.ts`
-- Trigger: Passing `0` to the `prettyBytes` function.
-- Workaround: Add a guard clause for `if (bytes === 0) return "0 bytes"`.
+**Future-dated Compatibility Date:**
+- Issue: `wrangler.jsonc` has a `compatibility_date` set to "2026-05-07".
+- Files: `wrangler.jsonc`
+- Impact: Potential deployment issues or warnings from Cloudflare Wrangler as it refers to a version of the runtime that does not yet exist.
+- Fix approach: Set `compatibility_date` to a current or past date representing the desired runtime version.
 
 ## Security Considerations
 
-**Unvalidated Unit Lookups:**
-
-- Risk: While not yet implemented, if the units converter uses URL parameters to dynamically look up units from a registry without a safe-list or proper validation, it could be vulnerable to prototype pollution or denial of service via memory exhaustion if extremely large strings are processed.
-- Files: `src/routes/index.tsx` (planned implementation)
-- Current mitigation: None (logic not yet implemented).
-- Recommendations: Use Zod to validate unit keys against a fixed set of allowed values in `validateSearch`.
-
-## Performance Bottlenecks
-
-**Complex Unit Conversions:**
-
-- Problem: Large-scale conversions or categories with thousands of derived units might slow down the UI if performed on every keystroke in the main thread.
-- Files: `src/lib/utils.ts`
-- Cause: JavaScript single-threaded nature.
-- Improvement path: Memoize conversion factors or use a Web Worker for complex, non-linear conversion registries.
-
-## Floating Point Precision
-
-**IEEE 754 Rounding Errors:**
-
-- Files: `src/lib/utils.ts`
-- Why fragile: Standard JavaScript `number` type is prone to rounding errors (e.g., `0.1 + 0.2 !== 0.3`). For a unit converter, precision is critical.
-- Safe modification: Use a library like `decimal.js` or `big.js` for all unit conversion calculations.
-- Test coverage: No tests for conversion precision currently exist.
+**Unprotected Feedback Form:**
+- Issue: The feedback form sends emails directly from the client-side using `@emailjs/browser` without any rate limiting or spam protection.
+- Files: `src/components/feedback-section.tsx`
+- Impact: Risk of automated spam or abuse of the EmailJS account (exhausting quotas).
+- Current mitigation: Basic check for description length (> 10 characters).
+- Recommendations: Implement a CAPTCHA or move the email sending logic to a server-side route (TanStack Start server function) where rate limiting can be applied.
 
 ## Test Coverage Gaps
 
-**Unit Conversion Logic:**
-
-- What's not tested: The `prettyBytes` utility and any future conversion logic.
-- Files: `src/lib/utils.ts`
-- Risk: Incorrect conversion results could lead to user error or lack of trust in the application.
+**Total Lack of Automated Tests:**
+- What's not tested: Entire conversion logic, UI components, and routing.
+- Files: All files under `src/`
+- Risk: Regressions in conversion accuracy (critical for this app) or UI breakage could go unnoticed until reported by users.
 - Priority: High
 
-**URL State Sync:**
+## Architectural Bottlenecks
 
-- What's not tested: Navigation with search parameters and ensuring the UI stays in sync.
-- Files: `src/routes/index.tsx`, `src/routes/__root.tsx`
-- Risk: "Back" button might not restore converter state correctly.
-- Priority: Medium
+**Units Record Typing:**
+- Files: `src/lib/units.ts`
+- Why fragile: The types are derived from the massive `units` object using `keyof typeof`. Circular or complex type inferences might slow down the IDE or build process as more units are added.
+- Safe modification: Define explicit interfaces/types for unit categories and units before declaring the data.
+
+## Missing Critical Features
+
+**Offline Support:**
+- Problem: The application is a utility tool that would benefit greatly from being available offline.
+- Blocks: Users cannot perform conversions without an internet connection.
+- Recommendations: Implement a Service Worker or use a PWA approach since the conversion logic is entirely client-side.
 
 ---
 
-_Concerns audit: 2026-05-01_
+*Concerns audit: 2025-03-03*

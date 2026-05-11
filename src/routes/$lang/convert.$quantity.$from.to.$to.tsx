@@ -17,17 +17,45 @@ import {
 } from "#/lib/units";
 import { getFirstKeyOfRecord, numberFormatter } from "#/lib/utils";
 
-export const Route = createFileRoute("/convert/$quantity/$from/to/$to")({
+export const Route = createFileRoute("/$lang/convert/$quantity/$from/to/$to")({
 	component: Converter,
 	head({ params }) {
 		const { from, to, quantity } = params;
+		const title = `Convert ${from} to ${to} | Accurate ${quantity} Converter`;
+		const description = `Easily convert ${from} to ${to} with our high-precision ${quantity} converter. Free online tool for students and engineers.`;
 
 		return {
 			meta: [
-				{ title: `Convert ${from} to ${to} | Accurate ${quantity} Converter` },
+				{ title },
+				{ name: "description", content: description },
+				// Open Graph
+				{ property: "og:title", content: title },
+				{ property: "og:description", content: description },
+				{ property: "og:type", content: "website" },
+				// Twitter
+				{ name: "twitter:title", content: title },
+				{ name: "twitter:description", content: description },
+			],
+			scripts: [
 				{
-					name: "description",
-					content: `High-precision ${quantity} conversion from ${from} to ${to}.`,
+					type: "application/ld+json",
+					children: JSON.stringify({
+						"@context": "https://schema.org",
+						"@type": "SoftwareApplication",
+						name: `${quantity} Converter`,
+						applicationCategory: "EducationalApplication",
+						operatingSystem: "Web",
+						description: description,
+						featureList: [
+							"High-precision conversions",
+							"Real-time results",
+							"Scientific grade units",
+						],
+						offers: {
+							"@type": "Offer",
+							price: "0",
+						},
+					}),
 				},
 			],
 		};
@@ -82,7 +110,7 @@ function Converter() {
 	function handleChangeParams(key: "from" | "to" | "quantity", value: string) {
 		startTransition(() => {
 			navigate({
-				to: `/convert/$quantity/$from/to/$to`,
+				to: `/$lang/convert/$quantity/$from/to/$to`,
 				search: () => ({
 					fromValue,
 				}),
@@ -97,7 +125,7 @@ function Converter() {
 	function handleChangeSearchParams(fromValue: string) {
 		startTransition(() => {
 			navigate({
-				to: `/convert/$quantity/$from/to/$to`,
+				to: `/$lang/convert/$quantity/$from/to/$to`,
 				params: (prev) => ({
 					...(prev as Required<typeof prev>),
 				}),
@@ -149,12 +177,12 @@ function Converter() {
 
 		startTransition(() => {
 			navigate({
-				to: `/convert/$quantity/$from/to/$to`,
+				to: `/$lang/convert/$quantity/$from/to/$to`,
 				search: () => ({
 					fromValue,
 				}),
 				params: (prev) => ({
-					...prev,
+					...(prev as Required<typeof prev>),
 					quantity: nextQuantity,
 					from: nextFirstUnit,
 					to: nextFirstUnit,
