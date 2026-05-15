@@ -1,4 +1,5 @@
 <!-- refreshed: 2025-05-14 -->
+
 # Architecture
 
 **Analysis Date:** 2025-05-14
@@ -29,19 +30,20 @@
 
 ## Component Responsibilities
 
-| Component | Responsibility | File |
-|-----------|----------------|------|
-| Conversion Engine | Central logic for unit calculations using `decimal.js` | `src/lib/units.ts` |
-| Route Definitions | File-based routing and page layout | `src/routes/` |
-| I18n Manager | Locale validation and message catalog loading | `src/integrations/i18n/` |
-| UI Kit | Reusable, atomic UI components (inputs, buttons) | `src/components/ui/` |
-| Analytics | User tracking and event logging via PostHog | `src/integrations/posthog/` |
+| Component         | Responsibility                                         | File                        |
+| ----------------- | ------------------------------------------------------ | --------------------------- |
+| Conversion Engine | Central logic for unit calculations using `decimal.js` | `src/lib/units.ts`          |
+| Route Definitions | File-based routing and page layout                     | `src/routes/`               |
+| I18n Manager      | Locale validation and message catalog loading          | `src/integrations/i18n/`    |
+| UI Kit            | Reusable, atomic UI components (inputs, buttons)       | `src/components/ui/`        |
+| Analytics         | User tracking and event logging via PostHog            | `src/integrations/posthog/` |
 
 ## Pattern Overview
 
 **Overall:** Client-side React Application with File-based Routing and Localized URL Segments.
 
 **Key Characteristics:**
+
 - **URL-Driven State:** The primary state of the application (selected units, quantity, language) is stored in the URL path and search parameters.
 - **Precision-First:** Uses `decimal.js` for all math to prevent floating-point errors in scientific conversions.
 - **Progressive Localization:** Language is part of the URL path (`/$lang/`), and translations are loaded dynamically.
@@ -49,6 +51,7 @@
 ## Layers
 
 **Routing Layer:**
+
 - Purpose: Handles navigation, URL parsing, and top-level layout.
 - Location: `src/routes/`
 - Contains: TanStack Router route definitions and page-level components.
@@ -56,12 +59,14 @@
 - Used by: React Entry point
 
 **Domain Layer:**
+
 - Purpose: Defines the business logic for unit conversions.
 - Location: `src/lib/units.ts`
 - Contains: Unit definitions, base unit conversion functions, and validation schemas.
 - Depends on: `decimal.js`, `valibot`
 
 **Integration Layer:**
+
 - Purpose: Connects the application to external services and cross-cutting concerns.
 - Location: `src/integrations/`
 - Contains: PostHog setup, Lingui i18n configuration.
@@ -77,6 +82,7 @@
 5. **UI Rendering:** The result is rendered using `src/components/ui/input.tsx`
 
 ### State Management:
+
 - **URL State:** Handled by TanStack Router (params and search params).
 - **Global UI State:** Minimal state managed by Zustand (`src/contexts/general-ctx/general-context.ts`).
 - **Persistence:** Zustand state is persisted to `localStorage`.
@@ -84,17 +90,20 @@
 ## Key Abstractions
 
 **UnitDefinition:**
+
 - Purpose: Defines how a specific unit (e.g., Meter) relates to its category's base unit.
 - Examples: `src/lib/units.ts`
 - Pattern: Strategy pattern for conversion logic (`toBaseUnit`, `fromBaseUnit`).
 
 **Route Context:**
+
 - Purpose: Shared data available to all routes.
 - Examples: `src/routes/__root.tsx`
 
 ## Entry Points
 
 **Main Entry:**
+
 - Location: `src/router.tsx` (and implicit Vite entry)
 - Triggers: Browser page load.
 - Responsibilities: Initializes TanStack Router and renders the application root.
@@ -124,6 +133,7 @@
 **Strategy:** Declarative error boundaries and route-level error components.
 
 **Patterns:**
+
 - **Route Error Components:** Defined in `src/routes/` to handle invalid params or failed loads.
 - **Default Catch Boundary:** `src/components/default-catch-boundary.tsx` for unexpected runtime errors.
 
@@ -135,4 +145,4 @@
 
 ---
 
-*Architecture analysis: 2025-05-14*
+_Architecture analysis: 2025-05-14_

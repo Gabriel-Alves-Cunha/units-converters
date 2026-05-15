@@ -1,4 +1,5 @@
 import { Link } from "@tanstack/react-router";
+import { Trans } from "@lingui/react/macro";
 
 import { defaultSearchParams } from "#/lib/global-params-params";
 import { Button } from "./ui/button";
@@ -12,21 +13,25 @@ export function NotFound({ children }: React.PropsWithChildren) {
 				</h2>
 
 				<h3 className="text-base-content mb-1.5 text-3xl font-semibold">
-					Something went wrong
+					<Trans>Something went wrong</Trans>
 				</h3>
 				{children ?? (
 					<p className="text-base-content mb-6 max-w-sm">
-						The page you&apos;re looking for isn&apos;t found, we suggest you
-						back to home.
+						<Trans>
+							The page you&apos;re looking for isn&apos;t found, we suggest you
+							back to home.
+						</Trans>
 					</p>
 				)}
 
 				<div className="grid grid-cols-2 gap-2">
-					<Button onClick={() => window.history.back()}>Go back</Button>
+					<Button onClick={() => window.history.back()}>
+						<Trans>Go back</Trans>
+					</Button>
 
 					<Button>
 						<Link search={defaultSearchParams} to="/">
-							Back to home page
+							<Trans>Back to home page</Trans>
 						</Link>
 					</Button>
 				</div>

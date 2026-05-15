@@ -1,6 +1,8 @@
+import { Link, useParams } from "@tanstack/react-router";
+
 import { defaultSearchParams } from "#/lib/global-params-params";
 import { type Quantity, type UnitName } from "#/lib/units";
-import { Link, useParams } from "@tanstack/react-router";
+import { Trans } from "@lingui/react/macro";
 
 const commonConversions: Array<{
 	quantity: Quantity;
@@ -116,7 +118,7 @@ export function CommonConversions() {
 								lang,
 							}}
 						>
-							{`${cv.from} to ${cv.to}`}
+							<Trans>{`${cv.from} to ${cv.to}`}</Trans>
 						</Link>
 					</li>
 				))}

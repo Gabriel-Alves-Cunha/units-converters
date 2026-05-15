@@ -1,3 +1,5 @@
+import { Trans } from "@lingui/react/macro";
+import { Trans as RuntimeTrans } from "@lingui/react";
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { Decimal } from "decimal.js";
 import { startTransition, useRef } from "react";
@@ -73,12 +75,18 @@ export const Route = createFileRoute("/$lang/convert/$quantity/$from/to/$to")({
 	},
 	errorComponent: () => (
 		<div className="p-4 text-center converter-content">
-			<h2 className="text-xl font-bold">Unit not found</h2>
+			<h2 className="text-xl font-bold">
+				<Trans>Unit not found</Trans>
+			</h2>
 
-			<p>We couldn't find those specific units. Try our default converter.</p>
+			<p>
+				<Trans>
+					We couldn't find those specific units. Try our default converter.
+				</Trans>
+			</p>
 
 			<Link search={defaultSearchParams} className="link" to="/">
-				Back to Home
+				<Trans>Back to Home</Trans>
 			</Link>
 		</div>
 	),
@@ -244,11 +252,11 @@ function Converter() {
 				<div className="grid grid-rows-2 h-fit">
 					<div className="grid grid-cols-2 gap-11">
 						<label htmlFor="from" className="font-bold">
-							From
+							<Trans>From</Trans>
 						</label>
 
 						<label htmlFor="from" className="font-bold">
-							To
+							<Trans>To</Trans>
 						</label>
 					</div>
 
@@ -296,7 +304,9 @@ function Converter() {
 								value={unitName}
 								key={unitName}
 							>
-								{unitName}
+								{/* {unitName} */}
+								<RuntimeTrans id={unitName} />
+
 								{symbol ? ` (${symbol})` : ""}
 							</option>
 						))}
@@ -323,7 +333,8 @@ function Converter() {
 							>
 								<div className="grid grid-cols-[max-content_auto] gap-4 items-center">
 									<span className="">
-										{unitName}
+										{/* {unitName} */}
+										<RuntimeTrans id={unitName} />
 										{symbol ? ` (${symbol})` : ""}
 									</span>
 

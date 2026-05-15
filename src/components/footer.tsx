@@ -1,4 +1,5 @@
 import { Link, useParams } from "@tanstack/react-router";
+import { Trans } from "@lingui/react/macro";
 
 import { defaultSearchParams } from "#/lib/global-params-params";
 
@@ -13,11 +14,14 @@ export function Footer() {
 				to="/$lang/privacy-policy"
 				params={{ lang }}
 			>
-				Privacy Policy
+				<Trans>Privacy Policy</Trans>
 			</Link>
 
 			<p className="">
-				&copy; {new Date().getFullYear()} Units Converters. All rights reserved.
+				<Trans>
+					&copy; {new Date().getFullYear()} Units Converters. All rights
+					reserved.
+				</Trans>
 			</p>
 		</footer>
 	);

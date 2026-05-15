@@ -1,7 +1,11 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { units, QuantitySchema } from "#/lib/units";
 
-const BASE_URL = "https://units-converters.pages.dev";
+const BASE_URL = import.meta.env.VITE_BASE_URL;
+
+if (!BASE_URL) {
+	throw new Error("VITE_BASE_URL is not defined");
+}
 
 export const Route = createFileRoute("/sitemap/xml")({
 	loader: () => {

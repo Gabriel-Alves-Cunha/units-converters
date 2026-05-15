@@ -1,5 +1,6 @@
 import { Decimal } from "decimal.js";
 import * as v from "valibot";
+import { msg } from "@lingui/core/macro";
 
 export type UnitDefinition = {
 	symbol: string;
@@ -1050,7 +1051,7 @@ const VolumeUnitNameEnum = {
 	"Teaspoon (Metric)": "Teaspoon (Metric)",
 } as const;
 
-export const UnitNameEnum = {
+const UnitNameEnum = {
 	...TemperatureUnitNameEnum,
 	...LengthUnitNameEnum,
 	...VolumeUnitNameEnum,
@@ -1059,19 +1060,23 @@ export const UnitNameEnum = {
 
 export const UnitNameSchema = v.enum(UnitNameEnum);
 
+export const UnitNamesWithTranslations = UnitNameSchema.options.map(
+	(name) => msg`${name}`,
+);
+
 export type UnitName =
 	| keyof typeof AreaUnitNameEnum
 	| keyof typeof LengthUnitNameEnum
 	| keyof typeof VolumeUnitNameEnum
 	| keyof typeof TemperatureUnitNameEnum;
 
-export const Quantity = {
+export const QuantityEnum = {
 	Temperature: "Temperature",
 	Volume: "Volume",
 	Length: "Length",
 	Area: "Area",
 } as const;
 
-export const QuantitySchema = v.enum(Quantity);
+export const QuantitySchema = v.enum(QuantityEnum);
 
-export type Quantity = keyof typeof Quantity;
+export type Quantity = keyof typeof QuantityEnum;

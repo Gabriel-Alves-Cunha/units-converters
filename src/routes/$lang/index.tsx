@@ -1,28 +1,14 @@
+import { Trans } from "@lingui/react/macro";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ChevronRight } from "lucide-react";
-import { Trans } from "@lingui/react/macro";
 
+import { defaultLocale } from "#/integrations/i18n/load-catalog";
 import { defaultSearchParams } from "#/lib/global-params-params";
 import { QuantitySchema, units } from "#/lib/units";
 import { getFirstKeyOfRecord } from "#/lib/utils";
-import { defaultLocale } from "#/integrations/i18n/load-catalog";
 
 export const Route = createFileRoute("/$lang/")({
 	component: Home,
-	head(props) {
-		console.log("Head props", props);
-
-		return {
-			meta: [
-				{ title: "Units Converters | Fast & Precise Unit Conversion Tool" },
-				{
-					name: "description",
-					content:
-						"Free online unit converter for Length, Temperature, Area, and Volume. Get instant, high-precision results for metric and imperial units.",
-				},
-			],
-		};
-	},
 });
 
 function Home() {

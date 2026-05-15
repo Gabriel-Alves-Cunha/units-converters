@@ -1,3 +1,5 @@
+import { I18nGlobalProvider } from "#/integrations/i18n/i18n-global-provider";
+import { i18n } from "@lingui/core";
 import { createRouter as createTanStackRouter } from "@tanstack/react-router";
 import { StrictMode } from "react";
 
@@ -12,15 +14,19 @@ export function getRouter() {
 		defaultPreloadStaleTime: 0,
 		defaultPreload: "intent",
 		scrollRestoration: true,
-		context: {},
 		routeTree,
 		search: {
 			strict: false, // If you want certain params to always persist without manually spreading them every time.
 		},
-		InnerWrap(props) {
+		context: {
+			i18n,
+		},
+		Wrap(props) {
 			return (
 				<StrictMode>
-					<PostHogProvider>{props.children}</PostHogProvider>
+					<I18nGlobalProvider i18n={i18n}>
+						<PostHogProvider>{props.children}</PostHogProvider>
+					</I18nGlobalProvider>
 				</StrictMode>
 			);
 		},

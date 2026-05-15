@@ -18,23 +18,199 @@ msgstr ""
 #~ msgid "im"
 #~ msgstr "im"
 
+#. placeholder {0}: isSending ? "Sending..." : "Submit Feedback"
+#: src/components/feedback-section.tsx:95
+msgid "{0}"
+msgstr "{0}"
+
+#. placeholder {0}: cv.from
+#. placeholder {1}: cv.to
+#: src/components/common-conversions.tsx:121
+msgid "{0} to {1}"
+msgstr "{0} to {1}"
+
+#: src/lib/units.ts:1064
+msgid "{name}"
+msgstr "{name}"
+
+#. placeholder {0}: new Date().getFullYear()
+#: src/components/footer.tsx:21
+msgid "© {0} Units Converters. All rights reserved."
+msgstr "© {0} Units Converters. All rights reserved."
+
+#: src/components/website-description.tsx:46
+msgid "<0>Area:</0> Square Meters, Acres, Hectares, and Barns."
+msgstr "<0>Area:</0> Square Meters, Acres, Hectares, and Barns."
+
+#: src/components/website-description.tsx:82
+msgid "<0>Instant Results:</0> Real-time conversion as you type."
+msgstr "<0>Instant Results:</0> Real-time conversion as you type."
+
+#: src/components/website-description.tsx:32
+msgid "<0>Length:</0> Nanometres to Light Years and Planck Length."
+msgstr "<0>Length:</0> Nanometres to Light Years and Planck Length."
+
+#: src/components/website-description.tsx:89
+msgid "<0>Mobile Friendly:</0> Optimized for use on any device."
+msgstr "<0>Mobile Friendly:</0> Optimized for use on any device."
+
+#: src/components/website-description.tsx:75
+msgid "<0>Scientific Grade:</0> Includes rare units like Bohr, Ångström, and Parsecs."
+msgstr "<0>Scientific Grade:</0> Includes rare units like Bohr, Ångström, and Parsecs."
+
+#: src/components/website-description.tsx:39
+msgid "<0>Temperature:</0> Celsius, Fahrenheit, Kelvin, and Newton."
+msgstr "<0>Temperature:</0> Celsius, Fahrenheit, Kelvin, and Newton."
+
+#: src/components/website-description.tsx:68
+msgid "<0>Ultimate Precision:</0> Powered by Decimal.js for zero rounding errors."
+msgstr "<0>Ultimate Precision:</0> Powered by Decimal.js for zero rounding errors."
+
+#: src/components/website-description.tsx:53
+msgid "<0>Volume:</0> Litres, Cubic Inches, Gallons, and Millilitres."
+msgstr "<0>Volume:</0> Litres, Cubic Inches, Gallons, and Millilitres."
+
+#: src/routes/$lang/convert.$quantity.$from.to.$to.tsx:89
+msgid "Back to Home"
+msgstr "Back to Home"
+
+#: src/components/not-found.tsx:34
+msgid "Back to home page"
+msgstr "Back to home page"
+
+#: src/components/website-description.tsx:27
+msgid "Comprehensive Categories"
+msgstr "Comprehensive Categories"
+
 #. placeholder {0}: Object.keys(units[quantity]).slice(0, 3).join(", ")
-#: src/routes/$lang/index.tsx:66
+#: src/routes/$lang/index.tsx:76
 msgid "Convert {0} and more."
 msgstr "Convert {0} and more."
 
-#: src/components/feedback-section.tsx:50
+#: src/components/feedback-section.tsx:57
+msgid "Describe your issue and we'll get back to you as soon as possible."
+msgstr "Describe your issue and we'll get back to you as soon as possible."
+
+#: src/components/feedback-section.tsx:77
+msgid "Description"
+msgstr "Description"
+
+#: src/routes/$lang/route.tsx:75
+msgid "Fast, accurate, and easy-to-use unit converter for Length, Temperature, Area, and Volume. Scientific precision with zero rounding errors."
+msgstr "Fast, accurate, and easy-to-use unit converter for Length, Temperature, Area, and Volume. Scientific precision with zero rounding errors."
+
+#: src/routes/$lang/index.tsx:27
+msgid "Free online unit converter for Length, Temperature, Area, and Volume. Get instant, high-precision results for metric and imperial units."
+msgstr "Free online unit converter for Length, Temperature, Area, and Volume. Get instant, high-precision results for metric and imperial units."
+
+#: src/routes/$lang/convert.$quantity.$from.to.$to.tsx:255
+msgid "From"
+msgstr "From"
+
+#: src/components/not-found.tsx:29
+msgid "Go back"
+msgstr "Go back"
+
+#: src/components/default-catch-boundary.tsx:55
+msgid "Go Back"
+msgstr "Go Back"
+
+#: src/routes/$lang/route.tsx:92
+#: src/routes/$lang/route.tsx:109
+msgid "High-precision unit conversion for students and professionals. Convert hundreds of units instantly."
+msgstr "High-precision unit conversion for students and professionals. Convert hundreds of units instantly."
+
+#: src/components/feedback-section.tsx:53
 msgid "How could this website improve?"
 msgstr "How could this website improve?"
 
-#: src/routes/$lang/index.tsx:33
+#: src/components/website-description.tsx:101
+msgid "Our free online converter is the fastest way to switch between metric and imperial systems. Save time on complex math and get reliable conversions for school, lab work, or construction projects."
+msgstr "Our free online converter is the fastest way to switch between metric and imperial systems. Save time on complex math and get reliable conversions for school, lab work, or construction projects."
+
+#: src/components/feedback-section.tsx:82
+msgid "Please provide as much detail as possible…"
+msgstr "Please provide as much detail as possible…"
+
+#: src/components/website-description.tsx:10
+msgid "Precision Unit Converter: Metric, Imperial & Scientific"
+msgstr "Precision Unit Converter: Metric, Imperial & Scientific"
+
+#: src/components/footer.tsx:17
+msgid "Privacy Policy"
+msgstr "Privacy Policy"
+
+#: src/components/website-description.tsx:14
+msgid "Quickly convert between hundreds of units across <0>Length</0>,<1> Temperature</1>, <2>Area</2>, and <3>Volume</3>. Whether you are a student, engineer, or hobbyist, our tool provides high-precision results for everything from everyday measurements to advanced scientific data."
+msgstr "Quickly convert between hundreds of units across <0>Length</0>,<1> Temperature</1>, <2>Area</2>, and <3>Volume</3>. Whether you are a student, engineer, or hobbyist, our tool provides high-precision results for everything from everyday measurements to advanced scientific data."
+
+#: src/components/default-suspense-and-error-boundary.tsx:116
+msgid "Retry from scratch"
+msgstr "Retry from scratch"
+
+#: src/routes/$lang/index.tsx:43
 msgid "Simple, fast, and scientific-grade precision. Convert anything from nanometres to light years in seconds."
 msgstr "Simple, fast, and scientific-grade precision. Convert anything from nanometres to light years in seconds."
 
-#: src/routes/$lang/index.tsx:29
+#: src/components/not-found.tsx:16
+msgid "Something went wrong"
+msgstr "Something went wrong"
+
+#: src/components/feedback-section.tsx:63
+msgid "Support email: <0>{supportEmail}</0>"
+msgstr "Support email: <0>{supportEmail}</0>"
+
+#: src/routes/$lang/index.tsx:39
 msgid "The Only Unit Converter You'll Ever Need"
 msgstr "The Only Unit Converter You'll Ever Need"
 
-#: src/routes/__root.tsx:138
+#: src/components/not-found.tsx:20
+msgid "The page you're looking for isn't found, we suggest you back to home."
+msgstr "The page you're looking for isn't found, we suggest you back to home."
+
+#: src/routes/$lang/convert.$quantity.$from.to.$to.tsx:259
+msgid "To"
+msgstr "To"
+
+#: src/components/default-suspense-and-error-boundary.tsx:120
+msgid "Try again"
+msgstr "Try again"
+
+#: src/components/default-catch-boundary.tsx:34
+msgid "Try Again"
+msgstr "Try Again"
+
+#: src/routes/$lang/route.tsx:79
+msgid "unit converter, metric conversion, imperial to metric, length converter, temperature converter, area converter, volume converter, scientific calculator"
+msgstr "unit converter, metric conversion, imperial to metric, length converter, temperature converter, area converter, volume converter, scientific calculator"
+
+#: src/routes/$lang/convert.$quantity.$from.to.$to.tsx:79
+msgid "Unit not found"
+msgstr "Unit not found"
+
+#: src/routes/$lang/route.tsx:96
+#: src/routes/$lang/route.tsx:140
 msgid "Units Converters"
 msgstr "Units Converters"
+
+#: src/routes/$lang/index.tsx:24
+msgid "Units Converters | Fast & Precise Unit Conversion Tool"
+msgstr "Units Converters | Fast & Precise Unit Conversion Tool"
+
+#: src/routes/$lang/route.tsx:88
+#: src/routes/$lang/route.tsx:105
+msgid "Units Converters | Precision Conversion Tool"
+msgstr "Units Converters | Precision Conversion Tool"
+
+#. placeholder {0}: import.meta.env.DEV ? " — Dev" : ""
+#: src/routes/$lang/route.tsx:71
+msgid "Units Converters{0}"
+msgstr "Units Converters{0}"
+
+#: src/routes/$lang/convert.$quantity.$from.to.$to.tsx:83
+msgid "We couldn't find those specific units. Try our default converter."
+msgstr "We couldn't find those specific units. Try our default converter."
+
+#: src/components/website-description.tsx:63
+msgid "Why Use Our Converter?"
+msgstr "Why Use Our Converter?"

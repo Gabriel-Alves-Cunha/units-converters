@@ -1,5 +1,8 @@
 import { Trans } from "@lingui/react/macro";
+import { t } from "@lingui/core/macro";
 import { useState } from "react";
+
+const supportEmail = "voyagertecnologias@gmail.com";
 
 export function FeedbackSection() {
 	const [isSending, setIsSending] = useState(false);
@@ -51,14 +54,18 @@ export function FeedbackSection() {
 				</h5>
 
 				<p className="text-muted-foreground">
-					Describe your issue and we'll get back to you as soon as possible.
+					<Trans>
+						Describe your issue and we'll get back to you as soon as possible.
+					</Trans>
 				</p>
 
 				<p className="text-xs text-muted-foreground mt-1">
-					Support email:{" "}
-					<a className="link" href="mailto:voyagertecnologias@gmail.com">
-						voyagertecnologias@gmail.com
-					</a>
+					<Trans>
+						Support email:{" "}
+						<a className="link" href={`mailto:${supportEmail}`}>
+							{supportEmail}
+						</a>
+					</Trans>
 				</p>
 			</div>
 
@@ -67,12 +74,12 @@ export function FeedbackSection() {
 					className="text-sm font-medium w-fit gap-2 leading-snug"
 					htmlFor="description"
 				>
-					Description
+					<Trans>Description</Trans>
 				</label>
 
 				<textarea
 					className="flex field-sizing-content w-full rounded-lg border border-input bg-transparent px-2.5 py-2 text-base outline-none placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 disabled:cursor-not-allowed disabled:bg-input/50 disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-3 aria-invalid:ring-destructive/20 md:text-sm dark:bg-input/30 dark:disabled:bg-input/80 dark:aria-invalid:border-destructive/50 dark:aria-invalid:ring-destructive/40 min-h-44"
-					placeholder="Please provide as much detail as possible…"
+					placeholder={t`Please provide as much detail as possible…`}
 					disabled={isSending}
 					name="description"
 					id="description"
@@ -85,7 +92,7 @@ export function FeedbackSection() {
 				disabled={isSending}
 				type="submit"
 			>
-				{isSending ? "Sending..." : "Submit Feedback"}
+				<Trans>{isSending ? "Sending..." : "Submit Feedback"}</Trans>
 			</button>
 		</form>
 	);

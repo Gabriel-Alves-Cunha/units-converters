@@ -1,22 +1,17 @@
 msgid ""
 msgstr ""
-"POT-Creation-Date: 2026-05-11 11:15-0300\n"
+"POT-Creation-Date: 2026-05-12 12:07-0300\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: @lingui/cli\n"
-"Language: pt\n"
+"Language: es\n"
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Plural-Forms: \n"
-
-#. js-lingui-explicit-id
-#: src/components/feedback-section.tsx:50
-#~ msgid "im"
-#~ msgstr ""
 
 #. placeholder {0}: isSending ? "Sending..." : "Submit Feedback"
 #: src/components/feedback-section.tsx:95
