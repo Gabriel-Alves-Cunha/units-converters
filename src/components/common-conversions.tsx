@@ -1,8 +1,13 @@
 import { Link, useParams } from "@tanstack/react-router";
+import { Trans } from "@lingui/react/macro";
+import { useLingui } from "@lingui/react";
 
 import { defaultSearchParams } from "#/lib/global-params-params";
-import { type Quantity, type UnitName } from "#/lib/units";
-import { Trans } from "@lingui/react/macro";
+import {
+	type Quantity,
+	type UnitName,
+	UnitNamesWithTranslations,
+} from "#/lib/units";
 
 const commonConversions: Array<{
 	quantity: Quantity;
@@ -100,6 +105,7 @@ function scrollPageToTop() {
 
 export function CommonConversions() {
 	const { lang } = useParams({ from: "/$lang" });
+	const { i18n } = useLingui();
 
 	return (
 		<div className="flex flex-col gap-4 converter-content">
@@ -118,7 +124,10 @@ export function CommonConversions() {
 								lang,
 							}}
 						>
-							<Trans>{`${cv.from} to ${cv.to}`}</Trans>
+							<Trans>
+								{i18n._(UnitNamesWithTranslations[cv.from])} to{" "}
+								{i18n._(UnitNamesWithTranslations[cv.to])}
+							</Trans>
 						</Link>
 					</li>
 				))}

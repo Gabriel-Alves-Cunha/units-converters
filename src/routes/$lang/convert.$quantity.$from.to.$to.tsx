@@ -1,9 +1,11 @@
 import { Trans } from "@lingui/react/macro";
-import { Trans as RuntimeTrans } from "@lingui/react";
+import { useLingui } from "@lingui/react";
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { Decimal } from "decimal.js";
 import { startTransition, useRef } from "react";
 import { safeParse } from "valibot";
+import { i18n } from "@lingui/core";
+import { msg } from "@lingui/core/macro";
 
 import { Input, Output } from "#/components/ui/input";
 import {
@@ -15,18 +17,44 @@ import {
 	QuantitySchema,
 	type UnitDefinition,
 	type UnitName,
+	UnitNamesWithTranslations,
+	QuantitiesWithTranslations,
 	units,
 } from "#/lib/units";
 import { getFirstKeyOfRecord, numberFormatter } from "#/lib/utils";
+import {
+	loadCatalog,
+	loadDefaultCatalog,
+} from "#/integrations/i18n/load-catalog";
 
 export const Route = createFileRoute("/$lang/convert/$quantity/$from/to/$to")({
 	component: Converter,
-	head({ params }) {
-		const { from, to, quantity } = params;
-		const title = `Convert ${from} to ${to} | Accurate ${quantity} Converter`;
-		const description = `Easily convert ${from} to ${to} with our high-precision ${quantity} converter. Free online tool for students and engineers.`;
+	async head({ params, match }) {
+		// 1. Get the language from params (since /$lang is a parent)
+		const lang = match.params.lang || "en";
 
-		return {
+		// 2. SAFETY CHECK: If Lingui hasn't activated yet, force it.
+		// This prevents the "No locale set" error during hydration.
+		if (!i18n.locale) {
+			await loadCatalog(lang, i18n).catch(() => {
+				loadDefaultCatalog(i18n);
+			});
+		}
+
+		const { from, to, quantity } = params;
+
+		const tQuantity = i18n._(quantity);
+		const tFrom = i18n._(from);
+		const tTo = i18n._(to);
+
+		const title = i18n._(
+			msg`Convert ${tFrom} to ${tTo} | Accurate ${tQuantity} Converter`,
+		);
+		const description = i18n._(
+			msg`Easily convert ${tFrom} to ${tTo} with our high-precision ${tQuantity} converter. Free online tool for students and engineers.`,
+		);
+
+		const head = {
 			meta: [
 				{ title },
 				{ name: "description", content: description },
@@ -44,14 +72,14 @@ export const Route = createFileRoute("/$lang/convert/$quantity/$from/to/$to")({
 					children: JSON.stringify({
 						"@context": "https://schema.org",
 						"@type": "SoftwareApplication",
-						name: `${quantity} Converter`,
+						name: i18n._(msg`${tQuantity} Converter`),
 						applicationCategory: "EducationalApplication",
 						operatingSystem: "Web",
 						description: description,
 						featureList: [
-							"High-precision conversions",
-							"Real-time results",
-							"Scientific grade units",
+							i18n._(msg`High-precision conversions`),
+							i18n._(msg`Real-time results`),
+							i18n._(msg`Scientific grade units`),
 						],
 						offers: {
 							"@type": "Offer",
@@ -61,6 +89,10 @@ export const Route = createFileRoute("/$lang/convert/$quantity/$from/to/$to")({
 				},
 			],
 		};
+
+		console.log("/$lang/convert/$quantity/$from/to/$to head", head);
+
+		return head;
 	},
 	parseParams(params) {
 		const result = safeParse(globalParamsSchema, params);
@@ -96,6 +128,7 @@ function Converter() {
 	const { fromValue } = Route.useSearch();
 	const rawParams = Route.useParams();
 	const navigate = useNavigate();
+	const { i18n } = useLingui();
 
 	const timerToChangeFromValue =
 		useRef<ReturnType<typeof setTimeout>>(undefined);
@@ -220,7 +253,7 @@ function Converter() {
 		<div className="flex flex-col h-svh gap-2 mt-4 w-full converter-content">
 			<section
 				className="flex w-fit items-center justify-center p-[3px] mx-auto text-muted-foreground"
-				aria-label="Quantities tabs"
+				aria-label={i18n._(msg`Quantities tabs`)}
 			>
 				{QuantitySchema.options.map((localQuantity) => (
 					<div className="relative" key={localQuantity}>
@@ -238,7 +271,7 @@ function Converter() {
 							className="relative flex items-center justify-center px-3 py-1 text-sm font-medium peer-checked:border-b border-primary peer-checked:text-foreground cursor-pointer button-hover hover:text-primary"
 							htmlFor={localQuantity}
 						>
-							{localQuantity}
+							{i18n._(QuantitiesWithTranslations[localQuantity])}
 						</label>
 					</div>
 				))}
@@ -246,7 +279,9 @@ function Converter() {
 
 			<form
 				className="p-4 grid grid-rows-[auto_1fr] gap-3"
-				aria-label={`${quantity} panel`}
+				aria-label={i18n._(
+					msg`${i18n._(QuantitiesWithTranslations[quantity])} panel`,
+				)}
 				id={quantity}
 			>
 				<div className="grid grid-rows-2 h-fit">
@@ -304,8 +339,7 @@ function Converter() {
 								value={unitName}
 								key={unitName}
 							>
-								{/* {unitName} */}
-								<RuntimeTrans id={unitName} />
+								{i18n._(UnitNamesWithTranslations[unitName as UnitName])}
 
 								{symbol ? ` (${symbol})` : ""}
 							</option>
@@ -333,8 +367,7 @@ function Converter() {
 							>
 								<div className="grid grid-cols-[max-content_auto] gap-4 items-center">
 									<span className="">
-										{/* {unitName} */}
-										<RuntimeTrans id={unitName} />
+										{i18n._(UnitNamesWithTranslations[unitName as UnitName])}
 										{symbol ? ` (${symbol})` : ""}
 									</span>
 

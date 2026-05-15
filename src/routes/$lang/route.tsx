@@ -2,6 +2,7 @@ import { i18n } from "@lingui/core";
 import { Trans } from "@lingui/react/macro";
 import { createFileRoute, Outlet, redirect } from "@tanstack/react-router";
 import { Link } from "@tanstack/react-router";
+import { msg } from "@lingui/core/macro";
 
 import { CommonConversions } from "#/components/common-conversions";
 import { FeedbackSection } from "#/components/feedback-section";
@@ -68,20 +69,20 @@ export const Route = createFileRoute("/$lang")({
 		const head = {
 			meta: [
 				{
-					title: i18n.t(
-						`Units Converters${import.meta.env.DEV ? " — Dev" : ""}`,
+					title: i18n._(
+						msg`Units Converters${import.meta.env.DEV ? " — Dev" : ""}`,
 					),
 				},
 				{
 					name: "description",
-					content: i18n.t(
-						`Fast, accurate, and easy-to-use unit converter for Length, Temperature, Area, and Volume. Scientific precision with zero rounding errors.`,
+					content: i18n._(
+						msg`Fast, accurate, and easy-to-use unit converter for Length, Temperature, Area, and Volume. Scientific precision with zero rounding errors.`,
 					),
 				},
 				{
 					name: "keywords",
-					content: i18n.t(
-						`unit converter, metric conversion, imperial to metric, length converter, temperature converter, area converter, volume converter, scientific calculator`,
+					content: i18n._(
+						msg`unit converter, metric conversion, imperial to metric, length converter, temperature converter, area converter, volume converter, scientific calculator`,
 					),
 				},
 				// Open Graph
@@ -91,17 +92,17 @@ export const Route = createFileRoute("/$lang")({
 				},
 				{
 					property: "og:title",
-					content: i18n.t(`Units Converters | Precision Conversion Tool`),
+					content: i18n._(msg`Units Converters | Precision Conversion Tool`),
 				},
 				{
 					property: "og:description",
-					content: i18n.t(
-						`High-precision unit conversion for students and professionals. Convert hundreds of units instantly.`,
+					content: i18n._(
+						msg`High-precision unit conversion for students and professionals. Convert hundreds of units instantly.`,
 					),
 				},
 				{
 					property: "og:site_name",
-					content: i18n.t(`Units Converters`),
+					content: i18n._(msg`Units Converters`),
 				},
 				// Twitter
 				{
@@ -110,12 +111,12 @@ export const Route = createFileRoute("/$lang")({
 				},
 				{
 					name: "twitter:title",
-					content: i18n.t(`Units Converters | Precision Conversion Tool`),
+					content: i18n._(msg`Units Converters | Precision Conversion Tool`),
 				},
 				{
 					name: "twitter:description",
-					content: i18n.t(
-						`High-precision unit conversion for students and professionals. Convert hundreds of units instantly.`,
+					content: i18n._(
+						msg`High-precision unit conversion for students and professionals. Convert hundreds of units instantly.`,
 					),
 				},
 			],
@@ -138,6 +139,11 @@ export const Route = createFileRoute("/$lang")({
 			pathAfterLang,
 			pathSegments,
 			head,
+			"i18n.locale": i18n.locale,
+			i18n,
+			content: i18n._(
+				msg`High-precision unit conversion for students and professionals. Convert hundreds of units instantly.`,
+			),
 		});
 
 		return head;

@@ -1,11 +1,13 @@
 import { Trans } from "@lingui/react/macro";
-import { t } from "@lingui/core/macro";
+import { useLingui } from "@lingui/react";
+import { msg, t } from "@lingui/core/macro";
 import { useState } from "react";
 
 const supportEmail = "voyagertecnologias@gmail.com";
 
 export function FeedbackSection() {
 	const [isSending, setIsSending] = useState(false);
+	const { i18n } = useLingui();
 
 	async function handleSubmit(e: React.SubmitEvent<HTMLFormElement>) {
 		e.preventDefault();
@@ -92,7 +94,7 @@ export function FeedbackSection() {
 				disabled={isSending}
 				type="submit"
 			>
-				<Trans>{isSending ? "Sending..." : "Submit Feedback"}</Trans>
+				{isSending ? i18n._(msg`Sending...`) : i18n._(msg`Submit Feedback`)}
 			</button>
 		</form>
 	);

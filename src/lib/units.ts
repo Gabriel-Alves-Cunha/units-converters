@@ -1,6 +1,7 @@
 import { Decimal } from "decimal.js";
 import * as v from "valibot";
 import { msg } from "@lingui/core/macro";
+import type { MessageDescriptor } from "@lingui/core";
 
 export type UnitDefinition = {
 	symbol: string;
@@ -1060,9 +1061,106 @@ const UnitNameEnum = {
 
 export const UnitNameSchema = v.enum(UnitNameEnum);
 
-export const UnitNamesWithTranslations = UnitNameSchema.options.map(
-	(name) => msg`${name}`,
-);
+export const UnitNamesWithTranslations: Record<UnitName, MessageDescriptor> = {
+	// Temperature
+	Celsius: msg`Celsius`,
+	Fahrenheit: msg`Fahrenheit`,
+	Kelvin: msg`Kelvin`,
+	Newton: msg`Newton`,
+
+	// Length
+	Meter: msg`Meter`,
+	Ångström: msg`Ångström`,
+	"Astronomical Unit": msg`Astronomical Unit`,
+	Attometre: msg`Attometre`,
+	Barleycorn: msg`Barleycorn`,
+	Bohr: msg`Bohr`,
+	"Cable Length (International)": msg`Cable Length (International)`,
+	Chain: msg`Chain`,
+	Cubit: msg`Cubit`,
+	Ell: msg`Ell`,
+	Fathom: msg`Fathom`,
+	"Foot (International)": msg`Foot (International)`,
+	"Inch (International)": msg`Inch (International)`,
+	"Hubble Length": msg`Hubble Length`,
+	Decimetre: msg`Decimetre`,
+	Decametre: msg`Decametre`,
+	Gigametre: msg`Gigametre`,
+	Femtometre: msg`Femtometre`,
+	Centimetre: msg`Centimetre`,
+	Millimetre: msg`Millimetre`,
+	Hectometre: msg`Hectometre`,
+	Kilometre: msg`Kilometre`,
+	"Light Day": msg`Light Day`,
+	"Light Hour": msg`Light Hour`,
+	"Light Minute": msg`Light Minute`,
+	"Light Second": msg`Light Second`,
+	"Light Year": msg`Light Year`,
+	Megametre: msg`Megametre`,
+	"Mile (International)": msg`Mile (International)`,
+	Micrometre: msg`Micrometre`,
+	Nanometre: msg`Nanometre`,
+	"Nautical Mile (International)": msg`Nautical Mile (International)`,
+	Parsec: msg`Parsec`,
+	Picometre: msg`Picometre`,
+	Yoctometre: msg`Yoctometre`,
+	Zeptometre: msg`Zeptometre`,
+	Zettametre: msg`Zettametre`,
+	"Planck Length": msg`Planck Length`,
+	"Yard (International)": msg`Yard (International)`,
+	Yottametre: msg`Yottametre`,
+
+	// Volume
+	"Acre Foot": msg`Acre Foot`,
+	"Acre Inch": msg`Acre Inch`,
+	"Board Foot": msg`Board Foot`,
+	"Cubic Fathom": msg`Cubic Fathom`,
+	Centilitre: msg`Centilitre`,
+	"Cubic Foot": msg`Cubic Foot`,
+	"Cubic Metre": msg`Cubic Metre`,
+	"Cubic Kilometre": msg`Cubic Kilometre`,
+	"Cubic Decimetre": msg`Cubic Decimetre`,
+	"Cubic Centimetre": msg`Cubic Centimetre`,
+	"Cubic Dekametre": msg`Cubic Dekametre`,
+	"Cubic Millimetre": msg`Cubic Millimetre`,
+	"Cubic Hectometre": msg`Cubic Hectometre`,
+	"Cubic Micrometre": msg`Cubic Micrometre`,
+	"Cubic Nanometre": msg`Cubic Nanometre`,
+	"Cubic Inch": msg`Cubic Inch`,
+	"Cubic Mile": msg`Cubic Mile`,
+	"Cubic Yard": msg`Cubic Yard`,
+	Dekalitre: msg`Dekalitre`,
+	Decilitre: msg`Decilitre`,
+	Hectolitre: msg`Hectolitre`,
+	Microlitre: msg`Microlitre`,
+	Picolitre: msg`Picolitre`,
+	Cup: msg`Cup`,
+	Drop: msg`Drop`,
+	Lambda: msg`Lambda`,
+	Litre: msg`Litre`,
+	"Tablespoon (Metric)": msg`Tablespoon (Metric)`,
+	"Teaspoon (Metric)": msg`Teaspoon (Metric)`,
+
+	// Area
+	Acre: msg`Acre`,
+	Are: msg`Are`,
+	Barn: msg`Barn`,
+	Board: msg`Board`,
+	"Circular Inch": msg`Circular Inch`,
+	"Circular Mil": msg`Circular Mil`,
+	Hectare: msg`Hectare`,
+	"Square Foot": msg`Square Foot`,
+	"Square Inch": msg`Square Inch`,
+	"Square Kilometre": msg`Square Kilometre`,
+	"Square Centimetre": msg`Square Centimetre`,
+	"Square Decimetre": msg`Square Decimetre`,
+	"Square Millimetre": msg`Square Millimetre`,
+	"Square Micrometre": msg`Square Micrometre`,
+	"Square Nanometre": msg`Square Nanometre`,
+	"Square Metre": msg`Square Metre`,
+	"Square Mile": msg`Square Mile`,
+	"Square Yard": msg`Square Yard`,
+};
 
 export type UnitName =
 	| keyof typeof AreaUnitNameEnum
@@ -1078,5 +1176,12 @@ export const QuantityEnum = {
 } as const;
 
 export const QuantitySchema = v.enum(QuantityEnum);
+
+export const QuantitiesWithTranslations: Record<Quantity, MessageDescriptor> = {
+	Temperature: msg`Temperature`,
+	Volume: msg`Volume`,
+	Length: msg`Length`,
+	Area: msg`Area`,
+};
 
 export type Quantity = keyof typeof QuantityEnum;

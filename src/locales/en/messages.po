@@ -14,24 +14,38 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. js-lingui-explicit-id
+#: src/routes/$lang/route.tsx:143
+#~ msgid "High-precision unit conversion for students and professionals. Convert hundreds of units instantly."
+#~ msgstr "High-precision unit conversion for students and professionals. Convert hundreds of units instantly."
+
+#. js-lingui-explicit-id
 #: src/components/feedback-section.tsx:50
 #~ msgid "im"
 #~ msgstr "im"
 
-#. placeholder {0}: isSending ? "Sending..." : "Submit Feedback"
 #: src/components/feedback-section.tsx:95
-msgid "{0}"
-msgstr "{0}"
+#~ msgid "{0}"
+#~ msgstr "{0}"
 
-#. placeholder {0}: cv.from
-#. placeholder {1}: cv.to
-#: src/components/common-conversions.tsx:121
+#. placeholder {0}: i18n._(QuantitiesWithTranslations[quantity])
+#: src/routes/$lang/convert.$quantity.$from.to.$to.tsx:283
+msgid "{0} panel"
+msgstr "{0} panel"
+
+#. placeholder {0}: i18n._(UnitNamesWithTranslations[cv.from])
+#. placeholder {1}: i18n._(UnitNamesWithTranslations[cv.to])
+#: src/components/common-conversions.tsx:127
 msgid "{0} to {1}"
 msgstr "{0} to {1}"
 
 #: src/lib/units.ts:1064
-msgid "{name}"
-msgstr "{name}"
+#: src/lib/units.ts:1083
+#~ msgid "{name}"
+#~ msgstr "{name}"
+
+#: src/routes/$lang/convert.$quantity.$from.to.$to.tsx:75
+msgid "{tQuantity} Converter"
+msgstr "{tQuantity} Converter"
 
 #. placeholder {0}: new Date().getFullYear()
 #: src/components/footer.tsx:21
@@ -70,7 +84,39 @@ msgstr "<0>Ultimate Precision:</0> Powered by Decimal.js for zero rounding error
 msgid "<0>Volume:</0> Litres, Cubic Inches, Gallons, and Millilitres."
 msgstr "<0>Volume:</0> Litres, Cubic Inches, Gallons, and Millilitres."
 
-#: src/routes/$lang/convert.$quantity.$from.to.$to.tsx:89
+#: src/lib/units.ts:1145
+msgid "Acre"
+msgstr "Acre"
+
+#: src/lib/units.ts:1114
+msgid "Acre Foot"
+msgstr "Acre Foot"
+
+#: src/lib/units.ts:1115
+msgid "Acre Inch"
+msgstr "Acre Inch"
+
+#: src/lib/units.ts:1073
+msgid "Ångström"
+msgstr "Ångström"
+
+#: src/lib/units.ts:1146
+msgid "Are"
+msgstr "Are"
+
+#: src/lib/units.ts:1184
+msgid "Area"
+msgstr "Area"
+
+#: src/lib/units.ts:1074
+msgid "Astronomical Unit"
+msgstr "Astronomical Unit"
+
+#: src/lib/units.ts:1075
+msgid "Attometre"
+msgstr "Attometre"
+
+#: src/routes/$lang/convert.$quantity.$from.to.$to.tsx:121
 msgid "Back to Home"
 msgstr "Back to Home"
 
@@ -78,34 +124,201 @@ msgstr "Back to Home"
 msgid "Back to home page"
 msgstr "Back to home page"
 
+#: src/lib/units.ts:1076
+msgid "Barleycorn"
+msgstr "Barleycorn"
+
+#: src/lib/units.ts:1147
+msgid "Barn"
+msgstr "Barn"
+
+#: src/lib/units.ts:1148
+msgid "Board"
+msgstr "Board"
+
+#: src/lib/units.ts:1116
+msgid "Board Foot"
+msgstr "Board Foot"
+
+#: src/lib/units.ts:1077
+msgid "Bohr"
+msgstr "Bohr"
+
+#: src/lib/units.ts:1078
+msgid "Cable Length (International)"
+msgstr "Cable Length (International)"
+
+#: src/lib/units.ts:1066
+msgid "Celsius"
+msgstr "Celsius"
+
+#: src/lib/units.ts:1118
+msgid "Centilitre"
+msgstr "Centilitre"
+
+#: src/lib/units.ts:1090
+msgid "Centimetre"
+msgstr "Centimetre"
+
+#: src/lib/units.ts:1079
+msgid "Chain"
+msgstr "Chain"
+
+#: src/lib/units.ts:1149
+msgid "Circular Inch"
+msgstr "Circular Inch"
+
+#: src/lib/units.ts:1150
+msgid "Circular Mil"
+msgstr "Circular Mil"
+
 #: src/components/website-description.tsx:27
 msgid "Comprehensive Categories"
 msgstr "Comprehensive Categories"
 
-#. placeholder {0}: Object.keys(units[quantity]).slice(0, 3).join(", ")
-#: src/routes/$lang/index.tsx:76
-msgid "Convert {0} and more."
-msgstr "Convert {0} and more."
+#: src/routes/$lang/index.tsx:56
+#~ msgid "Convert {0} and more."
+#~ msgstr "Convert {0} and more."
 
-#: src/components/feedback-section.tsx:57
+#: src/routes/$lang/convert.$quantity.$from.to.$to.tsx:51
+msgid "Convert {tFrom} to {tTo} | Accurate {tQuantity} Converter"
+msgstr "Convert {tFrom} to {tTo} | Accurate {tQuantity} Converter"
+
+#: src/routes/$lang/index.tsx:70
+msgid "Convert {translatedUnits} and more."
+msgstr "Convert {translatedUnits} and more."
+
+#: src/lib/units.ts:1123
+msgid "Cubic Centimetre"
+msgstr "Cubic Centimetre"
+
+#: src/lib/units.ts:1122
+msgid "Cubic Decimetre"
+msgstr "Cubic Decimetre"
+
+#: src/lib/units.ts:1124
+msgid "Cubic Dekametre"
+msgstr "Cubic Dekametre"
+
+#: src/lib/units.ts:1117
+msgid "Cubic Fathom"
+msgstr "Cubic Fathom"
+
+#: src/lib/units.ts:1119
+msgid "Cubic Foot"
+msgstr "Cubic Foot"
+
+#: src/lib/units.ts:1126
+msgid "Cubic Hectometre"
+msgstr "Cubic Hectometre"
+
+#: src/lib/units.ts:1129
+msgid "Cubic Inch"
+msgstr "Cubic Inch"
+
+#: src/lib/units.ts:1121
+msgid "Cubic Kilometre"
+msgstr "Cubic Kilometre"
+
+#: src/lib/units.ts:1120
+msgid "Cubic Metre"
+msgstr "Cubic Metre"
+
+#: src/lib/units.ts:1127
+msgid "Cubic Micrometre"
+msgstr "Cubic Micrometre"
+
+#: src/lib/units.ts:1130
+msgid "Cubic Mile"
+msgstr "Cubic Mile"
+
+#: src/lib/units.ts:1125
+msgid "Cubic Millimetre"
+msgstr "Cubic Millimetre"
+
+#: src/lib/units.ts:1128
+msgid "Cubic Nanometre"
+msgstr "Cubic Nanometre"
+
+#: src/lib/units.ts:1131
+msgid "Cubic Yard"
+msgstr "Cubic Yard"
+
+#: src/lib/units.ts:1080
+msgid "Cubit"
+msgstr "Cubit"
+
+#: src/lib/units.ts:1137
+msgid "Cup"
+msgstr "Cup"
+
+#: src/lib/units.ts:1087
+msgid "Decametre"
+msgstr "Decametre"
+
+#: src/lib/units.ts:1133
+msgid "Decilitre"
+msgstr "Decilitre"
+
+#: src/lib/units.ts:1086
+msgid "Decimetre"
+msgstr "Decimetre"
+
+#: src/lib/units.ts:1132
+msgid "Dekalitre"
+msgstr "Dekalitre"
+
+#: src/components/feedback-section.tsx:59
 msgid "Describe your issue and we'll get back to you as soon as possible."
 msgstr "Describe your issue and we'll get back to you as soon as possible."
 
-#: src/components/feedback-section.tsx:77
+#: src/components/feedback-section.tsx:79
 msgid "Description"
 msgstr "Description"
 
-#: src/routes/$lang/route.tsx:75
+#: src/lib/units.ts:1138
+msgid "Drop"
+msgstr "Drop"
+
+#: src/routes/$lang/convert.$quantity.$from.to.$to.tsx:54
+msgid "Easily convert {tFrom} to {tTo} with our high-precision {tQuantity} converter. Free online tool for students and engineers."
+msgstr "Easily convert {tFrom} to {tTo} with our high-precision {tQuantity} converter. Free online tool for students and engineers."
+
+#: src/lib/units.ts:1081
+msgid "Ell"
+msgstr "Ell"
+
+#: src/lib/units.ts:1067
+msgid "Fahrenheit"
+msgstr "Fahrenheit"
+
+#: src/routes/$lang/route.tsx:79
 msgid "Fast, accurate, and easy-to-use unit converter for Length, Temperature, Area, and Volume. Scientific precision with zero rounding errors."
 msgstr "Fast, accurate, and easy-to-use unit converter for Length, Temperature, Area, and Volume. Scientific precision with zero rounding errors."
 
-#: src/routes/$lang/index.tsx:27
-msgid "Free online unit converter for Length, Temperature, Area, and Volume. Get instant, high-precision results for metric and imperial units."
-msgstr "Free online unit converter for Length, Temperature, Area, and Volume. Get instant, high-precision results for metric and imperial units."
+#: src/lib/units.ts:1082
+msgid "Fathom"
+msgstr "Fathom"
 
-#: src/routes/$lang/convert.$quantity.$from.to.$to.tsx:255
+#: src/lib/units.ts:1089
+msgid "Femtometre"
+msgstr "Femtometre"
+
+#: src/lib/units.ts:1083
+msgid "Foot (International)"
+msgstr "Foot (International)"
+
+#: src/routes/$lang/index.tsx:27
+#~ msgid "Free online unit converter for Length, Temperature, Area, and Volume. Get instant, high-precision results for metric and imperial units."
+#~ msgstr "Free online unit converter for Length, Temperature, Area, and Volume. Get instant, high-precision results for metric and imperial units."
+
+#: src/routes/$lang/convert.$quantity.$from.to.$to.tsx:290
 msgid "From"
 msgstr "From"
+
+#: src/lib/units.ts:1088
+msgid "Gigametre"
+msgstr "Gigametre"
 
 #: src/components/not-found.tsx:29
 msgid "Go back"
@@ -115,20 +328,137 @@ msgstr "Go back"
 msgid "Go Back"
 msgstr "Go Back"
 
-#: src/routes/$lang/route.tsx:92
-#: src/routes/$lang/route.tsx:109
+#: src/lib/units.ts:1151
+msgid "Hectare"
+msgstr "Hectare"
+
+#: src/lib/units.ts:1134
+msgid "Hectolitre"
+msgstr "Hectolitre"
+
+#: src/lib/units.ts:1092
+msgid "Hectometre"
+msgstr "Hectometre"
+
+#: src/routes/$lang/convert.$quantity.$from.to.$to.tsx:80
+msgid "High-precision conversions"
+msgstr "High-precision conversions"
+
+#: src/routes/$lang/route.tsx:100
+#: src/routes/$lang/route.tsx:119
+#: src/routes/$lang/route.tsx:145
 msgid "High-precision unit conversion for students and professionals. Convert hundreds of units instantly."
 msgstr "High-precision unit conversion for students and professionals. Convert hundreds of units instantly."
 
-#: src/components/feedback-section.tsx:53
+#: src/components/feedback-section.tsx:55
 msgid "How could this website improve?"
 msgstr "How could this website improve?"
+
+#: src/lib/units.ts:1085
+msgid "Hubble Length"
+msgstr "Hubble Length"
+
+#: src/lib/units.ts:1084
+msgid "Inch (International)"
+msgstr "Inch (International)"
+
+#: src/lib/units.ts:1068
+msgid "Kelvin"
+msgstr "Kelvin"
+
+#: src/lib/units.ts:1093
+msgid "Kilometre"
+msgstr "Kilometre"
+
+#: src/lib/units.ts:1139
+msgid "Lambda"
+msgstr "Lambda"
+
+#: src/lib/units.ts:1183
+msgid "Length"
+msgstr "Length"
+
+#: src/lib/units.ts:1094
+msgid "Light Day"
+msgstr "Light Day"
+
+#: src/lib/units.ts:1095
+msgid "Light Hour"
+msgstr "Light Hour"
+
+#: src/lib/units.ts:1096
+msgid "Light Minute"
+msgstr "Light Minute"
+
+#: src/lib/units.ts:1097
+msgid "Light Second"
+msgstr "Light Second"
+
+#: src/lib/units.ts:1098
+msgid "Light Year"
+msgstr "Light Year"
+
+#: src/lib/units.ts:1140
+msgid "Litre"
+msgstr "Litre"
+
+#: src/lib/units.ts:1099
+msgid "Megametre"
+msgstr "Megametre"
+
+#: src/lib/units.ts:1072
+msgid "Meter"
+msgstr "Meter"
+
+#: src/lib/units.ts:1135
+msgid "Microlitre"
+msgstr "Microlitre"
+
+#: src/lib/units.ts:1101
+msgid "Micrometre"
+msgstr "Micrometre"
+
+#: src/lib/units.ts:1100
+msgid "Mile (International)"
+msgstr "Mile (International)"
+
+#: src/lib/units.ts:1091
+msgid "Millimetre"
+msgstr "Millimetre"
+
+#: src/lib/units.ts:1102
+msgid "Nanometre"
+msgstr "Nanometre"
+
+#: src/lib/units.ts:1103
+msgid "Nautical Mile (International)"
+msgstr "Nautical Mile (International)"
+
+#: src/lib/units.ts:1069
+msgid "Newton"
+msgstr "Newton"
 
 #: src/components/website-description.tsx:101
 msgid "Our free online converter is the fastest way to switch between metric and imperial systems. Save time on complex math and get reliable conversions for school, lab work, or construction projects."
 msgstr "Our free online converter is the fastest way to switch between metric and imperial systems. Save time on complex math and get reliable conversions for school, lab work, or construction projects."
 
-#: src/components/feedback-section.tsx:82
+#: src/lib/units.ts:1104
+msgid "Parsec"
+msgstr "Parsec"
+
+#: src/lib/units.ts:1136
+msgid "Picolitre"
+msgstr "Picolitre"
+
+#: src/lib/units.ts:1105
+msgid "Picometre"
+msgstr "Picometre"
+
+#: src/lib/units.ts:1109
+msgid "Planck Length"
+msgstr "Planck Length"
+
+#: src/components/feedback-section.tsx:84
 msgid "Please provide as much detail as possible…"
 msgstr "Please provide as much detail as possible…"
 
@@ -140,15 +470,31 @@ msgstr "Precision Unit Converter: Metric, Imperial & Scientific"
 msgid "Privacy Policy"
 msgstr "Privacy Policy"
 
+#: src/routes/$lang/convert.$quantity.$from.to.$to.tsx:256
+msgid "Quantities tabs"
+msgstr "Quantities tabs"
+
 #: src/components/website-description.tsx:14
 msgid "Quickly convert between hundreds of units across <0>Length</0>,<1> Temperature</1>, <2>Area</2>, and <3>Volume</3>. Whether you are a student, engineer, or hobbyist, our tool provides high-precision results for everything from everyday measurements to advanced scientific data."
 msgstr "Quickly convert between hundreds of units across <0>Length</0>,<1> Temperature</1>, <2>Area</2>, and <3>Volume</3>. Whether you are a student, engineer, or hobbyist, our tool provides high-precision results for everything from everyday measurements to advanced scientific data."
+
+#: src/routes/$lang/convert.$quantity.$from.to.$to.tsx:81
+msgid "Real-time results"
+msgstr "Real-time results"
 
 #: src/components/default-suspense-and-error-boundary.tsx:116
 msgid "Retry from scratch"
 msgstr "Retry from scratch"
 
-#: src/routes/$lang/index.tsx:43
+#: src/routes/$lang/convert.$quantity.$from.to.$to.tsx:82
+msgid "Scientific grade units"
+msgstr "Scientific grade units"
+
+#: src/components/feedback-section.tsx:97
+msgid "Sending..."
+msgstr "Sending..."
+
+#: src/routes/$lang/index.tsx:32
 msgid "Simple, fast, and scientific-grade precision. Convert anything from nanometres to light years in seconds."
 msgstr "Simple, fast, and scientific-grade precision. Convert anything from nanometres to light years in seconds."
 
@@ -156,11 +502,71 @@ msgstr "Simple, fast, and scientific-grade precision. Convert anything from nano
 msgid "Something went wrong"
 msgstr "Something went wrong"
 
-#: src/components/feedback-section.tsx:63
+#: src/lib/units.ts:1155
+msgid "Square Centimetre"
+msgstr "Square Centimetre"
+
+#: src/lib/units.ts:1156
+msgid "Square Decimetre"
+msgstr "Square Decimetre"
+
+#: src/lib/units.ts:1152
+msgid "Square Foot"
+msgstr "Square Foot"
+
+#: src/lib/units.ts:1153
+msgid "Square Inch"
+msgstr "Square Inch"
+
+#: src/lib/units.ts:1154
+msgid "Square Kilometre"
+msgstr "Square Kilometre"
+
+#: src/lib/units.ts:1160
+msgid "Square Metre"
+msgstr "Square Metre"
+
+#: src/lib/units.ts:1158
+msgid "Square Micrometre"
+msgstr "Square Micrometre"
+
+#: src/lib/units.ts:1161
+msgid "Square Mile"
+msgstr "Square Mile"
+
+#: src/lib/units.ts:1157
+msgid "Square Millimetre"
+msgstr "Square Millimetre"
+
+#: src/lib/units.ts:1159
+msgid "Square Nanometre"
+msgstr "Square Nanometre"
+
+#: src/lib/units.ts:1162
+msgid "Square Yard"
+msgstr "Square Yard"
+
+#: src/components/feedback-section.tsx:97
+msgid "Submit Feedback"
+msgstr "Submit Feedback"
+
+#: src/components/feedback-section.tsx:65
 msgid "Support email: <0>{supportEmail}</0>"
 msgstr "Support email: <0>{supportEmail}</0>"
 
-#: src/routes/$lang/index.tsx:39
+#: src/lib/units.ts:1141
+msgid "Tablespoon (Metric)"
+msgstr "Tablespoon (Metric)"
+
+#: src/lib/units.ts:1142
+msgid "Teaspoon (Metric)"
+msgstr "Teaspoon (Metric)"
+
+#: src/lib/units.ts:1181
+msgid "Temperature"
+msgstr "Temperature"
+
+#: src/routes/$lang/index.tsx:28
 msgid "The Only Unit Converter You'll Ever Need"
 msgstr "The Only Unit Converter You'll Ever Need"
 
@@ -168,7 +574,7 @@ msgstr "The Only Unit Converter You'll Ever Need"
 msgid "The page you're looking for isn't found, we suggest you back to home."
 msgstr "The page you're looking for isn't found, we suggest you back to home."
 
-#: src/routes/$lang/convert.$quantity.$from.to.$to.tsx:259
+#: src/routes/$lang/convert.$quantity.$from.to.$to.tsx:294
 msgid "To"
 msgstr "To"
 
@@ -180,37 +586,61 @@ msgstr "Try again"
 msgid "Try Again"
 msgstr "Try Again"
 
-#: src/routes/$lang/route.tsx:79
+#: src/routes/$lang/route.tsx:85
 msgid "unit converter, metric conversion, imperial to metric, length converter, temperature converter, area converter, volume converter, scientific calculator"
 msgstr "unit converter, metric conversion, imperial to metric, length converter, temperature converter, area converter, volume converter, scientific calculator"
 
-#: src/routes/$lang/convert.$quantity.$from.to.$to.tsx:79
+#: src/routes/$lang/convert.$quantity.$from.to.$to.tsx:111
 msgid "Unit not found"
 msgstr "Unit not found"
 
-#: src/routes/$lang/route.tsx:96
-#: src/routes/$lang/route.tsx:140
+#: src/routes/$lang/route.tsx:105
+#: src/routes/$lang/route.tsx:161
 msgid "Units Converters"
 msgstr "Units Converters"
 
 #: src/routes/$lang/index.tsx:24
-msgid "Units Converters | Fast & Precise Unit Conversion Tool"
-msgstr "Units Converters | Fast & Precise Unit Conversion Tool"
+#~ msgid "Units Converters | Fast & Precise Unit Conversion Tool"
+#~ msgstr "Units Converters | Fast & Precise Unit Conversion Tool"
 
-#: src/routes/$lang/route.tsx:88
-#: src/routes/$lang/route.tsx:105
+#: src/routes/$lang/route.tsx:95
+#: src/routes/$lang/route.tsx:114
 msgid "Units Converters | Precision Conversion Tool"
 msgstr "Units Converters | Precision Conversion Tool"
 
 #. placeholder {0}: import.meta.env.DEV ? " — Dev" : ""
-#: src/routes/$lang/route.tsx:71
+#: src/routes/$lang/route.tsx:73
 msgid "Units Converters{0}"
 msgstr "Units Converters{0}"
 
-#: src/routes/$lang/convert.$quantity.$from.to.$to.tsx:83
+#: src/lib/units.ts:1182
+msgid "Volume"
+msgstr "Volume"
+
+#: src/routes/$lang/convert.$quantity.$from.to.$to.tsx:115
 msgid "We couldn't find those specific units. Try our default converter."
 msgstr "We couldn't find those specific units. Try our default converter."
 
 #: src/components/website-description.tsx:63
 msgid "Why Use Our Converter?"
 msgstr "Why Use Our Converter?"
+
+#: src/lib/units.ts:1110
+msgid "Yard (International)"
+msgstr "Yard (International)"
+
+#: src/lib/units.ts:1106
+msgid "Yoctometre"
+msgstr "Yoctometre"
+
+#: src/lib/units.ts:1111
+msgid "Yottametre"
+msgstr "Yottametre"
+
+#: src/lib/units.ts:1107
+msgid "Zeptometre"
+msgstr "Zeptometre"
+
+#: src/lib/units.ts:1108
+msgid "Zettametre"
+msgstr "Zettametre"
