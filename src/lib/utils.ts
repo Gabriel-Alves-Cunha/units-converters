@@ -51,3 +51,7 @@ export const numberFormatter = new Intl.NumberFormat(undefined, {
 	useGrouping: true,
 	style: "decimal",
 });
+
+export function scrollPageToTop() {
+	document.body.scrollTo({ top: 0 });
+}

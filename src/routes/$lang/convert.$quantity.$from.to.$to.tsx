@@ -43,9 +43,11 @@ export const Route = createFileRoute("/$lang/convert/$quantity/$from/to/$to")({
 
 		const { from, to, quantity } = params;
 
-		const tQuantity = i18n._(quantity);
-		const tFrom = i18n._(from);
-		const tTo = i18n._(to);
+		const tQuantity = i18n._(
+			QuantitiesWithTranslations[quantity as Quantity] || quantity,
+		);
+		const tFrom = i18n._(UnitNamesWithTranslations[from as UnitName] || from);
+		const tTo = i18n._(UnitNamesWithTranslations[to as UnitName] || to);
 
 		const title = i18n._(
 			msg`Convert ${tFrom} to ${tTo} | Accurate ${tQuantity} Converter`,
@@ -90,7 +92,7 @@ export const Route = createFileRoute("/$lang/convert/$quantity/$from/to/$to")({
 			],
 		};
 
-		console.log("/$lang/convert/$quantity/$from/to/$to head", head);
+		// console.log("/$lang/convert/$quantity/$from/to/$to head", head);
 
 		return head;
 	},
@@ -143,7 +145,24 @@ function Converter() {
 
 	const quantities = Object.entries(units[quantity]);
 	const selectSize = Math.max(quantities.length / 2, 20);
-	const decimalFromValue = Decimal(fromValue);
+
+	const decimalFromValue = (() => {
+		try {
+			// Handle trailing slashes that might be added by some crawlers/prerenderers
+			const sanitizedValue = String(fromValue).replace(/\/$/, "");
+
+			const d = Decimal(sanitizedValue);
+
+			if (d.isNaN() || !d.isFinite()) {
+				return Decimal(1);
+			}
+
+			return d;
+		} catch {
+			return Decimal(1);
+		}
+	})();
+
 	const selectedQuantity = units[quantity];
 	// @ts-ignore
 	const symbol = selectedQuantity?.[to]?.symbol;

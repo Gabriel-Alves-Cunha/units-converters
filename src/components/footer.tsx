@@ -2,6 +2,7 @@ import { Link, useParams } from "@tanstack/react-router";
 import { Trans } from "@lingui/react/macro";
 
 import { defaultSearchParams } from "#/lib/global-params-params";
+import { scrollPageToTop } from "#/lib/utils";
 
 export function Footer() {
 	const { lang } = useParams({ from: "/$lang" });
@@ -12,6 +13,7 @@ export function Footer() {
 				search={defaultSearchParams}
 				className="link underline"
 				to="/$lang/privacy-policy"
+				onClick={scrollPageToTop}
 				params={{ lang }}
 			>
 				<Trans>Privacy Policy</Trans>

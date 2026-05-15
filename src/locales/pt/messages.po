@@ -346,7 +346,6 @@ msgstr "Conversões de alta precisão"
 
 #: src/routes/$lang/route.tsx:100
 #: src/routes/$lang/route.tsx:119
-#: src/routes/$lang/route.tsx:145
 msgid "High-precision unit conversion for students and professionals. Convert hundreds of units instantly."
 msgstr "Conversão de unidades de alta precisão para estudantes e profissionais. Converta centenas de unidades instantaneamente."
 

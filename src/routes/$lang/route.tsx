@@ -132,19 +132,19 @@ export const Route = createFileRoute("/$lang")({
 			],
 		};
 
-		console.log("lang route head", {
-			ctx,
-			hreflangLinks,
-			pathname,
-			pathAfterLang,
-			pathSegments,
-			head,
-			"i18n.locale": i18n.locale,
-			i18n,
-			content: i18n._(
-				msg`High-precision unit conversion for students and professionals. Convert hundreds of units instantly.`,
-			),
-		});
+		// console.log("lang route head", {
+		// 	ctx,
+		// 	hreflangLinks,
+		// 	pathname,
+		// 	pathAfterLang,
+		// 	pathSegments,
+		// 	head,
+		// 	"i18n.locale": i18n.locale,
+		// 	i18n,
+		// 	content: i18n._(
+		// 		msg`High-precision unit conversion for students and professionals. Convert hundreds of units instantly.`,
+		// 	),
+		// });
 
 		return head;
 	},

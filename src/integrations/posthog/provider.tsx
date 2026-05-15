@@ -2,7 +2,7 @@ import posthog from "posthog-js";
 import { PostHogProvider as BasePostHogProvider } from "@posthog/react";
 import type { ReactNode } from "react";
 
-const isDev = !import.meta.env.DEV;
+const isDev = import.meta.env.DEV;
 
 if (
 	typeof window !== "undefined" &&

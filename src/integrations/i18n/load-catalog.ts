@@ -1,6 +1,6 @@
 import { type I18n } from "@lingui/core";
 
-import { messages as enMessages } from "#/locales/en/messages";
+import { messages as enMessages } from "#/locales/en/messages.ts";
 
 export const locales = {
 	pseudo: "Pseudo",
@@ -39,7 +39,7 @@ export async function loadCatalog(locale: string, i18n: I18n) {
 
 	try {
 		const { messages } = await import(
-			`../../locales/${validatedLocale}/messages.po`
+			`../../locales/${validatedLocale}/messages.ts`
 		);
 
 		i18n.loadAndActivate({ locale: validatedLocale, messages });
@@ -54,8 +54,6 @@ export function loadDefaultCatalog(i18n: I18n) {
 	if (i18n._messages["en"]) {
 		return;
 	}
-
-	console.log("Loading default catalog", i18n);
 
 	i18n.loadAndActivate({ locale: "en", messages: enMessages });
 }

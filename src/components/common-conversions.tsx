@@ -8,6 +8,7 @@ import {
 	type UnitName,
 	UnitNamesWithTranslations,
 } from "#/lib/units";
+import { scrollPageToTop } from "#/lib/utils";
 
 const commonConversions: Array<{
 	quantity: Quantity;
@@ -98,10 +99,6 @@ const commonConversions: Array<{
 		to: "Celsius",
 	},
 ];
-
-function scrollPageToTop() {
-	document.body.scrollTo({ top: 0 });
-}
 
 export function CommonConversions() {
 	const { lang } = useParams({ from: "/$lang" });
