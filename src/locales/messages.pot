@@ -454,7 +454,7 @@ msgstr ""
 msgid "Real-time results"
 msgstr ""
 
-#: src/components/default-suspense-and-error-boundary.tsx:116
+#: src/components/default-suspense-and-error-boundary.tsx:113
 msgid "Retry from scratch"
 msgstr ""
 
@@ -550,7 +550,7 @@ msgstr ""
 msgid "To"
 msgstr ""
 
-#: src/components/default-suspense-and-error-boundary.tsx:120
+#: src/components/default-suspense-and-error-boundary.tsx:117
 msgid "Try again"
 msgstr ""
 

@@ -9,7 +9,6 @@ import { ErrorBoundary, useErrorBoundary } from "react-error-boundary";
 import { Trans } from "@lingui/react/macro";
 
 import { Button } from "#/components/ui/button";
-import { generalContextStore } from "#/contexts/general-ctx/general-context";
 import { cn } from "#/lib/utils";
 import { LOADER } from "./ui/loader";
 
@@ -56,7 +55,7 @@ export function FallbackLoader({
 }
 
 export function LoadError({
-	zustandStores = [generalContextStore],
+	zustandStores = [],
 	failedClassName,
 	fallbackFor,
 	failedText,
@@ -78,8 +77,6 @@ export function LoadError({
 	}, [error, fallbackFor]);
 
 	function retryFromScratch() {
-		generalContextStore.setState(generalContextStore.getInitialState());
-
 		// reset other stores here that might relevant and/or global ones
 		for (const store of zustandStores) {
 			store.setState(store.getInitialState());
