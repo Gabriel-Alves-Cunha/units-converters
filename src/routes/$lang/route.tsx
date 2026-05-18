@@ -151,7 +151,7 @@ export const Route = createFileRoute("/$lang")({
 	component() {
 		return (
 			<>
-				<header className="bg-accent text-accent-foreground h-16 flex text-center items-center justify-center">
+				<header className="bg-accent text-accent-foreground [grid-area:header] flex text-center items-center justify-center">
 					<h1 className="p-2">
 						<Link
 							params={(params) => ({ lang: params.lang || defaultLocale })}
@@ -163,7 +163,7 @@ export const Route = createFileRoute("/$lang")({
 					</h1>
 				</header>
 
-				<div className="w-full h-svh grid converter-grid gap-16">
+				<main className="w-full max-w-full h-full simple-scrollbar scrollbar-stable overflow-x-hidden converter-grid gap-y-16 [grid-area:main]">
 					<Outlet />
 
 					<hr className="converter-content" />
@@ -179,7 +179,7 @@ export const Route = createFileRoute("/$lang")({
 					<FeedbackSection />
 
 					<Footer />
-				</div>
+				</main>
 			</>
 		);
 	},

@@ -8,9 +8,7 @@
 	"main": "@tanstack/react-start/server-entry",
 	"assets": {
 		"directory": "dist/server/assets",
-		"binding": "ASSETS"
+		"binding": "ASSETS",
 	},
-	"compatibility_flags": [
-		"nodejs_compat"
-	],
+	"compatibility_flags": ["nodejs_compat"],
 }

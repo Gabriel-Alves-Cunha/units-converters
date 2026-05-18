@@ -8,7 +8,7 @@ export function Footer() {
 	const { lang } = useParams({ from: "/$lang" });
 
 	return (
-		<footer className="flex h-20 w-full items-center justify-center gap-6 converter-full bg-muted text-sm">
+		<footer className="flex h-20 w-full items-center justify-center gap-6 converter-full bg-muted text-sm px-4">
 			<Link
 				search={defaultSearchParams}
 				className="link underline"

@@ -87,12 +87,8 @@ function RootDocument({ children }: React.PropsWithChildren) {
 				) : null}
 			</head>
 
-			<body className="flex flex-col h-svh w-svw simple-scrollbar scrollbar-stable">
-				<div className="h-(--safe-top) flex-none bg-black w-full"></div>
-
+			<body className="grid grid-rows-[var(--header-height)_1fr] [grid-template-areas:'header'_'main'] grid-cols-1 h-dvh w-dvw overflow-hidden">
 				{children}
-
-				<div className="h-(--safe-bottom) flex-none w-full bg-notebook"></div>
 
 				<TanStackDevtools
 					config={{

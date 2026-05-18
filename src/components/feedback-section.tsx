@@ -49,7 +49,7 @@ export function FeedbackSection() {
 	}
 
 	return (
-		<form className="converter-content h-[50svh]" onSubmit={handleSubmit}>
+		<form className="converter-content" onSubmit={handleSubmit}>
 			<div className="mb-10 text-center mobile:mt-4 px-4">
 				<h5 className="text-2xl font-bold text-foreground">
 					<Trans>How could this website improve?</Trans>

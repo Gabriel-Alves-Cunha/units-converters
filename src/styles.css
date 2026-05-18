@@ -167,10 +167,16 @@
 		--safe-bottom: env(safe-area-inset-bottom, 0px);
 		--safe-top: env(safe-area-inset-top, 0px);
 		--simple-scrollbar-width: 12px;
+		--header-height: 4rem;
 
 		::selection {
 			background-color: var(--color-accent);
 			color: #fff;
+		}
+
+		@media (width < 32rem /* mobile */) {
+			--simple-scrollbar-width: 6px;
+			--header-height: 3rem;
 		}
 
 		contain-intrinsic-size: auto 3000px;
@@ -278,7 +284,7 @@
 	--content: calc(((min(52rem, 100% - var(--gap) * 4)) / 2) - (var(--gap) / 2));
 	--parallel: minmax(0, 1fr);
 
-	@apply mobile:[--gap:6px] @max-[32rem]:[--gap:6px];
+	@apply mobile:[--gap:8px];
 
 	display: grid;
 

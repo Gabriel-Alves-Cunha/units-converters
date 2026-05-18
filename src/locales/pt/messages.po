@@ -28,13 +28,13 @@ msgstr ""
 #~ msgstr "{0}"
 
 #. placeholder {0}: i18n._(QuantitiesWithTranslations[quantity])
-#: src/routes/$lang/convert.$quantity.$from.to.$to.tsx:283
+#: src/routes/$lang/convert.$quantity.$from.to.$to.tsx:302
 msgid "{0} panel"
 msgstr ""
 
 #. placeholder {0}: i18n._(UnitNamesWithTranslations[cv.from])
 #. placeholder {1}: i18n._(UnitNamesWithTranslations[cv.to])
-#: src/components/common-conversions.tsx:127
+#: src/components/common-conversions.tsx:124
 msgid "{0} to {1}"
 msgstr "{0} para {1}"
 
@@ -43,12 +43,12 @@ msgstr "{0} para {1}"
 #~ msgid "{name}"
 #~ msgstr "{name}"
 
-#: src/routes/$lang/convert.$quantity.$from.to.$to.tsx:75
+#: src/routes/$lang/convert.$quantity.$from.to.$to.tsx:77
 msgid "{tQuantity} Converter"
 msgstr "Conversor de {tQuantity}"
 
 #. placeholder {0}: new Date().getFullYear()
-#: src/components/footer.tsx:21
+#: src/components/footer.tsx:23
 msgid "© {0} Units Converters. All rights reserved."
 msgstr "© {0} Units Converters. Todos os direitos reservados."
 
@@ -116,7 +116,7 @@ msgstr "Unidade astronômica"
 msgid "Attometre"
 msgstr "Atômetro"
 
-#: src/routes/$lang/convert.$quantity.$from.to.$to.tsx:121
+#: src/routes/$lang/convert.$quantity.$from.to.$to.tsx:123
 msgid "Back to Home"
 msgstr "Voltar para a Página Inicial"
 
@@ -180,7 +180,7 @@ msgstr "Categorias Abrangentes"
 #~ msgid "Convert {0} and more."
 #~ msgstr "Converta {0} e mais."
 
-#: src/routes/$lang/convert.$quantity.$from.to.$to.tsx:51
+#: src/routes/$lang/convert.$quantity.$from.to.$to.tsx:53
 msgid "Convert {tFrom} to {tTo} | Accurate {tQuantity} Converter"
 msgstr "Converter {tFrom} para {tTo} | Conversor de {tQuantity} preciso"
 
@@ -280,7 +280,7 @@ msgstr "Descrição"
 msgid "Drop"
 msgstr "Gota"
 
-#: src/routes/$lang/convert.$quantity.$from.to.$to.tsx:54
+#: src/routes/$lang/convert.$quantity.$from.to.$to.tsx:56
 msgid "Easily convert {tFrom} to {tTo} with our high-precision {tQuantity} converter. Free online tool for students and engineers."
 msgstr "Converta facilmente {tFrom} para {tTo} com nosso conversor de {tQuantity} de alta precisão. Ferramenta online gratuita para estudantes e engenheiros."
 
@@ -312,7 +312,7 @@ msgstr "Pé (internacional)"
 #~ msgid "Free online unit converter for Length, Temperature, Area, and Volume. Get instant, high-precision results for metric and imperial units."
 #~ msgstr "Conversor de unidades online gratuito para Comprimento, Temperatura, Área e Volume. Obtenha resultados instantâneos de alta precisão para unidades métricas e imperiais."
 
-#: src/routes/$lang/convert.$quantity.$from.to.$to.tsx:290
+#: src/routes/$lang/convert.$quantity.$from.to.$to.tsx:309
 msgid "From"
 msgstr "De"
 
@@ -340,7 +340,7 @@ msgstr "Hectolitro"
 msgid "Hectometre"
 msgstr "Hectômetro"
 
-#: src/routes/$lang/convert.$quantity.$from.to.$to.tsx:80
+#: src/routes/$lang/convert.$quantity.$from.to.$to.tsx:82
 msgid "High-precision conversions"
 msgstr "Conversões de alta precisão"
 
@@ -465,11 +465,11 @@ msgstr "Por favor, forneça o máximo de detalhes possível…"
 msgid "Precision Unit Converter: Metric, Imperial & Scientific"
 msgstr "Conversor de Unidades de Precisão: Métrico, Imperial e Científico"
 
-#: src/components/footer.tsx:17
+#: src/components/footer.tsx:19
 msgid "Privacy Policy"
 msgstr "Política de Privacidade"
 
-#: src/routes/$lang/convert.$quantity.$from.to.$to.tsx:256
+#: src/routes/$lang/convert.$quantity.$from.to.$to.tsx:275
 msgid "Quantities tabs"
 msgstr ""
 
@@ -477,15 +477,15 @@ msgstr ""
 msgid "Quickly convert between hundreds of units across <0>Length</0>,<1> Temperature</1>, <2>Area</2>, and <3>Volume</3>. Whether you are a student, engineer, or hobbyist, our tool provides high-precision results for everything from everyday measurements to advanced scientific data."
 msgstr "Converta rapidamente entre centenas de unidades em <0>Comprimento</0>, <1>Temperatura</1>, <2>Área</2> e <3>Volume</3>. Seja você estudante, engenheiro ou entusiasta, nossa ferramenta fornece resultados de alta precisão para tudo, desde medições cotidianas até dados científicos avançados."
 
-#: src/routes/$lang/convert.$quantity.$from.to.$to.tsx:81
+#: src/routes/$lang/convert.$quantity.$from.to.$to.tsx:83
 msgid "Real-time results"
 msgstr "Resultados em tempo real"
 
-#: src/components/default-suspense-and-error-boundary.tsx:116
+#: src/components/default-suspense-and-error-boundary.tsx:113
 msgid "Retry from scratch"
 msgstr "Recomeçar do zero"
 
-#: src/routes/$lang/convert.$quantity.$from.to.$to.tsx:82
+#: src/routes/$lang/convert.$quantity.$from.to.$to.tsx:84
 msgid "Scientific grade units"
 msgstr "Unidades de grau científico"
 
@@ -573,11 +573,11 @@ msgstr "O único conversor de unidades que você precisará"
 msgid "The page you're looking for isn't found, we suggest you back to home."
 msgstr "A página que você está procurando não foi encontrada. Sugerimos que você volte para a página inicial."
 
-#: src/routes/$lang/convert.$quantity.$from.to.$to.tsx:294
+#: src/routes/$lang/convert.$quantity.$from.to.$to.tsx:313
 msgid "To"
 msgstr "Para"
 
-#: src/components/default-suspense-and-error-boundary.tsx:120
+#: src/components/default-suspense-and-error-boundary.tsx:117
 msgid "Try again"
 msgstr "Tentar novamente"
 
@@ -589,7 +589,7 @@ msgstr "Tentar novamente"
 msgid "unit converter, metric conversion, imperial to metric, length converter, temperature converter, area converter, volume converter, scientific calculator"
 msgstr "conversor de unidades, conversão métrica, imperial para métrico, conversor de comprimento, conversor de temperatura, conversor de área, conversor de volume, calculadora científica"
 
-#: src/routes/$lang/convert.$quantity.$from.to.$to.tsx:111
+#: src/routes/$lang/convert.$quantity.$from.to.$to.tsx:113
 msgid "Unit not found"
 msgstr "Unidade não encontrada"
 
@@ -616,7 +616,7 @@ msgstr "Units Converters{0}"
 msgid "Volume"
 msgstr "Volume"
 
-#: src/routes/$lang/convert.$quantity.$from.to.$to.tsx:115
+#: src/routes/$lang/convert.$quantity.$from.to.$to.tsx:117
 msgid "We couldn't find those specific units. Try our default converter."
 msgstr "Não conseguimos encontrar essas unidades específicas. Tente nosso conversor padrão."
 

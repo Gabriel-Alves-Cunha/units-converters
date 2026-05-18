@@ -269,7 +269,7 @@ function Converter() {
 	}
 
 	return (
-		<div className="flex flex-col h-svh gap-2 mt-4 w-full converter-content">
+		<div className="flex flex-col min-h-svh gap-2 mt-4 w-full converter-content">
 			<section
 				className="flex w-fit items-center justify-center p-[3px] mx-auto text-muted-foreground"
 				aria-label={i18n._(msg`Quantities tabs`)}
@@ -354,7 +354,7 @@ function Converter() {
 					>
 						{quantities.map(([unitName, { symbol }]) => (
 							<option
-								className="p-1 text-lg text-wrap"
+								className="p-1 text-lg text-wrap not-last:border-b"
 								value={unitName}
 								key={unitName}
 							>
@@ -380,20 +380,20 @@ function Converter() {
 					>
 						{quantities.map(([unitName, { symbol }]) => (
 							<option
-								className="p-1 text-lg text-wrap overflow-hidden"
+								className="p-1 text-lg text-wrap not-last:border-b"
 								value={unitName}
 								key={unitName}
 							>
-								<div className="grid grid-cols-[max-content_auto] gap-4 items-center">
-									<span className="">
-										{i18n._(UnitNamesWithTranslations[unitName as UnitName])}
-										{symbol ? ` (${symbol})` : ""}
-									</span>
+								{/* <div className="grid grid-cols-[max-content_auto] gap-4 items-center"> */}
+								<span className="text-wrap">
+									{i18n._(UnitNamesWithTranslations[unitName as UnitName])}
+									{symbol ? ` (${symbol})` : ""}
+								</span>
 
-									<span className="text-xs opacity-70 max-w-full truncate">
-										{convert(unitName as UnitName)}
-									</span>
-								</div>
+								<span className="text-xs opacity-70 max-w-full truncate">
+									{convert(unitName as UnitName)}
+								</span>
+								{/* </div> */}
 							</option>
 						))}
 					</select>
