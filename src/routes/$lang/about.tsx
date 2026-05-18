@@ -29,7 +29,7 @@ export const Route = createFileRoute("/$lang/about")({
 
 function AboutPage() {
 	return (
-		<div className="flex flex-col gap-12 min-h-svh converter-content py-8 leading-relaxed">
+		<div className="flex flex-col gap-12 min-h-fit converter-content py-8 leading-relaxed">
 			<section className="space-y-6">
 				<h2 className="text-4xl font-bold tracking-tight text-primary sm:text-5xl">
 					<Trans>About Units Converters</Trans>

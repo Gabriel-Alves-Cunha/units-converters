@@ -7,6 +7,8 @@ export type UnitDefinition = {
 	symbol: string;
 	fromBaseUnit(input: Decimal): Decimal; // function to convert from the base unit to this unit
 	toBaseUnit(input: Decimal): Decimal; // function to convert from this unit to the base unit (e.g., meter for length)
+	description?: MessageDescriptor;
+	formula?: string;
 };
 
 export const units = {
@@ -205,6 +207,7 @@ export const units = {
 			fromBaseUnit(input) {
 				return input; // base unit
 			},
+			description: msg`The base unit of length in the International System of Units (SI).`,
 		},
 
 		Ell: {
@@ -432,6 +435,8 @@ export const units = {
 			fromBaseUnit(input: Decimal) {
 				return input.sub(273.15); // Convert Kelvin to Celsius
 			},
+			description: msg`A scale and unit of measurement for temperature used by most of the world.`,
+			formula: "K = °C + 273.15",
 		},
 
 		Fahrenheit: {
@@ -442,6 +447,8 @@ export const units = {
 			fromBaseUnit(input: Decimal) {
 				return input.mul(9).div(5).sub(459.67); // Convert Kelvin to Fahrenheit
 			},
+			description: msg`A temperature scale used primarily in the United States.`,
+			formula: "K = (°F + 459.67) × 5/9",
 		},
 
 		Kelvin: {

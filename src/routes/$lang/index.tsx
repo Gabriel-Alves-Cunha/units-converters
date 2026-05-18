@@ -22,7 +22,7 @@ function Home() {
 	const { i18n } = useLingui();
 
 	return (
-		<div className="flex flex-col gap-12 min-h-svh converter-content py-8">
+		<div className="flex flex-col gap-12 min-h-fit converter-content py-8">
 			<section className="text-center space-y-4">
 				<h2 className="text-4xl font-bold tracking-tight text-primary sm:text-5xl">
 					<Trans>The Only Unit Converter You'll Ever Need</Trans>

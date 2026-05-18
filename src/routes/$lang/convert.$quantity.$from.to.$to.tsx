@@ -26,6 +26,7 @@ import {
 	loadCatalog,
 	loadDefaultCatalog,
 } from "#/integrations/i18n/load-catalog";
+import { ConversionDetails } from "#/components/conversion-details";
 
 export const Route = createFileRoute("/$lang/convert/$quantity/$from/to/$to")({
 	component: Converter,
@@ -269,136 +270,140 @@ function Converter() {
 	}
 
 	return (
-		<div className="flex flex-col min-h-svh gap-2 mt-4 w-full converter-content">
-			<section
-				className="flex w-fit items-center justify-center p-[3px] mx-auto text-muted-foreground"
-				aria-label={i18n._(msg`Quantities tabs`)}
-			>
-				{QuantitySchema.options.map((localQuantity) => (
-					<div className="relative" key={localQuantity}>
-						<input
-							onChange={() => handleChangeQuantity(localQuantity)}
-							checked={localQuantity === quantity}
-							name={localQuantity}
-							id={localQuantity}
-							className="peer"
-							type="radio"
-							hidden
-						/>
+		<>
+			<div className="flex flex-col min-h-svh gap-2 mt-4 w-full converter-content">
+				<section
+					className="flex w-fit items-center justify-center mx-auto p-1 text-muted-foreground"
+					aria-label={i18n._(msg`Quantities tabs`)}
+				>
+					{QuantitySchema.options.map((localQuantity) => (
+						<div className="relative" key={localQuantity}>
+							<input
+								onChange={() => handleChangeQuantity(localQuantity)}
+								checked={localQuantity === quantity}
+								name={localQuantity}
+								id={localQuantity}
+								className="peer"
+								type="radio"
+								hidden
+							/>
 
-						<label
-							className="relative flex items-center justify-center px-3 py-1 text-sm font-medium peer-checked:border-b border-primary peer-checked:text-foreground cursor-pointer button-hover hover:text-primary"
-							htmlFor={localQuantity}
-						>
-							{i18n._(QuantitiesWithTranslations[localQuantity])}
-						</label>
-					</div>
-				))}
-			</section>
-
-			<form
-				className="p-4 grid grid-rows-[auto_1fr] gap-3"
-				aria-label={i18n._(
-					msg`${i18n._(QuantitiesWithTranslations[quantity])} panel`,
-				)}
-				id={quantity}
-			>
-				<div className="grid grid-rows-2 h-fit">
-					<div className="grid grid-cols-2 gap-11">
-						<label htmlFor="from" className="font-bold">
-							<Trans>From</Trans>
-						</label>
-
-						<label htmlFor="from" className="font-bold">
-							<Trans>To</Trans>
-						</label>
-					</div>
-
-					<div className="grid grid-cols-[1fr_min-content_1fr] gap-4 place-items-center">
-						<Input
-							onChange={handleChangeFromValue}
-							className="w-full text-lg"
-							defaultValue={fromValue}
-							placeholder="1"
-							type="number"
-							name="from"
-							id="from"
-						/>
-
-						<span className="text-xl">=</span>
-
-						<Output
-							className="w-full appearance-none text-lg"
-							htmlFor="from"
-							name="to"
-							id="to"
-						>
-							{`${convert(to)}${symbol ? ` ${symbol}` : ""}`}
-						</Output>
-					</div>
-				</div>
-
-				<div className="grid grid-cols-2 gap-2">
-					<select
-						onChange={(e) =>
-							handleChangeParams(
-								"from",
-								e.target.value || getFirstKeyOfRecord(selectedQuantity) || "",
-							)
-						}
-						className="w-full simple-scrollbar overflow-x-hidden"
-						name="select-from"
-						size={selectSize}
-						id="select-from"
-						value={from}
-					>
-						{quantities.map(([unitName, { symbol }]) => (
-							<option
-								className="p-1 text-lg text-wrap not-last:border-b"
-								value={unitName}
-								key={unitName}
+							<label
+								className="relative flex items-center justify-center px-3 py-1 text-sm font-medium peer-checked:border-b border-primary peer-checked:text-foreground cursor-pointer button-hover hover:text-primary"
+								htmlFor={localQuantity}
 							>
-								{i18n._(UnitNamesWithTranslations[unitName as UnitName])}
+								{i18n._(QuantitiesWithTranslations[localQuantity])}
+							</label>
+						</div>
+					))}
+				</section>
 
-								{symbol ? ` (${symbol})` : ""}
-							</option>
-						))}
-					</select>
+				<form
+					aria-label={i18n._(
+						msg`${i18n._(QuantitiesWithTranslations[quantity])} panel`,
+					)}
+					className="grid grid-rows-[auto_1fr] gap-3"
+					id={quantity}
+				>
+					<div className="grid grid-rows-[auto_1fr] h-fit">
+						<div className="grid grid-cols-2 gap-11">
+							<label htmlFor="from" className="font-bold">
+								<Trans>From</Trans>
+							</label>
 
-					<select
-						onChange={(e) =>
-							handleChangeParams(
-								"to",
-								e.target.value || getFirstKeyOfRecord(selectedQuantity) || "",
-							)
-						}
-						className="w-full simple-scrollbar overflow-x-hidden"
-						size={selectSize}
-						name="select-to"
-						id="select-to"
-						value={to}
-					>
-						{quantities.map(([unitName, { symbol }]) => (
-							<option
-								className="p-1 text-lg text-wrap not-last:border-b"
-								value={unitName}
-								key={unitName}
+							<label htmlFor="from" className="font-bold">
+								<Trans>To</Trans>
+							</label>
+						</div>
+
+						<div className="grid grid-cols-[1fr_min-content_1fr] gap-4 place-items-center">
+							<Input
+								onChange={handleChangeFromValue}
+								className="w-full text-lg"
+								defaultValue={fromValue}
+								placeholder="1"
+								type="number"
+								name="from"
+								id="from"
+							/>
+
+							<span className="text-xl">=</span>
+
+							<Output
+								className="w-full appearance-none text-lg"
+								htmlFor="from"
+								name="to"
+								id="to"
 							>
-								{/* <div className="grid grid-cols-[max-content_auto] gap-4 items-center"> */}
-								<span className="text-wrap">
+								{`${convert(to)}${symbol ? ` ${symbol}` : ""}`}
+							</Output>
+						</div>
+					</div>
+
+					<div className="grid grid-cols-2 gap-2">
+						<select
+							onChange={(e) =>
+								handleChangeParams(
+									"from",
+									e.target.value || getFirstKeyOfRecord(selectedQuantity) || "",
+								)
+							}
+							className="w-full simple-scrollbar overflow-x-hidden"
+							name="select-from"
+							size={selectSize}
+							id="select-from"
+							value={from}
+						>
+							{quantities.map(([unitName, { symbol }]) => (
+								<option
+									className="p-1 text-lg text-wrap not-last:border-b"
+									value={unitName}
+									key={unitName}
+								>
 									{i18n._(UnitNamesWithTranslations[unitName as UnitName])}
-									{symbol ? ` (${symbol})` : ""}
-								</span>
 
-								<span className="text-xs opacity-70 max-w-full truncate">
-									{convert(unitName as UnitName)}
-								</span>
-								{/* </div> */}
-							</option>
-						))}
-					</select>
-				</div>
-			</form>
-		</div>
+									{symbol ? ` (${symbol})` : ""}
+								</option>
+							))}
+						</select>
+
+						<select
+							onChange={(e) =>
+								handleChangeParams(
+									"to",
+									e.target.value || getFirstKeyOfRecord(selectedQuantity) || "",
+								)
+							}
+							className="w-full simple-scrollbar overflow-x-hidden"
+							size={selectSize}
+							name="select-to"
+							id="select-to"
+							value={to}
+						>
+							{quantities.map(([unitName, { symbol }]) => (
+								<option
+									className="p-1 text-lg text-wrap not-last:border-b"
+									value={unitName}
+									key={unitName}
+								>
+									{/* <div className="grid grid-cols-[max-content_auto] gap-4 items-center"> */}
+									<span className="text-wrap">
+										{i18n._(UnitNamesWithTranslations[unitName as UnitName])}
+										{symbol ? ` (${symbol})` : ""}
+									</span>
+
+									<span className="text-xs opacity-70 max-w-full truncate">
+										{convert(unitName as UnitName)}
+									</span>
+									{/* </div> */}
+								</option>
+							))}
+						</select>
+					</div>
+				</form>
+			</div>
+
+			<ConversionDetails quantity={quantity} from={from} to={to} />
+		</>
 	);
 }

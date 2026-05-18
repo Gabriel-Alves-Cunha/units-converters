@@ -166,6 +166,8 @@ export const Route = createFileRoute("/$lang")({
 				<main className="w-full max-w-full h-full simple-scrollbar scrollbar-stable overflow-x-hidden converter-grid gap-y-16 [grid-area:main]">
 					<Outlet />
 
+					<div className="h-svh flex flex-none"></div>
+
 					<hr className="converter-content" />
 
 					<CommonConversions />

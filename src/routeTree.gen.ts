@@ -8,200 +8,200 @@
 // You should NOT make any changes in this file as it will be overwritten.
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
-import { Route as rootRouteImport } from './routes/__root'
-import { Route as LangRouteRouteImport } from './routes/$lang/route'
-import { Route as IndexRouteImport } from './routes/index'
-import { Route as LangIndexRouteImport } from './routes/$lang/index'
-import { Route as SitemapXmlRouteImport } from './routes/sitemap.xml'
-import { Route as LangPrivacyPolicyRouteImport } from './routes/$lang/privacy-policy'
-import { Route as LangAboutRouteImport } from './routes/$lang/about'
-import { Route as LangConvertQuantityFromToToRouteImport } from './routes/$lang/convert.$quantity.$from.to.$to'
+import { Route as rootRouteImport } from "./routes/__root";
+import { Route as LangRouteRouteImport } from "./routes/$lang/route";
+import { Route as IndexRouteImport } from "./routes/index";
+import { Route as LangIndexRouteImport } from "./routes/$lang/index";
+import { Route as SitemapXmlRouteImport } from "./routes/sitemap.xml";
+import { Route as LangPrivacyPolicyRouteImport } from "./routes/$lang/privacy-policy";
+import { Route as LangAboutRouteImport } from "./routes/$lang/about";
+import { Route as LangConvertQuantityFromToToRouteImport } from "./routes/$lang/convert.$quantity.$from.to.$to";
 
 const LangRouteRoute = LangRouteRouteImport.update({
-  id: '/$lang',
-  path: '/$lang',
-  getParentRoute: () => rootRouteImport,
-} as any)
+	id: "/$lang",
+	path: "/$lang",
+	getParentRoute: () => rootRouteImport,
+} as any);
 const IndexRoute = IndexRouteImport.update({
-  id: '/',
-  path: '/',
-  getParentRoute: () => rootRouteImport,
-} as any)
+	id: "/",
+	path: "/",
+	getParentRoute: () => rootRouteImport,
+} as any);
 const LangIndexRoute = LangIndexRouteImport.update({
-  id: '/',
-  path: '/',
-  getParentRoute: () => LangRouteRoute,
-} as any)
+	id: "/",
+	path: "/",
+	getParentRoute: () => LangRouteRoute,
+} as any);
 const SitemapXmlRoute = SitemapXmlRouteImport.update({
-  id: '/sitemap/xml',
-  path: '/sitemap/xml',
-  getParentRoute: () => rootRouteImport,
-} as any)
+	id: "/sitemap/xml",
+	path: "/sitemap/xml",
+	getParentRoute: () => rootRouteImport,
+} as any);
 const LangPrivacyPolicyRoute = LangPrivacyPolicyRouteImport.update({
-  id: '/privacy-policy',
-  path: '/privacy-policy',
-  getParentRoute: () => LangRouteRoute,
-} as any)
+	id: "/privacy-policy",
+	path: "/privacy-policy",
+	getParentRoute: () => LangRouteRoute,
+} as any);
 const LangAboutRoute = LangAboutRouteImport.update({
-  id: '/about',
-  path: '/about',
-  getParentRoute: () => LangRouteRoute,
-} as any)
+	id: "/about",
+	path: "/about",
+	getParentRoute: () => LangRouteRoute,
+} as any);
 const LangConvertQuantityFromToToRoute =
-  LangConvertQuantityFromToToRouteImport.update({
-    id: '/convert/$quantity/$from/to/$to',
-    path: '/convert/$quantity/$from/to/$to',
-    getParentRoute: () => LangRouteRoute,
-  } as any)
+	LangConvertQuantityFromToToRouteImport.update({
+		id: "/convert/$quantity/$from/to/$to",
+		path: "/convert/$quantity/$from/to/$to",
+		getParentRoute: () => LangRouteRoute,
+	} as any);
 
 export interface FileRoutesByFullPath {
-  '/': typeof IndexRoute
-  '/$lang': typeof LangRouteRouteWithChildren
-  '/$lang/about': typeof LangAboutRoute
-  '/$lang/privacy-policy': typeof LangPrivacyPolicyRoute
-  '/sitemap/xml': typeof SitemapXmlRoute
-  '/$lang/': typeof LangIndexRoute
-  '/$lang/convert/$quantity/$from/to/$to': typeof LangConvertQuantityFromToToRoute
+	"/": typeof IndexRoute;
+	"/$lang": typeof LangRouteRouteWithChildren;
+	"/$lang/about": typeof LangAboutRoute;
+	"/$lang/privacy-policy": typeof LangPrivacyPolicyRoute;
+	"/sitemap/xml": typeof SitemapXmlRoute;
+	"/$lang/": typeof LangIndexRoute;
+	"/$lang/convert/$quantity/$from/to/$to": typeof LangConvertQuantityFromToToRoute;
 }
 export interface FileRoutesByTo {
-  '/': typeof IndexRoute
-  '/$lang/about': typeof LangAboutRoute
-  '/$lang/privacy-policy': typeof LangPrivacyPolicyRoute
-  '/sitemap/xml': typeof SitemapXmlRoute
-  '/$lang': typeof LangIndexRoute
-  '/$lang/convert/$quantity/$from/to/$to': typeof LangConvertQuantityFromToToRoute
+	"/": typeof IndexRoute;
+	"/$lang/about": typeof LangAboutRoute;
+	"/$lang/privacy-policy": typeof LangPrivacyPolicyRoute;
+	"/sitemap/xml": typeof SitemapXmlRoute;
+	"/$lang": typeof LangIndexRoute;
+	"/$lang/convert/$quantity/$from/to/$to": typeof LangConvertQuantityFromToToRoute;
 }
 export interface FileRoutesById {
-  __root__: typeof rootRouteImport
-  '/': typeof IndexRoute
-  '/$lang': typeof LangRouteRouteWithChildren
-  '/$lang/about': typeof LangAboutRoute
-  '/$lang/privacy-policy': typeof LangPrivacyPolicyRoute
-  '/sitemap/xml': typeof SitemapXmlRoute
-  '/$lang/': typeof LangIndexRoute
-  '/$lang/convert/$quantity/$from/to/$to': typeof LangConvertQuantityFromToToRoute
+	__root__: typeof rootRouteImport;
+	"/": typeof IndexRoute;
+	"/$lang": typeof LangRouteRouteWithChildren;
+	"/$lang/about": typeof LangAboutRoute;
+	"/$lang/privacy-policy": typeof LangPrivacyPolicyRoute;
+	"/sitemap/xml": typeof SitemapXmlRoute;
+	"/$lang/": typeof LangIndexRoute;
+	"/$lang/convert/$quantity/$from/to/$to": typeof LangConvertQuantityFromToToRoute;
 }
 export interface FileRouteTypes {
-  fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths:
-    | '/'
-    | '/$lang'
-    | '/$lang/about'
-    | '/$lang/privacy-policy'
-    | '/sitemap/xml'
-    | '/$lang/'
-    | '/$lang/convert/$quantity/$from/to/$to'
-  fileRoutesByTo: FileRoutesByTo
-  to:
-    | '/'
-    | '/$lang/about'
-    | '/$lang/privacy-policy'
-    | '/sitemap/xml'
-    | '/$lang'
-    | '/$lang/convert/$quantity/$from/to/$to'
-  id:
-    | '__root__'
-    | '/'
-    | '/$lang'
-    | '/$lang/about'
-    | '/$lang/privacy-policy'
-    | '/sitemap/xml'
-    | '/$lang/'
-    | '/$lang/convert/$quantity/$from/to/$to'
-  fileRoutesById: FileRoutesById
+	fileRoutesByFullPath: FileRoutesByFullPath;
+	fullPaths:
+		| "/"
+		| "/$lang"
+		| "/$lang/about"
+		| "/$lang/privacy-policy"
+		| "/sitemap/xml"
+		| "/$lang/"
+		| "/$lang/convert/$quantity/$from/to/$to";
+	fileRoutesByTo: FileRoutesByTo;
+	to:
+		| "/"
+		| "/$lang/about"
+		| "/$lang/privacy-policy"
+		| "/sitemap/xml"
+		| "/$lang"
+		| "/$lang/convert/$quantity/$from/to/$to";
+	id:
+		| "__root__"
+		| "/"
+		| "/$lang"
+		| "/$lang/about"
+		| "/$lang/privacy-policy"
+		| "/sitemap/xml"
+		| "/$lang/"
+		| "/$lang/convert/$quantity/$from/to/$to";
+	fileRoutesById: FileRoutesById;
 }
 export interface RootRouteChildren {
-  IndexRoute: typeof IndexRoute
-  LangRouteRoute: typeof LangRouteRouteWithChildren
-  SitemapXmlRoute: typeof SitemapXmlRoute
+	IndexRoute: typeof IndexRoute;
+	LangRouteRoute: typeof LangRouteRouteWithChildren;
+	SitemapXmlRoute: typeof SitemapXmlRoute;
 }
 
-declare module '@tanstack/react-router' {
-  interface FileRoutesByPath {
-    '/$lang': {
-      id: '/$lang'
-      path: '/$lang'
-      fullPath: '/$lang'
-      preLoaderRoute: typeof LangRouteRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/$lang/': {
-      id: '/$lang/'
-      path: '/'
-      fullPath: '/$lang/'
-      preLoaderRoute: typeof LangIndexRouteImport
-      parentRoute: typeof LangRouteRoute
-    }
-    '/sitemap/xml': {
-      id: '/sitemap/xml'
-      path: '/sitemap/xml'
-      fullPath: '/sitemap/xml'
-      preLoaderRoute: typeof SitemapXmlRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/$lang/privacy-policy': {
-      id: '/$lang/privacy-policy'
-      path: '/privacy-policy'
-      fullPath: '/$lang/privacy-policy'
-      preLoaderRoute: typeof LangPrivacyPolicyRouteImport
-      parentRoute: typeof LangRouteRoute
-    }
-    '/$lang/about': {
-      id: '/$lang/about'
-      path: '/about'
-      fullPath: '/$lang/about'
-      preLoaderRoute: typeof LangAboutRouteImport
-      parentRoute: typeof LangRouteRoute
-    }
-    '/$lang/convert/$quantity/$from/to/$to': {
-      id: '/$lang/convert/$quantity/$from/to/$to'
-      path: '/convert/$quantity/$from/to/$to'
-      fullPath: '/$lang/convert/$quantity/$from/to/$to'
-      preLoaderRoute: typeof LangConvertQuantityFromToToRouteImport
-      parentRoute: typeof LangRouteRoute
-    }
-  }
+declare module "@tanstack/react-router" {
+	interface FileRoutesByPath {
+		"/$lang": {
+			id: "/$lang";
+			path: "/$lang";
+			fullPath: "/$lang";
+			preLoaderRoute: typeof LangRouteRouteImport;
+			parentRoute: typeof rootRouteImport;
+		};
+		"/": {
+			id: "/";
+			path: "/";
+			fullPath: "/";
+			preLoaderRoute: typeof IndexRouteImport;
+			parentRoute: typeof rootRouteImport;
+		};
+		"/$lang/": {
+			id: "/$lang/";
+			path: "/";
+			fullPath: "/$lang/";
+			preLoaderRoute: typeof LangIndexRouteImport;
+			parentRoute: typeof LangRouteRoute;
+		};
+		"/sitemap/xml": {
+			id: "/sitemap/xml";
+			path: "/sitemap/xml";
+			fullPath: "/sitemap/xml";
+			preLoaderRoute: typeof SitemapXmlRouteImport;
+			parentRoute: typeof rootRouteImport;
+		};
+		"/$lang/privacy-policy": {
+			id: "/$lang/privacy-policy";
+			path: "/privacy-policy";
+			fullPath: "/$lang/privacy-policy";
+			preLoaderRoute: typeof LangPrivacyPolicyRouteImport;
+			parentRoute: typeof LangRouteRoute;
+		};
+		"/$lang/about": {
+			id: "/$lang/about";
+			path: "/about";
+			fullPath: "/$lang/about";
+			preLoaderRoute: typeof LangAboutRouteImport;
+			parentRoute: typeof LangRouteRoute;
+		};
+		"/$lang/convert/$quantity/$from/to/$to": {
+			id: "/$lang/convert/$quantity/$from/to/$to";
+			path: "/convert/$quantity/$from/to/$to";
+			fullPath: "/$lang/convert/$quantity/$from/to/$to";
+			preLoaderRoute: typeof LangConvertQuantityFromToToRouteImport;
+			parentRoute: typeof LangRouteRoute;
+		};
+	}
 }
 
 interface LangRouteRouteChildren {
-  LangAboutRoute: typeof LangAboutRoute
-  LangPrivacyPolicyRoute: typeof LangPrivacyPolicyRoute
-  LangIndexRoute: typeof LangIndexRoute
-  LangConvertQuantityFromToToRoute: typeof LangConvertQuantityFromToToRoute
+	LangAboutRoute: typeof LangAboutRoute;
+	LangPrivacyPolicyRoute: typeof LangPrivacyPolicyRoute;
+	LangIndexRoute: typeof LangIndexRoute;
+	LangConvertQuantityFromToToRoute: typeof LangConvertQuantityFromToToRoute;
 }
 
 const LangRouteRouteChildren: LangRouteRouteChildren = {
-  LangAboutRoute: LangAboutRoute,
-  LangPrivacyPolicyRoute: LangPrivacyPolicyRoute,
-  LangIndexRoute: LangIndexRoute,
-  LangConvertQuantityFromToToRoute: LangConvertQuantityFromToToRoute,
-}
+	LangAboutRoute: LangAboutRoute,
+	LangPrivacyPolicyRoute: LangPrivacyPolicyRoute,
+	LangIndexRoute: LangIndexRoute,
+	LangConvertQuantityFromToToRoute: LangConvertQuantityFromToToRoute,
+};
 
 const LangRouteRouteWithChildren = LangRouteRoute._addFileChildren(
-  LangRouteRouteChildren,
-)
+	LangRouteRouteChildren,
+);
 
 const rootRouteChildren: RootRouteChildren = {
-  IndexRoute: IndexRoute,
-  LangRouteRoute: LangRouteRouteWithChildren,
-  SitemapXmlRoute: SitemapXmlRoute,
-}
+	IndexRoute: IndexRoute,
+	LangRouteRoute: LangRouteRouteWithChildren,
+	SitemapXmlRoute: SitemapXmlRoute,
+};
 export const routeTree = rootRouteImport
-  ._addFileChildren(rootRouteChildren)
-  ._addFileTypes<FileRouteTypes>()
+	._addFileChildren(rootRouteChildren)
+	._addFileTypes<FileRouteTypes>();
 
-import type { getRouter } from './router.tsx'
-import type { createStart } from '@tanstack/react-start'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-  }
+import type { getRouter } from "./router.tsx";
+import type { createStart } from "@tanstack/react-start";
+declare module "@tanstack/react-start" {
+	interface Register {
+		ssr: true;
+		router: Awaited<ReturnType<typeof getRouter>>;
+	}
 }

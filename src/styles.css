@@ -287,6 +287,7 @@
 	@apply mobile:[--gap:8px];
 
 	display: grid;
+	grid-auto-rows: min-content;
 
 	grid-template-columns:
 		[full-start] var(--full) [parallel-one-start] var(--parallel)
