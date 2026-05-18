@@ -12,6 +12,16 @@ export function Footer() {
 			<Link
 				search={defaultSearchParams}
 				className="link underline"
+				to="/$lang/about"
+				onClick={scrollPageToTop}
+				params={{ lang }}
+			>
+				<Trans>About</Trans>
+			</Link>
+
+			<Link
+				search={defaultSearchParams}
+				className="link underline"
 				to="/$lang/privacy-policy"
 				onClick={scrollPageToTop}
 				params={{ lang }}

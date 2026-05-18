@@ -14,6 +14,7 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as LangIndexRouteImport } from './routes/$lang/index'
 import { Route as SitemapXmlRouteImport } from './routes/sitemap.xml'
 import { Route as LangPrivacyPolicyRouteImport } from './routes/$lang/privacy-policy'
+import { Route as LangAboutRouteImport } from './routes/$lang/about'
 import { Route as LangConvertQuantityFromToToRouteImport } from './routes/$lang/convert.$quantity.$from.to.$to'
 
 const LangRouteRoute = LangRouteRouteImport.update({
@@ -41,6 +42,11 @@ const LangPrivacyPolicyRoute = LangPrivacyPolicyRouteImport.update({
   path: '/privacy-policy',
   getParentRoute: () => LangRouteRoute,
 } as any)
+const LangAboutRoute = LangAboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => LangRouteRoute,
+} as any)
 const LangConvertQuantityFromToToRoute =
   LangConvertQuantityFromToToRouteImport.update({
     id: '/convert/$quantity/$from/to/$to',
@@ -51,6 +57,7 @@ const LangConvertQuantityFromToToRoute =
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/$lang': typeof LangRouteRouteWithChildren
+  '/$lang/about': typeof LangAboutRoute
   '/$lang/privacy-policy': typeof LangPrivacyPolicyRoute
   '/sitemap/xml': typeof SitemapXmlRoute
   '/$lang/': typeof LangIndexRoute
@@ -58,6 +65,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/$lang/about': typeof LangAboutRoute
   '/$lang/privacy-policy': typeof LangPrivacyPolicyRoute
   '/sitemap/xml': typeof SitemapXmlRoute
   '/$lang': typeof LangIndexRoute
@@ -67,6 +75,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/$lang': typeof LangRouteRouteWithChildren
+  '/$lang/about': typeof LangAboutRoute
   '/$lang/privacy-policy': typeof LangPrivacyPolicyRoute
   '/sitemap/xml': typeof SitemapXmlRoute
   '/$lang/': typeof LangIndexRoute
@@ -77,6 +86,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/$lang'
+    | '/$lang/about'
     | '/$lang/privacy-policy'
     | '/sitemap/xml'
     | '/$lang/'
@@ -84,6 +94,7 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/$lang/about'
     | '/$lang/privacy-policy'
     | '/sitemap/xml'
     | '/$lang'
@@ -92,6 +103,7 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/$lang'
+    | '/$lang/about'
     | '/$lang/privacy-policy'
     | '/sitemap/xml'
     | '/$lang/'
@@ -141,6 +153,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LangPrivacyPolicyRouteImport
       parentRoute: typeof LangRouteRoute
     }
+    '/$lang/about': {
+      id: '/$lang/about'
+      path: '/about'
+      fullPath: '/$lang/about'
+      preLoaderRoute: typeof LangAboutRouteImport
+      parentRoute: typeof LangRouteRoute
+    }
     '/$lang/convert/$quantity/$from/to/$to': {
       id: '/$lang/convert/$quantity/$from/to/$to'
       path: '/convert/$quantity/$from/to/$to'
@@ -152,12 +171,14 @@ declare module '@tanstack/react-router' {
 }
 
 interface LangRouteRouteChildren {
+  LangAboutRoute: typeof LangAboutRoute
   LangPrivacyPolicyRoute: typeof LangPrivacyPolicyRoute
   LangIndexRoute: typeof LangIndexRoute
   LangConvertQuantityFromToToRoute: typeof LangConvertQuantityFromToToRoute
 }
 
 const LangRouteRouteChildren: LangRouteRouteChildren = {
+  LangAboutRoute: LangAboutRoute,
   LangPrivacyPolicyRoute: LangPrivacyPolicyRoute,
   LangIndexRoute: LangIndexRoute,
   LangConvertQuantityFromToToRoute: LangConvertQuantityFromToToRoute,

@@ -85,6 +85,12 @@ function RootDocument({ children }: React.PropsWithChildren) {
 						crossOrigin="anonymous"
 					/>
 				) : null}
+
+				<script
+					src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4889381718129009"
+					crossOrigin="anonymous"
+					async
+				></script>
 			</head>
 
 			<body className="grid grid-rows-[var(--header-height)_1fr] [grid-template-areas:'header'_'main'] grid-cols-1 h-dvh w-dvw overflow-hidden">

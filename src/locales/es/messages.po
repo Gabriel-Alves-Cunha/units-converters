@@ -43,7 +43,7 @@ msgid "{tQuantity} Converter"
 msgstr "Convertidor de {tQuantity}"
 
 #. placeholder {0}: new Date().getFullYear()
-#: src/components/footer.tsx:23
+#: src/components/footer.tsx:33
 msgid "© {0} Units Converters. All rights reserved."
 msgstr "© {0} Units Converters. Todos los derechos reservados."
 
@@ -79,6 +79,18 @@ msgstr "<0>Precisión máxima:</0> Impulsado por Decimal.js para cero errores de
 msgid "<0>Volume:</0> Litres, Cubic Inches, Gallons, and Millilitres."
 msgstr "<0>Volumen:</0> Litros, pulgadas cúbicas, galones y mililitros."
 
+#: src/components/footer.tsx:19
+msgid "About"
+msgstr ""
+
+#: src/routes/$lang/about.tsx:36
+msgid "About Units Converters"
+msgstr ""
+
+#: src/routes/$lang/about.tsx:12
+msgid "About Units Converters | Our Mission & Technology"
+msgstr ""
+
 #: src/lib/units.ts:1145
 msgid "Acre"
 msgstr "Acre"
@@ -107,10 +119,15 @@ msgstr "Área"
 msgid "Astronomical Unit"
 msgstr "Unidad astronómica"
 
+#: src/routes/$lang/about.tsx:40
+msgid "At Units Converters, our mission is to provide the most accurate, reliable, and easy-to-use conversion tool on the web. Whether you are a student solving a physics problem, an engineer working on a global project, or just someone trying to follow a recipe, we ensure your measurements are exact."
+msgstr ""
+
 #: src/lib/units.ts:1075
 msgid "Attometre"
 msgstr "Attómetro"
 
+#: src/routes/$lang/about.tsx:127
 #: src/routes/$lang/convert.$quantity.$from.to.$to.tsx:123
 msgid "Back to Home"
 msgstr "Volver al inicio"
@@ -138,6 +155,10 @@ msgstr "Pie de tabla"
 #: src/lib/units.ts:1077
 msgid "Bohr"
 msgstr "Bohr"
+
+#: src/routes/$lang/about.tsx:97
+msgid "Built on TanStack Start and React 19, the site is optimized for instant loading and real-time results as you type."
+msgstr "Construido con TanStack Start y React 19, el sitio está optimizado para una carga instantánea y resultados en tiempo real mientras escribes."
 
 #: src/lib/units.ts:1078
 msgid "Cable Length (International)"
@@ -315,6 +336,10 @@ msgstr "De"
 msgid "Gigametre"
 msgstr "Gigámetro"
 
+#: src/routes/$lang/about.tsx:85
+msgid "Global Accessibility:"
+msgstr "Accesibilidad global:"
+
 #: src/components/not-found.tsx:29
 msgid "Go back"
 msgstr "Volver"
@@ -360,6 +385,10 @@ msgstr "Pulgada (internacional)"
 msgid "Kelvin"
 msgstr "Kelvin"
 
+#: src/routes/$lang/about.tsx:69
+msgid "Key Features"
+msgstr "Características clave"
+
 #: src/lib/units.ts:1093
 msgid "Kilometre"
 msgstr "Kilómetro"
@@ -367,6 +396,10 @@ msgstr "Kilómetro"
 #: src/lib/units.ts:1139
 msgid "Lambda"
 msgstr "Lambda"
+
+#: src/routes/$lang/about.tsx:14
+msgid "Learn about Units Converters, our commitment to scientific precision, and the technology behind our zero-rounding-error conversion tool."
+msgstr "Conozca Units Converters, nuestro compromiso con la precisión científica y la tecnología detrás de nuestra herramienta de conversión sin errores de redondeo."
 
 #: src/lib/units.ts:1183
 msgid "Length"
@@ -420,6 +453,10 @@ msgstr "Milla (internacional)"
 msgid "Millimetre"
 msgstr "Milímetro"
 
+#: src/routes/$lang/about.tsx:56
+msgid "Most online converters suffer from rounding errors because they use standard floating-point arithmetic. Our tool is built using <0>Decimal.js</0>, a library for arbitrary-precision decimal arithmetic. This means that when you convert units, you get mathematically perfect results without the common \"0.000000000004\" artifacts found in other tools."
+msgstr "La mayoría de los convertidores en línea sufren errores de redondeo porque utilizan aritmética de punto flotante estándar. Nuestra herramienta está construida con <0>Decimal.js</0>, una biblioteca para aritmética decimal de precisión arbitraria. Esto significa que cuando conviertes unidades, obtienes resultados matemáticamente perfectos sin los artefactos comunes \"0.000000000004\" que se encuentran en otras herramientas."
+
 #: src/lib/units.ts:1102
 msgid "Nanometre"
 msgstr "Nanómetro"
@@ -432,9 +469,17 @@ msgstr "Milla náutica (internacional)"
 msgid "Newton"
 msgstr "Newton"
 
+#: src/routes/$lang/about.tsx:52
+msgid "Our Commitment to Precision"
+msgstr "Nuestro compromiso con la precisión"
+
 #: src/components/website-description.tsx:101
 msgid "Our free online converter is the fastest way to switch between metric and imperial systems. Save time on complex math and get reliable conversions for school, lab work, or construction projects."
 msgstr "Nuestro convertidor en línea gratuito es la forma más rápida de cambiar entre los sistemas métrico e imperial. Ahorre tiempo en matemáticas complejas y obtenga conversiones confiables para la escuela, el trabajo de laboratorio o proyectos de construcción."
+
+#: src/routes/$lang/about.tsx:87
+msgid "Our platform is fully translated into English, Spanish, and Portuguese to serve users worldwide."
+msgstr "Nuestra plataforma está totalmente traducida al inglés, español y portugués para servir a usuarios de todo el mundo."
 
 #: src/lib/units.ts:1104
 msgid "Parsec"
@@ -460,13 +505,13 @@ msgstr "Por favor, proporcione tantos detalles como sea posible…"
 msgid "Precision Unit Converter: Metric, Imperial & Scientific"
 msgstr "Convertidor de unidades de precisión: Métrico, Imperial y Científico"
 
-#: src/components/footer.tsx:19
+#: src/components/footer.tsx:29
 msgid "Privacy Policy"
 msgstr "Política de privacidad"
 
 #: src/routes/$lang/convert.$quantity.$from.to.$to.tsx:275
 msgid "Quantities tabs"
-msgstr ""
+msgstr "Pestañas de cantidades"
 
 #: src/components/website-description.tsx:14
 msgid "Quickly convert between hundreds of units across <0>Length</0>,<1> Temperature</1>, <2>Area</2>, and <3>Volume</3>. Whether you are a student, engineer, or hobbyist, our tool provides high-precision results for everything from everyday measurements to advanced scientific data."
@@ -484,6 +529,10 @@ msgstr "Reintentar desde cero"
 msgid "Scientific grade units"
 msgstr "Unidades de grado científico"
 
+#: src/routes/$lang/about.tsx:75
+msgid "Scientific Grade:"
+msgstr "Grado científico:"
+
 #: src/components/feedback-section.tsx:97
 msgid "Sending..."
 msgstr "Enviando..."
@@ -495,6 +544,10 @@ msgstr "Precisión simple, rápida y de grado científico. Convierte cualquier c
 #: src/components/not-found.tsx:16
 msgid "Something went wrong"
 msgstr "Algo salió mal"
+
+#: src/routes/$lang/about.tsx:95
+msgid "Speed and Simplicity:"
+msgstr "Rapidez y sencillez:"
 
 #: src/lib/units.ts:1155
 msgid "Square Centimetre"
@@ -568,6 +621,10 @@ msgstr "El único convertidor de unidades que necesitarás"
 msgid "The page you're looking for isn't found, we suggest you back to home."
 msgstr "La página que busca no se encuentra, le sugerimos que vuelva al inicio."
 
+#: src/routes/$lang/about.tsx:107
+msgid "The Team"
+msgstr "El equipo"
+
 #: src/routes/$lang/convert.$quantity.$from.to.$to.tsx:313
 msgid "To"
 msgstr "A"
@@ -602,6 +659,10 @@ msgstr "Units Converters"
 msgid "Units Converters | Precision Conversion Tool"
 msgstr "Units Converters | Herramienta de conversión de precisión"
 
+#: src/routes/$lang/about.tsx:111
+msgid "Units Converters is developed and maintained by <0>Voyager Tecnologias LTDA</0>. We are a small team passionate about building high-quality digital utilities that solve everyday problems with technical excellence."
+msgstr "Units Converters es desarrollado y mantenido por <0>Voyager Tecnologias LTDA</0>. Somos un equipo pequeño apasionado por crear utilidades digitales de alta calidad que resuelven problemas cotidianos con excelencia técnica."
+
 #. placeholder {0}: import.meta.env.DEV ? " — Dev" : ""
 #: src/routes/$lang/route.tsx:73
 msgid "Units Converters{0}"
@@ -614,6 +675,10 @@ msgstr "Volumen"
 #: src/routes/$lang/convert.$quantity.$from.to.$to.tsx:117
 msgid "We couldn't find those specific units. Try our default converter."
 msgstr "No pudimos encontrar esas unidades específicas. Pruebe nuestro convertidor predeterminado."
+
+#: src/routes/$lang/about.tsx:77
+msgid "We include rare and precise units like Planck length, Bohr radius, and Ångström for advanced scientific research."
+msgstr "Incluimos unidades raras y precisas como la longitud de Planck, el radio de Bohr y el Ångström para investigaciones científicas avanzadas."
 
 #: src/components/website-description.tsx:63
 msgid "Why Use Our Converter?"
@@ -638,3 +703,24 @@ msgstr "Zeptómetro"
 #: src/lib/units.ts:1108
 msgid "Zettametre"
 msgstr "Zettámetro"
+
+#: src/routes/$lang/about.tsx:32
+msgid "About Units Converters"
+msgstr "Acerca de Units Converters"
+
+#: src/routes/$lang/about.tsx:12
+msgid "About Units Converters | Our Mission & Technology"
+msgstr "Acerca de Units Converters | Nuestra misión y tecnología"
+
+#: src/routes/$lang/about.tsx:36
+msgid "At Units Converters, our mission is to provide the most accurate, reliable, and easy-to-use conversion tool on the web. Whether you are a student solving a physics problem, an engineer working on a global project, or just someone trying to follow a recipe, we ensure your measurements are exact."
+msgstr "En Units Converters, nuestra misión es proporcionar la herramienta de conversión más precisa, confiable y fácil de usar en la web. Ya sea que seas un estudiante que resuelve un problema de física, un ingeniero que trabaja en un proyecto global o simplemente alguien que intenta seguir una receta, nos aseguramos de que tus medidas sean exactas."
+
+#: src/routes/$lang/about.tsx:121
+#: src/routes/$lang/convert.$quantity.$from.to.$to.tsx:122
+msgid "Back to Home"
+msgstr "Volver al inicio"
+
+#: src/components/footer.tsx:21
+msgid "About"
+msgstr "Acerca de"
