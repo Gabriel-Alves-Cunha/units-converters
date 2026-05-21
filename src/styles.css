@@ -1,11 +1,10 @@
-@import url("https://fonts.cdnfonts.com/css/inter?display=swap");
 @import "tailwindcss";
 
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
+	--font-sans: InterVariable, sans-serif;
 	--font-heading: var(--font-sans);
-	--font-sans: "Inter Variable", Inter, sans-serif;
 	--color-sidebar-ring: var(--sidebar-ring);
 	--color-sidebar-border: var(--sidebar-border);
 	--color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -150,10 +149,6 @@
 		@apply border-border outline-ring/50;
 	}
 
-	body {
-		@apply bg-background text-foreground;
-	}
-
 	button:not(:disabled),
 	[role="button"]:not(:disabled) {
 		cursor: pointer;
@@ -164,8 +159,6 @@
 	}
 
 	html {
-		--safe-bottom: env(safe-area-inset-bottom, 0px);
-		--safe-top: env(safe-area-inset-top, 0px);
 		--simple-scrollbar-width: 12px;
 		--header-height: 4rem;
 
@@ -179,13 +172,10 @@
 			--header-height: 3rem;
 		}
 
-		contain-intrinsic-size: auto 3000px;
-		content-visibility: auto;
-
 		-webkit-font-smoothing: antialiased;
 		touch-action: manipulation;
 
-		@apply font-sans font-features-inter tabular-nums;
+		@apply font-sans font-features-inter tabular-nums bg-background text-foreground;
 
 		h1 {
 			@apply scroll-m-20 text-3xl font-semibold tracking-tight first:mt-0;
@@ -213,18 +203,6 @@
 
 @custom-variant mobile {
 	@media (width < 32rem) {
-		@slot;
-	}
-}
-
-@custom-variant big-screen {
-	@media (width >= 75rem) {
-		@slot;
-	}
-}
-
-@custom-variant desktop {
-	@media (width >= 32rem) and (width < 75rem) {
 		@slot;
 	}
 }
@@ -270,10 +248,6 @@
 	scrollbar-gutter: stable;
 }
 
-@utility scrollbar-both-edges {
-	scrollbar-gutter: stable both-edges;
-}
-
 @utility scrollbar-width-small {
 	--simple-scrollbar-width: 6px;
 }
@@ -314,4 +288,20 @@
 
 @utility link {
 	@apply text-link hover:text-link-hover active:text-link-active visited:text-link-visited;
+}
+
+@font-face {
+	font-family: "InterVariable";
+	font-style: normal;
+	font-weight: 100 900;
+	font-display: swap;
+	src: url("/fonts/InterVariable.woff2") format("woff2");
+}
+
+@font-face {
+	font-family: "InterVariable";
+	font-style: italic;
+	font-weight: 100 900;
+	font-display: swap;
+	src: url("/fonts/InterVariable-Italic.woff2") format("woff2");
 }

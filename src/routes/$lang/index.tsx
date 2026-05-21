@@ -24,7 +24,7 @@ function Home() {
 	return (
 		<div className="flex flex-col gap-12 min-h-fit converter-content py-8">
 			<section className="text-center space-y-4">
-				<h2 className="text-4xl font-bold tracking-tight text-primary sm:text-5xl">
+				<h2 className="text-4xl font-bold tracking-tight text-primary sm:text-5xl min-h-28">
 					<Trans>The Only Unit Converter You'll Ever Need</Trans>
 				</h2>
 
@@ -63,7 +63,7 @@ function Home() {
 									{i18n._(QuantitiesWithTranslations[quantity])}
 								</h3>
 
-								<ChevronRight className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />
+								<ChevronRight className="size-5 text-muted-foreground group-hover:text-primary" />
 							</div>
 
 							<p className="text-muted-foreground">

@@ -51,9 +51,9 @@ export function FeedbackSection() {
 	return (
 		<form className="converter-content" onSubmit={handleSubmit}>
 			<div className="mb-10 text-center mobile:mt-4 px-4">
-				<h5 className="text-2xl font-bold text-foreground">
+				<h3 className="text-2xl font-bold text-foreground">
 					<Trans>How could this website improve?</Trans>
-				</h5>
+				</h3>
 
 				<p className="text-muted-foreground">
 					<Trans>

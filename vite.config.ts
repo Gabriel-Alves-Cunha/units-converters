@@ -35,6 +35,7 @@ const config = defineConfig(({ mode }) => {
 					failOnError: true,
 					crawlLinks: true,
 					enabled: true,
+					filter: ({ path }) => path !== "/",
 				},
 				sitemap: {
 					host: baseUrl,

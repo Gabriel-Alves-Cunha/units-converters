@@ -97,7 +97,7 @@ export function WebsiteDescription() {
 
 			<hr className="converter-content" />
 
-			<p className="text-sm italic py-auto">
+			<p className="text-sm py-auto">
 				<Trans>
 					Our free online converter is the fastest way to switch between metric
 					and imperial systems. Save time on complex math and get reliable

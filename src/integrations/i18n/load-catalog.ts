@@ -3,7 +3,6 @@ import { type I18n } from "@lingui/core";
 import { messages as enMessages } from "#/locales/en/messages.ts";
 
 export const locales = {
-	pseudo: "Pseudo",
 	pt: "Português",
 	en: "English",
 	es: "Español",
@@ -25,13 +24,6 @@ export const defaultLocale: Locales = "en";
  */
 export async function loadCatalog(locale: string, i18n: I18n) {
 	if (locale === i18n.locale) {
-		return;
-	}
-
-	if (locale === "pseudo") {
-		i18n.load("pseudo", {}); // Load empty messages
-		i18n.activate("pseudo");
-
 		return;
 	}
 

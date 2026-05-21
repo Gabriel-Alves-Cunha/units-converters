@@ -46,16 +46,19 @@ export const Route = createRootRouteWithContext<MyRouterContext>()({
 				{
 					title: `Units Converters${import.meta.env.DEV ? " — Dev" : ""}`,
 				},
-				{ rel: "preconnect", href: "https://rsms.me/" },
-				{
-					href: "https://rsms.me/inter/inter.css",
-					rel: "stylesheet",
-				},
 			],
 			links: [
 				{
+					rel: "preload",
+					href: "/fonts/InterVariable.woff2",
+					as: "font",
+					type: "font/woff2",
+					crossOrigin: "anonymous",
+				},
+				{
 					rel: "stylesheet",
 					href: appCss,
+					fetchPriority: "high",
 				},
 				{
 					rel: "icon",
@@ -63,7 +66,25 @@ export const Route = createRootRouteWithContext<MyRouterContext>()({
 				},
 				{
 					rel: "manifest",
-					href: "/manifest.json",
+					href: `data:application/manifest+json,${encodeURIComponent(
+						JSON.stringify({
+							short_name: "Units Conv",
+							name: "Units Converters - Precision Conversion Tool",
+							description:
+								"High-precision unit converter for Length, Temperature, Area, and Volume.",
+							icons: [
+								{
+									src: "/favicon.ico",
+									sizes: "64x64 32x32 24x24 16x16",
+									type: "image/x-icon",
+								},
+							],
+							start_url: "/",
+							display: "standalone",
+							theme_color: "#000000",
+							background_color: "#ffffff",
+						}),
+					)}`,
 				},
 			],
 		};
@@ -78,6 +99,12 @@ function RootDocument({ children }: React.PropsWithChildren) {
 		<html lang={i18n.locale}>
 			<head>
 				<HeadContent />
+
+				<script
+					dangerouslySetInnerHTML={{
+						__html: `if (window.location.pathname === '/') window.location.replace('/en' + window.location.search);`,
+					}}
+				/>
 
 				{import.meta.env.DEV ? (
 					<script
