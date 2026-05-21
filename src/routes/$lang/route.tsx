@@ -53,7 +53,7 @@ export const Route = createFileRoute("/$lang")({
 			});
 		}
 
-		const { pathname } = ctx.match;
+		const { pathname } = ctx.matches.at(-1) ?? ctx.match; // Fallback to root if no matches (shouldn't happen)
 
 		// Extract the part of the path AFTER the language (e.g., /en/length -> length)
 		const pathSegments = pathname.split("/").filter(Boolean);
@@ -61,7 +61,7 @@ export const Route = createFileRoute("/$lang")({
 
 		// Generate alternate language links automatically
 		const hreflangLinks = localeKeys.map((locale) => ({
-			href: `${BASE_URL}/${locale}/${pathAfterLang}`,
+			href: `${BASE_URL}/${locale}${pathAfterLang ? `/${pathAfterLang}` : ""}`,
 			rel: "alternate",
 			hrefLang: locale,
 		}));
@@ -121,30 +121,34 @@ export const Route = createFileRoute("/$lang")({
 				},
 			],
 			links: [
+				{
+					href: `${BASE_URL}/${lang}`,
+					rel: "canonical",
+				},
 				// Automated Hreflang Tags
 				...hreflangLinks,
 				// x-default (usually English)
 				{
-					href: `${BASE_URL}/en/${pathAfterLang}`,
+					href: `${BASE_URL}/en${pathAfterLang ? `/${pathAfterLang}` : ""}`,
 					hrefLang: "x-default",
 					rel: "alternate",
 				},
 			],
 		};
 
-		// console.log("lang route head", {
-		// 	ctx,
-		// 	hreflangLinks,
-		// 	pathname,
-		// 	pathAfterLang,
-		// 	pathSegments,
-		// 	head,
-		// 	"i18n.locale": i18n.locale,
-		// 	i18n,
-		// 	content: i18n._(
-		// 		msg`High-precision unit conversion for students and professionals. Convert hundreds of units instantly.`,
-		// 	),
-		// });
+		console.log("lang route head", {
+			ctx,
+			hreflangLinks,
+			pathname,
+			pathAfterLang,
+			pathSegments,
+			head,
+			"i18n.locale": i18n.locale,
+			i18n,
+			content: i18n._(
+				msg`High-precision unit conversion for students and professionals. Convert hundreds of units instantly.`,
+			),
+		});
 
 		return head;
 	},

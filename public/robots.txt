@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://units-converters.pages.dev/sitemap.xml
+Sitemap: https://units-converters.com/sitemap.xml
