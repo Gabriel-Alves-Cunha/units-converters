@@ -7,6 +7,7 @@ import { msg } from "@lingui/core/macro";
 import { CommonConversions } from "#/components/common-conversions";
 import { FeedbackSection } from "#/components/feedback-section";
 import { Footer } from "#/components/footer";
+import { CookieConsent } from "#/components/cookie-consent";
 import { WebsiteDescription } from "#/components/website-description";
 import {
 	defaultLocale,
@@ -186,6 +187,7 @@ export const Route = createFileRoute("/$lang")({
 
 					<Footer />
 				</main>
+				<CookieConsent />
 			</>
 		);
 	},

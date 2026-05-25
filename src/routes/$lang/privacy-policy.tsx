@@ -5,6 +5,8 @@ export const Route = createFileRoute("/$lang/privacy-policy")({
 });
 
 function RouteComponent() {
+	const siteUrl = typeof window !== "undefined" ? window.location.origin : (import.meta.env.VITE_BASE_URL || "https://units-converters.com");
+
 	return (
 		<div className="converter-content">
 			<style
@@ -105,9 +107,9 @@ function RouteComponent() {
 											<a
 												target="_blank"
 												data-custom-class="link"
-												href="https://units-converters.staging-units-converter.workers.dev/"
+												href={siteUrl}
 											>
-												https://units-converters.staging-units-converter.workers.dev/
+												{siteUrl}
 											</a>
 										</bdt>
 									</span>
@@ -3900,6 +3902,58 @@ function RouteComponent() {
 																																					site
 																																					functions.
 																																				</span>
+																																			</span>
+																																		</span>
+																																	</div>
+																																	<div style={{ lineHeight: "1.5" }}>
+																																		<br />
+																																	</div>
+																																	<div style={{ lineHeight: "1.5" }}>
+																																		<strong>
+																																			<span style={{ fontSize: 15 }}>
+																																				<span data-custom-class="heading_2">
+																																					<h3>Third-Party Advertising &amp; Google AdSense</h3>
+																																				</span>
+																																			</span>
+																																		</strong>
+																																	</div>
+																																	<div style={{ lineHeight: "1.5" }}>
+																																		<span style={{ fontSize: 15, color: "rgb(89, 89, 89)" }}>
+																																			<span data-custom-class="body_text">
+																																				We use third-party advertising companies to serve ads when you visit our Services. Specifically, <strong>Google AdSense</strong> is used to serve ads. Google and other third-party vendors use cookies to serve ads based on your prior visits to our website or other websites on the Internet. Google's use of advertising cookies enables it and its partners to serve ads to you based on your visits to our site and/or other sites on the Internet.
+																																			</span>
+																																		</span>
+																																	</div>
+																																	<div style={{ lineHeight: "1.5" }}>
+																																		<span style={{ fontSize: 15, color: "rgb(89, 89, 89)" }}>
+																																			<span data-custom-class="body_text">
+																																				You can opt out of personalized advertising by visiting Google's <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener noreferrer" data-custom-class="link">Ads Settings</a>. Alternatively, you can opt out of a third-party vendor's use of cookies for personalized advertising by visiting <a href="https://www.aboutads.info/" target="_blank" rel="noopener noreferrer" data-custom-class="link">www.aboutads.info</a>.
+																																			</span>
+																																		</span>
+																																	</div>
+																																	<div style={{ lineHeight: "1.5" }}>
+																																		<br />
+																																	</div>
+																																	<div style={{ lineHeight: "1.5" }}>
+																																		<strong>
+																																			<span style={{ fontSize: 15 }}>
+																																				<span data-custom-class="heading_2">
+																																					<h3>Publicidade de terceiros e Google AdSense</h3>
+																																				</span>
+																																			</span>
+																																		</strong>
+																																	</div>
+																																	<div style={{ lineHeight: "1.5" }}>
+																																		<span style={{ fontSize: 15, color: "rgb(89, 89, 89)" }}>
+																																			<span data-custom-class="body_text">
+																																				Utilizamos empresas de publicidade de terceiros para apresentar anúncios quando visita os nossos Serviços. Especificamente, o <strong>Google AdSense</strong> é utilizado para apresentar anúncios. A Google e outros fornecedores terceiros utilizam cookies para apresentar anúncios com base em visitas anteriores dos utilizadores ao nosso website ou a outros websites na Internet. A utilização de cookies de publicidade por parte da Google permite que esta e os respetivos parceiros apresentem anúncios aos utilizadores com base nas visitas que estes efetuaram ao nosso e/ou a outros websites na Internet.
+																																			</span>
+																																		</span>
+																																	</div>
+																																	<div style={{ lineHeight: "1.5" }}>
+																																		<span style={{ fontSize: 15, color: "rgb(89, 89, 89)" }}>
+																																			<span data-custom-class="body_text">
+																																				Pode desativar a publicidade personalizada ao aceder às <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener noreferrer" data-custom-class="link">Definições de anúncios da Google</a>. Em alternativa, pode desativar a utilização de cookies de terceiros para publicidade personalizada ao visitar <a href="https://www.aboutads.info/" target="_blank" rel="noopener noreferrer" data-custom-class="link">www.aboutads.info</a>.
 																																			</span>
 																																		</span>
 																																	</div>

@@ -91,6 +91,10 @@ msgstr ""
 msgid "About Units Converters | Our Mission & Technology"
 msgstr ""
 
+#: src/components/cookie-consent.tsx:88
+msgid "Accept All"
+msgstr ""
+
 #: src/lib/units.ts:1152
 msgid "Acre"
 msgstr ""
@@ -204,6 +208,10 @@ msgstr ""
 msgid "Convert {translatedUnits} and more."
 msgstr ""
 
+#: src/components/cookie-consent.tsx:49
+msgid "Cookie Consent"
+msgstr ""
+
 #: src/lib/units.ts:1130
 msgid "Cubic Centimetre"
 msgstr ""
@@ -280,6 +288,10 @@ msgstr ""
 msgid "Decimetre"
 msgstr ""
 
+#: src/components/cookie-consent.tsx:81
+msgid "Decline"
+msgstr ""
+
 #: src/lib/units.ts:1139
 msgid "Dekalitre"
 msgstr ""
@@ -308,7 +320,7 @@ msgstr ""
 msgid "Fahrenheit"
 msgstr ""
 
-#: src/routes/$lang/route.tsx:79
+#: src/routes/$lang/route.tsx:80
 msgid "Fast, accurate, and easy-to-use unit converter for Length, Temperature, Area, and Volume. Scientific precision with zero rounding errors."
 msgstr ""
 
@@ -360,8 +372,8 @@ msgstr ""
 msgid "High-precision conversions"
 msgstr ""
 
-#: src/routes/$lang/route.tsx:100
-#: src/routes/$lang/route.tsx:119
+#: src/routes/$lang/route.tsx:101
+#: src/routes/$lang/route.tsx:120
 msgid "High-precision unit conversion for students and professionals. Convert hundreds of units instantly."
 msgstr ""
 
@@ -649,7 +661,7 @@ msgstr ""
 msgid "Try Again"
 msgstr ""
 
-#: src/routes/$lang/route.tsx:85
+#: src/routes/$lang/route.tsx:86
 msgid "unit converter, metric conversion, imperial to metric, length converter, temperature converter, area converter, volume converter, scientific calculator"
 msgstr ""
 
@@ -657,13 +669,13 @@ msgstr ""
 msgid "Unit not found"
 msgstr ""
 
-#: src/routes/$lang/route.tsx:105
-#: src/routes/$lang/route.tsx:165
+#: src/routes/$lang/route.tsx:106
+#: src/routes/$lang/route.tsx:166
 msgid "Units Converters"
 msgstr ""
 
-#: src/routes/$lang/route.tsx:95
-#: src/routes/$lang/route.tsx:114
+#: src/routes/$lang/route.tsx:96
+#: src/routes/$lang/route.tsx:115
 msgid "Units Converters | Precision Conversion Tool"
 msgstr ""
 
@@ -672,12 +684,16 @@ msgid "Units Converters is developed and maintained by <0>Voyager Tecnologias LT
 msgstr ""
 
 #. placeholder {0}: import.meta.env.DEV ? " — Dev" : ""
-#: src/routes/$lang/route.tsx:73
+#: src/routes/$lang/route.tsx:74
 msgid "Units Converters{0}"
 msgstr ""
 
 #: src/lib/units.ts:1189
 msgid "Volume"
+msgstr ""
+
+#: src/components/cookie-consent.tsx:57
+msgid "We and our partners use cookies to analyze site traffic, personalize content, and serve relevant advertisements (such as Google AdSense). By clicking \"Accept All\", you agree to our use of cookies as detailed in our <0>Privacy Policy</0>."
 msgstr ""
 
 #: src/routes/$lang/convert.$quantity.$from.to.$to.tsx:118
