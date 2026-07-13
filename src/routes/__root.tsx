@@ -8,7 +8,10 @@ import {
 import { TanStackRouterDevtoolsPanel } from "@tanstack/react-router-devtools";
 import { safeParse } from "valibot";
 
-import { loadDefaultCatalog } from "#/integrations/i18n/load-catalog";
+import {
+	getLocaleDir,
+	loadDefaultCatalog,
+} from "#/integrations/i18n/load-catalog";
 import {
 	defaultSearchParams,
 	globalSearchParamsSchema,
@@ -96,7 +99,7 @@ function RootDocument({ children }: React.PropsWithChildren) {
 	const { i18n } = Route.useRouteContext();
 
 	return (
-		<html lang={i18n.locale}>
+		<html dir={getLocaleDir(i18n.locale)} lang={i18n.locale}>
 			<head>
 				<HeadContent />
 
@@ -106,18 +109,29 @@ function RootDocument({ children }: React.PropsWithChildren) {
 					}}
 				/>
 
+				{/* Google Consent Mode v2 defaults — must run before any Google tags */}
+				<script
+					dangerouslySetInnerHTML={{
+						__html: `
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('consent', 'default', {
+	ad_storage: 'denied',
+	ad_user_data: 'denied',
+	ad_personalization: 'denied',
+	analytics_storage: 'denied',
+	wait_for_update: 500
+});
+`.trim(),
+					}}
+				/>
+
 				{import.meta.env.DEV ? (
 					<script
 						src="//unpkg.com/react-scan/dist/auto.global.js"
 						crossOrigin="anonymous"
 					/>
 				) : null}
-
-				<script
-					src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4889381718129009"
-					crossOrigin="anonymous"
-					async
-				></script>
 			</head>
 
 			<body className="grid grid-rows-[var(--header-height)_1fr] [grid-template-areas:'header'_'main'] grid-cols-1 h-dvh w-dvw overflow-hidden">

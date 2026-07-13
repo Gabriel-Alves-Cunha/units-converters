@@ -12,8 +12,13 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as LangRouteRouteImport } from './routes/$lang/route'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as LangIndexRouteImport } from './routes/$lang/index'
+import { Route as LangTermsOfServiceRouteImport } from './routes/$lang/terms-of-service'
 import { Route as LangPrivacyPolicyRouteImport } from './routes/$lang/privacy-policy'
+import { Route as LangContactRouteImport } from './routes/$lang/contact'
 import { Route as LangAboutRouteImport } from './routes/$lang/about'
+import { Route as LangGuidesIndexRouteImport } from './routes/$lang/guides/index'
+import { Route as LangGuidesSlugRouteImport } from './routes/$lang/guides/$slug'
+import { Route as LangCategoryQuantityRouteImport } from './routes/$lang/category.$quantity'
 import { Route as LangConvertQuantityFromToToRouteImport } from './routes/$lang/convert.$quantity.$from.to.$to'
 
 const LangRouteRoute = LangRouteRouteImport.update({
@@ -31,14 +36,39 @@ const LangIndexRoute = LangIndexRouteImport.update({
   path: '/',
   getParentRoute: () => LangRouteRoute,
 } as any)
+const LangTermsOfServiceRoute = LangTermsOfServiceRouteImport.update({
+  id: '/terms-of-service',
+  path: '/terms-of-service',
+  getParentRoute: () => LangRouteRoute,
+} as any)
 const LangPrivacyPolicyRoute = LangPrivacyPolicyRouteImport.update({
   id: '/privacy-policy',
   path: '/privacy-policy',
   getParentRoute: () => LangRouteRoute,
 } as any)
+const LangContactRoute = LangContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => LangRouteRoute,
+} as any)
 const LangAboutRoute = LangAboutRouteImport.update({
   id: '/about',
   path: '/about',
+  getParentRoute: () => LangRouteRoute,
+} as any)
+const LangGuidesIndexRoute = LangGuidesIndexRouteImport.update({
+  id: '/guides/',
+  path: '/guides/',
+  getParentRoute: () => LangRouteRoute,
+} as any)
+const LangGuidesSlugRoute = LangGuidesSlugRouteImport.update({
+  id: '/guides/$slug',
+  path: '/guides/$slug',
+  getParentRoute: () => LangRouteRoute,
+} as any)
+const LangCategoryQuantityRoute = LangCategoryQuantityRouteImport.update({
+  id: '/category/$quantity',
+  path: '/category/$quantity',
   getParentRoute: () => LangRouteRoute,
 } as any)
 const LangConvertQuantityFromToToRoute =
@@ -52,15 +82,25 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/$lang': typeof LangRouteRouteWithChildren
   '/$lang/about': typeof LangAboutRoute
+  '/$lang/contact': typeof LangContactRoute
   '/$lang/privacy-policy': typeof LangPrivacyPolicyRoute
+  '/$lang/terms-of-service': typeof LangTermsOfServiceRoute
   '/$lang/': typeof LangIndexRoute
+  '/$lang/category/$quantity': typeof LangCategoryQuantityRoute
+  '/$lang/guides/$slug': typeof LangGuidesSlugRoute
+  '/$lang/guides/': typeof LangGuidesIndexRoute
   '/$lang/convert/$quantity/$from/to/$to': typeof LangConvertQuantityFromToToRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/$lang/about': typeof LangAboutRoute
+  '/$lang/contact': typeof LangContactRoute
   '/$lang/privacy-policy': typeof LangPrivacyPolicyRoute
+  '/$lang/terms-of-service': typeof LangTermsOfServiceRoute
   '/$lang': typeof LangIndexRoute
+  '/$lang/category/$quantity': typeof LangCategoryQuantityRoute
+  '/$lang/guides/$slug': typeof LangGuidesSlugRoute
+  '/$lang/guides': typeof LangGuidesIndexRoute
   '/$lang/convert/$quantity/$from/to/$to': typeof LangConvertQuantityFromToToRoute
 }
 export interface FileRoutesById {
@@ -68,8 +108,13 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/$lang': typeof LangRouteRouteWithChildren
   '/$lang/about': typeof LangAboutRoute
+  '/$lang/contact': typeof LangContactRoute
   '/$lang/privacy-policy': typeof LangPrivacyPolicyRoute
+  '/$lang/terms-of-service': typeof LangTermsOfServiceRoute
   '/$lang/': typeof LangIndexRoute
+  '/$lang/category/$quantity': typeof LangCategoryQuantityRoute
+  '/$lang/guides/$slug': typeof LangGuidesSlugRoute
+  '/$lang/guides/': typeof LangGuidesIndexRoute
   '/$lang/convert/$quantity/$from/to/$to': typeof LangConvertQuantityFromToToRoute
 }
 export interface FileRouteTypes {
@@ -78,23 +123,38 @@ export interface FileRouteTypes {
     | '/'
     | '/$lang'
     | '/$lang/about'
+    | '/$lang/contact'
     | '/$lang/privacy-policy'
+    | '/$lang/terms-of-service'
     | '/$lang/'
+    | '/$lang/category/$quantity'
+    | '/$lang/guides/$slug'
+    | '/$lang/guides/'
     | '/$lang/convert/$quantity/$from/to/$to'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/$lang/about'
+    | '/$lang/contact'
     | '/$lang/privacy-policy'
+    | '/$lang/terms-of-service'
     | '/$lang'
+    | '/$lang/category/$quantity'
+    | '/$lang/guides/$slug'
+    | '/$lang/guides'
     | '/$lang/convert/$quantity/$from/to/$to'
   id:
     | '__root__'
     | '/'
     | '/$lang'
     | '/$lang/about'
+    | '/$lang/contact'
     | '/$lang/privacy-policy'
+    | '/$lang/terms-of-service'
     | '/$lang/'
+    | '/$lang/category/$quantity'
+    | '/$lang/guides/$slug'
+    | '/$lang/guides/'
     | '/$lang/convert/$quantity/$from/to/$to'
   fileRoutesById: FileRoutesById
 }
@@ -126,6 +186,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LangIndexRouteImport
       parentRoute: typeof LangRouteRoute
     }
+    '/$lang/terms-of-service': {
+      id: '/$lang/terms-of-service'
+      path: '/terms-of-service'
+      fullPath: '/$lang/terms-of-service'
+      preLoaderRoute: typeof LangTermsOfServiceRouteImport
+      parentRoute: typeof LangRouteRoute
+    }
     '/$lang/privacy-policy': {
       id: '/$lang/privacy-policy'
       path: '/privacy-policy'
@@ -133,11 +200,39 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LangPrivacyPolicyRouteImport
       parentRoute: typeof LangRouteRoute
     }
+    '/$lang/contact': {
+      id: '/$lang/contact'
+      path: '/contact'
+      fullPath: '/$lang/contact'
+      preLoaderRoute: typeof LangContactRouteImport
+      parentRoute: typeof LangRouteRoute
+    }
     '/$lang/about': {
       id: '/$lang/about'
       path: '/about'
       fullPath: '/$lang/about'
       preLoaderRoute: typeof LangAboutRouteImport
+      parentRoute: typeof LangRouteRoute
+    }
+    '/$lang/guides/': {
+      id: '/$lang/guides/'
+      path: '/guides'
+      fullPath: '/$lang/guides/'
+      preLoaderRoute: typeof LangGuidesIndexRouteImport
+      parentRoute: typeof LangRouteRoute
+    }
+    '/$lang/guides/$slug': {
+      id: '/$lang/guides/$slug'
+      path: '/guides/$slug'
+      fullPath: '/$lang/guides/$slug'
+      preLoaderRoute: typeof LangGuidesSlugRouteImport
+      parentRoute: typeof LangRouteRoute
+    }
+    '/$lang/category/$quantity': {
+      id: '/$lang/category/$quantity'
+      path: '/category/$quantity'
+      fullPath: '/$lang/category/$quantity'
+      preLoaderRoute: typeof LangCategoryQuantityRouteImport
       parentRoute: typeof LangRouteRoute
     }
     '/$lang/convert/$quantity/$from/to/$to': {
@@ -152,15 +247,25 @@ declare module '@tanstack/react-router' {
 
 interface LangRouteRouteChildren {
   LangAboutRoute: typeof LangAboutRoute
+  LangContactRoute: typeof LangContactRoute
   LangPrivacyPolicyRoute: typeof LangPrivacyPolicyRoute
+  LangTermsOfServiceRoute: typeof LangTermsOfServiceRoute
   LangIndexRoute: typeof LangIndexRoute
+  LangCategoryQuantityRoute: typeof LangCategoryQuantityRoute
+  LangGuidesSlugRoute: typeof LangGuidesSlugRoute
+  LangGuidesIndexRoute: typeof LangGuidesIndexRoute
   LangConvertQuantityFromToToRoute: typeof LangConvertQuantityFromToToRoute
 }
 
 const LangRouteRouteChildren: LangRouteRouteChildren = {
   LangAboutRoute: LangAboutRoute,
+  LangContactRoute: LangContactRoute,
   LangPrivacyPolicyRoute: LangPrivacyPolicyRoute,
+  LangTermsOfServiceRoute: LangTermsOfServiceRoute,
   LangIndexRoute: LangIndexRoute,
+  LangCategoryQuantityRoute: LangCategoryQuantityRoute,
+  LangGuidesSlugRoute: LangGuidesSlugRoute,
+  LangGuidesIndexRoute: LangGuidesIndexRoute,
   LangConvertQuantityFromToToRoute: LangConvertQuantityFromToToRoute,
 }
 

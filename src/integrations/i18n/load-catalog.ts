@@ -3,16 +3,35 @@ import { type I18n } from "@lingui/core";
 import { messages as enMessages } from "#/locales/en/messages.ts";
 
 export const locales = {
-	pt: "Português",
+	pt: "Português",
 	en: "English",
-	es: "Español",
+	es: "Español",
+	fr: "Français",
+	de: "Deutsch",
+	ja: "日本語",
+	zh: "中文",
+	"zh-TW": "繁體中文",
+	ko: "한국어",
+	ru: "Русский",
+	it: "Italiano",
+	id: "Bahasa Indonesia",
+	ar: "العربية",
+	pl: "Polski",
+	nl: "Nederlands",
+	tr: "Türkçe",
+	hi: "हिन्दी",
 } as const;
 
 export type Locales = keyof typeof locales;
 
-export function isLocaleValid(locale: string) {
-	// @ts-ignore
-	return Boolean(locales[locale]);
+export const rtlLocales = new Set<Locales>(["ar"]);
+
+export function isLocaleValid(locale: string): locale is Locales {
+	return Object.hasOwn(locales, locale);
+}
+
+export function getLocaleDir(locale: string): "rtl" | "ltr" {
+	return isLocaleValid(locale) && rtlLocales.has(locale) ? "rtl" : "ltr";
 }
 
 export const defaultLocale: Locales = "en";
@@ -41,9 +60,16 @@ export async function loadCatalog(locale: string, i18n: I18n) {
 }
 
 export function loadDefaultCatalog(i18n: I18n) {
-	// Don't load default catalog if it's already loaded
-	// @ts-ignore
+	// Never clobber an already-active locale (root beforeLoad runs on every
+	// navigation and used to briefly flip UI strings back to English).
+	if (i18n.locale) {
+		return;
+	}
+
+	// Messages may already be loaded (e.g. after HMR) without an active locale.
+	// @ts-expect-error — private Lingui catalog map
 	if (i18n._messages["en"]) {
+		i18n.activate("en");
 		return;
 	}
 

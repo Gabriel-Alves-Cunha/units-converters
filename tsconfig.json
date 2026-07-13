@@ -27,7 +27,6 @@
 		"forceConsistentCasingInFileNames": true,
 		"noErrorTruncation": true,
 		"useUnknownInCatchVariables": true,
-		"suppressImplicitAnyIndexErrors": false,
 		"strictPropertyInitialization": true,
 		"strictNullChecks": true,
 		"strictFunctionTypes": true,

@@ -2,12 +2,24 @@ import { msg } from "@lingui/core/macro";
 import { Trans } from "@lingui/react/macro";
 import { createFileRoute, Link } from "@tanstack/react-router";
 
-import { defaultLocale } from "#/integrations/i18n/load-catalog";
+import {
+	defaultLocale,
+	loadCatalog,
+	loadDefaultCatalog,
+} from "#/integrations/i18n/load-catalog";
 import { defaultSearchParams } from "#/lib/global-params-params";
 
 export const Route = createFileRoute("/$lang/about")({
-	head({ match }) {
+	async head({ match }) {
 		const { i18n } = match.context;
+		const lang = match.params.lang || defaultLocale;
+
+		if (!i18n.locale) {
+			await loadCatalog(lang, i18n).catch(() => {
+				loadDefaultCatalog(i18n);
+			});
+		}
+
 		const title = i18n._(
 			msg`About Units Converters | Our Mission & Technology`,
 		);
@@ -84,8 +96,10 @@ function AboutPage() {
 							<Trans>Global Accessibility:</Trans>
 						</strong>{" "}
 						<Trans>
-							Our platform is fully translated into English, Spanish, and
-							Portuguese to serve users worldwide.
+							Our platform is fully translated into English, Spanish,
+							Portuguese, French, German, Japanese, Chinese, Traditional
+							Chinese, Korean, Russian, Italian, Indonesian, Arabic, Polish,
+							Dutch, Turkish, and Hindi to serve users worldwide.
 						</Trans>
 					</li>
 

@@ -3,9 +3,11 @@ import { useLingui } from "@lingui/react";
 import { msg, t } from "@lingui/core/macro";
 import { useState } from "react";
 
+import { cn } from "#/lib/utils";
+
 const supportEmail = "voyagertecnologias@gmail.com";
 
-export function FeedbackSection() {
+export function FeedbackSection({ className }: { className?: string }) {
 	const [isSending, setIsSending] = useState(false);
 	const { i18n } = useLingui();
 
@@ -49,7 +51,7 @@ export function FeedbackSection() {
 	}
 
 	return (
-		<form className="converter-content" onSubmit={handleSubmit}>
+		<form className={cn(className)} onSubmit={handleSubmit}>
 			<div className="mb-10 text-center mobile:mt-4 px-4">
 				<h3 className="text-2xl font-bold text-foreground">
 					<Trans>How could this website improve?</Trans>

@@ -14,6 +14,8 @@ export function getRouter() {
 		defaultPreloadStaleTime: 0,
 		defaultPreload: "intent",
 		scrollRestoration: true,
+		// `main` is the actual scroll container (body is overflow-hidden)
+		scrollToTopSelectors: ["main"],
 		routeTree,
 		search: {
 			strict: false, // If you want certain params to always persist without manually spreading them every time.

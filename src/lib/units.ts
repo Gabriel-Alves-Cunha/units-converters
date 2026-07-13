@@ -15,6 +15,7 @@ export const units = {
 	Length: {
 		"Planck Length": {
 			symbol: "lₚ",
+			description: msg`The Planck length is a fundamental physical constant representing the scale at which classical ideas about space and gravity break down. It is about 1.6 × 10⁻³⁵ metres and is used in theoretical physics.`,
 			toBaseUnit(input: Decimal) {
 				return Decimal.mul(input, Decimal.pow(10, -35));
 			},
@@ -25,6 +26,7 @@ export const units = {
 
 		Yoctometre: {
 			symbol: "ym",
+			description: msg`A yoctometre (ym) equals 10⁻²⁴ metres. It is an SI length prefix used for extremely small distances in particle and nuclear physics contexts.`,
 			toBaseUnit(input: Decimal) {
 				return Decimal.mul(input, Decimal.pow(10, -24));
 			},
@@ -35,6 +37,7 @@ export const units = {
 
 		Zeptometre: {
 			symbol: "zm",
+			description: msg`A zeptometre (zm) equals 10⁻²¹ metres. This SI unit describes subatomic-scale lengths far smaller than an atom.`,
 			toBaseUnit(input: Decimal) {
 				return Decimal.mul(input, Decimal.pow(10, -21));
 			},
@@ -45,6 +48,7 @@ export const units = {
 
 		Attometre: {
 			symbol: "am",
+			description: msg`An attometre (am) equals 10⁻¹⁸ metres. It is useful when describing distances comparable to the size of atomic nuclei.`,
 			toBaseUnit(input: Decimal) {
 				return Decimal.mul(input, Decimal.pow(10, -18));
 			},
@@ -55,6 +59,7 @@ export const units = {
 
 		Femtometre: {
 			symbol: "fm",
+			description: msg`A femtometre (fm), also called a fermi, equals 10⁻¹⁵ metres. Nuclear physicists use it to measure the size of atomic nuclei and nucleons.`,
 			toBaseUnit(input: Decimal) {
 				return Decimal.mul(input, Decimal.pow(10, -15));
 			},
@@ -65,6 +70,7 @@ export const units = {
 
 		Picometre: {
 			symbol: "pm",
+			description: msg`A picometre (pm) equals 10⁻¹² metres. It is commonly used for atomic radii and bond lengths in chemistry.`,
 			toBaseUnit(input: Decimal) {
 				return Decimal.mul(input, Decimal.pow(10, -12));
 			},
@@ -75,6 +81,7 @@ export const units = {
 
 		Bohr: {
 			symbol: "a₀",
+			description: msg`The Bohr radius (a₀) is the most probable distance between the nucleus and the electron in a hydrogen atom in its ground state, about 5.29 × 10⁻¹¹ metres.`,
 			toBaseUnit(input: Decimal) {
 				return Decimal.mul(
 					input,
@@ -91,6 +98,7 @@ export const units = {
 
 		Ångström: {
 			symbol: "Å",
+			description: msg`An ångström (Å) equals 10⁻¹⁰ metres, or 0.1 nanometres. It is widely used in spectroscopy and crystallography to express atomic-scale lengths.`,
 			toBaseUnit(input: Decimal) {
 				return Decimal.mul(input, Decimal.pow(10, -10));
 			},
@@ -101,6 +109,7 @@ export const units = {
 
 		Nanometre: {
 			symbol: "nm",
+			description: msg`A nanometre (nm) equals one billionth of a metre (10⁻⁹ m). It is the everyday unit for wavelengths of light, nanotechnology, and thin films.`,
 			toBaseUnit(input: Decimal) {
 				return Decimal.mul(input, Decimal.pow(10, -9));
 			},
@@ -111,6 +120,7 @@ export const units = {
 
 		Micrometre: {
 			symbol: "µm",
+			description: msg`A micrometre (µm), or micron, equals 10⁻⁶ metres. Biologists use it for cell sizes; engineers use it for fine manufacturing tolerances.`,
 			toBaseUnit(input: Decimal) {
 				return Decimal.mul(input, Decimal.pow(10, -6));
 			},
@@ -121,6 +131,7 @@ export const units = {
 
 		Millimetre: {
 			symbol: "mm",
+			description: msg`A millimetre (mm) equals 0.001 metres. It is a common everyday metric unit for small objects, engineering drawings, and rainfall.`,
 			toBaseUnit(input: Decimal) {
 				return Decimal.mul(input, 0.001);
 			},
@@ -131,6 +142,7 @@ export const units = {
 
 		Barleycorn: {
 			symbol: "",
+			description: msg`A barleycorn is an old English length unit equal to one-third of an inch. It historically underpinned shoe sizing systems.`,
 			toBaseUnit(input: Decimal) {
 				return Decimal.mul(input, Decimal.div(254, 30_000));
 			},
@@ -141,6 +153,7 @@ export const units = {
 
 		Centimetre: {
 			symbol: "cm",
+			description: msg`A centimetre (cm) equals 0.01 metres. It is one of the most familiar metric units for body measurements, clothing, and school science.`,
 			toBaseUnit(input: Decimal) {
 				return Decimal.mul(input, Decimal.pow(10, -2));
 			},
@@ -151,6 +164,7 @@ export const units = {
 
 		"Inch (International)": {
 			symbol: "in",
+			description: msg`An international inch equals exactly 25.4 millimetres. It remains a primary length unit in the United States customary system.`,
 			toBaseUnit(input: Decimal) {
 				return Decimal.mul(input, 0.0254);
 			},
@@ -161,6 +175,7 @@ export const units = {
 
 		Decimetre: {
 			symbol: "dm",
+			description: msg`A decimetre (dm) equals 0.1 metres, or 10 centimetres. It appears in metric education and some industrial specifications.`,
 			toBaseUnit(input: Decimal) {
 				return Decimal.mul(input, 0.1);
 			},
@@ -171,6 +186,7 @@ export const units = {
 
 		"Foot (International)": {
 			symbol: "ft",
+			description: msg`An international foot equals exactly 0.3048 metres (12 inches). It is widely used in construction, aviation altitude, and US everyday measurement.`,
 			toBaseUnit(input: Decimal) {
 				return Decimal.mul(input, 0.3048);
 			},
@@ -181,6 +197,7 @@ export const units = {
 
 		Cubit: {
 			symbol: "",
+			description: msg`A cubit is an ancient length unit based on the forearm, standardized here at 0.4572 metres. It appears in historical architecture and biblical scholarship.`,
 			toBaseUnit(input: Decimal) {
 				return Decimal.mul(input, 0.4572);
 			},
@@ -191,6 +208,7 @@ export const units = {
 
 		"Yard (International)": {
 			symbol: "yd",
+			description: msg`An international yard equals exactly 0.9144 metres (3 feet). It is common in fabric, sports fields, and US customary measurements.`,
 			toBaseUnit(input: Decimal) {
 				return Decimal.mul(input, 0.9144);
 			},
@@ -212,6 +230,7 @@ export const units = {
 
 		Ell: {
 			symbol: "ell",
+			description: msg`An ell is a historical cloth-measure length, standardized here at 1.143 metres. Tailors once used it for fabric lengths.`,
 			toBaseUnit(input: Decimal) {
 				return Decimal.mul(input, 1.143);
 			},
@@ -222,6 +241,7 @@ export const units = {
 
 		Fathom: {
 			symbol: "ftm",
+			description: msg`A fathom equals 1.8288 metres (6 feet). Mariners traditionally use it to express water depth.`,
 			toBaseUnit(input: Decimal) {
 				return Decimal.mul(input, 1.8288);
 			},
@@ -232,6 +252,7 @@ export const units = {
 
 		Decametre: {
 			symbol: "dam",
+			description: msg`A decametre (dam) equals 10 metres. It is an SI multiple occasionally used for surveying and athletics track distances.`,
 			toBaseUnit(input: Decimal) {
 				return Decimal.mul(input, 10);
 			},
@@ -242,6 +263,7 @@ export const units = {
 
 		Chain: {
 			symbol: "ch",
+			description: msg`A surveyor's chain (Gunter's chain) equals 66 feet, or about 20.117 metres. It was foundational to land surveying in English-speaking countries.`,
 			toBaseUnit(input: Decimal) {
 				return Decimal.mul(input, Decimal.div(79_200, 3_937));
 			},
@@ -252,6 +274,7 @@ export const units = {
 
 		Hectometre: {
 			symbol: "hm",
+			description: msg`A hectometre (hm) equals 100 metres. It is an SI multiple used in meteorology (rainfall rates) and some sports distances.`,
 			toBaseUnit(input: Decimal) {
 				return Decimal.mul(input, 100);
 			},
@@ -262,6 +285,7 @@ export const units = {
 
 		"Cable Length (International)": {
 			symbol: "",
+			description: msg`An international cable length equals 185.2 metres (one-tenth of a nautical mile). Navies historically used it for short sea distances.`,
 			toBaseUnit(input: Decimal) {
 				return Decimal.mul(input, 185.2);
 			},
@@ -272,6 +296,7 @@ export const units = {
 
 		Kilometre: {
 			symbol: "km",
+			description: msg`A kilometre (km) equals 1,000 metres. It is the standard metric unit for road distances, maps, and athletic races.`,
 			toBaseUnit(input: Decimal) {
 				return Decimal.mul(input, 1_000);
 			},
@@ -282,6 +307,7 @@ export const units = {
 
 		"Mile (International)": {
 			symbol: "mi",
+			description: msg`An international mile equals exactly 1,609.344 metres. It remains the primary long-distance road unit in the United States and United Kingdom.`,
 			toBaseUnit(input: Decimal) {
 				return Decimal.mul(input, 1_609.344);
 			},
@@ -292,6 +318,7 @@ export const units = {
 
 		"Nautical Mile (International)": {
 			symbol: "nmi",
+			description: msg`An international nautical mile equals exactly 1,852 metres. Aviation and maritime navigation use it because it relates closely to Earth's latitude.`,
 			toBaseUnit(input: Decimal) {
 				return Decimal.mul(input, 1_852);
 			},
@@ -302,6 +329,7 @@ export const units = {
 
 		Megametre: {
 			symbol: "Mm",
+			description: msg`A megametre (Mm) equals one million metres (1,000 kilometres). It is useful for planetary-scale distances.`,
 			toBaseUnit(input: Decimal) {
 				return Decimal.mul(input, Decimal.pow(10, 6));
 			},
@@ -312,6 +340,7 @@ export const units = {
 
 		Gigametre: {
 			symbol: "Gm",
+			description: msg`A gigametre (Gm) equals one billion metres. Astronomers sometimes use it for distances within the inner Solar System.`,
 			toBaseUnit(input: Decimal) {
 				return Decimal.mul(input, Decimal.pow(10, 9));
 			},
@@ -322,6 +351,7 @@ export const units = {
 
 		"Light Second": {
 			symbol: "",
+			description: msg`A light-second is the distance light travels in one second in vacuum, exactly 299,792,458 metres. It helps express near-Earth space distances.`,
 			toBaseUnit(input: Decimal) {
 				return Decimal.mul(input, 299792458);
 			},
@@ -332,6 +362,7 @@ export const units = {
 
 		"Light Minute": {
 			symbol: "",
+			description: msg`A light-minute is the distance light travels in one minute, about 18 million kilometres. The Sun–Earth light time is roughly eight light-minutes.`,
 			toBaseUnit(input: Decimal) {
 				return Decimal.mul(input, 17987547480);
 			},
@@ -342,6 +373,7 @@ export const units = {
 
 		"Astronomical Unit": {
 			symbol: "au",
+			description: msg`An astronomical unit (au) is the average Earth–Sun distance, exactly 149,597,870,700 metres. It is the standard yardstick for Solar System distances.`,
 			toBaseUnit(input: Decimal) {
 				return Decimal.mul(input, 149_597_870_700);
 			},
@@ -352,6 +384,7 @@ export const units = {
 
 		"Light Hour": {
 			symbol: "",
+			description: msg`A light-hour is the distance light travels in one hour, about 1.079 billion kilometres. It spans distances comparable to the outer planets' orbits.`,
 			toBaseUnit(input: Decimal) {
 				return Decimal.mul(input, 1079252848800);
 			},
@@ -362,6 +395,7 @@ export const units = {
 
 		"Light Day": {
 			symbol: "",
+			description: msg`A light-day is the distance light travels in one day, about 26 trillion metres. It bridges Solar System and nearby interstellar scales.`,
 			toBaseUnit(input: Decimal) {
 				return Decimal.mul(input, 25902068371200);
 			},
@@ -372,6 +406,7 @@ export const units = {
 
 		"Light Year": {
 			symbol: "ly",
+			description: msg`A light-year (ly) is the distance light travels in one Julian year, about 9.46 trillion kilometres. It is the most familiar unit for interstellar distances.`,
 			toBaseUnit(input: Decimal) {
 				return Decimal.mul(input, Decimal("9460730472580800"));
 			},
@@ -382,6 +417,7 @@ export const units = {
 
 		Parsec: {
 			symbol: "pc",
+			description: msg`A parsec (pc) equals about 3.26 light-years. Astronomers prefer it because it relates directly to stellar parallax measurements.`,
 			toBaseUnit(input: Decimal) {
 				return Decimal.mul(
 					input,
@@ -398,6 +434,7 @@ export const units = {
 
 		Zettametre: {
 			symbol: "Zm",
+			description: msg`A zettametre (Zm) equals 10²¹ metres. It is an SI extreme used for cosmological distance discussions.`,
 			toBaseUnit(input: Decimal) {
 				return Decimal.mul(input, Decimal.pow(10, 21));
 			},
@@ -408,6 +445,7 @@ export const units = {
 
 		Yottametre: {
 			symbol: "Ym",
+			description: msg`A yottametre (Ym) equals 10²⁴ metres. It is among the largest named SI length multiples.`,
 			toBaseUnit(input: Decimal) {
 				return Decimal.mul(input, Decimal.pow(10, 24));
 			},
@@ -418,6 +456,7 @@ export const units = {
 
 		"Hubble Length": {
 			symbol: "",
+			description: msg`The Hubble length is a cosmological distance scale related to the Hubble constant, on the order of 10²⁶ metres—comparable to the observable universe's size.`,
 			toBaseUnit(input: Decimal) {
 				return Decimal.mul(input, 1.322_4e26);
 			},
@@ -453,6 +492,7 @@ export const units = {
 
 		Kelvin: {
 			symbol: "K",
+			description: msg`Kelvin (K) is the SI base unit of thermodynamic temperature. Absolute zero is 0 K; water's triple point is defined near 273.16 K.`,
 			toBaseUnit(input: Decimal) {
 				return input; // Base unit
 			},
@@ -463,6 +503,7 @@ export const units = {
 
 		Newton: {
 			symbol: "°N",
+			description: msg`The Newton temperature scale (°N) was devised by Isaac Newton. It places the freezing point of water at 0 °N and the boiling point at 33 °N.`,
 			toBaseUnit(input: Decimal) {
 				return input.mul(100).div(33).add(273.15); // Convert Newton to Kelvin (base unit)
 			},
@@ -474,6 +515,7 @@ export const units = {
 	Area: {
 		Barn: {
 			symbol: "b",
+			description: msg`A barn (b) equals 10⁻²⁸ square metres. Particle physicists use it as a convenient unit for nuclear and particle interaction cross-sections.`,
 			toBaseUnit(input: Decimal) {
 				return input.mul(Decimal.pow(10, -28));
 			},
@@ -484,6 +526,7 @@ export const units = {
 
 		"Square Nanometre": {
 			symbol: "nm²",
+			description: msg`A square nanometre (nm²) equals 10⁻¹⁸ square metres. It measures ultra-small surface areas in nanotechnology and materials science.`,
 			toBaseUnit(input: Decimal) {
 				return input.mul(Decimal.pow(10, -18));
 			},
@@ -494,6 +537,7 @@ export const units = {
 
 		"Square Micrometre": {
 			symbol: "μm²",
+			description: msg`A square micrometre (µm²) equals 10⁻¹² square metres. Microscopy and microfabrication often report areas in this unit.`,
 			toBaseUnit(input: Decimal) {
 				return input.mul(Decimal.pow(10, -12));
 			},
@@ -504,6 +548,7 @@ export const units = {
 
 		"Square Millimetre": {
 			symbol: "mm²",
+			description: msg`A square millimetre (mm²) equals 10⁻⁶ square metres. Engineering drawings and small-component cross-sections commonly use it.`,
 			toBaseUnit(input: Decimal) {
 				return input.mul(Decimal.pow(10, 6));
 			},
@@ -514,6 +559,7 @@ export const units = {
 
 		"Square Centimetre": {
 			symbol: "cm²",
+			description: msg`A square centimetre (cm²) equals 10⁻⁴ square metres. It is a familiar school and laboratory unit for small surfaces.`,
 			toBaseUnit(input: Decimal) {
 				return input.mul(Decimal.pow(10, 4));
 			},
@@ -524,6 +570,7 @@ export const units = {
 
 		"Square Inch": {
 			symbol: "sq in",
+			description: msg`A square inch equals 645.16 square millimetres. US customary technical drawings and packaging often specify area in square inches.`,
 			toBaseUnit(input: Decimal) {
 				return input.mul(Decimal("0.00064516"));
 			},
@@ -534,6 +581,7 @@ export const units = {
 
 		"Square Decimetre": {
 			symbol: "dm²",
+			description: msg`A square decimetre (dm²) equals 0.01 square metres. It sits between the centimetre and metre squared in the metric area ladder.`,
 			toBaseUnit(input: Decimal) {
 				return input.mul(Decimal.pow(10, 2));
 			},
@@ -544,6 +592,7 @@ export const units = {
 
 		"Square Foot": {
 			symbol: "sq ft",
+			description: msg`A square foot equals about 0.0929 square metres. Real estate, flooring, and construction in the US routinely use square feet.`,
 			toBaseUnit(input: Decimal) {
 				return input.mul(Decimal("0.09290304"));
 			},
@@ -554,6 +603,7 @@ export const units = {
 
 		"Square Yard": {
 			symbol: "sq yd",
+			description: msg`A square yard equals about 0.836 square metres. Carpeting, fabric, and landscaping frequently quote area in square yards.`,
 			toBaseUnit(input: Decimal) {
 				return input.mul(Decimal("0.83612736"));
 			},
@@ -564,6 +614,7 @@ export const units = {
 
 		"Square Metre": {
 			symbol: "m²",
+			description: msg`The square metre (m²) is the SI derived unit of area. Property listings, science, and engineering worldwide use it as the base area unit.`,
 			toBaseUnit(input: Decimal) {
 				return input; // base unit
 			},
@@ -574,6 +625,7 @@ export const units = {
 
 		Are: {
 			symbol: "a",
+			description: msg`An are (a) equals 100 square metres. It is a traditional metric land unit that underlies the more common hectare.`,
 			toBaseUnit(input: Decimal) {
 				return input.mul(Decimal(100));
 			},
@@ -584,6 +636,7 @@ export const units = {
 
 		Acre: {
 			symbol: "ac",
+			description: msg`An international acre equals about 4,047 square metres. It remains a primary land-area unit in the United States and United Kingdom.`,
 			toBaseUnit(input: Decimal) {
 				return input.mul(Decimal("4046.8564224"));
 			},
@@ -594,6 +647,7 @@ export const units = {
 
 		Hectare: {
 			symbol: "ha",
+			description: msg`A hectare (ha) equals 10,000 square metres (100 ares). Agriculture and land management worldwide report field sizes in hectares.`,
 			toBaseUnit(input: Decimal) {
 				return input.mul(Decimal("10000"));
 			},
@@ -604,6 +658,7 @@ export const units = {
 
 		"Square Kilometre": {
 			symbol: "km²",
+			description: msg`A square kilometre (km²) equals one million square metres. Maps and geography use it for cities, regions, and countries.`,
 			toBaseUnit(input: Decimal) {
 				return input.mul(Decimal.pow(10, 6));
 			},
@@ -614,6 +669,7 @@ export const units = {
 
 		"Square Mile": {
 			symbol: "sq mi",
+			description: msg`A square mile equals about 2.59 square kilometres. US and UK geographic statistics often express large areas in square miles.`,
 			toBaseUnit(input: Decimal) {
 				return input.mul(Decimal("2.589988110336").mul(Decimal.pow(10, 6)));
 			},
@@ -624,6 +680,7 @@ export const units = {
 
 		Board: {
 			symbol: "bd",
+			description: msg`A board (board measure area) equals about 0.00774 square metres—the face area of a one-inch by one-foot board. Lumber trades use related board measures.`,
 			toBaseUnit(input: Decimal) {
 				return input.mul(Decimal("0.00774192"));
 			},
@@ -634,6 +691,7 @@ export const units = {
 
 		"Circular Inch": {
 			symbol: "circ in",
+			description: msg`A circular inch is the area of a circle one inch in diameter, about 0.785 square inches. Wire and tubing sizing historically used circular measures.`,
 			toBaseUnit(input: Decimal) {
 				return input.mul(Decimal("5.06707479097498").mul(Decimal.pow(10, -4)));
 			},
@@ -644,6 +702,7 @@ export const units = {
 
 		"Circular Mil": {
 			symbol: "circ mil",
+			description: msg`A circular mil is the area of a circle 0.001 inch in diameter. Electrical engineering uses it to specify wire cross-sectional area.`,
 			toBaseUnit(input: Decimal) {
 				return input.mul(Decimal("5.06707479097498").mul(Decimal.pow(10, -10)));
 			},
@@ -655,6 +714,7 @@ export const units = {
 	Volume: {
 		"Cubic Nanometre": {
 			symbol: "nm³",
+			description: msg`A cubic nanometre (nm³) equals 10⁻²⁷ cubic metres. It describes molecular-scale volumes in nanoscience.`,
 			toBaseUnit(input: Decimal) {
 				return input.mul(Decimal.pow(10, -27));
 			},
@@ -665,6 +725,7 @@ export const units = {
 
 		"Cubic Micrometre": {
 			symbol: "μm³",
+			description: msg`A cubic micrometre (µm³) equals 10⁻¹⁸ cubic metres. Cell biology and microparticle work often report volumes this way.`,
 			toBaseUnit(input: Decimal) {
 				return input.mul(Decimal.pow(10, -18));
 			},
@@ -675,6 +736,7 @@ export const units = {
 
 		Picolitre: {
 			symbol: "pL",
+			description: msg`A picolitre (pL) equals 10⁻¹² litres. Microfluidics and inkjet printing deal with volumes at this scale.`,
 			toBaseUnit(input: Decimal) {
 				return input.mul(Decimal.pow(10, -12));
 			},
@@ -685,6 +747,7 @@ export const units = {
 
 		Lambda: {
 			symbol: "λ",
+			description: msg`A lambda (λ) is a laboratory volume unit equal to one microlitre (10⁻⁶ L). Older biochemistry literature still uses the name.`,
 			toBaseUnit(input: Decimal) {
 				return input.mul(Decimal.pow(10, -9));
 			},
@@ -695,6 +758,7 @@ export const units = {
 
 		Microlitre: {
 			symbol: "μL",
+			description: msg`A microlitre (µL) equals one millionth of a litre. Pipettes in biology and chemistry routinely dispense microlitre volumes.`,
 			toBaseUnit(input: Decimal) {
 				return input.mul(Decimal("0.000000001"));
 			},
@@ -705,6 +769,7 @@ export const units = {
 
 		"Cubic Millimetre": {
 			symbol: "mm³",
+			description: msg`A cubic millimetre (mm³) equals one microlitre. Medicine and engineering use it for small solid or fluid volumes.`,
 			toBaseUnit(input: Decimal) {
 				return input.mul(Decimal("0.000000001"));
 			},
@@ -715,6 +780,7 @@ export const units = {
 
 		Drop: {
 			symbol: "gtt (metric)",
+			description: msg`A metric drop is standardized here as 50 microlitres. Pharmacy and laboratory instructions sometimes dose liquids by drops.`,
 			toBaseUnit(input: Decimal) {
 				return input.mul(Decimal("0.00000005"));
 			},
@@ -725,6 +791,7 @@ export const units = {
 
 		Millimetre: {
 			symbol: "mL",
+			description: msg`A millilitre (mL) equals one cubic centimetre. Medicine, cooking, and laboratory work use millilitres for precise liquid volumes.`,
 			toBaseUnit(input: Decimal) {
 				return input.mul(Decimal("0.000001"));
 			},
@@ -735,6 +802,7 @@ export const units = {
 
 		"Cubic Centimetre": {
 			symbol: "cm³",
+			description: msg`A cubic centimetre (cm³ or cc) equals one millilitre. Medicine and engine displacement commonly use this name.`,
 			toBaseUnit(input: Decimal) {
 				return input.mul(Decimal("0.000001"));
 			},
@@ -745,6 +813,7 @@ export const units = {
 
 		Centilitre: {
 			symbol: "cL",
+			description: msg`A centilitre (cL) equals 10 millilitres. Beverage packaging in Europe often labels volume in centilitres.`,
 			toBaseUnit(input: Decimal) {
 				return input.mul(Decimal("0.00001"));
 			},
@@ -755,6 +824,7 @@ export const units = {
 
 		Decilitre: {
 			symbol: "dL",
+			description: msg`A decilitre (dL) equals 100 millilitres. Cooking and nutrition labels in some countries use decilitres.`,
 			toBaseUnit(input: Decimal) {
 				return input.mul(Decimal("0.0001"));
 			},
@@ -765,6 +835,7 @@ export const units = {
 
 		"Teaspoon (Metric)": {
 			symbol: "tsp (metric)",
+			description: msg`A metric teaspoon equals 5 millilitres. Cooking recipes use it for small liquid and powder measures.`,
 			toBaseUnit(input: Decimal) {
 				return input.mul(Decimal("5").mul(Decimal.pow(10, -6)));
 			},
@@ -775,6 +846,7 @@ export const units = {
 
 		"Acre Foot": {
 			symbol: "ac ft",
+			description: msg`An acre-foot is the volume covering one acre to a depth of one foot, about 1,233 cubic metres. Water-resource management uses it for reservoirs.`,
 			toBaseUnit(input: Decimal) {
 				return input.mul(Decimal("1233.48183754752"));
 			},
@@ -785,6 +857,7 @@ export const units = {
 
 		"Acre Inch": {
 			symbol: "ac in",
+			description: msg`An acre-inch is the volume covering one acre one inch deep, about 102.8 cubic metres. Irrigation planning often uses acre-inches.`,
 			toBaseUnit(input: Decimal) {
 				return input.mul(Decimal("102.79015312896"));
 			},
@@ -795,6 +868,7 @@ export const units = {
 
 		"Board Foot": {
 			symbol: "bd ft",
+			description: msg`A board foot is a lumber volume of 1 foot × 1 foot × 1 inch, about 2.36 litres. Softwood and hardwood trades price wood by board feet.`,
 			toBaseUnit(input: Decimal) {
 				return input.mul(Decimal("2.359737216").mul(Decimal.pow(10, -3)));
 			},
@@ -805,6 +879,7 @@ export const units = {
 
 		"Cubic Decimetre": {
 			symbol: "dm³",
+			description: msg`A cubic decimetre (dm³) equals exactly one litre. SI texts often prefer this name when emphasizing volume as length cubed.`,
 			toBaseUnit(input: Decimal) {
 				return input.mul(Decimal("0.001"));
 			},
@@ -815,6 +890,7 @@ export const units = {
 
 		"Cubic Dekametre": {
 			symbol: "dam³",
+			description: msg`A cubic dekametre (dam³) equals 1,000 cubic metres. Large civil-engineering and water volumes may use this SI multiple.`,
 			toBaseUnit(input: Decimal) {
 				return input.mul(Decimal("1000"));
 			},
@@ -825,6 +901,7 @@ export const units = {
 
 		"Cubic Fathom": {
 			symbol: "cu fm",
+			description: msg`A cubic fathom equals about 6.12 cubic metres. Historical maritime cargo and dredging contexts used cubic fathoms.`,
 			toBaseUnit(input: Decimal) {
 				return input.mul(Decimal("6.116438863872"));
 			},
@@ -835,6 +912,7 @@ export const units = {
 
 		"Cubic Foot": {
 			symbol: "cu ft",
+			description: msg`A cubic foot equals about 28.3 litres. HVAC, shipping, and US construction routinely measure volume in cubic feet.`,
 			toBaseUnit(input: Decimal) {
 				return input.mul(Decimal("0.028316846592"));
 			},
@@ -845,6 +923,7 @@ export const units = {
 
 		"Cubic Hectometre": {
 			symbol: "hm³",
+			description: msg`A cubic hectometre (hm³) equals one million cubic metres. Reservoir capacity and river discharge are often quoted in hm³.`,
 			toBaseUnit(input: Decimal) {
 				return input.mul(Decimal("1000000"));
 			},
@@ -855,6 +934,7 @@ export const units = {
 
 		"Cubic Inch": {
 			symbol: "cu in",
+			description: msg`A cubic inch equals about 16.4 millilitres. Engine displacement in the US was long advertised in cubic inches.`,
 			toBaseUnit(input: Decimal) {
 				return input.mul(Decimal("1.6387064").mul(Decimal.pow(10, -5)));
 			},
@@ -865,6 +945,7 @@ export const units = {
 
 		"Cubic Kilometre": {
 			symbol: "km³",
+			description: msg`A cubic kilometre (km³) equals one billion cubic metres. Geology and oceanography use it for enormous natural volumes.`,
 			toBaseUnit(input: Decimal) {
 				return input.mul(Decimal("1000000000"));
 			},
@@ -875,6 +956,7 @@ export const units = {
 
 		"Cubic Metre": {
 			symbol: "m³",
+			description: msg`The cubic metre (m³) is the SI derived unit of volume. Science, industry, and utilities worldwide treat it as the base volume unit.`,
 			toBaseUnit(input: Decimal) {
 				return input;
 			},
@@ -885,6 +967,7 @@ export const units = {
 
 		"Cubic Mile": {
 			symbol: "cu mi",
+			description: msg`A cubic mile equals about 4.17 cubic kilometres. Large natural features such as aquifers or ice sheets may be described in cubic miles.`,
 			toBaseUnit(input: Decimal) {
 				return input.mul(Decimal("4.16818182544058").mul(Decimal.pow(10, -9)));
 			},
@@ -895,6 +978,7 @@ export const units = {
 
 		"Cubic Yard": {
 			symbol: "cu yd",
+			description: msg`A cubic yard equals about 0.765 cubic metres. Construction and landscaping in the US buy concrete, soil, and mulch by the cubic yard.`,
 			toBaseUnit(input: Decimal) {
 				return input.mul(Decimal("0.764554857984"));
 			},
@@ -905,6 +989,7 @@ export const units = {
 
 		Cup: {
 			symbol: "c",
+			description: msg`A metric cup is standardized here as 250 millilitres. Cooking recipes use cups for everyday liquid and dry measures.`,
 			toBaseUnit(input: Decimal) {
 				return input.mul(Decimal("0.00025"));
 			},
@@ -915,6 +1000,7 @@ export const units = {
 
 		Dekalitre: {
 			symbol: "daL",
+			description: msg`A dekalitre (daL) equals 10 litres. Beverage and agricultural bulk liquids sometimes use dekalitres.`,
 			toBaseUnit(input: Decimal) {
 				return input.mul(Decimal("0.01"));
 			},
@@ -925,6 +1011,7 @@ export const units = {
 
 		Hectolitre: {
 			symbol: "hL",
+			description: msg`A hectolitre (hL) equals 100 litres. Brewing, wine production, and grain trade historically favour hectolitres.`,
 			toBaseUnit(input: Decimal) {
 				return input.mul(Decimal("0.1"));
 			},
@@ -935,6 +1022,7 @@ export const units = {
 
 		"Tablespoon (Metric)": {
 			symbol: "tbsp (metric)",
+			description: msg`A metric tablespoon equals 15 millilitres. Cooking instructions use it for medium liquid and condiment measures.`,
 			toBaseUnit(input: Decimal) {
 				return input.mul(Decimal("1.5").mul(Decimal.pow(10, -5)));
 			},
@@ -945,6 +1033,7 @@ export const units = {
 
 		Litre: {
 			symbol: "L",
+			description: msg`A litre (L) equals 0.001 cubic metres. It is the everyday metric unit for beverages, fuel, and household liquids.`,
 			toBaseUnit(input: Decimal) {
 				return input.mul(Decimal("0.001"));
 			},

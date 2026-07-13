@@ -8,10 +8,14 @@ import { i18n } from "@lingui/core";
 import { msg } from "@lingui/core/macro";
 
 import { Input, Output } from "#/components/ui/input";
+import { AdSlot } from "#/components/ads/ad-slot";
+import { ConversionDetails } from "#/components/conversion-details";
+import { ADSENSE_SLOTS } from "#/lib/adsense";
 import {
 	defaultSearchParams,
 	globalParamsSchema,
 } from "#/lib/global-params-params";
+import { isPopularConversion } from "#/lib/popular-conversions";
 import {
 	type Quantity,
 	QuantitySchema,
@@ -26,10 +30,11 @@ import {
 	loadCatalog,
 	loadDefaultCatalog,
 } from "#/integrations/i18n/load-catalog";
-import { ConversionDetails } from "#/components/conversion-details";
 
 export const Route = createFileRoute("/$lang/convert/$quantity/$from/to/$to")({
 	component: Converter,
+	// Keep unit switches instant — no pending flash on param-only navigations
+	pendingMs: 10_000,
 	async head({ params, match }) {
 		// 1. Get the language from params (since /$lang is a parent)
 		const lang = match.params.lang || "en";
@@ -43,12 +48,15 @@ export const Route = createFileRoute("/$lang/convert/$quantity/$from/to/$to")({
 		}
 
 		const { from, to, quantity } = params;
+		const quantityValue = quantity as Quantity;
+		const fromValue = from as UnitName;
+		const toValue = to as UnitName;
 
 		const tQuantity = i18n._(
-			QuantitiesWithTranslations[quantity as Quantity] || quantity,
+			QuantitiesWithTranslations[quantityValue] || quantity,
 		);
-		const tFrom = i18n._(UnitNamesWithTranslations[from as UnitName] || from);
-		const tTo = i18n._(UnitNamesWithTranslations[to as UnitName] || to);
+		const tFrom = i18n._(UnitNamesWithTranslations[fromValue] || from);
+		const tTo = i18n._(UnitNamesWithTranslations[toValue] || to);
 
 		const title = i18n._(
 			msg`Convert ${tFrom} to ${tTo} | Accurate ${tQuantity} Converter`,
@@ -57,10 +65,46 @@ export const Route = createFileRoute("/$lang/convert/$quantity/$from/to/$to")({
 			msg`Easily convert ${tFrom} to ${tTo} with our high-precision ${tQuantity} converter. Free online tool for students and engineers.`,
 		);
 
+		const isPopular = isPopularConversion(quantityValue, fromValue, toValue);
+
+		const faqEntities = [
+			{
+				"@type": "Question",
+				name: i18n._(msg`How do I convert ${tFrom} to ${tTo} quickly?`),
+				acceptedAnswer: {
+					"@type": "Answer",
+					text: i18n._(
+						msg`Enter a value in the converter. We convert through the ${tQuantity} base unit with Decimal.js arithmetic, then display the result in ${tTo}.`,
+					),
+				},
+			},
+			{
+				"@type": "Question",
+				name: i18n._(msg`Is this ${tFrom} to ${tTo} converter free?`),
+				acceptedAnswer: {
+					"@type": "Answer",
+					text: i18n._(
+						msg`Yes. Units Converters is free to use for students, professionals, and everyday tasks. Results are for informational purposes.`,
+					),
+				},
+			},
+			{
+				"@type": "Question",
+				name: i18n._(msg`Why might my calculator disagree slightly?`),
+				acceptedAnswer: {
+					"@type": "Answer",
+					text: i18n._(
+						msg`Many calculators use binary floating-point numbers. Our converter uses arbitrary-precision decimals so long conversion chains stay stable.`,
+					),
+				},
+			},
+		];
+
 		const head = {
 			meta: [
 				{ title },
 				{ name: "description", content: description },
+				...(isPopular ? [] : [{ name: "robots", content: "noindex, follow" }]),
 				// Open Graph
 				{ property: "og:title", content: title },
 				{ property: "og:description", content: description },
@@ -90,10 +134,16 @@ export const Route = createFileRoute("/$lang/convert/$quantity/$from/to/$to")({
 						},
 					}),
 				},
+				{
+					type: "application/ld+json",
+					children: JSON.stringify({
+						"@context": "https://schema.org",
+						"@type": "FAQPage",
+						mainEntity: faqEntities,
+					}),
+				},
 			],
 		};
-
-		// console.log("/$lang/convert/$quantity/$from/to/$to head", head);
 
 		return head;
 	},
@@ -145,7 +195,7 @@ function Converter() {
 	const { from, to, quantity } = result.output;
 
 	const quantities = Object.entries(units[quantity]);
-	const selectSize = Math.max(quantities.length / 2, 20);
+	const selectSize = Math.max(quantities.length / 2, 10);
 
 	const decimalFromValue = (() => {
 		try {
@@ -179,6 +229,7 @@ function Converter() {
 					...(prev as Required<typeof prev>),
 					[key]: value,
 				}),
+				resetScroll: false,
 			});
 		});
 	}
@@ -193,6 +244,7 @@ function Converter() {
 				search: () => ({
 					fromValue,
 				}),
+				resetScroll: false,
 			});
 		});
 	}
@@ -248,6 +300,7 @@ function Converter() {
 					from: nextFirstUnit,
 					to: nextFirstUnit,
 				}),
+				resetScroll: false,
 			});
 		});
 	}
@@ -386,21 +439,23 @@ function Converter() {
 									value={unitName}
 									key={unitName}
 								>
-									{/* <div className="grid grid-cols-[max-content_auto] gap-4 items-center"> */}
-									<span className="text-wrap">
-										{i18n._(UnitNamesWithTranslations[unitName as UnitName])}
-										{symbol ? ` (${symbol})` : ""}
-									</span>
+									<div className="grid grid-cols-[max-content_auto] gap-4 items-center">
+										<span className="text-wrap">
+											{i18n._(UnitNamesWithTranslations[unitName as UnitName])}
+											{symbol ? ` (${symbol})` : ""}
+										</span>
 
-									<span className="text-xs opacity-70 max-w-full truncate">
-										{convert(unitName as UnitName)}
-									</span>
-									{/* </div> */}
+										<span className="text-xs opacity-70 max-w-full truncate">
+											{convert(unitName as UnitName)}
+										</span>
+									</div>
 								</option>
 							))}
 						</select>
 					</div>
 				</form>
+
+				<AdSlot slot={ADSENSE_SLOTS.convert} className="mt-4" />
 			</div>
 
 			<ConversionDetails quantity={quantity} from={from} to={to} />

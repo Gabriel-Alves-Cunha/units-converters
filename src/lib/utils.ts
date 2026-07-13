@@ -53,5 +53,5 @@ export const numberFormatter = new Intl.NumberFormat(undefined, {
 });
 
 export function scrollPageToTop() {
-	document.querySelector("main")?.scrollTo({ top: 0, behavior: "instant" });
+	document.querySelector("main")?.scrollTo({ top: 0, behavior: "auto" });
 }

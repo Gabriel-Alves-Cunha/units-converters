@@ -207,6 +207,44 @@
 	}
 }
 
+.language-switcher-trigger {
+	anchor-name: --language-switcher;
+}
+
+.language-switcher-popover {
+	inset: auto;
+	top: calc(var(--header-height) + 0.5rem);
+	inset-inline-end: 1rem;
+}
+
+@supports (anchor-name: --language-switcher) {
+	.language-switcher-popover {
+		position-anchor: --language-switcher;
+		top: anchor(bottom);
+		inset-inline-end: anchor(end);
+		margin-top: 0.25rem;
+	}
+}
+
+.mobile-nav-trigger {
+	anchor-name: --mobile-nav;
+}
+
+.mobile-nav-popover {
+	inset: auto;
+	top: calc(var(--header-height) + 0.5rem);
+	inset-inline-end: 1rem;
+}
+
+@supports (anchor-name: --mobile-nav) {
+	.mobile-nav-popover {
+		position-anchor: --mobile-nav;
+		top: anchor(bottom);
+		inset-inline-end: anchor(end);
+		margin-top: 0.25rem;
+	}
+}
+
 @utility simple-scrollbar {
 	overflow: auto;
 
