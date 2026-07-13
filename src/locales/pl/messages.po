@@ -3000,8 +3000,7 @@ msgstr "Przeczytaj, jak Units Converters gromadzi i wykorzystuje dane, w tym pli
 
 #: src/routes/$lang/terms-of-service.tsx:25
 msgid "Read the Terms of Service for Units Converters, including usage disclaimers, intellectual property, advertising, PostHog analytics, and limitation of liability."
-msgstr ""
-"Przeczytaj Warunki korzystania z usługi dla Units Converters, w tym zastrzeżenia dotyczące użytkowania, własność intelektualną, reklamy, analizy PostHog i ograniczenia odpowiedzialności."
+msgstr "Przeczytaj Warunki korzystania z usługi dla Units Converters, w tym zastrzeżenia dotyczące użytkowania, własność intelektualną, reklamy, analizy PostHog i ograniczenia odpowiedzialności."
 
 #: src/routes/$lang/terms-of-service.tsx:25
 #~ msgid "Read the Terms of Service for Units Converters, including usage disclaimers, intellectual property, third-party advertising, and limitation of liability."

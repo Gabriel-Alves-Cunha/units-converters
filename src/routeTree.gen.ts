@@ -9,6 +9,7 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as LangRouteRouteImport } from './routes/$lang/route'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as LangIndexRouteImport } from './routes/$lang/index'
@@ -21,6 +22,11 @@ import { Route as LangGuidesSlugRouteImport } from './routes/$lang/guides/$slug'
 import { Route as LangCategoryQuantityRouteImport } from './routes/$lang/category.$quantity'
 import { Route as LangConvertQuantityFromToToRouteImport } from './routes/$lang/convert.$quantity.$from.to.$to'
 
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const LangRouteRoute = LangRouteRouteImport.update({
   id: '/$lang',
   path: '/$lang',
@@ -81,6 +87,7 @@ const LangConvertQuantityFromToToRoute =
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/$lang': typeof LangRouteRouteWithChildren
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/$lang/about': typeof LangAboutRoute
   '/$lang/contact': typeof LangContactRoute
   '/$lang/privacy-policy': typeof LangPrivacyPolicyRoute
@@ -93,6 +100,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/$lang/about': typeof LangAboutRoute
   '/$lang/contact': typeof LangContactRoute
   '/$lang/privacy-policy': typeof LangPrivacyPolicyRoute
@@ -107,6 +115,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/$lang': typeof LangRouteRouteWithChildren
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/$lang/about': typeof LangAboutRoute
   '/$lang/contact': typeof LangContactRoute
   '/$lang/privacy-policy': typeof LangPrivacyPolicyRoute
@@ -122,6 +131,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/$lang'
+    | '/sitemap.xml'
     | '/$lang/about'
     | '/$lang/contact'
     | '/$lang/privacy-policy'
@@ -134,6 +144,7 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/sitemap.xml'
     | '/$lang/about'
     | '/$lang/contact'
     | '/$lang/privacy-policy'
@@ -147,6 +158,7 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/$lang'
+    | '/sitemap.xml'
     | '/$lang/about'
     | '/$lang/contact'
     | '/$lang/privacy-policy'
@@ -161,10 +173,18 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   LangRouteRoute: typeof LangRouteRouteWithChildren
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/$lang': {
       id: '/$lang'
       path: '/$lang'
@@ -276,6 +296,7 @@ const LangRouteRouteWithChildren = LangRouteRoute._addFileChildren(
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   LangRouteRoute: LangRouteRouteWithChildren,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

@@ -7,7 +7,8 @@
 	},
 	"scripts": {
 		"lint:all": "bun run format && bun run lint && bun run typecheck && bunx lingui extract && bunx lingui compile --typescript",
-		"build": "bunx lingui extract-template && bunx lingui compile --typescript && vite build",
+		"generate:sitemap": "bunx vite-node --config vite.config.ts --mode production scripts/generate-sitemap.ts",
+		"build": "bun run generate:sitemap && bunx lingui extract-template && bunx lingui compile --typescript && vite build",
 		"deploy": "bun run build && wrangler deploy",
 		"dev": "portless units-converters vite dev",
 		"preview": "bun run build && wrangler dev",

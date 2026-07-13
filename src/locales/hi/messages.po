@@ -3000,8 +3000,7 @@ msgstr "पढ़ें कि Units Converters कुकीज़, पोस्
 
 #: src/routes/$lang/terms-of-service.tsx:25
 msgid "Read the Terms of Service for Units Converters, including usage disclaimers, intellectual property, advertising, PostHog analytics, and limitation of liability."
-msgstr ""
-"Units Converters के लिए सेवा की शर्तें पढ़ें, जिसमें उपयोग अस्वीकरण, बौद्धिक संपदा, विज्ञापन, पोस्टहॉग एनालिटिक्स और दायित्व की सीमा शामिल है।"
+msgstr "Units Converters के लिए सेवा की शर्तें पढ़ें, जिसमें उपयोग अस्वीकरण, बौद्धिक संपदा, विज्ञापन, पोस्टहॉग एनालिटिक्स और दायित्व की सीमा शामिल है।"
 
 #: src/routes/$lang/terms-of-service.tsx:25
 #~ msgid "Read the Terms of Service for Units Converters, including usage disclaimers, intellectual property, third-party advertising, and limitation of liability."

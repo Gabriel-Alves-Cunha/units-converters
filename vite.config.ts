@@ -6,6 +6,14 @@ import tailwindcss from "@tailwindcss/vite";
 import { cloudflare } from "@cloudflare/vite-plugin";
 import { lingui } from "@lingui/vite-plugin";
 
+import { locales } from "./src/integrations/i18n/load-catalog";
+
+/** Locale homes seed crawlLinks; `/$lang` is dynamic so it is not auto-discovered. */
+const localeSeedPages = Object.keys(locales).map((lang) => ({
+	path: `/${lang}`,
+	prerender: { enabled: true as const },
+}));
+
 const config = defineConfig(({ mode }) => {
 	const env = loadEnv(mode, process.cwd(), "VITE_");
 	const baseUrl = env.VITE_BASE_URL;
@@ -37,9 +45,17 @@ const config = defineConfig(({ mode }) => {
 					enabled: true,
 					filter: ({ path }) => path !== "/",
 				},
+				pages: [
+					...localeSeedPages,
+					{
+						path: "/sitemap.xml",
+						prerender: { enabled: true },
+					},
+				],
+				// Custom route at src/routes/sitemap[.]xml.ts owns the full multilingual sitemap.
 				sitemap: {
 					host: baseUrl,
-					enabled: true,
+					enabled: false,
 				},
 			}),
 			react({

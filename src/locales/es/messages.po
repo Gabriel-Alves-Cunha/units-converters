@@ -3026,8 +3026,7 @@ msgstr "Lea cómo Units Converters recopila y utiliza datos, incluidas cookies, 
 
 #: src/routes/$lang/terms-of-service.tsx:25
 msgid "Read the Terms of Service for Units Converters, including usage disclaimers, intellectual property, advertising, PostHog analytics, and limitation of liability."
-msgstr ""
-"Lea los Términos de servicio de Units Converters, incluidas las exenciones de responsabilidad de uso, propiedad intelectual, publicidad, análisis de PostHog y limitación de responsabilidad."
+msgstr "Lea los Términos de servicio de Units Converters, incluidas las exenciones de responsabilidad de uso, propiedad intelectual, publicidad, análisis de PostHog y limitación de responsabilidad."
 
 #: src/routes/$lang/terms-of-service.tsx:25
 #~ msgid "Read the Terms of Service for Units Converters, including usage disclaimers, intellectual property, third-party advertising, and limitation of liability."
