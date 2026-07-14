@@ -13,28 +13,69 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
+#. placeholder {0}: i18n._(guide.title)
+#: src/routes/$lang/guides/$slug.tsx:32
+msgid "{0} | Units Converters Guides"
+msgstr ""
+
 #. placeholder {0}: i18n._(QuantitiesWithTranslations[quantity])
-#: src/routes/$lang/convert.$quantity.$from.to.$to.tsx:303
+#: src/routes/$lang/convert.$quantity.$from.to.$to.tsx:356
 msgid "{0} panel"
 msgstr ""
 
 #. placeholder {0}: i18n._(UnitNamesWithTranslations[cv.from])
 #. placeholder {1}: i18n._(UnitNamesWithTranslations[cv.to])
-#: src/components/common-conversions.tsx:183
+#: src/components/common-conversions.tsx:33
 msgid "{0} to {1}"
 msgstr ""
 
-#: src/routes/$lang/convert.$quantity.$from.to.$to.tsx:78
+#: src/routes/$lang/category.$quantity.tsx:166
+msgid "{fromLabel} to {toLabel}"
+msgstr ""
+
+#: src/components/conversion-details.tsx:85
+msgid "{tFrom} is a unit of {tQuantity} used in measurement and conversion work."
+msgstr ""
+
+#: src/components/conversion-details.tsx:319
+msgid "{tFrom} to {label}"
+msgstr ""
+
+#: src/routes/$lang/category.$quantity.tsx:128
+msgid "{tQuantity} conversions"
+msgstr ""
+
+#: src/routes/$lang/convert.$quantity.$from.to.$to.tsx:122
 msgid "{tQuantity} Converter"
 msgstr ""
 
+#: src/routes/$lang/category.$quantity.tsx:66
+msgid "{tQuantity} Converter Hub | Units Converters"
+msgstr ""
+
+#: src/components/conversion-details.tsx:102
+msgid "{tTo} is a unit of {tQuantity} used in measurement and conversion work."
+msgstr ""
+
 #. placeholder {0}: new Date().getFullYear()
-#: src/components/footer.tsx:53
+#: src/components/footer.tsx:72
 msgid "© {0} Units Converters. All rights reserved."
+msgstr ""
+
+#: src/routes/$lang/privacy-policy.tsx:117
+msgid "<0>Advertising data:</0> when ads are enabled after consent, Google AdSense and partners may process cookie and device identifiers to show and measure ads."
 msgstr ""
 
 #: src/components/website-description.tsx:46
 msgid "<0>Area:</0> Square Meters, Acres, Hectares, and Barns."
+msgstr ""
+
+#: src/routes/$lang/privacy-policy.tsx:104
+msgid "<0>Consent preference:</0> whether you accepted or declined non-essential cookies, stored in your browser (localStorage)."
+msgstr ""
+
+#: src/routes/$lang/privacy-policy.tsx:111
+msgid "<0>Feedback you send:</0> name, email, and message if you use our contact or feedback forms."
 msgstr ""
 
 #: src/components/website-description.tsx:82
@@ -61,8 +102,32 @@ msgstr ""
 msgid "<0>Ultimate Precision:</0> Powered by Decimal.js for zero rounding errors."
 msgstr ""
 
+#: src/routes/$lang/privacy-policy.tsx:97
+msgid "<0>Usage data:</0> pages viewed, approximate location derived from IP, device/browser type, and referral information — typically via analytics tools after you consent."
+msgstr ""
+
 #: src/components/website-description.tsx:53
 msgid "<0>Volume:</0> Litres, Cubic Inches, Gallons, and Millilitres."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:809
+msgid "1 ha = 10 000 m². 1 km² = 100 ha = 1 000 000 m². 1 acre ≈ 0.404 686 ha. 1 acre ≈ 4 047 m² (more precisely 4 046.856 422 4 m²). 1 acre = 43 560 ft² by definition in US customary land measure tied to the survey/international foot discussion. Memorise the hectare and the acre-to-square-metre pair; derive the rest when needed."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1403
+msgid "350 °F converts to about 177 °C, commonly rounded to 180 °C in home recipes. Confirm with your oven and recipe style."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1285
+msgid "5 ft 10 in is 70 inches total. One international inch is 2.54 cm, so 70 × 2.54 = 177.8 cm. Round according to the form’s rules."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:825
+msgid "A 2.5-acre hobby farm is about 1.01 ha or about 10 117 m². A 40-hectare orchard is 0.4 km² and about 98.8 acres. These ballparks help when reading international listings."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1466
+msgid "A 5K is five kilometres (about 3.1 miles). Always read the K as kilometres in race names."
 msgstr ""
 
 #: src/lib/units.ts:145
@@ -81,6 +146,10 @@ msgstr ""
 msgid "A board foot is a lumber volume of 1 foot × 1 foot × 1 inch, about 2.36 litres. Softwood and hardwood trades price wood by board feet."
 msgstr ""
 
+#: src/features/guides/data/guides.ts:864
+msgid "A Brief History of Temperature Scales"
+msgstr ""
+
 #: src/lib/units.ts:816
 msgid "A centilitre (cL) equals 10 millilitres. Beverage packaging in Europe often labels volume in centilitres."
 msgstr ""
@@ -89,12 +158,32 @@ msgstr ""
 msgid "A centimetre (cm) equals 0.01 metres. It is one of the most familiar metric units for body measurements, clothing, and school science."
 msgstr ""
 
+#: src/features/guides/data/guides.ts:613
+msgid "A checklist before you convert"
+msgstr ""
+
 #: src/lib/units.ts:694
 msgid "A circular inch is the area of a circle one inch in diameter, about 0.785 square inches. Wire and tubing sizing historically used circular measures."
 msgstr ""
 
 #: src/lib/units.ts:705
 msgid "A circular mil is the area of a circle 0.001 inch in diameter. Electrical engineering uses it to specify wire cross-sectional area."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:639
+msgid "A clear explanation of the light-year as a length unit—how it relates to metres, why astronomy uses it, and how it compares to AUs and parsecs."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:414
+msgid "A clear tour of SI prefixes—milli, centi, kilo, mega, nano, and more—so you can scale length, area, and volume without losing track of powers of ten."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:128
+msgid "A coherent system picks one base for each quantity. For length, SI uses the metre. Feet, miles, nanometres, and light-years can all be expressed as a multiple of metres. For area, the coherent SI unit is the square metre; for volume, the cubic metre. Litres are convenient but still defined through cubic metres."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:120
+msgid "A conversion factor is a ratio equal to 1 that changes the unit label without changing the physical quantity. Writing 1 in = 2.54 cm means the fraction (2.54 cm)/(1 in) equals one. Multiply a measurement by that fraction and the inches cancel, leaving centimetres."
 msgstr ""
 
 #: src/lib/units.ts:805
@@ -165,6 +254,10 @@ msgstr ""
 msgid "A decimetre (dm) equals 0.1 metres, or 10 centimetres. It appears in metric education and some industrial specifications."
 msgstr ""
 
+#: src/features/guides/data/guides.ts:271
+msgid "A degree Celsius and a kelvin are the same size. That is why converting Celsius to Kelvin is addition: T(K) = t(°C) + 273.15. Fahrenheit degrees are smaller: one Fahrenheit degree is 5/9 of a Celsius degree."
+msgstr ""
+
 #: src/lib/units.ts:1003
 msgid "A dekalitre (daL) equals 10 litres. Beverage and agricultural bulk liquids sometimes use dekalitres."
 msgstr ""
@@ -175,6 +268,10 @@ msgstr ""
 
 #: src/lib/units.ts:62
 msgid "A femtometre (fm), also called a fermi, equals 10⁻¹⁵ metres. Nuclear physicists use it to measure the size of atomic nuclei and nucleons."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1065
+msgid "A field checklist"
 msgstr ""
 
 #: src/lib/units.ts:343
@@ -191,6 +288,10 @@ msgstr ""
 
 #: src/lib/units.ts:277
 msgid "A hectometre (hm) equals 100 metres. It is an SI multiple used in meteorology (rainfall rates) and some sports distances."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:433
+msgid "A human hair is on the order of tens of micrometres. Visible light wavelengths sit around hundreds of nanometres. Atomic spacings are on the order of tenths of a nanometre (ångströms). Road distances use kilometres; machining uses millimetres; optics and semiconductors live in micrometres and nanometres."
 msgstr ""
 
 #: src/lib/units.ts:299
@@ -221,6 +322,14 @@ msgstr ""
 msgid "A light-year (ly) is the distance light travels in one Julian year, about 9.46 trillion kilometres. It is the most familiar unit for interstellar distances."
 msgstr ""
 
+#: src/features/guides/data/guides.ts:650
+msgid "A light-year is the distance light travels in vacuum in one Julian year. Despite the word year, it is a length unit, not a time unit. Saying a star is 4 light-years away means its light takes about four years to reach us—and that the path length is that many light-years."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:648
+msgid "A light-year measures distance"
+msgstr ""
+
 #: src/lib/units.ts:1036
 msgid "A litre (L) equals 0.001 cubic metres. It is the everyday metric unit for beverages, fuel, and household liquids."
 msgstr ""
@@ -231,6 +340,10 @@ msgstr ""
 
 #: src/lib/units.ts:992
 msgid "A metric cup is standardized here as 250 millilitres. Cooking recipes use cups for everyday liquid and dry measures."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:358
+msgid "A metric cup of 250 mL is one-quarter of a litre. Sixteen US tablespoons make a US cup in customary cooking arithmetic, but verify against millilitres when converting a metric recipe. When in doubt, convert everything to millilitres first, then back to the utensil you own."
 msgstr ""
 
 #: src/lib/units.ts:783
@@ -269,6 +382,10 @@ msgstr ""
 msgid "A parsec (pc) equals about 3.26 light-years. Astronomers prefer it because it relates directly to stellar parallax measurements."
 msgstr ""
 
+#: src/features/guides/data/guides.ts:707
+msgid "A parsec is larger—about 3.26 light-years. Professional astronomy often prefers parsecs; outreach often prefers light-years."
+msgstr ""
+
 #: src/lib/units.ts:739
 msgid "A picolitre (pL) equals 10⁻¹² litres. Microfluidics and inkjet printing deal with volumes at this scale."
 msgstr ""
@@ -277,8 +394,40 @@ msgstr ""
 msgid "A picometre (pm) equals 10⁻¹² metres. It is commonly used for atomic radii and bond lengths in chemistry."
 msgstr ""
 
+#: src/features/guides/data/guides.ts:34
+msgid "A practical comparison of metric and imperial units for length, volume, and area—when each system wins and how to convert between them confidently."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:973
+msgid "A practical conversion strategy"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1166
+msgid "A practical decision guide for picking length, area, volume, and temperature units that keep numbers readable, standards-compliant, and hard to misinterpret."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:387
+msgid "A reliable workflow for converting any recipe"
+msgstr ""
+
 #: src/lib/units.ts:477
 msgid "A scale and unit of measurement for temperature used by most of the world."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1027
+msgid "A shaft specified as 10.00 ± 0.02 mm is not the same as casually writing 0.394 in after a phone conversion rounded to three decimals. Soft conversion can eat the tolerance budget before the machine starts. The scrap bin fills with parts that were converted casually rather than machined poorly."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1215
+msgid "A short decision recipe"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1392
+msgid "A simple baking workflow"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:169
+msgid "A single base keeps every unit definition consistent and reduces the number of stored factors. Direct factors are fine when you trust them; the base-unit path is the reliable pattern for software and for checking hand calculations."
 msgstr ""
 
 #: src/lib/units.ts:562
@@ -299,6 +448,10 @@ msgstr ""
 
 #: src/lib/units.ts:661
 msgid "A square kilometre (km²) equals one million square metres. Maps and geography use it for cities, regions, and countries."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:441
+msgid "A square kilometre is not 10³ square metres—it is (10³)² = 10⁶ square metres. A cubic centimetre is (10⁻²)³ = 10⁻⁶ cubic metres. Forgetting to square or cube the prefix power is the classic SI scaling mistake."
 msgstr ""
 
 #: src/lib/units.ts:540
@@ -329,10 +482,12 @@ msgstr ""
 msgid "A temperature scale used primarily in the United States."
 msgstr ""
 
-#. placeholder {0}: quantity.toLowerCase()
-#: src/components/conversion-details.tsx:68
-#: src/components/conversion-details.tsx:82
-msgid "A unit of {0}."
+#: src/features/guides/data/guides.ts:1209
+msgid "A unit choice cannot fix a poor measurement. It can only present the measurement clearly. State uncertainties and significant figures honestly after conversion. Converting an uncertain value into a flashy tiny unit does not make the measurement more precise."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1370
+msgid "A US cookie recipe at 350 °F is not the same sentence as a European recipe at 180 °C—even when those temperatures are the intended conversion pair. Writers round, ovens run hot or cold, and fan modes change heat transfer."
 msgstr ""
 
 #: src/lib/units.ts:29
@@ -351,9 +506,13 @@ msgstr ""
 msgid "A zettametre (Zm) equals 10²¹ metres. It is an SI extreme used for cosmological distance discussions."
 msgstr ""
 
-#: src/components/footer.tsx:19
-#: src/routes/$lang/route.tsx:273
+#: src/components/footer.tsx:20
+#: src/routes/$lang/route.tsx:181
 msgid "About"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:703
+msgid "About 9.46 trillion kilometres (9.46 × 10¹² km), depending on the exact year definition used. For precise work, convert via metres using your converter’s documented constant."
 msgstr ""
 
 #: src/routes/$lang/about.tsx:47
@@ -364,7 +523,8 @@ msgstr ""
 msgid "About Units Converters | Our Mission & Technology"
 msgstr ""
 
-#: src/components/cookie-consent.tsx:127
+#: src/components/cookie-consent.tsx:107
+#: src/components/cookie-consent.tsx:109
 msgid "Accept All"
 msgstr ""
 
@@ -384,8 +544,44 @@ msgstr ""
 msgid "Acre Inch"
 msgstr ""
 
+#: src/features/guides/data/guides.ts:591
+msgid "Acres and hectares measure land area. Acre-feet measure volume of water covering an acre one foot deep—an irrigation and reservoir unit. The shared word acre tricks newcomers into treating them as interchangeable."
+msgstr ""
+
+#: src/components/ads/ad-slot.tsx:35
+msgid "Advertisement"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1380
+msgid "Air-fryers and toaster ovens have different thermal mass. Treat their charts as separate; still convert units carefully when a recipe only lists one scale."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:375
+msgid "Alcohol and extracts in teaspoons look trivial until you scale cocktails or flavourings for a crowd. Convert to millilitres, scale, then portion with a jug or syringe for consistency."
+msgstr ""
+
+#: src/routes/$lang/category.$quantity.tsx:178
+msgid "All {tQuantity} units"
+msgstr ""
+
 #: src/routes/$lang/terms-of-service.tsx:102
 msgid "All content, branding, layout, and software on Units Converters — excluding third-party materials — are owned by Voyager Tecnologias LTDA or its licensors and are protected by applicable intellectual property laws. You may use the site for personal, non-commercial conversion purposes. You may not copy, scrape, republish, or commercially exploit our content or technology without prior written permission."
+msgstr ""
+
+#: src/features/guides/guide-article.tsx:134
+msgid "All guides"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:45
+msgid "Almost every measurement you make describes the same physical quantity—distance, capacity, or surface—but the labels differ by country and industry. The metric system (SI and its everyday cousins) builds units from powers of ten. The imperial and US customary systems grew from trade, craft, and land practice, so their ratios are historical rather than decimal."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:933
+msgid "Almost nothing in daily practice. It appears mainly in historical discussions and comprehensive converters. Use Celsius or Kelvin for new scientific work."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1504
+msgid "Always follow the product label and local regulations. Online converters help with units; they do not replace water testing or professional advice for commercial pools."
 msgstr ""
 
 #: src/lib/units.ts:849
@@ -416,6 +612,10 @@ msgstr ""
 msgid "An ell is a historical cloth-measure length, standardized here at 1.143 metres. Tailors once used it for fabric lengths."
 msgstr ""
 
+#: src/features/guides/data/guides.ts:1000
+msgid "An imperial gallon is about 4.546 L versus about 3.785 L for a US liquid gallon—roughly 20% larger. Always check which gallon a figure uses."
+msgstr ""
+
 #: src/lib/units.ts:639
 msgid "An international acre equals about 4,047 square metres. It remains a primary land-area unit in the United States and United Kingdom."
 msgstr ""
@@ -444,16 +644,65 @@ msgstr ""
 msgid "An international yard equals exactly 0.9144 metres (3 feet). It is common in fabric, sports fields, and US customary measurements."
 msgstr ""
 
+#: src/routes/$lang/privacy-policy.tsx:177
+#: src/routes/$lang/terms-of-service.tsx:148
+msgid "Analytics"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:892
+msgid "Anders Celsius proposed a hundred-degree scale between water’s freezing and boiling points. The modern orientation (0 at freezing, 100 at boiling) became the everyday metric temperature scale."
+msgstr ""
+
 #: src/lib/units.ts:1169
 msgid "Ångström"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:516
+msgid "Architects and interior designers choose metres or feet based on local codes and software defaults. Ceiling heights near 2.4 m (about 8 ft) are a common residential ballpark. Convert carefully when importing overseas furniture dimensions into a local floor plan."
 msgstr ""
 
 #: src/lib/units.ts:1242
 msgid "Are"
 msgstr ""
 
+#: src/features/guides/data/guides.ts:401
+msgid "Are metric tablespoons always 15 mL?"
+msgstr ""
+
 #: src/lib/units.ts:1280
 msgid "Area"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:439
+msgid "Area and volume need squared and cubed prefixes"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:145
+msgid "Area and volume need squared or cubed length factors. If 1 m = 100 cm, then 1 m² = 10 000 cm² and 1 m³ = 1 000 000 cm³. Forgetting to square or cube the factor is one of the most common conversion mistakes in engineering homework and DIY material estimates."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:63
+msgid "Area for land still often uses acres (about 4 047 m²). Floor plans may mix square feet with metric room dimensions. That mixture is common on renovations spanning old and new drawings—always convert the whole drawing set to one system before cutting materials."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1309
+msgid "Area is not length"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:575
+msgid "Area measures surface: length squared. Volume measures space: length cubed. A square metre (m²) cannot convert to a litre (a volume) without additional information such as thickness or depth. If a tool offers that conversion, it is either wrong or silently assuming a height."
+msgstr ""
+
+#: src/routes/$lang/category.$quantity.tsx:34
+msgid "Area measures surface: rooms in square metres or square feet, land in hectares and acres. Pick a starting unit below, then convert to any other area unit without rounding drift. Guides on flooring and land units pair well with these tools."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:563
+msgid "Area vs Volume: Common Mistakes and How to Avoid Them"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1049
+msgid "Area, volume, and derived quantities"
 msgstr ""
 
 #: src/lib/units.ts:1170
@@ -464,19 +713,56 @@ msgstr ""
 msgid "At Units Converters, our mission is to provide the most accurate, reliable, and easy-to-use conversion tool on the web. Whether you are a student solving a physics problem, an engineer working on a global project, or just someone trying to follow a recipe, we ensure your measurements are exact."
 msgstr ""
 
+#: src/features/guides/data/guides.ts:1110
+msgid "Atomic diameters are on the order of 0.1 nm (1 Å). Small molecules span a few nanometres. Many viruses sit in tens to hundreds of nanometres. Wavelengths of visible light are hundreds of nanometres—linking optics to nanometre language."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:726
+msgid "Atoms, molecules, wavelengths of light, and crystal lattices are far smaller than millimetres. Saying 0.000 000 000 2 m repeatedly is unreadable. Prefixed SI units and a few traditional scientific units keep numbers near human scale."
+msgstr ""
+
 #: src/lib/units.ts:1171
 msgid "Attometre"
 msgstr ""
 
-#: src/routes/$lang/about.tsx:138
+#: src/features/guides/data/guides.ts:1061
+msgid "Automated converters in ERP systems need decimal arithmetic for money-adjacent quantities and for regulated dimensions. Binary float leftovers show up as mismatched hashes between plants."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1497
+msgid "Average depth for a sloping floor is often (shallow + deep) / 2. Confirm with the builder’s as-built drawings when available—guessing depth is the usual error source."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:767
+msgid "Avoid mixing ångströms and nanometres in the same column without labels. Silent unit changes are a frequent source of plot errors."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1136
+msgid "Avoid mixing nm and Å in the same paragraph without conversion. Experts can switch; mixed audiences get lost. The same advice applies when slides jump from micrometres of cell width to nanometres of membrane thickness without a verbal bridge between the scales."
+msgstr ""
+
+#: src/routes/$lang/about.tsx:140
+#: src/routes/$lang/category.$quantity.tsx:100
 #: src/routes/$lang/contact.tsx:100
-#: src/routes/$lang/convert.$quantity.$from.to.$to.tsx:124
-#: src/routes/$lang/terms-of-service.tsx:202
+#: src/routes/$lang/convert.$quantity.$from.to.$to.tsx:174
+#: src/routes/$lang/terms-of-service.tsx:219
 msgid "Back to Home"
 msgstr ""
 
 #: src/components/not-found.tsx:34
 msgid "Back to home page"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1111
+msgid "Bacteria often measure about one micrometre. Human cells are typically tens of micrometres. A human hair might be 50–100 µm wide. These landmarks help students check whether a converted value is absurd."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:750
+msgid "Bacteria sizes, human-cell diameters, and microfabricated channels are often quoted in micrometres. A red blood cell on the order of 7–8 µm is a classic teaching example. Plant cells and many protozoa push into tens or hundreds of micrometres, which is why biology lectures hop prefixes mid-sentence."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:959
+msgid "Baking formulas are sensitive to liquid ratios. Swapping a 250 mL metric cup into a recipe written for a 240 mL US cup quietly adds liquid. Cakes and breads may still work; macarons and laminated doughs may not forgive it. Professional kitchens avoid the ambiguity by weighing nearly everything."
 msgstr ""
 
 #: src/lib/units.ts:1172
@@ -487,12 +773,60 @@ msgstr ""
 msgid "Barn"
 msgstr ""
 
+#: src/features/guides/data/guides.ts:126
+msgid "Base units and why they matter"
+msgstr ""
+
 #: src/routes/$lang/contact.tsx:84
 msgid "Based in Brazil"
 msgstr ""
 
-#: src/components/conversion-details.tsx:108
+#: src/features/guides/data/guides.ts:736
+msgid "Because 1 Å = 10⁻¹⁰ m exactly in ordinary use, conversion is a clean power of ten—ideal for decimal arithmetic and less prone to exotic floating-point drama than customary-unit factors. Still label every column; clean math does not excuse ambiguous headers."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:54
+msgid "Because every step is a factor of ten, mental math is straightforward: 2.4 km is 2 400 m; 75 cm is 0.75 m. Spreadsheets and CAD tools handle metric cleanly, and international standards (ISO, IEC, most scientific journals) expect SI units or clearly defined metric derivatives."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:478
+msgid "Because the kilo prefix scales the underlying length by 1 000, and area squares that factor: 1 000 × 1 000 = 1 000 000. Always square or cube prefix factors for area and volume."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:659
+msgid "Because the speed of light is exact in SI, the light-year inherits a precise relationship to the metre once the year convention is fixed. Converters should document which year definition they use; Julian year is the common astronomical choice."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:874
+msgid "Before standard degrees"
+msgstr ""
+
+#: src/components/conversion-details.tsx:131
 msgid "Below you will find a quick reference table of common <0>{tFrom}</0> to <1>{tTo}</1> values, plus any available formulas, so you can compare results at a glance without re-entering each amount."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1312
+msgid "Best practice: measure both sides in one system, multiply to get area in that system, then convert area with an area converter. Do not convert only one side."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:764
+msgid "Best practices for scientific conversion"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1041
+msgid "Bilateral tolerances and unit changes"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1053
+msgid "Bill-of-materials lengths might be metric while packaging volumes are litres and shipping weights are kilograms—still keep each quantity’s conversions isolated and labelled."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:244
+msgid "Binary floating-point cannot represent many decimal factors exactly. Each multiply or divide adds a tiny rounding error. Round-trip conversion through floats often fails to restore the original bits even when the conversion factors are conceptually exact."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:449
+msgid "Biology and chemistry talk constantly in microlitres and nanomolar concentrations. Mechanical drawings for precision parts may call out micrometre tolerances. Electronics migrated from micrometre feature sizes toward nanometre nodes—the prefix is part of the industry vocabulary."
 msgstr ""
 
 #: src/lib/units.ts:1244
@@ -503,12 +837,60 @@ msgstr ""
 msgid "Board Foot"
 msgstr ""
 
+#: src/features/guides/data/guides.ts:1240
+msgid "Body Height Conversions: Feet, Inches, and Centimetres"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:69
+msgid "Body height, furniture, and room sizes are where people feel the difference most. Rough mental anchors help: 1 m ≈ 3.28 ft; 30 cm ≈ 1 ft; 1.6 km ≈ 1 mile. For precision work—door clearances, CNC stock, 3D printing—use exact factors, not memory."
+msgstr ""
+
 #: src/lib/units.ts:1173
 msgid "Bohr"
 msgstr ""
 
-#: src/routes/$lang/about.tsx:108
+#: src/features/guides/data/guides.ts:759
+msgid "Bohr radii and related atomic units appear in quantum chemistry. Convert to metres or picometres when comparing to experimental bond lengths in SI-friendly tables. Document the CODATA or software-default Bohr radius your package assumes if you need exact reproducibility."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:969
+msgid "Brewing and beverage industries historically lived on barrels and gallons with local definitions. Modern quality systems increasingly standardise on litres while keeping traditional names for marketing. Treat marketing units as labels and production units as litres whenever possible."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:960
+msgid "British recipes sometimes use imperial pints alongside metric weights—a hybrid that makes sense locally and confuses importers. Convert liquids to millilitres and dry goods to grams for a portable version."
+msgstr ""
+
+#: src/components/conversion-details.tsx:336
+msgid "Browse all {tQuantity} units"
+msgstr ""
+
+#: src/routes/$lang/guides/$slug.tsx:86
+msgid "Browse all guides"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1091
+msgid "Build intuition for lengths spanning nanometres to metres—powers of ten, everyday analogies, and clean conversion habits across SI prefixes."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:831
+msgid "Building footprints versus lot size"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:538
+msgid "Building personal conversion anchors"
+msgstr ""
+
+#: src/routes/$lang/index.tsx:169
+msgid "Built for everyday and scientific use"
+msgstr ""
+
+#: src/routes/$lang/about.tsx:110
 msgid "Built on TanStack Start and React 19, the site is optimized for instant loading and real-time results as you type."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:323
+msgid "By definition the kelvin and the degree Celsius have equal magnitude. The scales differ only by the location of zero: Kelvin starts at absolute zero; Celsius is offset by 273.15."
 msgstr ""
 
 #: src/routes/$lang/terms-of-service.tsx:62
@@ -519,8 +901,88 @@ msgstr ""
 msgid "Cable Length (International)"
 msgstr ""
 
+#: src/features/guides/data/guides.ts:1059
+msgid "CAD dual dimensioning should derive the secondary unit from the primary, never the reverse on alternate days. Primary units own the design authority. Secondary values are communication aids, not a second source of truth."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1128
+msgid "Calibration certificates themselves use units—read them. A gauge block set in inches converted carelessly into millimetres for a metric CMM program is a process risk."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:326
+msgid "Can I convert a temperature change the same way as a temperature reading?"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:857
+msgid "Can I convert acres to square kilometres directly?"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1524
+msgid "Can I convert pool volume from length units alone?"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:623
+msgid "Can I convert square metres to litres?"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1386
+msgid "Candy stages and meat doneness are often quoted in Fahrenheit in older US books and in Celsius elsewhere. Convert the target probe temperature the same way you convert oven set points—then verify with a calibrated thermometer."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1384
+msgid "Candy, meat, and probe temperatures"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:532
+msgid "Carpentry in the US still speaks feet and inches, including fractional inches. Metric-trained woodworkers converting plans must decide whether to soft-convert (nearest convenient millimetre) or hard-convert (exact 25.4 mm per inch) based on fit-critical parts."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1387
+msgid "Carryover cooking means food temperature rises after removal. Unit conversion does not change that physics; timing and resting still matter."
+msgstr ""
+
+#: src/routes/$lang/category.$quantity.tsx:92
+msgid "Category not found"
+msgstr ""
+
+#: src/routes/$lang/category.$quantity.tsx:60
+msgid "Category not found | Units Converters"
+msgstr ""
+
 #: src/lib/units.ts:1162
 msgid "Celsius"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:890
+msgid "Celsius and centigrade"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:270
+msgid "Celsius and Fahrenheit are everyday interval scales: equal degree sizes measure temperature differences, but their zeros are chosen for human convenience. Kelvin is an absolute thermodynamic scale: zero kelvin is absolute zero, where molecular motion reaches its theoretical minimum."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:177
+msgid "Celsius and Fahrenheit include an offset from absolute zero, so the mapping is of the form y = ax + b, not y = ax alone. Kelvin is an absolute scale and converts by scale factor once you are comparing absolute temperatures."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:894
+msgid "Celsius conquered international weather reporting, cooking outside the US, and most engineering education. Its alignment with kelvin degree size makes scientific conversion tidy."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:286
+msgid "Celsius to Fahrenheit: °F = °C × 9/5 + 32. Fahrenheit to Celsius: °C = (°F − 32) × 5/9. Memorise the offset and the 9/5 factor together—dropping either step is the usual classroom error."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:287
+msgid "Celsius to Kelvin: K = °C + 273.15. Kelvin to Celsius: °C = K − 273.15. Fahrenheit to Kelvin is safest as a two-step conversion: Fahrenheit → Celsius → Kelvin, unless you carefully apply a combined formula."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:258
+msgid "Celsius, Fahrenheit, and Kelvin Explained"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:474
+msgid "Centi appears constantly for centimetres in everyday length, but scientists often prefer millimetres or metres for technical drawings. Use the prefix that matches local practice and keeps numbers readable."
 msgstr ""
 
 #: src/lib/units.ts:1214
@@ -535,12 +997,64 @@ msgstr ""
 msgid "Chain"
 msgstr ""
 
-#: src/routes/$lang/terms-of-service.tsx:165
+#: src/features/guides/data/guides.ts:212
+msgid "Chained conversions amplify trouble. Going mile → yard → foot → inch → millimetre → metre with binary floats at each step is worse than a single mile → metre conversion with a high-precision factor. Each hop re-rounds the intermediate value."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:142
+msgid "Chaining conversions without losing the plot"
+msgstr ""
+
+#: src/components/conversion-details.tsx:198
+msgid "Change the input in the converter to check homework, recipes, engineering estimates, or lab notes. Results update as you type and keep full decimal precision instead of binary floating-point drift."
+msgstr ""
+
+#: src/routes/$lang/terms-of-service.tsx:182
 msgid "Changes to These Terms"
 msgstr ""
 
-#: src/routes/$lang/route.tsx:194
+#: src/routes/$lang/privacy-policy.tsx:308
+msgid "Changes to this policy"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1502
+msgid "Chemical charts and safety"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:968
+msgid "Chemical packaging and SDS documents should state litres or cubic metres explicitly. If gallons appear, look for US versus imperial labelling. Mistaking them in dilution calculations has safety implications, especially for concentrates where a 20% volume error is not cosmetic."
+msgstr ""
+
+#: src/routes/$lang/privacy-policy.tsx:279
+msgid "Children"
+msgstr ""
+
+#: src/components/conversion-details.tsx:247
+msgid "Choose <0>{tFrom}</0> when your source data, standard, or instrument already reports that unit. Switch to <1>{tTo}</1> when collaborating with teams, tools, or documents that expect a different convention for {tQuantity}."
+msgstr ""
+
+#: src/routes/$lang/route.tsx:222
 msgid "Choose language"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1193
+msgid "Choose length versus area versus volume before choosing metres versus feet. Many “unit” problems are quantity problems in disguise, especially in construction estimates."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:85
+msgid "Choose metric when you need international collaboration, scientific reporting, or simple scaling. Choose imperial or US customary when your local codes, tools, and suppliers already live there—and document the choice. Dual-dimension drawings can help on the shop floor if both values are derived from one master unit."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:308
+msgid "Choosing a scale for your work"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:83
+msgid "Choosing a system—and converting safely"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1165
+msgid "Choosing the Right Unit for the Job"
 msgstr ""
 
 #: src/lib/units.ts:1245
@@ -551,6 +1065,38 @@ msgstr ""
 msgid "Circular Mil"
 msgstr ""
 
+#: src/features/guides/data/guides.ts:581
+msgid "Classic DIY and gardening errors"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:680
+msgid "Classroom and communication tips"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:259
+msgid "Clear formulas, fixed points, and practical advice for converting between Celsius, Fahrenheit, and Kelvin without mixing offsets and scale factors."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:509
+msgid "Clothing and body measurements often use centimetres internationally and inches in the US. Pattern drafting can mix both; convert seam allowances carefully so ease calculations stay consistent."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:300
+msgid "Common conversion mistakes"
+msgstr ""
+
+#: src/components/common-conversions.tsx:17
+msgid "Common conversions"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:426
+msgid "Common prefixes in daily technical work include milli (10⁻³), centi (10⁻²), deci (10⁻¹), deka (10¹), hecto (10²), and kilo (10³). Science and engineering add micro (10⁻⁶), nano (10⁻⁹), pico (10⁻¹²), mega (10⁶), giga (10⁹), and beyond."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:989
+msgid "Communicating volumes across borders"
+msgstr ""
+
 #: src/routes/$lang/contact.tsx:60
 msgid "Company details"
 msgstr ""
@@ -559,14 +1105,39 @@ msgstr ""
 msgid "Company:"
 msgstr ""
 
+#: src/features/guides/data/guides.ts:252
+msgid "Compare at a declared precision, use decimal string equality, or assert absolute and relative tolerances. Avoid expecting exact binary equality after several arithmetic steps."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:664
+msgid "Comparing light-years, AUs, and parsecs"
+msgstr ""
+
 #: src/components/website-description.tsx:27
 msgid "Comprehensive Categories"
 msgstr ""
 
-#: src/components/footer.tsx:29
+#: src/features/guides/data/guides.ts:585
+msgid "Concrete slabs need volume, not floor area alone. A 10 m² slab 0.1 m thick is 1 m³ of concrete before waste factors. Ordering 10 m³ because the floor is 10 m² is an expensive confusion of symbols."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1431
+msgid "Confusing km/h with mph is a safety issue, not just a math issue. When you convert distance, also check whether speed limits were converted."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:652
+msgid "Confusing light-years with years leads to wrong mental models of age versus distance. A galaxy 100 million light-years away is not necessarily 100 million years old; we see it as it was when the light left, which is a different statement."
+msgstr ""
+
+#: src/routes/$lang/privacy-policy.tsx:246
+msgid "Consent preferences stay in your browser until you clear site data or change them. Feedback messages are kept only as long as needed to respond and improve the service. Analytics and advertising retention follow each provider's policies."
+msgstr ""
+
+#: src/components/footer.tsx:40
 #: src/routes/$lang/contact.tsx:46
-#: src/routes/$lang/route.tsx:282
-#: src/routes/$lang/terms-of-service.tsx:180
+#: src/routes/$lang/privacy-policy.tsx:322
+#: src/routes/$lang/route.tsx:186
+#: src/routes/$lang/terms-of-service.tsx:197
 msgid "Contact"
 msgstr ""
 
@@ -578,20 +1149,116 @@ msgstr ""
 msgid "Contact Voyager Tecnologias LTDA about Units Converters. Send feedback or reach us by email at voyagertecnologias@gmail.com."
 msgstr ""
 
-#: src/components/conversion-details.tsx:119
+#: src/components/conversion-details.tsx:142
+msgid "Conversion formula"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:118
+msgid "Conversion is multiplication by one"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1116
+msgid "Conversion patterns that never fail"
+msgstr ""
+
+#: src/components/conversion-details.tsx:208
 msgid "Conversion Table"
 msgstr ""
 
-#: src/routes/$lang/convert.$quantity.$from.to.$to.tsx:54
+#: src/features/guides/guide-article.tsx:91
+msgid "Convert {fromLabel} to {toLabel}"
+msgstr ""
+
+#: src/routes/$lang/convert.$quantity.$from.to.$to.tsx:62
 msgid "Convert {tFrom} to {tTo} | Accurate {tQuantity} Converter"
 msgstr ""
 
-#: src/routes/$lang/index.tsx:70
+#: src/routes/$lang/index.tsx:110
 msgid "Convert {translatedUnits} and more."
 msgstr ""
 
-#: src/components/cookie-consent.tsx:86
+#: src/features/guides/data/guides.ts:744
+msgid "Convert nm → m by multiplying by 10⁻⁹. Convert nm → µm by dividing by 1 000. Keep powers of ten explicit in lab notebooks. A one-line dimensional check after every conversion catches most transcription mistakes before they enter a paper draft."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1359
+msgid "Convert oven settings between Celsius and Fahrenheit, understand fan-assisted adjustments, and keep recipes reliable across regions."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:975
+msgid "Convert regional units to litres (or millilitres) as soon as possible. Work in SI-friendly volume, then convert back to the utensil or legal unit required for output. That round trip through litres is the cheapest insurance against US/UK name collisions."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1418
+msgid "Convert road and trail distances between kilometres and miles, read maps from different countries, and pace trips without unit confusion."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1300
+msgid "Convert room area between square metres and square feet, add waste factor the right way, and avoid the classic length×width unit mix-up."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1379
+msgid "Convert the printed recipe temperature first, then apply the fan adjustment. Do not mix the steps or you will double-correct."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1407
+msgid "Convert the printed temperature first, then apply your oven’s recommended fan reduction. Conversion and fan adjustment are separate steps."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:465
+msgid "Convert to the base SI unit first, then to the destination prefix. That two-step habit prevents tangled mental decimal shifts when you are tired."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:102
+msgid "Convert when you must compare, manufacture, dose, or navigate across systems. If a local building code, speed limit, or packaging label already matches your tools, work in that system and convert only at interfaces—imports, exports, and published specs."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:608
+msgid "Converter UIs should separate quantity tabs: Length, Area, Volume, Temperature. Cross-quantity conversion options invite nonsense results. If you build tools, disable impossible pairs."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:993
+msgid "Converters that expose a single cup unit should document which cup they implement. Users deserve that footnote. If you publish recipe software, store volumes internally in millilitres and localise the display unit—do not store ambiguous cup counts as if they were universal constants."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:789
+msgid "Converting Acres, Hectares, and Square Metres"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:690
+msgid "Converting light-years to kilometres produces enormous integers. Prefer scientific notation in reports. Check that your converter’s light-year matches the Julian-year definition if you need agreement with catalogue values. A mismatch in year definition is tiny compared with cosmic distances for outreach, but it matters when you reconcile two catalogues to many significant figures."
+msgstr ""
+
+#: src/components/cookie-consent.tsx:72
 msgid "Cookie Consent"
+msgstr ""
+
+#: src/components/footer.tsx:68
+msgid "Cookie settings"
+msgstr ""
+
+#: src/routes/$lang/privacy-policy.tsx:128
+msgid "Cookies and similar technologies"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:957
+msgid "Cooking consequences"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:77
+msgid "Cooking is the most common place non-engineers hit unit friction. Metric recipes weigh flour and liquids in grams and millilitres; US recipes lean on cups and tablespoons. Weight is more reliable than volume for dry goods because packing density varies. When you must convert volume, treat cup and litre conversions carefully and prefer weighing when accuracy matters."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:333
+msgid "Cooking Volume Conversions: Cups, Litres, and Spoons"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:355
+msgid "Core volume relationships for the kitchen"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:609
+msgid "CSV exports from CAD or GIS tools sometimes drop unit metadata. Re-attach units before converting, and sanity-check magnitudes: a house lot of 500 might be m²; a house lot of 500 000 is probably not acres."
 msgstr ""
 
 #: src/lib/units.ts:1219
@@ -654,8 +1321,36 @@ msgstr ""
 msgid "Cubit"
 msgstr ""
 
+#: src/features/guides/data/guides.ts:925
+msgid "Cultural and infrastructural inertia. Weather services, thermostats, and public expectations in some countries remain Fahrenheit-based. Science and most countries use Celsius or Kelvin."
+msgstr ""
+
 #: src/lib/units.ts:1233
 msgid "Cup"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:953
+msgid "Cups are even less consistent. US customary cups, US legal cups for nutrition labels, and metric cups (often 250 mL) all appear in recipes. Always identify which cup a source assumes. When a blog omits that detail, convert cautiously or find a weighed version of the same recipe."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1266
+msgid "Customary height: feet and inches"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:884
+msgid "Daniel Gabriel Fahrenheit produced reliable mercury thermometers in the early eighteenth century and a scale that placed familiar weather and body temperatures in convenient numbers. Freezing water at 32 and boiling at 212 gave 180 divisions between those points. Those numbers were engineering choices as much as scientific ones."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1187
+msgid "Dashboards and UI converters should default to locale-sensible units but allow overrides. Remember user preference without fighting legal labelling requirements. Logged analytics events should store a canonical unit so preference changes do not corrupt historical aggregates."
+msgstr ""
+
+#: src/routes/$lang/privacy-policy.tsx:242
+msgid "Data retention"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:458
+msgid "Data storage uses mega and giga too, but binary multiples (mebi, gibi) complicate that domain. Do not import binary prefix confusion into physical unit conversion—metres remain decimal."
 msgstr ""
 
 #: src/lib/units.ts:1183
@@ -666,16 +1361,36 @@ msgstr ""
 msgid "Decilitre"
 msgstr ""
 
+#: src/features/guides/data/guides.ts:219
+msgid "Decimal libraries (for example decimal.js, Big.js, or language-native decimals) store numbers in base 10. Exact decimal factors like 0.3048 and 0.001 stay exact within the chosen precision. Unit converters that care about correctness often convert through a decimal base unit."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:217
+msgid "Decimal, rational, and fixed-point alternatives"
+msgstr ""
+
 #: src/lib/units.ts:1182
 msgid "Decimetre"
 msgstr ""
 
-#: src/components/cookie-consent.tsx:119
+#: src/components/cookie-consent.tsx:100
 msgid "Decline"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:819
+msgid "Deeds may list acres to two decimals while the underlying metes-and-bounds geometry is more precise—or less. Conversion cannot add accuracy that the survey never measured."
 msgstr ""
 
 #: src/lib/units.ts:1228
 msgid "Dekalitre"
+msgstr ""
+
+#: src/routes/$lang/privacy-policy.tsx:261
+msgid "Depending on where you live, you may have rights to access, correct, delete, or restrict processing of your personal data, and to object to certain processing or withdraw consent. To exercise these rights, email <0>voyagertecnologias@gmail.com</0>. You can also decline non-essential cookies at any time."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1195
+msgid "Derived units (pressure, density, flow) should come from a coherent base system when possible. Coherence reduces the number of conversion factors in equations."
 msgstr ""
 
 #: src/components/feedback-section.tsx:61
@@ -686,12 +1401,80 @@ msgstr ""
 msgid "Description"
 msgstr ""
 
+#: src/features/guides/data/guides.ts:675
+msgid "Different distance measures exist in cosmology (comoving distance, luminosity distance, angular-diameter distance). A casual converter from redshift to light-years embeds cosmological model assumptions. Treat popular single-number conversions as approximate for deep-sky objects."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:573
+msgid "Different quantities, different dimensions"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1159
+msgid "Different structures sit at different scales. Cells may be discussed in microns (micrometres) while membranes, pores, or wavelengths are discussed in nanometres. Convert between them by factors of 1 000."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1445
+msgid "Distance units show up inside fuel economy (L/100 km vs mpg). Converting trip length alone does not convert economy figures—those need their own formulas."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:508
+msgid "DIY shelving, 3D printing, and picture framing benefit from millimetres because tolerances are tight and decimals in centimetres become error-prone. A 19 mm shelf pin hole is clearer than 1.9 cm for many makers."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:172
+msgid "Do I always multiply, or sometimes divide?"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1406
+msgid "Do I convert differently for fan ovens?"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:691
+msgid "Do not convert light-years to seconds and call it time without clearly switching quantity. Length converters should keep the result labelled as distance. If you need light-travel time, state time explicitly in years, days, or seconds after dividing distance by the speed of light."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:917
+msgid "Document which scale a dataset uses. Historical weather records may need station metadata and even scale reconstruction before comparison to modern Celsius series."
+msgstr ""
+
+#: src/components/conversion-details.tsx:414
+msgid "Does converting {tFrom} to {tTo} lose precision?"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1486
+msgid "Dose depends on volume"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:248
+msgid "Double precision (float64) is enough for many everyday conversions after display rounding, but it is not a substitute for exact decimal factors when you need bit-stable round trips, legal metrology, or strict automated tests. Prefer decimals or rationals for authoritative converters."
+msgstr ""
+
 #: src/lib/units.ts:1234
 msgid "Drop"
 msgstr ""
 
-#: src/routes/$lang/convert.$quantity.$from.to.$to.tsx:57
+#: src/features/guides/data/guides.ts:981
+msgid "Dry versus liquid measures"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1230
+msgid "Dual-label when audiences or regulations split across systems. Avoid cluttering specialist documents that already share one system—there, clear single-unit labelling is better."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:876
+msgid "Early thermoscopes showed expansion of air or liquid with heat but lacked shared numeric scales. Without fixed points agreed between cities, a reading could not travel with a letter or a scientific paper. Reproducibility—not convenience—pushed instrument makers toward shared reference points."
+msgstr ""
+
+#: src/routes/$lang/convert.$quantity.$from.to.$to.tsx:65
 msgid "Easily convert {tFrom} to {tTo} with our high-precision {tQuantity} converter. Free online tool for students and engineers."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1348
+msgid "Either works if you are consistent. Most people compute area in one unit, add waste, then convert for the supplier’s packaging unit."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1438
+msgid "Elevation gain is a length too—often in metres or feet. Convert gain separately from horizontal distance; they are different columns in a plan."
 msgstr ""
 
 #: src/lib/units.ts:1177
@@ -702,11 +1485,131 @@ msgstr ""
 msgid "Email:"
 msgstr ""
 
+#: src/features/guides/data/guides.ts:682
+msgid "Emphasise that the unit answers how far, not how long something lasts. Analogy: a three-hour drive describes a distance via a travel convention; it does not mean the destination is three hours old."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1029
+msgid "Engineering drawings should declare the conversion policy. Global teams that mix methods produce parts that almost fit, which is worse than parts that clearly do not. Almost-fitting parts waste inspection time and erode trust between suppliers."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:951
+msgid "English-speaking countries reused words like pint, quart, and gallon for liquid measure, then standardised them differently. A US liquid gallon is 231 in³ (exactly 3.785 411 784 L). An imperial gallon is 4.546 09 L. That is roughly a 20% difference—large enough to ruin dilution math and beverage yield planning."
+msgstr ""
+
+#. placeholder {0}: fromUnit.symbol
+#. placeholder {1}: toUnit.symbol
+#: src/components/conversion-details.tsx:356
+msgid "Enter a value in the converter above. We convert through the {tQuantity} base unit with Decimal.js arithmetic, then display the result in {tTo}. For a reference, 1 {0} = {oneToOne} {1}."
+msgstr ""
+
+#: src/routes/$lang/convert.$quantity.$from.to.$to.tsx:77
+msgid "Enter a value in the converter. We convert through the {tQuantity} base unit with Decimal.js arithmetic, then display the result in {tTo}."
+msgstr ""
+
+#: src/routes/$lang/privacy-policy.tsx:132
+msgid "Essential storage keeps your language and consent choices working. Non-essential cookies for analytics and advertising load only after you click \"Accept All\" on our cookie banner. You can change your mind anytime via \"Cookie settings\" in the footer."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1477
+msgid "Estimate swimming-pool volume in litres or cubic metres, convert between units, and dose chemicals from labels that disagree on volume units."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1327
+msgid "European product data sheets lean on m²; many North American sheets use ft². Keep a single project sheet with both columns if installers and suppliers disagree."
+msgstr ""
+
+#: src/routes/$lang/category.$quantity.tsx:223
+msgid "Every conversion goes through a carefully defined base unit for {tQuantity}. We use arbitrary-precision decimal arithmetic so results stay stable for scientific work, homework, and professional estimates alike."
+msgstr ""
+
+#: src/routes/$lang/index.tsx:65
+msgid "Every conversion goes through a carefully defined base unit with Decimal.js arithmetic—so homework, recipes, lab notes, and engineering estimates stay stable instead of drifting with binary floating-point math. Pick a category, choose two units, and read the formulas, tables, and FAQs on each page."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:501
+msgid "Everyday fluency means knowing rough sizes without a calculator: a credit card is about 85 mm long; a doorway is about 2 m high; a city block varies but is often a few hundred metres; a 5K run is 5 km."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:292
+msgid "Everyday intuition for each scale"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:67
+msgid "Everyday length: metres, feet, and miles"
+msgstr ""
+
+#. placeholder {0}: fromUnit.symbol
+#. placeholder {1}: toUnit.symbol
+#: src/components/conversion-details.tsx:146
+msgid "Exact conversion between <0>{tFrom}</0> and <1>{tTo}</1> starts by expressing the source value in the {tQuantity} base unit, then converting that base value into {tTo}. For a one-to-one check: 1 {0} equals {oneToOne} {1}."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1033
+msgid "Exact factors and significant figures"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:134
+msgid "Exact factors versus measured factors"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:807
+msgid "Exact relationships worth remembering"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1151
+msgid "Exactly 1 000 000 000 nanometres (10⁹ nm). One nanometre is 10⁻⁹ metre."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1521
+msgid "Exactly 1,000 litres. Cubic metres and litres are linked by a power of ten in everyday metric volume."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:850
+msgid "Exactly 10 000 square metres. A hectare is a square 100 metres on each side."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:549
+msgid "Exactly 25.4 mm per international inch. Use that factor for technical work instead of the older approximate 25 mm rule of thumb."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:760
+msgid "Extreme units teach scale stacking: from Planck lengths to the observable universe spans dozens of orders of magnitude. Prefixed metres and scientific notation are the bridges. A one-page scale ladder on the lab wall—nm, µm, mm, m—prevents more mistakes than another slide of prefix trivia."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:533
+msgid "Fabric and sports fields use yards historically. A yard is 0.9144 m exactly under the international definition. That exactness makes conversion trustworthy when you use international units."
+msgstr ""
+
 #: src/lib/units.ts:1163
 msgid "Fahrenheit"
 msgstr ""
 
-#: src/routes/$lang/route.tsx:94
+#: src/features/guides/data/guides.ts:279
+msgid "Fahrenheit set 32 °F at the freezing point of water and 212 °F at boiling, so there are 180 Fahrenheit degrees between those points versus 100 Celsius degrees. That 180/100 ratio is exactly 9/5, which appears in every conversion formula."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:882
+msgid "Fahrenheit’s practical scale"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:382
+msgid "Fan (convection) ovens may need temperature adjustments independent of unit conversion. Read your appliance manual; a correct Celsius ↔ Fahrenheit conversion still will not fix a fan-versus-conventional mismatch."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1376
+msgid "Fan (convection) vs conventional"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1378
+msgid "Fan-assisted ovens often need a lower set point than conventional recipes assume. Many bakers reduce by about 20 °C (roughly 25–40 °F) when switching to fan—check your oven manual."
+msgstr ""
+
+#: src/components/conversion-details.tsx:344
+msgid "FAQ: {tFrom} to {tTo}"
+msgstr ""
+
+#: src/routes/$lang/route.tsx:95
 msgid "Fast, accurate, and easy-to-use unit converter for Length, Temperature, Area, and Volume. Scientific precision with zero rounding errors."
 msgstr ""
 
@@ -718,16 +1621,140 @@ msgstr ""
 msgid "Femtometre"
 msgstr ""
 
+#: src/features/guides/data/guides.ts:1333
+msgid "Field tips that save returns"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1144
+msgid "Finally, convert a real lab value from a paper into the unit your instrument displays. That end-to-end habit is what professional work demands. If the converted value sits below the instrument’s resolution, change the measurement plan—do not pretend the conversion created observability."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1052
+msgid "Finite-element and CFD models are merciless about unit consistency. Pick SI for the model, convert inputs in, convert outputs out. Mixed-unit decks are legendary failure modes."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:276
+msgid "Fixed points that define the scales"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:221
+msgid "Fixed-point math scales everything to an integer count of the smallest tick—nanometres, microlitres, or thousandths of an inch. Integer arithmetic is exact until you overflow. It works well for domains with a clear quantum of measurement."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1311
+msgid "Flooring quotes need area (m² or ft²), not a single length. If you convert room length from metres to feet but forget to convert width the same way before multiplying, the area will be wrong by the length scale factor—not the square of it, and still disastrous for a materials order."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:365
+msgid "Flour, cocoa, grated cheese, and chopped nuts vary wildly by packing. Weighing removes that variance. If a recipe lists only cups, look for a reputable weight conversion for that ingredient and note whether flour was spooned or scooped."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1289
+msgid "Follow the form. If both are allowed, centimetres as a whole number are usually less error-prone than decimal metres."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:783
+msgid "Follow the journal and your field’s norms. Crystallography often still uses ångströms; much of nanoscience prefers nanometres. Consistency within a manuscript matters most."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1202
+msgid "Food labelling regimes may legally define cups and servings differently from grandma’s measuring cup. Follow the regulation for packaging; follow tested recipes for cooking. When the two conflict in a product development kitchen, keep separate spec sheets rather than forcing one ambiguous cup column."
+msgstr ""
+
 #: src/lib/units.ts:1179
 msgid "Foot (International)"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1496
+msgid "For a rectangle: length × width × average depth. Keep all three lengths in the same unit, compute cubic length (m³ or ft³), then convert to litres if your chemical chart needs litres."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1120
+msgid "For area and volume at small scales, remember to square and cube. A square micrometre is not related to a square millimetre by 1 000—it is related by 1 000² = 10⁶. Microfluidic volume calculations fail loudly when that power is missed."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1277
+msgid "For athletes and children, re-measure periodically instead of converting an old value forever. Growth and posture change the true length even when the unit system stays the same."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:676
+msgid "For educational Solar System and nearby-star problems, the simple light-travel distance is appropriate and clear. Save cosmological distance-measure nuance for courses that already cover expanding-space metrics; introducing it too early often confuses the core lesson that a light-year is length."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:197
+msgid "For many displays the difference is invisible after rounding. For finance-adjacent dosing, CNC toolpaths, legal land area, or automated test assertions that expect exact equality, those residuals become real bugs."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1454
+msgid "For mixed groups, publish both km and miles on shared itineraries. Dual totals prevent “how much farther?” arguments in the car."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:984
+msgid "For pantry staples, weight beats any pint definition. A pint of blueberries and a pint of cooked rice are market conventions more than laboratory volumes."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:541
+msgid "For precision, abandon estimates. Use a converter or exact factors, then round to the tolerance of the task. Estimating a cabinet reveal is fine; estimating a lens focal clearance may not be."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:459
+msgid "For public communication, choose a prefix that keeps the leading number between roughly 0.1 and 999. Saying 0.003 km is legal but unfriendly; 3 m is clearer."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:810
+msgid "For quick mental math: multiply hectares by 2.47 to estimate acres; multiply acres by 0.4 to estimate hectares. Then refine with a precise converter for legal work. Field estimates can use the rough factors; contracts and cadastre updates should not."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1037
+msgid "For statistical process control, keep one internal unit system in the database and convert only at presentation boundaries. Converting stored history repeatedly degrades data and complicates capability studies across plants."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:288
+msgid "For temperature differences, offsets cancel. A rise of 10 °C is a rise of 10 K and a rise of 18 °F. People often confuse converting a reading with converting a change—room temperature 20 °C is 68 °F, but a 20 °C increase is 36 °F, not 68 °F."
 msgstr ""
 
 #: src/routes/$lang/terms-of-service.tsx:72
 msgid "Free Converter Disclaimer"
 msgstr ""
 
-#: src/routes/$lang/convert.$quantity.$from.to.$to.tsx:311
+#: src/features/guides/guide-article.tsx:105
+msgid "Frequently asked questions"
+msgstr ""
+
+#: src/routes/$lang/convert.$quantity.$from.to.$to.tsx:364
 msgid "From"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:865
+msgid "From early thermoscopes to Celsius, Fahrenheit, Kelvin, and Newton—how temperature scales evolved and why multiple scales still appear in converters."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1090
+msgid "From Nanometre to Metre: Understanding Scale"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1443
+msgid "Fuel economy adjacent confusion"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:525
+msgid "Fuel economy complicates matters further: L/100 km versus miles per gallon inverts both volume and length thinking. Convert with full dimensional analysis rather than a memorised approximate factor when comparing cars across markets."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:967
+msgid "Fuel economy figures in miles per gallon depend on which gallon you mean. Comparing a US mpg sticker to a UK mpg figure without converting gallons misleads by about 20%. Prefer L/100 km for cross-border comparison, then convert only for local storytelling."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:965
+msgid "Fuel, labs, and industry"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:79
+msgid "Garden soil, paint, and concrete are sold by volume or coverage area. Confusing square metres of wall with litres of paint, or acres of field with cubic metres of mulch, is an area-versus-volume error—not a metric-versus-imperial one. Keep the quantity type clear before you convert the unit."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1045
+msgid "GD&T frames and datum schemes are unit-agnostic in logic but unit-specific in numbers. Update the entire feature control frame set coherently."
 msgstr ""
 
 #: src/lib/units.ts:1184
@@ -746,6 +1773,56 @@ msgstr ""
 msgid "Go Back"
 msgstr ""
 
+#: src/features/guides/data/guides.ts:1119
+msgid "Going the other way multiplies. 0.003 m = 3 mm = 3 000 µm = 3 000 000 nm. Writing scientific notation beside prefixed units catches slip errors. Dual writing is especially helpful when exporting CSV files that strip unit metadata."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:237
+msgid "Good engineering is matching numeric representation to the decision you will make with the number. Unit conversion for manufacturing, medicine, and legal metrology deserves decimal or rational math; a weather widget converting city temperatures does not. When in doubt, choose the stricter representation—the performance cost of decimals is usually smaller than the cost of a silent round-trip bug."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:500
+msgid "Good measurement starts by choosing a unit that keeps numbers comfortable. Furniture assembly lives in millimetres or inches. Room layouts live in metres or feet. Road trips live in kilometres or miles. Using kilometres to describe a screw pitch forces awkward decimals; using millimetres for a road trip forces huge integers. Comfortable magnitude is a usability feature, not a cosmetic preference."
+msgstr ""
+
+#: src/routes/$lang/privacy-policy.tsx:144
+msgid "Google AdSense"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1439
+msgid "GPX tools sometimes default to metres internally. Export settings can silently switch display units; verify the summary totals before sharing a route."
+msgstr ""
+
+#: src/routes/$lang/guides/$slug.tsx:75
+msgid "Guide not found"
+msgstr ""
+
+#: src/routes/$lang/guides/$slug.tsx:28
+msgid "Guide not found | Units Converters"
+msgstr ""
+
+#: src/components/footer.tsx:30
+#: src/features/guides/guide-article.tsx:31
+#: src/routes/$lang/route.tsx:176
+msgid "Guides"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:463
+msgid "Habits for error-free prefix conversion"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1076
+msgid "Hard conversion uses exact factors and preserves the original intent as closely as rounding allows. Soft conversion chooses a convenient near value in the other unit system, possibly adjusting tolerances, for manufacturability in local tooling."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1028
+msgid "Hard conversion uses exact factors and then rounds according to a stated rule that preserves the intent of the tolerance. Soft conversion picks a convenient nearby nominal in the other system. Both are valid strategies—but they are different strategies. Write which one you used in the revision block."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:236
+msgid "Hardware acceleration and GPU pipelines often force floats. In those cases, keep authoritative conversion in decimal on the CPU or server, and treat GPU floats as a display or intermediate approximation."
+msgstr ""
+
 #: src/lib/units.ts:1247
 msgid "Hectare"
 msgstr ""
@@ -758,41 +1835,391 @@ msgstr ""
 msgid "Hectometre"
 msgstr ""
 
-#: src/routes/$lang/convert.$quantity.$from.to.$to.tsx:83
+#: src/features/guides/data/guides.ts:1252
+msgid "Height looks simple until a form asks for feet and inches while your passport lists centimetres. People round early, forget the remaining inches, or paste a decimal foot value into an inches field. Those mistakes show up in clothing orders, medical charts, and sports eligibility checks."
+msgstr ""
+
+#: src/routes/$lang/convert.$quantity.$from.to.$to.tsx:127
 msgid "High-precision conversions"
 msgstr ""
 
-#: src/routes/$lang/route.tsx:115
-#: src/routes/$lang/route.tsx:138
+#: src/routes/$lang/route.tsx:116
+#: src/routes/$lang/route.tsx:139
 msgid "High-precision unit conversion for students and professionals. Convert hundreds of units instantly."
 msgstr ""
 
-#: src/routes/$lang/route.tsx:264
+#: src/features/guides/data/guides.ts:1435
+msgid "Hiking and running events"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:526
+msgid "Hiking maps may use contour intervals in metres while trail talk uses miles. GPS device settings should match the map and the group’s language to reduce rendezvous errors."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:983
+msgid "Historical dry pints and quarts add another layer rarely relevant to modern home cooking but still present in archives. Do not assume a dry pint equals a liquid pint without checking."
+msgstr ""
+
+#: src/routes/$lang/route.tsx:171
 msgid "Home"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:349
+msgid "Home cooking mixes traditions. US recipes lean on cups and spoons; many European and professional pastry recipes prefer grams and millilitres. A cup is a volume, not a weight, so a cup of sifted flour and a cup of packed brown sugar are different masses even when the cup is identical."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:374
+msgid "Honey, syrup, and molasses are viscous. They cling to measuring cups, so weight or a flexible silicone cup improves accuracy. Oiling a spoon lightly can help sticky transfers without changing volume much."
 msgstr ""
 
 #: src/components/feedback-section.tsx:57
 msgid "How could this website improve?"
 msgstr ""
 
-#: src/components/conversion-details.tsx:58
+#: src/components/conversion-details.tsx:351
+#: src/routes/$lang/convert.$quantity.$from.to.$to.tsx:73
+msgid "How do I convert {tFrom} to {tTo} quickly?"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1343
+msgid "How do I convert m² to ft² for a room?"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1016
+msgid "How engineers should convert units without destroying tolerances—significant figures, exact factors, stack-ups, and documentation habits that keep parts fitting."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:59
+msgid "How imperial and US customary units work"
+msgstr ""
+
+#: src/routes/$lang/index.tsx:62
+msgid "How it works"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:853
+msgid "How many acres are in a hectare?"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1284
+msgid "How many centimetres are in 5 feet 10 inches?"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:702
+msgid "How many kilometres are in a light-year?"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1461
+msgid "How many kilometres are in a mile?"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1520
+msgid "How many litres are in a cubic metre?"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:397
+msgid "How many millilitres are in a cup?"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:548
+msgid "How many millimetres are in an inch?"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1150
+msgid "How many nanometres are in a metre?"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:774
+msgid "How many nanometres are in an ångström?"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:849
+msgid "How many square metres are in a hectare?"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:51
+msgid "How metric units are organised"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:999
+msgid "How much larger is an imperial gallon than a US gallon?"
+msgstr ""
+
+#: src/routes/$lang/category.$quantity.tsx:219
+msgid "How our {tQuantity} converter works"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:489
+msgid "How people actually use millimetres, centimetres, metres, kilometres, inches, feet, and miles—and how to pick the right unit for home, travel, and DIY."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:251
+msgid "How should I compare converter results in tests?"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:656
+msgid "How the unit is defined"
+msgstr ""
+
+#: src/components/conversion-details.tsx:75
 msgid "How to convert {tFrom} to {tTo}"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1241
+msgid "How to convert height between centimetres, metres, feet, and inches for forms, sports, and health records—without mixing systems mid-sentence."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:108
+msgid "How Unit Conversion Works: Factors, Bases, and Dimensional Analysis"
+msgstr ""
+
+#: src/routes/$lang/privacy-policy.tsx:203
+msgid "How we use information"
 msgstr ""
 
 #: src/lib/units.ts:1181
 msgid "Hubble Length"
 msgstr ""
 
+#: src/features/guides/data/guides.ts:1067
+msgid "Identify authoritative units. Choose hard or soft conversion deliberately. Use exact factors. Convert limits for fits. Round once. Record the policy. Verify with a go/no-go mental estimate."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1217
+msgid "Identify quantity. Check legal and contractual requirements. Choose a readable unit for the magnitude. Confirm the audience recognises it. Convert through base units with exact factors. Round for display once. Label every number. If you cannot label a chart axis unambiguously, the unit choice is not finished."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:389
+msgid "Identify the cup and spoon standard assumed by the author. Convert all volumes to millilitres. Convert dry ingredients to grams where possible. Scale. Convert back only to the tools you will actually use."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1394
+msgid "Identify the recipe’s scale. Convert to your oven’s scale. Adjust for fan if needed. Preheat fully. Confirm with an oven thermometer on the rack you will use."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:985
+msgid "If a canning recipe comes from another country, convert volumes carefully and prefer updated recipes tested in your jar system—food safety depends on more than unit math."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1262
+msgid "If a form accepts only metres with two decimals, 175 cm becomes 1.75 m. Keep the centimetre value as the authoritative measurement when possible."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:616
+msgid "If a problem statement mixes coverage, depth, and capacity, draw a tiny diagram. Many homework and site errors vanish once the geometry is visible."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:204
+msgid "If software stores 25.4 as a binary float, it may already be slightly wrong before any conversion runs. Multiplying by another inexact factor compounds the error. Round-trip tests that assert strict equality then fail even when the algorithm is conceptually correct."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1211
+msgid "If two unit choices are equally readable, pick the one that minimises conversion steps to your equations or machines. Fewer conversions mean fewer opportunities to invert a factor or forget to square an area scale."
+msgstr ""
+
+#: src/routes/$lang/privacy-policy.tsx:181
+msgid "If you accept cookies, we may use PostHog (posthog.com) to understand how people use Units Converters—for example, which pages are popular, approximate region, and basic device or browser information. PostHog processes this data on our behalf so we can improve the site. Analytics is disabled when you decline cookies. Learn more in <0>PostHog's Privacy Policy</0>."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:87
+msgid "If you are learning both systems, practice with lengths you can see—desk width, walking pace, milk carton volume—so the numbers stick. Fluency beats memorising long tables you will not use under pressure. Keep one exact anchor in memory—25.4 mm per inch—and derive the rest when precision matters."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:229
+msgid "If you build a calculator UI, show enough precision to be useful but not so many digits that floating noise looks like signal. A length tool showing twelve decimals after converting through floats is advertising its representation error."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:818
+msgid "If you convert archived legal descriptions, note the epoch and foot definition used by the surveying authority. GIS professionals care about this; backyard gardeners usually do not."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:312
+msgid "If you only remember one habit, remember this: convert readings with the full affine formula; convert differences with the scale factor alone. Print that sentence near any lab oven or environmental chamber that displays a different scale than your protocol documents."
+msgstr ""
+
 #: src/routes/$lang/terms-of-service.tsx:120
 msgid "If you submit feedback, suggestions, or other content through our forms or email, you grant us a non-exclusive, royalty-free license to use that material to improve the service. You agree not to misuse the site, attempt to disrupt it, submit unlawful or abusive content, or interfere with other users' access."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:47
+msgid "If you work across borders—or follow recipes, building plans, and product specs from different countries—you need fluent conversion, not loyalty to one system. The rest of this guide shows where each system shines and the conversion habits that prevent costly mistakes."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:61
+msgid "Imperial length uses inches, feet, yards, and miles with fixed but non-decimal ratios: 12 inches in a foot, 3 feet in a yard, 1 760 yards in a mile. International definitions now pin the inch to exactly 25.4 mm, so conversions to metres are exact once you use the international foot and mile—not older survey definitions."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:939
+msgid "Imperial Volume: US vs UK Measures"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:779
+msgid "In common scientific and engineering usage, yes: micron is informal language for micrometre (10⁻⁶ m). Prefer micrometre in formal writing."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:71
+msgid "In manufacturing, mixed drawings are a classic failure mode: a part designed in millimetres, a fixture cut in inches, and a tolerance stack that quietly exceeds the budget. Pick one system for the project file and convert at the boundary only."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:402
+msgid "In many metric cooking standards, yes: 15 mL per tablespoon and 5 mL per teaspoon. Antique spoons and some regional utensils differ, so measure once into a jug if you need consistency."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:651
+msgid "In metres, one light-year is about 9.46 × 10¹⁵ m (roughly 9.46 petametres). In kilometres that is about 9.46 × 10¹² km. The huge size is exactly why astronomers like the unit: galactic distances stay readable."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:977
+msgid "In software and spreadsheets, name columns us_cup_mL or imperial_pint_mL rather than cup or pint. Ambiguous column headers are data bugs waiting to happen."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:138
+msgid "In software, exact factors should be stored as exact decimals or rational numbers where possible. Binary floating-point approximations of 0.001 or 25.4 can create tiny residuals that look like bugs when you convert back and forth."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1135
+msgid "In writing, introduce an unfamiliar small unit with an SI comparison once: 80 nm (0.08 µm) pores. Readers retain the comparison better than a bare nanometre figure. Repeat the comparison in figure captions, where readers often look first under time pressure."
+msgstr ""
+
+#: src/routes/$lang/guides/index.tsx:28
+msgid "In-depth guides on metric and imperial units, temperature scales, SI prefixes, cooking conversions, and precision measurement."
 msgstr ""
 
 #: src/lib/units.ts:1180
 msgid "Inch (International)"
 msgstr ""
 
+#: src/features/guides/data/guides.ts:530
+msgid "Inches, feet, and yards in trade skills"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1199
+msgid "Industry patterns that work"
+msgstr ""
+
+#: src/routes/$lang/privacy-policy.tsx:86
+msgid "Information we collect"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:877
+msgid "Instrument makers began marking fixed points such as melting ice, boiling water, or human body temperature. The choice of fixed points and how many degrees to place between them created competing scales. Even the direction of numbering (which end was zero) varied before conventions settled."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1124
+msgid "Instruments and resolution"
+msgstr ""
+
 #: src/routes/$lang/terms-of-service.tsx:98
 msgid "Intellectual Property"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1270
+msgid "International inch definitions are standardized today; everyday body-height conversion can treat the international inch as exact. Still, label the unit so software importers do not guess."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:381
+msgid "International recipes often pair metric volumes with Celsius ovens, while US recipes pair cups with Fahrenheit. Convert temperatures with the proper affine formulas; do not treat oven settings like volume factors."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1179
+msgid "International teams should pick a project system of units in kickoff documents. Retrofits mid-project are expensive. Include firmware defaults, CAD templates, and supplier portals in that decision—not only the report text."
+msgstr ""
+
+#: src/routes/$lang/privacy-policy.tsx:294
+msgid "International transfers"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1321
+msgid "Irregular rooms: split into rectangles, compute each area, then sum. Convert the sum once. Piecemeal rounding of each rectangle can leave you short."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:318
+msgid "Is 0 K the same as −273.15 °C?"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1154
+msgid "Is 1 µm equal to 1 000 nm?"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1465
+msgid "Is a 5K race five kilometres or five miles?"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:698
+msgid "Is a light-year a measure of time?"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:552
+msgid "Is a metre longer than a yard?"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:778
+msgid "Is a micron the same as a micrometre?"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:631
+msgid "Is an acre-foot an area unit?"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:473
+msgid "Is centi used as widely as milli and kilo?"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:247
+msgid "Is double precision enough for unit conversion?"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:928
+msgid "Is Kelvin written with a degree symbol?"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1225
+msgid "Is SI always the right choice?"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:93
+msgid "Is the metric system the same as SI?"
+msgstr ""
+
+#: src/components/conversion-details.tsx:367
+#: src/routes/$lang/convert.$quantity.$from.to.$to.tsx:83
+msgid "Is this {tFrom} to {tTo} converter free?"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:908
+msgid "Isaac Newton experimented with a temperature scale based on freely cooling materials and other references. The Newton scale appears in some converters as a historical curiosity with a zero near freezing and a smaller degree count to boiling."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:398
+msgid "It depends on which cup. A common modern US legal cup for nutrition labelling is 240 mL. A metric cup is often 250 mL. Check the recipe’s origin and prefer millilitre measurements when accuracy matters."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1510
+msgid "Keep a pool data card"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:383
+msgid "Keep a small card on the fridge with your most-used pairs: cup ↔ mL, tablespoon ↔ mL, butter stick ↔ grams if relevant in your country. Habit beats hunting mid-batter."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:467
+msgid "Keep a small reference of the prefixes you actually use. You do not need yocto and yotta memorised for construction work; you do need milli, micro, and kilo cold. Add nano if you read materials or electronics papers; add mega and giga if you work with planetary or data-centre physical plant scales."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:976
+msgid "Keep a tiny reference card: US gal ≈ 3.785 L; imperial gal ≈ 4.546 L; metric cup = 250 mL; US legal cup = 240 mL. Those four numbers prevent most kitchen disasters."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:152
+msgid "Keep full precision through intermediate steps. Round once for the audience: a cooking blog may show one decimal place; a machine shop may need three. Rounding early in a multi-step calculation invents error that was not in the original measurement."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1183
+msgid "Keep leading digits readable"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1455
+msgid "Keep nautical miles separate for marine and aviation contexts—they are not the same as statute miles."
 msgstr ""
 
 #: src/lib/units.ts:1164
@@ -803,6 +2230,22 @@ msgstr ""
 msgid "Kelvin (K) is the SI base unit of thermodynamic temperature. Absolute zero is 0 K; water's triple point is defined near 273.16 K."
 msgstr ""
 
+#: src/features/guides/data/guides.ts:280
+msgid "Kelvin anchors absolute zero at 0 K. The triple point of water and other defining fixed points connect Kelvin to laboratory practice. Scientists prefer Kelvin for equations of state, cryogenics, and colour temperature because ratios and absolute values behave cleanly."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:898
+msgid "Kelvin and absolute temperature"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:295
+msgid "Kelvin appears in physics, chemistry, astronomy, and lighting. Deep space backgrounds near 2.7 K, liquid nitrogen near 77 K, and steelmaking temperatures in the thousands of kelvin are easier to reason about without negative values."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1388
+msgid "Kelvin is rarely printed on consumer recipes but appears in science-of-cooking texts. Knowing that a 1 °C change equals a 1 K change helps when reading those charts."
+msgstr ""
+
 #: src/routes/$lang/about.tsx:80
 msgid "Key Features"
 msgstr ""
@@ -811,16 +2254,80 @@ msgstr ""
 msgid "Kilometre"
 msgstr ""
 
+#: src/features/guides/data/guides.ts:522
+msgid "Kilometres and miles outdoors"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:910
+msgid "Knowing these scales exist helps when reading older papers—but for new work, prefer Celsius for communication and Kelvin for absolute thermodynamic quantities."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:605
+msgid "Labels, symbols, and UI pitfalls"
+msgstr ""
+
 #: src/lib/units.ts:1235
 msgid "Lambda"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:78
+msgid "Land and property use hectares and acres side by side in international markets. One hectare is 10 000 m²; one acre is 4 046.856 422 4 m² under the international definition. Real-estate listings sometimes round aggressively—verify the survey plat, not the marketing brochure."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:799
+msgid "Land area units you will meet"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:589
+msgid "Land area versus water volume"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:443
+msgid "Land metric units add hectare (10⁴ m²) and are (10² m²). They are accepted for use with SI even though they are not prefix forms of the metre. Still convert through square metres when mixing with square kilometres or acres."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:790
+msgid "Land-area conversion made clear: acres, hectares, square metres, and square kilometres—with exact factors and pitfalls from surveying history."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1108
+msgid "Landmarks from nanometre upward"
+msgstr ""
+
+#: src/routes/$lang/privacy-policy.tsx:60
+msgid "Last updated: 13 July 2026"
 msgstr ""
 
 #: src/routes/$lang/about.tsx:27
 msgid "Learn about Units Converters, our commitment to scientific precision, and the technology behind our zero-rounding-error conversion tool."
 msgstr ""
 
+#: src/components/conversion-details.tsx:267
+msgid "Learn more about {tQuantity}"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:109
+msgid "Learn the mechanics behind unit conversion—base units, conversion factors, dimensional analysis, and why chaining conversions carefully keeps answers exact."
+msgstr ""
+
+#: src/routes/$lang/index.tsx:121
+msgid "Learn with our guides"
+msgstr ""
+
 #: src/lib/units.ts:1279
 msgid "Length"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:431
+msgid "Length examples that stick"
+msgstr ""
+
+#: src/routes/$lang/category.$quantity.tsx:32
+msgid "Length measures distance—from nanometres in materials science to light years in astronomy. This hub collects everyday and scientific length units so you can open any pair for formulas, tables, and high-precision conversion."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:488
+msgid "Length Units in Everyday Life: From Millimetres to Miles"
 msgstr ""
 
 #: src/lib/units.ts:1190
@@ -839,12 +2346,28 @@ msgstr ""
 msgid "Light Second"
 msgstr ""
 
+#: src/features/guides/data/guides.ts:658
+msgid "Light speed in vacuum is exactly 299 792 458 m/s by SI definition of the metre. A Julian year is 365.25 days of 86 400 seconds. Multiply speed by that time interval to get the light-year length used in astronomy."
+msgstr ""
+
 #: src/lib/units.ts:1194
 msgid "Light Year"
 msgstr ""
 
-#: src/routes/$lang/terms-of-service.tsx:148
+#: src/features/guides/data/guides.ts:435
+msgid "Light-travel units and astronomical units sit outside everyday prefixes but still convert to metres. Prefix fluency helps you sanity-check whether a result belonging in kilometres accidentally landed in metres."
+msgstr ""
+
+#: src/routes/$lang/terms-of-service.tsx:165
 msgid "Limitation of Liability"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:359
+msgid "Liquid oils, water, milk, and stocks convert cleanly by volume because they fill a cup without packing voids. Dry powders do not. That is why bread bakers live by weight."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:371
+msgid "Liquids, reductions, and substitutions"
 msgstr ""
 
 #: src/lib/units.ts:1236
@@ -855,12 +2378,101 @@ msgstr ""
 msgid "Location:"
 msgstr ""
 
+#: src/features/guides/data/guides.ts:672
+msgid "Lookback time and what we see"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:833
+msgid "Lot size may be acres; building floor area may be square metres or square feet. They measure different polygons. Floor-area ratio calculations fail if you convert units but mix the wrong polygons."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1201
+msgid "Machining: millimetres or inches, never both as authoritative. Civil land: hectares or acres plus square metres for footprints. Chemistry: litres and millilitres, with m³ for bulk tanks. Astrophysics: AU, parsecs, light-years depending on scale. Each domain already solved readability—borrow those norms instead of inventing a private system."
+msgstr ""
+
+#: src/routes/$lang/route.tsx:269
+#: src/routes/$lang/route.tsx:312
+msgid "Main"
+msgstr ""
+
+#: src/components/conversion-details.tsx:386
+msgid "Many calculators use binary floating-point numbers that cannot represent every decimal exactly. Our converter uses arbitrary-precision decimals so long conversion chains stay stable. Small differences usually come from rounding display, not from a different physical factor."
+msgstr ""
+
+#: src/routes/$lang/convert.$quantity.$from.to.$to.tsx:97
+msgid "Many calculators use binary floating-point numbers. Our converter uses arbitrary-precision decimals so long conversion chains stay stable."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1293
+msgid "Many shops validate ranges in one unit only. Converting with the wrong factor, or mixing ft/in with cm in one field, triggers those checks."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1008
+msgid "Many tools pick one common definition for simplicity—often a US cup or a metric cup. Read the tool’s documentation and prefer litre-based measures when you need unambiguous results."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1191
+msgid "Match the quantity—then the unit"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:498
+msgid "Matching the unit to the task"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1276
+msgid "Measure once with a clear method (wall-mounted stadiometer when accuracy matters). Convert to the form’s required unit. Round only for display. Double-check that feet and inches were not swapped."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1494
+msgid "Measuring a simple rectangular pool"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:304
+msgid "Medical and industrial alarms must use the correct scale and the correct notion of difference versus absolute reading. A thermostat set incorrectly by 5 °F versus 5 °C is a very different safety margin."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:455
+msgid "Mega, giga, and large-scale measures"
+msgstr ""
+
 #: src/lib/units.ts:1195
 msgid "Megametre"
 msgstr ""
 
+#: src/features/guides/data/guides.ts:457
+msgid "Megametres and gigametres appear in planetary science. Earth diameters and orbital distances are awkward in raw metres; prefixed megametres or scientific notation keep numbers readable."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:540
+msgid "Memorise a few anchors tied to your body and home: your height in both cm and ft/in; your door width; 100 m on a local track; one mile on a familiar road. Anchors beat abstract tables for quick estimates."
+msgstr ""
+
 #: src/lib/units.ts:1168
 msgid "Meter"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:514
+msgid "Metres and feet indoors"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1258
+msgid "Metric height: centimetres vs metres"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:53
+msgid "Metric length starts at the metre. Prefixes multiply or divide by ten: kilometre (1 000 m), centimetre (0.01 m), millimetre (0.001 m). Area uses square metres and square kilometres; land often uses hectares (10 000 m²). Volume centres on the litre (exactly 0.001 m³) and smaller kitchen measures such as cups and cubic centimetres."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:33
+msgid "Metric vs Imperial: Which System Should You Use?"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1325
+msgid "Metric vs US product sheets"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:447
+msgid "Micro, nano, and pico in the lab"
 msgstr ""
 
 #: src/lib/units.ts:1231
@@ -871,6 +2483,10 @@ msgstr ""
 msgid "Micrometre"
 msgstr ""
 
+#: src/features/guides/data/guides.ts:748
+msgid "Micrometres in biology and machining"
+msgstr ""
+
 #: src/lib/units.ts:1196
 msgid "Mile (International)"
 msgstr ""
@@ -879,27 +2495,231 @@ msgstr ""
 msgid "Millimetre"
 msgstr ""
 
+#: src/features/guides/data/guides.ts:506
+msgid "Millimetres and centimetres at home"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1112
+msgid "Millimetres rule machining and product design. Metres rule architecture and human movement. Connecting the ladder of landmarks makes SI prefixes feel like places, not trivia."
+msgstr ""
+
+#: src/components/conversion-details.tsx:256
+msgid "Mixing systems mid-project is a common source of error. Convert once at a clear boundary, label the unit on every number, and keep the rest of the workflow in a single system whenever possible."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:886
+msgid "Modern Fahrenheit is defined by exact conversion to Celsius/Kelvin rather than by Fahrenheit’s original reference experiments—metrology moved on, the name stayed. When you convert today, you are using the modern definition, not reconstructing eighteenth-century brine experiments."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:195
+msgid "Most CPUs store non-integer numbers in binary floating-point (IEEE 754). Fractions that look simple in decimal—0.1, 0.001, 2.54—often cannot be represented exactly in binary. The stored value is the nearest representable approximation, and arithmetic on approximations accumulates tiny residuals."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1260
+msgid "Most medical and ID systems outside the US store height in centimetres (for example, 175 cm). Metres (1.75 m) are clearer in scientific text but awkward on forms that expect whole centimetres."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1429
+msgid "Most of the world posts highway distances in kilometres. The United States (and a few other contexts) still lean on miles. Navigation apps usually localize, but printed guides, race bibs, and rental-car dashboards may not match your instincts."
+msgstr ""
+
 #: src/routes/$lang/about.tsx:67
 msgid "Most online converters suffer from rounding errors because they use standard floating-point arithmetic. Our tool is built using <0>Decimal.js</0>, a library for arbitrary-precision decimal arithmetic. This means that when you convert units, you get mathematically perfect results without the common \"0.000000000004\" artifacts found in other tools."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:434
+msgid "Moving between prefixes is shifting the decimal point. 3.5 km = 3 500 m = 3 500 000 mm. Avoid mixing mental shifts with calculator typos by writing the power explicitly: 3.5 × 10³ m."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:584
+msgid "Mulch and topsoil are sold by volume (cubic metres or litres) but spread over area (square metres) at a chosen depth. Volume = area × depth with consistent length units. Mixing feet of depth with square metres of bed is a dimensional mash-up."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:302
+msgid "Multiplying Celsius by 1.8 without adding 32 yields a wrong Fahrenheit reading. Adding 273 instead of 273.15 introduces a 0.15 K bias—negligible for weather, unacceptable for careful lab work."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:615
+msgid "Name the quantity. Confirm the dimension (L, L², L³, θ, …). Choose compatible units. Apply the correct power to length factors. Round at the end. Estimate a ballpark magnitude to catch 100× mistakes. If the ballpark fails, stop before ordering materials."
 msgstr ""
 
 #: src/lib/units.ts:1198
 msgid "Nanometre"
 msgstr ""
 
+#: src/features/guides/data/guides.ts:740
+msgid "Nanometres in optics and nanotechnology"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:350
+msgid "National cup definitions also differ. A common US customary cup is 240 mL in modern nutrition labelling contexts (historically often treated as 236.588 mL from 8 US fluid ounces). Metric cups in some countries are 250 mL. Using the wrong cup changes hydration and texture."
+msgstr ""
+
 #: src/lib/units.ts:1199
 msgid "Nautical Mile (International)"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:715
+msgid "Navigate ångströms, nanometres, micrometres, picometres, and related scientific length units used in chemistry, physics, and materials science."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:524
+msgid "Navigation, running, and cycling revolve around kilometres or miles depending on country. Pace (min/km versus min/mile) is a reciprocal-style conversion people get wrong under race stress—convert before the start, not mid-interval."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:692
+msgid "Nearest-star examples (Proxima Centauri at about 4.25 light-years) make excellent worked problems for metre and kilometre conversion practice. Ask students to compute the same distance in AU and in metres using scientific notation, then explain why both answers describe one physical separation."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:902
+msgid "Negative Celsius readings are normal; negative kelvin values are not used for ordinary thermodynamic temperatures. Historical oddities and pop-science misstatements sometimes confuse this point. If a conversion yields negative kelvin from a plausible Celsius input path, the implementation is wrong."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:296
+msgid "Negative Celsius temperatures are common in winter climates. Negative Kelvin is physically meaningless for ordinary thermodynamic temperature. If a converter produces negative kelvin from a valid input path, the formula implementation is wrong."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:46
+msgid "Neither system is more correct. A metre of road and a yard of fabric both measure length. What changes is how easy it is to scale, communicate internationally, and keep arithmetic simple. Engineers, scientists, and most of the world default to metric. Construction, aviation in some regions, cooking in the United States, and older legal documents still lean heavily on imperial or US customary units."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:228
+msgid "Never test converters with strict equality on binary floats. Compare within an absolute or relative tolerance, or compare decimal string forms at a stated precision. Prefer golden tests that use known exact pairs such as 1 in = 25.4 mm."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:811
+msgid "Never use linear mile-to-kilometre factors on acreages without squaring. Area conversion is not the same as length conversion. A 10% length-factor mistake becomes roughly a 21% area mistake after squaring—large enough to matter in lease negotiations."
 msgstr ""
 
 #: src/lib/units.ts:1165
 msgid "Newton"
 msgstr ""
 
+#: src/features/guides/data/guides.ts:906
+msgid "Newton and other historical scales"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1100
+msgid "Nine orders of magnitude in one glance"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1118
+msgid "nm → µm: divide by 1 000. µm → mm: divide by 1 000. mm → m: divide by 1 000. Each step is three orders of ten. nm → m: divide by 10⁹ (or multiply by 10⁻⁹). Drill those shifts until they are automatic under exam or shift pressure."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:632
+msgid "No. An acre-foot is a volume: the volume of water that would cover one acre to a depth of one foot. Acres alone measure area."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:327
+msgid "No. For changes, skip the offsets. Δ°F = Δ°C × 9/5, and ΔK = Δ°C. Applying +32 or +273.15 to a difference is incorrect."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:699
+msgid "No. It is a measure of distance: how far light travels in one year. The time metaphor helps intuition but the unit itself is length."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:929
+msgid "No. Modern style writes 300 K without a degree symbol, unlike °C and °F. The unit is the kelvin."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:624
+msgid "Not directly. Litres measure volume. You need a depth or thickness to turn area into volume, then convert cubic metres to litres (1 m³ = 1 000 L)."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:129
+msgid "Offsets appear for temperature: Celsius and Fahrenheit are affine scales, not pure ratios. Converting 20 °C to Fahrenheit is not simply multiply by 1.8; you must apply the correct offset. Length, area, and volume conversions are almost always pure scale factors—temperature is the common exception."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1084
+msgid "Often because of intermediate rounding, different foot definitions historically, or floating-point display modes. Agree on exact factors, a single conversion path, and a shared rounding policy."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1529
+msgid "Often the volume was underestimated, or gallons were treated as litres. Recalculate volume, convert units carefully, and retest the water."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:278
+msgid "On the modern Celsius scale, 0 °C is the freezing point of water and 100 °C is the boiling point at standard atmospheric pressure—useful anchors, though precise metrology now defines scales through absolute thermodynamic methods and fixed points of pure substances."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1068
+msgid "On the shop floor, give machinists drawings in the unit their tools display. Forcing constant mental conversion increases scrap more than any factor-table debate. If dual dimensions are required, derive the secondary unit from one authoritative primary value every time the drawing updates."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:130
+msgid "Once every unit maps to a base, any pair converts in two steps. That is more maintainable than storing a giant matrix of every unit against every other unit, and it keeps factors consistent."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:162
+msgid "Once the algebra is automatic, online converters become a speed tool rather than a crutch. You will spot inverted factors, wrong quantity types, and temperature offset mistakes before they reach a drawing or a dose. That skill matters even if you trust a particular website—because you still need to validate its quantity mode and rounding behaviour."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:775
+msgid "One ångström equals 0.1 nanometre (and 100 picometres). Multiply ångströms by 0.1 to get nanometres."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1489
+msgid "One cubic metre equals 1,000 litres. That SI relationship is exact and is the cleanest bridge for metric pool math."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:802
+msgid "One hectare is a square 100 m on a side—easy to visualise on a metric map. One international acre is 4 046.856 422 4 m², defined via the international yard and foot. That exact definition replaced older regional acres for most conversion work. When a historical document says acre without geometry, treat marketing roundings as approximate until a survey confirms them."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:854
+msgid "One hectare is approximately 2.471 acres. One acre is approximately 0.4047 hectares."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1462
+msgid "One international mile equals exactly 1.609344 kilometres. For rough estimates, 8 km ≈ 5 miles."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1430
+msgid "One international mile is exactly 1.609344 kilometres. For trip planning, that exact factor is enough; you rarely need more precision than a tenth of a kilometre or mile."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:357
+msgid "One litre is 1 000 mL and equals 1 000 cm³. That identity connects recipe language to laboratory language: 250 mL of stock is 250 cm³. A cubic metre is 1 000 L—useful for catering tanks, not cake batter."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1102
+msgid "One metre is 1 000 millimetres, 1 000 000 micrometres, or 1 000 000 000 nanometres. Climbing from nm to m is climbing nine powers of ten. That span covers DNA widths, bacteria, human hairs, insects, and human-scale objects—one reason science communication leans so hard on scale ladders."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1080
+msgid "Only for soft conversion where the design can tolerate it. For precision fits, keep the necessary decimals after multiplying by 25.4 and round according to a documented rule that protects the tolerance zone."
+msgstr ""
+
+#: src/routes/$lang/category.$quantity.tsx:232
+msgid "Open a conversion pair for formulas, a reference table, worked examples, and short FAQs tailored to those two units."
+msgstr ""
+
+#: src/routes/$lang/route.tsx:304
+msgid "Open menu"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:752
+msgid "Optical microscope resolution discussions blur micrometre and nanometre scales depending on technique. Match the unit to the instrument’s meaningful precision. Reporting 12.345 µm from an instrument good to 0.2 µm invents false confidence after conversion from millimetres."
+msgstr ""
+
+#: src/routes/$lang/index.tsx:124
+msgid "Original explainers on metric vs imperial, temperature scales, SI prefixes, cooking conversions, and more."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:137
+msgid "Other factors are measured or historically rounded. Older survey feet, local land measures, or experimental constants may carry uncertainty. When a factor is approximate, the converted result inherits that uncertainty—report significant figures honestly."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1329
+msgid "Our area hub and square-metre ↔ square-foot converter pages include tables for common room sizes so you can sanity-check contractor quotes quickly."
+msgstr ""
+
 #: src/routes/$lang/about.tsx:63
 msgid "Our Commitment to Precision"
 msgstr ""
 
-#: src/components/conversion-details.tsx:156
+#: src/components/conversion-details.tsx:435
 msgid "Our converter is designed for accuracy and speed. Unlike other tools that might have small rounding errors, we use specialized libraries to ensure every decimal point is correct. This is especially important for scientific calculations, engineering tasks, or any situation where precision is key."
 msgstr ""
 
@@ -907,12 +2727,56 @@ msgstr ""
 msgid "Our free online converter is the fastest way to switch between metric and imperial systems. Save time on complex math and get reliable conversions for school, lab work, or construction projects."
 msgstr ""
 
+#: src/routes/$lang/privacy-policy.tsx:298
+msgid "Our hosting and partners may process data in countries other than yours. Where required, we rely on appropriate safeguards offered by those providers."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1447
+msgid "Our kilometre ↔ mile converter pages include tables for common road distances so you can translate itinerary notes quickly."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1514
+msgid "Our litre ↔ cubic metre pages include reference tables that make a quick sanity check easy before you open a chemical jug."
+msgstr ""
+
 #: src/routes/$lang/about.tsx:98
-msgid "Our platform is fully translated into English, Spanish, and Portuguese to serve users worldwide."
+msgid "Our platform is fully translated into English, Spanish, Portuguese, French, German, Japanese, Chinese, Traditional Chinese, Korean, Russian, Italian, Indonesian, Arabic, Polish, Dutch, Turkish, and Hindi to serve users worldwide."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1358
+msgid "Oven Temperature for Baking: Celsius and Fahrenheit"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:379
+msgid "Oven temperatures are not volumes—but they travel with recipes"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1411
+msgid "Ovens vary. Rack position, pan colour, and calibration errors matter as much as the unit label. Use an oven thermometer."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1320
+msgid "Packaging is often sold in boxes covering a stated area. Convert your net area (plus waste) into the seller’s unit before dividing by coverage per box. Round up to whole boxes."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:583
+msgid "Paint coverage is area; paint purchase is volume. You need area of wall, number of coats, and coverage rate (m² per litre) to find litres. Converting wall m² directly into litres without coverage data is meaningless."
 msgstr ""
 
 #: src/lib/units.ts:1200
 msgid "Parsec"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:576
+msgid "People confuse the words because everyday language is loose. We say a room is 20 squares, a pool holds 50 000 litres, and a field is 2 acres—then ask a converter to jump between those numbers without checking dimensions."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:510
+msgid "Phone screens, notebooks, and desk accessories are marketed in inches in some regions even when the rest of life is metric. Treat those inches as marketing conventions and convert if you need clearance in a metric bag or sleeve."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1453
+msgid "Pick one planning unit for the trip. Convert all legs into that unit. Add buffer for detours. Only then convert a summary into the local road-sign unit if needed."
 msgstr ""
 
 #: src/lib/units.ts:1232
@@ -923,27 +2787,168 @@ msgstr ""
 msgid "Picometre"
 msgstr ""
 
+#: src/features/guides/data/guides.ts:728
+msgid "Picometres and femtometres appear in nuclear and precision atomic contexts. Choosing among them is about readability and community convention, not different physics."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:952
+msgid "Pints follow their gallons: eight pints to a gallon in both systems, so the pints differ by the same ratio. Ordering a pint while travelling teaches metrology faster than a textbook. Pub glassware regulations and labelling laws encode these differences whether cooks notice or not."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:534
+msgid "Pipe and lumber nominal sizes are not always actual measured sizes. Unit conversion cannot fix a nominal-versus-actual mismatch—measure the part you have."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:450
+msgid "Pipettes, micrometers (the tool), and nanometre-resolution stages all demand that you keep prefix meaning separate from tool names. English uses micrometer for both a tool and a unit spelling variant—context prevents confusion."
+msgstr ""
+
 #: src/lib/units.ts:1205
 msgid "Planck Length"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:756
+msgid "Planck length and other extreme units"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1451
+msgid "Planning checklist"
 msgstr ""
 
 #: src/components/feedback-section.tsx:86
 msgid "Please provide as much detail as possible…"
 msgstr ""
 
+#: src/features/guides/data/guides.ts:1060
+msgid "PLM exports to suppliers must state units in the file, not only in an email. Ambiguous CSV columns are scrap tickets waiting to happen."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1488
+msgid "Pool chemical labels assume you know the water volume. If your notes say gallons but the label says litres—or your builder quoted cubic metres—you must convert before multiplying dose per volume."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1476
+msgid "Pool Volume for Chemicals: Litres and Cubic Metres"
+msgstr ""
+
+#: src/routes/$lang/category.$quantity.tsx:144
+msgid "Popular {tQuantity} conversions"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:668
+msgid "Popular science favours light-years because the travel-time metaphor is intuitive. Research papers often favour parsecs. Converting between them is routine length conversion through metres."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1103
+msgid "Powers-of-ten thinking prevents panic when a lab protocol says 250 nm and your calipers read millimetres. Convert to metres first: 250 nm = 2.5 × 10⁻⁷ m = 0.000 25 mm—far below caliper resolution. The conversion is correct; the instrument choice is wrong."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1134
+msgid "Powers-of-ten videos and scale-of-universe graphics work because they walk the prefix ladder visually. Pair them with actual conversion drills so students can compute, not only watch."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:442
+msgid "Practical check: 1 m³ = 1 000 L = 1 000 000 cm³. 1 m² = 10 000 cm². If your converted area or volume is off by factors of 100 or 1 000, suspect a missing square or cube on the prefix."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1274
+msgid "Practical checklist"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:334
+msgid "Practical kitchen guidance for converting cups, litres, tablespoons, and teaspoons—plus when weighing beats volume for consistent baking."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:823
+msgid "Practical property and agriculture examples"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:225
+msgid "Practical rules for trustworthy converters"
+msgstr ""
+
+#: src/routes/$lang/guides/index.tsx:55
+msgid "Practical, original explainers for students, engineers, cooks, and anyone who needs to convert units without second-guessing the math."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1142
+msgid "Practice converting the same length through nm, µm, mm, and m until the decimal shifts feel boring. Boredom here is competence."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1015
+msgid "Precision in Engineering Conversions"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:751
+msgid "Precision machining and metrology may specify tolerances in micrometres (or microns in shop slang). Confirm whether a drawing’s micron means micrometre—almost always yes in modern practice. When a drawing mixes µm tolerances with inch nominals, convert one system to authority before quoting capability to a customer."
+msgstr ""
+
 #: src/components/website-description.tsx:10
 msgid "Precision Unit Converter: Metric, Imperial & Scientific"
 msgstr ""
 
-#: src/components/footer.tsx:39
+#: src/features/guides/data/guides.ts:1207
+msgid "Precision, uncertainty, and honesty"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:841
+msgid "Prefer converting through square metres as a base. Acre → m² → hectare is transparent and easy to audit. Round to the precision required by the legal or agronomic context at the end only. Title reports and GIS layers should name the unit in the filename or layer metadata so downloads remain unambiguous."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:146
+msgid "Prefer converting through the base unit rather than hopping through many intermediate customary units. Each unnecessary hop is another chance to grab the wrong factor or round too early."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1210
+msgid "Prefer exact SI factors when converting customary units for engineering. Prefer documented legal definitions for trade and land. Prefer community convention in a field only after those constraints are satisfied."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1234
+msgid "Prefer kelvin for absolute thermodynamic data, or Celsius with explicit labels for many experimental datasets. Never leave temperature numbers unlabeled."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1185
+msgid "Prefer units that keep values roughly between 0.1 and 999 for ordinary communication. Prefer 12.5 km over 12 500 m for a road distance; prefer 12.5 m over 0.0125 km for a room length. Readable magnitude is part of error prevention."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:406
+msgid "Prefer weight. Flour packing density varies enough to change crumb and rise. If you only have cups, use a consistent method (typically spoon and level) and accept more batch-to-batch variation."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:423
+msgid "Prefixes are powers of ten"
+msgstr ""
+
+#: src/components/footer.tsx:50
+#: src/routes/$lang/privacy-policy.tsx:48
 msgid "Privacy Policy"
 msgstr ""
 
-#: src/routes/$lang/convert.$quantity.$from.to.$to.tsx:277
+#: src/routes/$lang/privacy-policy.tsx:24
+msgid "Privacy Policy | Units Converters"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:122
+msgid "Professional converters do the same algebra under the hood. They store each unit as a scale (and sometimes an offset) relative to a base unit, then convert input → base → output. Understanding that pattern makes every converter less mysterious."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:991
+msgid "Publish millilitres alongside cups. Publish litres alongside gallons. Dual labelling is cheap compared with failed batches and angry comments."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:158
+msgid "Putting it into practice"
+msgstr ""
+
+#: src/routes/$lang/convert.$quantity.$from.to.$to.tsx:330
 msgid "Quantities tabs"
 msgstr ""
 
-#: src/routes/$lang/terms-of-service.tsx:184
+#: src/routes/$lang/privacy-policy.tsx:326
+msgid "Questions about privacy? Email <0>voyagertecnologias@gmail.com</0> or visit our <1>Contact</1> page. See also our <2>Terms of Service</2>."
+msgstr ""
+
+#: src/routes/$lang/terms-of-service.tsx:201
 msgid "Questions about these Terms of Service may be sent to <0>Voyager Tecnologias LTDA</0> at <1>voyagertecnologias@gmail.com</1>."
 msgstr ""
 
@@ -951,19 +2956,127 @@ msgstr ""
 msgid "Quickly convert between hundreds of units across <0>Length</0>,<1> Temperature</1>, <2>Area</2>, and <3>Volume</3>. Whether you are a student, engineer, or hobbyist, our tool provides high-precision results for everything from everyday measurements to advanced scientific data."
 msgstr ""
 
-#: src/routes/$lang/terms-of-service.tsx:25
-msgid "Read the Terms of Service for Units Converters, including usage disclaimers, intellectual property, third-party advertising, and limitation of liability."
+#: src/features/guides/data/guides.ts:1352
+msgid "Quotes may include waste, pattern matching, or different rounding. Compare net area in the same unit first, then discuss add-ons."
 msgstr ""
 
-#: src/routes/$lang/convert.$quantity.$from.to.$to.tsx:84
+#: src/features/guides/data/guides.ts:592
+msgid "Rainfall is often discussed as a depth (millimetres) over a catchment area. Volume of rain equals area × depth. Flood planning lives on that relationship; unit conversion is only one step in the hydrology."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:220
+msgid "Rational arithmetic stores factors as fractions of integers. If 1 inch = 127/5000 metres exactly (because 25.4 mm = 127/5000 m), multiplication can cancel exactly. Rationals are ideal for pure scale conversions; offsets still need careful handling for temperature."
+msgstr ""
+
+#: src/routes/$lang/privacy-policy.tsx:26
+msgid "Read how Units Converters collects and uses data, including cookies, PostHog analytics, and Google AdSense advertising."
+msgstr ""
+
+#: src/routes/$lang/terms-of-service.tsx:25
+msgid "Read the Terms of Service for Units Converters, including usage disclaimers, intellectual property, advertising, PostHog analytics, and limitation of liability."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:593
+msgid "Real-estate listings that casually compare acreage to building floor area without saying so confuse land footprint with living space. Read the survey definitions."
+msgstr ""
+
+#: src/routes/$lang/convert.$quantity.$from.to.$to.tsx:128
 msgid "Real-time results"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:909
+msgid "Réaumur, Rankine, Delisle, and others also left traces in archives and specialised engineering domains (Rankine still appears in some US thermodynamic teaching as an absolute Fahrenheit-sized scale)."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1336
+msgid "Recheck closet and hallway areas; they are easy to omit and painful to under-order. Include niches if finish material continues into them."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1368
+msgid "Recipes travel; oven dials do not"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:842
+msgid "Record the factor source (international acre, local regulation) in project notes. Future you will not remember which constant you typed. If a client provides acres from an old survey foot regime, flag that in the same note before anyone designs fencing from a soft-converted hectare figure."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1512
+msgid "Record volume in litres and in cubic metres (and gallons if your local suppliers use them). Update the card if you change water level significantly or remodel."
+msgstr ""
+
+#: src/components/conversion-details.tsx:298
+msgid "Related {tQuantity} conversions"
+msgstr ""
+
+#: src/features/guides/guide-article.tsx:65
+msgid "Related converters"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:660
+msgid "Related units include the light-second, light-minute, light-hour, and light-day—useful for Solar System scales and communications delay discussions."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1127
+msgid "Reporting a converted value finer than the instrument’s resolution is false precision. Conversion should not invent digits the measurement never provided."
 msgstr ""
 
 #: src/components/default-suspense-and-error-boundary.tsx:113
 msgid "Retry from scratch"
 msgstr ""
 
-#: src/routes/$lang/convert.$quantity.$from.to.$to.tsx:85
+#: src/features/guides/data/guides.ts:1218
+msgid "Review one sample output with a colleague from another country or trade. If they misread it, your unit choice failed—even if the math was perfect. Usability testing for units sounds excessive until the first shipment fails incoming inspection."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1219
+msgid "Revisit choices when the project scale changes: a prototype in millimetres may become a site plan in metres without anyone updating the spreadsheet headers. Headers matter. Build a one-page unit register for long projects listing quantity, authoritative unit, display unit, and conversion owner so changes leave an audit trail."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:70
+msgid "Road distances illustrate national habit more than physics. Most countries post kilometres; the US posts miles. Running and cycling training plans often mix 5K (metric branding) with mile pace. Convert deliberately when comparing workouts or GPS exports."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1427
+msgid "Road signs disagree by country"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1299
+msgid "Room Area for Flooring: Square Metres and Square Feet"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:235
+msgid "Rough comparisons, games, data visualisation, and many scientific simulations tolerate float error because the model uncertainty dwarfs representation error. The key is knowing your tolerance. If a millimetre matters, floats need discipline or replacement."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:150
+msgid "Rounding, significant figures, and display"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:86
+msgid "Safe conversion habits: convert through SI base units when possible (metres, cubic metres, square metres), use exact legal factors (25.4 mm per inch), and round only at the end for display. Intermediate rounding is how small errors become expensive after several steps."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:949
+msgid "Same names, different volumes"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:843
+msgid "Sanity-check magnitudes: a suburban house lot of 0.2 acres is hundreds of square metres, not hundreds of hectares. A national park listed as 2 000 hectares is tens of square kilometres—if your spreadsheet shows 2 000 km², you dropped a factor of one hundred."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1104
+msgid "Scale intuition is a professional skill in science education, microfabrication, and biology. Converters give numbers; analogies give judgment. Teams that share a common set of landmarks waste less time arguing about whether a result looks reasonable."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:683
+msgid "Scale models help: if the Earth–Sun distance is 1 cm, a light-year becomes an awkwardly large classroom length—which itself teaches why astronomers need big units."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:367
+msgid "Scaling a recipe up for a party magnifies volume error. Convert the master recipe to grams and millilitres, scale by a pure number, then convert back to cups only if your guests insist on seeing familiar utensils."
+msgstr ""
+
+#: src/routes/$lang/convert.$quantity.$from.to.$to.tsx:129
 msgid "Scientific grade units"
 msgstr ""
 
@@ -971,20 +3084,148 @@ msgstr ""
 msgid "Scientific Grade:"
 msgstr ""
 
+#: src/features/guides/data/guides.ts:714
+msgid "Scientific Length Units: Ångström, Nanometre, Micrometre, and More"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1186
+msgid "Scientific notation supplements prefixes when values span wide ranges in one table. Consistency within a column matters more than clever prefix switching every row. Readers compare numbers faster when the unit token does not change every line."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:826
+msgid "Seed and fertiliser rates mix area units with mass: kg/ha versus lb/acre. Convert area and mass separately, then combine. Dimensional analysis prevents inverted rates."
+msgstr ""
+
+#: src/routes/$lang/category.$quantity.tsx:182
+msgid "Select any unit to open the converter. You can change the target unit on the next screen."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:743
+msgid "Semiconductor process nodes historically used nanometre branding; interpret marketing nodes cautiously versus physical gate lengths. Still, the nanometre remains the linguistic home of small electronic features. Materials papers on nanoparticles likewise default to nm for diameters and to m²/g for surface area—do not mix those quantity types."
+msgstr ""
+
 #: src/components/feedback-section.tsx:99
 msgid "Sending..."
 msgstr ""
 
-#: src/routes/$lang/index.tsx:32
+#: src/features/guides/data/guides.ts:1490
+msgid "Shape matters: rectangular, circular, and freeform pools need different geometric estimates. Convert units after you trust the geometric volume, not before."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1513
+msgid "Share the data card with anyone who helps maintain the pool. Dual units prevent weekend overdosing when a guest reads a foreign label."
+msgstr ""
+
+#: src/routes/$lang/privacy-policy.tsx:226
+msgid "Sharing of information"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1506
+msgid "Shock, chlorine, and acid products can use different chart conventions. Convert volume once into a “home unit” you reuse for every product."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:101
+msgid "Should I convert every measurement I see?"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:405
+msgid "Should I convert flour by volume or weight?"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1469
+msgid "Should I convert speed limits the same way?"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1229
+msgid "Should I dual-label every measurement?"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1288
+msgid "Should I enter height in metres or centimetres?"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1079
+msgid "Should I round millimetre equivalents of inches to whole millimetres?"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:782
+msgid "Should I use ångströms or nanometres in a paper?"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1347
+msgid "Should waste factor be added before or after conversion?"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:901
+msgid "SI defines the kelvin via fundamental constants in modern metrology, completing a journey from ice baths to quantum standards. Everyday users still convert to Celsius for intuition. Lab notebooks should still record which scale a sensor firmware emits—assumptions here cause multi-degree biases."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:94
+msgid "SI is the formal International System of Units. Everyday metric speech includes SI units plus convenient units like the litre and hectare that are accepted for use with SI. For technical work, prefer SI base and derived units and state any non-SI metric units explicitly."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1226
+msgid "SI is usually best for science and international engineering, but local codes, tools, and audiences may require customary units. When they do, convert carefully and document the authoritative system."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:425
+msgid "SI prefixes attach to unit names to multiply or divide by powers of ten. A kilometre is 10³ metres; a millimetre is 10⁻³ metres; a nanometre is 10⁻⁹ metres. Learning the prefix table once unlocks length, mass, and many derived units."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:413
+msgid "SI Prefixes Explained: From Nano to Giga and Beyond"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:735
+msgid "SI purists prefer nanometres or picometres, and many journals accept either. When collaborating, agree on a unit for tables and convert consistently in supplementary data. Reviewers notice when Figure 1 uses nm and Table 2 uses Å without a conversion note."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1036
+msgid "Significant figures should reflect measurement capability and functional need. Listing eight decimals after converting a tape-measure dimension pretends to precision you do not have. Inspectors should be told which digits are functional and which are artefacts of conversion display."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:153
+msgid "Significant figures should reflect the least precise input, not the calculator display. A tape measure good to the nearest millimetre does not justify reporting a converted inch value to six decimals."
+msgstr ""
+
+#: src/routes/$lang/index.tsx:53
 msgid "Simple, fast, and scientific-grade precision. Convert anything from nanometres to light years in seconds."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:366
+msgid "Small quantities of baking powder, yeast, and salt are often safer by volume spoons only when the recipe was developed that way—or by grams on a 0.1 g scale for serious baking. Tiny absolute errors are large relative errors in a teaspoon."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1203
+msgid "Software defaults influence everything. CAD templates, sensor firmwares, and CSV exporters silently choose units—audit them. A fifteen-minute defaults review at project start prevents weeks of forensic unit archaeology later."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1057
+msgid "Software, PLM, and dual dimensioning"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:827
+msgid "Solar farm and sports-pitch comparisons often quote hectares in one article and acres in another. Convert before arguing which site is larger."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:136
+msgid "Some factors are defined by law or international agreement and are exact. The international inch is exactly 25.4 mm. The litre is exactly 0.001 m³. Using those exact values avoids introducing false precision or systematic bias."
 msgstr ""
 
 #: src/components/not-found.tsx:16
 msgid "Something went wrong"
 msgstr ""
 
-#: src/routes/$lang/about.tsx:106
+#: src/routes/$lang/about.tsx:108
 msgid "Speed and Simplicity:"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:518
+msgid "Sports fields and courts have standardised dimensions—often published in metres internationally even where fans still talk in yards or feet. Check the governing body’s ruleset for the exact numbers."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:303
+msgid "Spreadsheets sometimes store temperatures as numbers without units in the header. Downstream scripts then apply the wrong formula. Always label columns with the scale, including the degree symbol or the letter K."
 msgstr ""
 
 #: src/lib/units.ts:1251
@@ -993,6 +3234,10 @@ msgstr ""
 
 #: src/lib/units.ts:1252
 msgid "Square Decimetre"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:600
+msgid "Square feet to square metres and cubic feet to cubic metres are frequent spreadsheet bugs. Someone stores 0.3048 as a constant named FT_TO_M and multiplies area by it once. The correct area factor is 0.3048²."
 msgstr ""
 
 #: src/lib/units.ts:1248
@@ -1007,8 +3252,20 @@ msgstr ""
 msgid "Square Kilometre"
 msgstr ""
 
+#: src/features/guides/data/guides.ts:803
+msgid "Square kilometres suit regions and parks; hectares suit farms and forests; acres suit US parcels; square metres suit building footprints and small lots. Pick the unit that keeps the number readable for the decision at hand, then convert for comparison—not the other way around."
+msgstr ""
+
 #: src/lib/units.ts:1256
 msgid "Square Metre"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1313
+msgid "Square metres and square feet are related by the square of the metre–foot factor. That is why area conversions feel “larger” than length conversions for the same room."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:801
+msgid "Square metres and square kilometres are SI-friendly area units. Hectares (1 ha = 10 000 m²) are accepted for land measurement worldwide. Acres dominate US land conversation and appear in many English-language property records. International investors often need all three on one fact sheet."
 msgstr ""
 
 #: src/lib/units.ts:1254
@@ -1031,6 +3288,46 @@ msgstr ""
 msgid "Square Yard"
 msgstr ""
 
+#: src/features/guides/data/guides.ts:597
+msgid "Squared and cubed conversion factors"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:213
+msgid "Squared and cubed quantities make errors worse. Area and volume multiply length scales, so a tiny relative error in length becomes two or three times larger in relative terms for area or volume when you expand (1+ε)ⁿ."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1371
+msgid "Start with a correct Celsius ↔ Fahrenheit conversion, then adjust for your oven’s behaviour. An oven thermometer is more valuable than a third significant digit on a website."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1175
+msgid "Start with audience and standard"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:766
+msgid "State uncertainties with units. Converting 1.540 0 Å to nanometres should preserve significant figures: 0.154 00 nm if the precision is real."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:373
+msgid "Stock, wine, and milk listed in cups convert to litres by simple scale factors once you fix the cup definition. Reductions change concentration but not the conversion math: 500 mL reduced by half is still a volume statement about what remains."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:564
+msgid "Stop mixing square metres with cubic metres. Learn the dimensional difference between area and volume and the conversion errors that follow from confusing them."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:227
+msgid "Store exact legal factors as decimals or rationals, not as hastily typed binary floats. Convert input → base → output in as few steps as possible. Round only when formatting for humans, and document the rounding mode."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1051
+msgid "Stress, pressure, density, and flow combine units. Convert each base dimension with factors raised to the correct powers. A pressure conversion error often starts as a length or area factor used linearly."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:517
+msgid "Stride length and walking distance estimates often mix metres and minutes. Pedometers and phones may report kilometres while your mental map is in blocks or miles. Calibrate once on a known path."
+msgstr ""
+
 #: src/components/feedback-section.tsx:99
 msgid "Submit Feedback"
 msgstr ""
@@ -1039,8 +3336,34 @@ msgstr ""
 msgid "Support email: <0>{supportEmail}</0>"
 msgstr ""
 
+#. placeholder {0}: fromUnit.symbol
+#. placeholder {1}: toUnit.symbol
+#: src/components/conversion-details.tsx:189
+msgid "Suppose you need to convert <0>{exampleInput}</0> {tFrom} into {tTo}. Using the same base-unit bridge as the calculator above, <1>{exampleInput}</1> {0} equals <2>{exampleOutput}</2> {1}."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:815
+msgid "Survey feet and historical caveats"
+msgstr ""
+
 #: src/lib/units.ts:1237
 msgid "Tablespoon (Metric)"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:351
+msgid "Tablespoons and teaspoons vary too. Metric tablespoons are often 15 mL and metric teaspoons 5 mL, with three teaspoons per tablespoon. Older utensils in a drawer may not match those standards—calibrate once with a measuring jug if precision matters."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:961
+msgid "Tablespoons differ internationally as well. Many metric spoons are 15 mL; some traditional Australian tablespoons were 20 mL. When a recipe is critical, prefer weighed ingredients or millilitre measures."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:542
+msgid "Teach children both systems if they will travel or read international media. Dual literacy is a practical life skill, not a political statement. A kitchen thermometer, a road atlas, and a sewing pattern from another country are enough real objects to practice conversions without worksheets alone."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1132
+msgid "Teaching and communicating scale"
 msgstr ""
 
 #: src/lib/units.ts:1238
@@ -1051,13 +3374,61 @@ msgstr ""
 msgid "Temperature"
 msgstr ""
 
-#: src/components/footer.tsx:49
+#: src/features/guides/data/guides.ts:205
+msgid "Temperature adds offsets: Celsius ↔ Kelvin uses 273.15. That constant is also a decimal value that binary floats only approximate. Affine conversions are especially sensitive because addition of an inexact offset shifts every result."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1194
+msgid "Temperature choices depend on whether you need absolute thermodynamic temperature (kelvin) or human-facing weather and cooking scales (Celsius or Fahrenheit)."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1372
+msgid "Temperature conversion is affine (scale plus offset), not a simple multiply. That is why “divide by two” folklore fails. Use a proper converter or the exact formulas."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:916
+msgid "Temperature conversion is affine because zeros were chosen for convenience. Length units rarely need offsets; temperature almost always does for Celsius and Fahrenheit."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:55
+msgid "Temperature in everyday life is usually Celsius; science and engineering often use Kelvin, which shares the same degree size as Celsius but starts at absolute zero. That separation of everyday and scientific scales is itself a metric-world habit."
+msgstr ""
+
+#: src/routes/$lang/category.$quantity.tsx:33
+msgid "Temperature scales describe how hot or cold something is. Celsius and Fahrenheit dominate daily life; Kelvin is the SI scientific scale. Convert between them with exact formulas—not floating-point shortcuts—and read the FAQs on each pair page."
+msgstr ""
+
+#: src/components/footer.tsx:60
 #: src/routes/$lang/terms-of-service.tsx:45
 msgid "Terms of Service"
 msgstr ""
 
 #: src/routes/$lang/terms-of-service.tsx:23
 msgid "Terms of Service | Units Converters"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:390
+msgid "Test critical recipes at the original yield before scaling. Conversion errors and scaling errors look the same in a collapsed cake—controlled tests separate them. Keep a conversion log for bakery R&D: original unit, assumed cup standard, millilitre value, and weighed confirmation for flour and sugar."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:121
+msgid "That cancelation is dimensional analysis: track units the way you track algebra variables. If inches do not cancel, the factor is upside down. Students who treat conversion as look up a number and hope miss this check—and that check catches most homework and spreadsheet errors."
+msgstr ""
+
+#: src/routes/$lang/guides/$slug.tsx:78
+msgid "That guide does not exist or may have moved."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:878
+msgid "That historical competition explains why converters still list scales most people never use daily: they are part of the documentary record of science and occasionally appear in older texts. Meeting an unfamiliar scale in an archive is less intimidating when you know it is usually just another affine mapping to kelvin."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:732
+msgid "The ångström in chemistry and crystallography"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:666
+msgid "The astronomical unit (AU) is roughly the Earth–Sun distance—about 1.496 × 10¹¹ m. Planetary orbits and spacecraft trajectories often use AU. One light-year is about 63 241 AU."
 msgstr ""
 
 #: src/lib/units.ts:228
@@ -1068,19 +3439,47 @@ msgstr ""
 msgid "The Bohr radius (a₀) is the most probable distance between the nucleus and the electron in a hydrogen atom in its ground state, about 5.29 × 10⁻¹¹ metres."
 msgstr ""
 
+#: src/features/guides/data/guides.ts:193
+msgid "The classic 0.1 + 0.2 problem meets units"
+msgstr ""
+
 #: src/lib/units.ts:959
 msgid "The cubic metre (m³) is the SI derived unit of volume. Science, industry, and utilities worldwide treat it as the base volume unit."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:885
+msgid "The Fahrenheit scale spread with instrument trade and remains embedded in US weather culture and some industrial practices. Its degree size is smaller than Celsius, which can feel more granular for everyday weather talk. That cultural grip is why dual-scale forecasts remain useful for international audiences."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:577
+msgid "The first question before any conversion is: what physical quantity am I measuring? Only then choose units. Quantity mistakes dwarf unit mistakes."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:284
+msgid "The formulas you actually need"
 msgstr ""
 
 #: src/lib/units.ts:459
 msgid "The Hubble length is a cosmological distance scale related to the Hubble constant, on the order of 10²⁶ metres—comparable to the observable universe's size."
 msgstr ""
 
+#: src/features/guides/data/guides.ts:203
+msgid "The international inch is exactly 25.4 mm. The international foot is exactly 0.3048 m. The litre is exactly 0.001 m³. A cubic centimetre is exactly 1 mL in the usual laboratory sense (1 cm³ = 10⁻⁶ m³). These are definitions, not measurements."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:727
+msgid "The micrometre (µm) covers cells and many manufacturing tolerances. The nanometre (nm) covers visible-light wavelengths and nanoparticle sizes. The ångström (Å), equal to 0.1 nm or 10⁻¹⁰ m, remains common in crystallography and chemistry for bond lengths."
+msgstr ""
+
 #: src/lib/units.ts:506
 msgid "The Newton temperature scale (°N) was devised by Isaac Newton. It places the freezing point of water at 0 °N and the boiling point at 33 °N."
 msgstr ""
 
-#: src/routes/$lang/index.tsx:28
+#: src/features/guides/data/guides.ts:272
+msgid "The Newton temperature scale (not to be confused with the force unit) is a historical scale sometimes still listed in converters. It is rarely used in modern lab work, but it reminds us that many scales once competed before Celsius and Kelvin dominated science."
+msgstr ""
+
+#: src/routes/$lang/index.tsx:49
 msgid "The Only Unit Converter You'll Ever Need"
 msgstr ""
 
@@ -1088,8 +3487,24 @@ msgstr ""
 msgid "The page you're looking for isn't found, we suggest you back to home."
 msgstr ""
 
+#: src/features/guides/data/guides.ts:667
+msgid "The parsec (parallax-second) is about 3.26 light-years and is preferred in professional astronomy because it connects cleanly to parallax measurements. Survey papers may report megaparsecs for cosmological distances."
+msgstr ""
+
+#: src/components/conversion-details.tsx:419
+msgid "The physical relationship is exact for defined scale factors. What can change is how many digits you display. Units Converters keeps internal arithmetic precise; round only once for the output you need."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:758
+msgid "The Planck length (~1.6 × 10⁻³⁵ m) is a theoretical scale from fundamental constants, not a laboratory measuring stick. Converters may include it for education; it is not for machining parts. Treat any practical claim of measuring to a Planck length as a misunderstanding of the unit’s role."
+msgstr ""
+
 #: src/lib/units.ts:18
 msgid "The Planck length is a fundamental physical constant representing the scale at which classical ideas about space and gravity break down. It is about 1.6 × 10⁻³⁵ metres and is used in theoretical physics."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1177
+msgid "The right unit is the one your audience already uses—and the one your regulator, journal, or customer contract requires. A perfect SI choice that nobody on the job site can read will still cause errors. Clarity for humans and compliance for auditors both count as correctness."
 msgstr ""
 
 #: src/routes/$lang/terms-of-service.tsx:87
@@ -1100,32 +3515,128 @@ msgstr ""
 msgid "The square metre (m²) is the SI derived unit of area. Property listings, science, and engineering worldwide use it as the base area unit."
 msgstr ""
 
-#: src/routes/$lang/about.tsx:118
+#: src/features/guides/data/guides.ts:427
+msgid "The symbol matters: m means milli, M means mega. Writing Mm when you mean millimetre is a three-orders-of-magnitude disaster. Teach juniors to read symbols carefully before they trust a CAD export."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:482
+msgid "The symbol µ (mu) means micro (10⁻⁶). The symbol m means milli (10⁻³) when used as a prefix. They differ by a factor of one thousand."
+msgstr ""
+
+#: src/routes/$lang/about.tsx:120
 msgid "The Team"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:817
+msgid "The US has distinguished international feet from survey feet in geospatial contexts. Tiny differences per foot become measurable over large parcels. Modern practice is converging on the international foot, but old plats may embed survey-foot geometry."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:893
+msgid "The word centigrade historically described a hundred-grade scale; today Celsius is the preferred name in scientific communication, tied formally to kelvin."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1143
+msgid "Then practice area and volume at two scales to ensure the squared and cubed factors are automatic. Most residual mistakes are missing powers, not missing prefix names."
+msgstr ""
+
+#: src/components/conversion-details.tsx:271
+msgid "These guides explain the systems, pitfalls, and everyday uses behind {tQuantity} conversions like {tFrom} to {tTo}."
 msgstr ""
 
 #: src/routes/$lang/terms-of-service.tsx:49
 msgid "These Terms of Service govern your use of Units Converters. By accessing or using this website, you agree to these terms."
 msgstr ""
 
+#: src/features/guides/data/guides.ts:98
+msgid "They come from different historical definitions of the gallon. The US liquid gallon is defined as 231 cubic inches (about 3.785 L). The imperial gallon used in the UK historically is larger (about 4.546 L). Always check which gallon a recipe, fuel economy figure, or chemical safety sheet assumes."
+msgstr ""
+
 #: src/routes/$lang/terms-of-service.tsx:132
 msgid "Third-Party Advertising"
 msgstr ""
 
-#: src/routes/$lang/privacy-policy.tsx:17
-msgid "This Privacy Policy is currently provided in English. For questions, contact voyagertecnologias@gmail.com."
+#: src/components/conversion-details.tsx:172
+msgid "This pair uses fixed scale factors relative to the {tQuantity} base unit. The calculator applies those factors with Decimal.js so chained conversions stay stable."
 msgstr ""
 
-#: src/routes/$lang/convert.$quantity.$from.to.$to.tsx:315
+#: src/routes/$lang/privacy-policy.tsx:52
+msgid "This Privacy Policy explains how Voyager Tecnologias LTDA (\"we\", \"us\") collects, uses, and shares information when you use Units Converters."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:268
+msgid "Three scales, two kinds of zero"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1319
+msgid "Tile, plank, and carpet orders usually add 5–15% waste for cuts and mistakes. Apply the waste percentage after you trust the measured area. Converting units does not replace waste planning."
+msgstr ""
+
+#: src/routes/$lang/category.$quantity.tsx:41
+msgid "Tip: do not confuse square metres of floor with litres of paint—area and volume are different quantity types. Convert area only after length × width in a single system."
+msgstr ""
+
+#: src/routes/$lang/category.$quantity.tsx:42
+msgid "Tip: for baking accuracy, prefer weighing ingredients in grams over converting cup volumes when you can. For pools and tanks, confirm geometry before converting to litres."
+msgstr ""
+
+#: src/routes/$lang/category.$quantity.tsx:39
+msgid "Tip: keep drawings in one system (metric or imperial) end-to-end. Convert only at the project boundary to avoid tolerance stack-ups. Dual-label heights and road distances when teams span countries."
+msgstr ""
+
+#: src/routes/$lang/category.$quantity.tsx:40
+msgid "Tip: Kelvin never uses a degree symbol in SI writing (K, not °K). A change of 1 K equals a change of 1 °C. For baking, convert the recipe first, then adjust for fan ovens."
+msgstr ""
+
+#: src/routes/$lang/convert.$quantity.$from.to.$to.tsx:368
 msgid "To"
 msgstr ""
 
-#: src/components/conversion-details.tsx:94
+#: src/routes/$lang/privacy-policy.tsx:219
+msgid "To comply with legal obligations"
+msgstr ""
+
+#: src/components/conversion-details.tsx:117
 msgid "To convert <0>{tFrom}</0> to <1>{tTo}</1>, our tool uses the base unit as a bridge, ensuring maximum precision through arbitrary-precision decimal arithmetic."
 msgstr ""
 
-#: src/routes/$lang/terms-of-service.tsx:152
+#: src/features/guides/data/guides.ts:144
+msgid "To go from miles per hour to metres per second, convert length and time separately, then combine. Write the full product of factors so each unwanted unit cancels. The same method scales to density, pressure, and energy once you know the compound dimensions."
+msgstr ""
+
+#: src/routes/$lang/privacy-policy.tsx:208
+msgid "To operate, secure, and improve the converter and guides"
+msgstr ""
+
+#: src/routes/$lang/privacy-policy.tsx:213
+msgid "To respond to contact and feedback messages"
+msgstr ""
+
+#: src/routes/$lang/privacy-policy.tsx:216
+msgid "To show relevant advertising when you have consented"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1269
+msgid "To split a total inch value: divide by 12 for feet, and use the remainder as inches. Label both numbers. Never write “5.9 ft” when you mean 5 ft 9 in—those are different heights."
+msgstr ""
+
+#: src/routes/$lang/terms-of-service.tsx:169
 msgid "To the fullest extent permitted by law, Voyager Tecnologias LTDA and its operators shall not be liable for any indirect, incidental, special, consequential, or punitive damages, or for any loss of data, profits, or business arising from your use of — or inability to use — Units Converters, including reliance on any conversion result."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1025
+msgid "Tolerances do not survive careless conversion"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1437
+msgid "Trail races may advertise a “10K” (kilometres) while US training plans talk in miles. Convert the race distance once and rebuild paces in your preferred unit."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1417
+msgid "Travel Distance: Kilometres and Miles"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1253
+msgid "Treat height as a length conversion problem with a clear target format. Decide whether the destination wants a single metric value (cm or m) or a dual customary pair (ft + in). Convert once, then format for display."
 msgstr ""
 
 #: src/components/default-suspense-and-error-boundary.tsx:117
@@ -1136,25 +3647,73 @@ msgstr ""
 msgid "Try Again"
 msgstr ""
 
-#: src/routes/$lang/route.tsx:100
+#: src/features/guides/data/guides.ts:43
+msgid "Two systems, one physical world"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:734
+msgid "Typical covalent bond lengths fall around one to two ångströms. X-ray crystallography papers often report lattice parameters in ångströms. Converting to nanometres is a shift by ×0.1: 1.54 Å = 0.154 nm. Converting to picometres multiplies by 100: 1.54 Å = 154 pm—sometimes preferred in quantum-chemistry outputs."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:211
+msgid "UI converters often hide the issue by rounding to a fixed number of decimals. Users see clean results and never notice the internal noise. Problems appear when another system consumes the raw float: a CAD kernel, a CSV export, or a unit test comparing strings of full precision."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1328
+msgid "Underlayment, adhesive, and trim are sometimes sold by length even when flooring is sold by area. Track quantity types separately so you do not treat a linear metre like a square metre."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:185
+msgid "Understand why binary floating-point creates weird conversion residuals, when those errors matter, and how decimal or rational arithmetic keeps unit converters trustworthy."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1044
+msgid "Unequal tolerances and fits (H7/g6 style thinking, even when expressed in inches historically) need special care. Convert the limiting sizes that define the fit, not just a single mid value."
+msgstr ""
+
+#: src/routes/$lang/guides/index.tsx:51
+msgid "Unit Conversion Guides"
+msgstr ""
+
+#: src/routes/$lang/guides/index.tsx:26
+msgid "Unit Conversion Guides | Units Converters"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:196
+msgid "Unit conversion multiplies and divides those values repeatedly. Convert inches to millimetres and back, or litres to cubic metres and back, and you may see 2.9999999997 instead of 3. The physical conversion factor was exact; the computer representation was not."
+msgstr ""
+
+#: src/routes/$lang/route.tsx:101
 msgid "unit converter, metric conversion, imperial to metric, length converter, temperature converter, area converter, volume converter, scientific calculator"
 msgstr ""
 
-#: src/routes/$lang/convert.$quantity.$from.to.$to.tsx:114
+#: src/routes/$lang/convert.$quantity.$from.to.$to.tsx:164
 msgid "Unit not found"
 msgstr ""
 
-#: src/routes/$lang/route.tsx:120
-#: src/routes/$lang/route.tsx:253
+#: src/features/guides/data/guides.ts:601
+msgid "Unit tests should include area and volume cases explicitly. Linear tests alone will not catch a missing power."
+msgstr ""
+
+#: src/routes/$lang/route.tsx:121
+#: src/routes/$lang/route.tsx:360
 msgid "Units Converters"
 msgstr ""
 
-#: src/routes/$lang/route.tsx:110
-#: src/routes/$lang/route.tsx:133
+#: src/routes/$lang/route.tsx:111
+#: src/routes/$lang/route.tsx:134
 msgid "Units Converters | Precision Conversion Tool"
 msgstr ""
 
-#: src/routes/$lang/about.tsx:122
+#: src/features/guides/data/guides.ts:1254
+msgid "Units Converters can move between centimetres, metres, feet, and inches with exact factors. Use the worked example on each pair page when you need a quick sanity check for a common adult height."
+msgstr ""
+
+#: src/routes/$lang/privacy-policy.tsx:283
+msgid "Units Converters is a general-audience educational tool. We do not knowingly collect personal information from children under 13 (or the equivalent age in your region). If you believe a child provided data, contact us and we will delete it."
+msgstr ""
+
+#: src/routes/$lang/about.tsx:124
 msgid "Units Converters is developed and maintained by <0>Voyager Tecnologias LTDA</0>. We are a small team passionate about building high-quality digital utilities that solve everyday problems with technical excellence."
 msgstr ""
 
@@ -1162,29 +3721,109 @@ msgstr ""
 msgid "Units Converters is operated by <0>Voyager Tecnologias LTDA</0>, based in Brazil. We'd love to hear from you."
 msgstr ""
 
+#: src/routes/$lang/privacy-policy.tsx:70
+msgid "Units Converters is operated by Voyager Tecnologias LTDA, based in Brazil. For privacy questions, contact <0>voyagertecnologias@gmail.com</0>."
+msgstr ""
+
 #: src/routes/$lang/terms-of-service.tsx:76
 msgid "Units Converters is provided free of charge as a convenience tool. Conversion results are for general informational and educational purposes only. They are <0>not</0> intended for life-critical, medical, safety, legal, financial, or other high-stakes decisions. Always verify critical measurements with appropriate professional standards or calibrated instruments."
 msgstr ""
 
 #. placeholder {0}: import.meta.env.DEV ? " — Dev" : ""
-#: src/routes/$lang/route.tsx:88
+#: src/routes/$lang/route.tsx:89
 msgid "Units Converters{0}"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1498
+msgid "US customary pool calculators may output gallons. Convert gallons to litres only with a volume converter; do not treat gallons like litres."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1268
+msgid "US forms often want feet and remaining inches (5 ft 9 in), not a decimal foot (5.75 ft). Decimal feet are fine in surveying software but confuse humans on medical questionnaires."
+msgstr ""
+
+#: src/components/conversion-details.tsx:403
+msgid "Use {tFrom} when your instruments, drawings, or local standards already speak that unit. Prefer {tTo} when your collaborators, regulations, or tools expect that convention for {tQuantity}. Convert at a clear boundary and label every number."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:768
+msgid "Use a trusted converter or exact powers of ten for SI prefixes. Reserve careful factor lookup for customary units and specialised astronomical lengths."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1344
+msgid "Use an area converter (or multiply by the exact square-metre to square-foot factor). Do not convert metres to feet and forget to square the scale."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:310
+msgid "Use Celsius for weather, cooking, and most international engineering communication. Use Fahrenheit where local practice and equipment displays require it. Use Kelvin for scientific equations, cryogenics, and any context where absolute temperature matters."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1035
+msgid "Use exact definitions: 1 in = 25.4 mm. Convert with full precision, then round once for the drawing. Intermediate rounding in a multi-step spreadsheet is a common source of mysterious 0.01 mm disagreements between vendors. Lock conversion cells as formulas, not pasted values, when possible."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:557
+msgid "Use kilometres for distances where metres would produce thousands of units—typically travel, running routes, and geographic scales. Keep metres for buildings, rooms, and short outdoor segments."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1004
+msgid "Use the cup standard assumed by the recipe’s author, or convert the recipe to millilitres and grams. Metric cups (250 mL) and US cups (~240 mL) are not interchangeable for precision baking."
 msgstr ""
 
 #: src/routes/$lang/terms-of-service.tsx:116
 msgid "User Feedback and Conduct"
 msgstr ""
 
+#: src/features/guides/data/guides.ts:1140
+msgid "Using converters as a scale gym"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:688
+msgid "Using converters wisely"
+msgstr ""
+
+#: src/routes/$lang/index.tsx:138
+msgid "View all guides"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:742
+msgid "Visible light spans roughly 400–700 nm. Specifying a laser as 532 nm is clearer than 5.32 × 10⁻⁷ m. Thin-film coatings and diffraction problems live naturally in nanometres. Students who only ever see scientific notation often mis-count zeros when translating to nanometres—practice both forms side by side."
+msgstr ""
+
 #: src/lib/units.ts:1278
 msgid "Volume"
 msgstr ""
 
-#: src/components/cookie-consent.tsx:95
-msgid "We and our partners use cookies to analyze site traffic, personalize content, and serve relevant advertisements (such as Google AdSense). By clicking \"Accept All\", you agree to our use of cookies as detailed in our <0>Privacy Policy</0>."
+#: src/features/guides/data/guides.ts:75
+msgid "Volume and area in kitchens and on land"
 msgstr ""
 
-#: src/routes/$lang/convert.$quantity.$from.to.$to.tsx:118
+#: src/routes/$lang/category.$quantity.tsx:35
+msgid "Volume covers capacity and three-dimensional space—litres in the kitchen, cubic metres in construction and pools, and fine scientific units. Convert carefully when recipes or chemical charts mix cups, millilitres, and cubic metres."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:62
+msgid "Volume is messier. A US cup, pint, and gallon differ from historical UK imperial measures. A US liquid gallon is about 3.785 L; an imperial gallon is about 4.546 L. Recipes that say cup without specifying the country can silently change batter hydration and cake structure."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1317
+msgid "Waste factor and packaging"
+msgstr ""
+
+#: src/routes/$lang/privacy-policy.tsx:90
+msgid "We aim to collect only what we need to run and improve the site:"
+msgstr ""
+
+#: src/components/cookie-consent.tsx:76
+msgid "We and our partners use cookies to analyze site traffic with PostHog, personalize content, and serve relevant advertisements (such as Google AdSense). By clicking \"Accept All\", you agree to our use of cookies as detailed in our <0>Privacy Policy</0>. You can decline non-essential cookies and still use the converter."
+msgstr ""
+
+#: src/routes/$lang/convert.$quantity.$from.to.$to.tsx:168
 msgid "We couldn't find those specific units. Try our default converter."
+msgstr ""
+
+#: src/routes/$lang/privacy-policy.tsx:230
+msgid "We do not sell your personal information. We share data with service providers who help us run the site (hosting, email delivery for forms, analytics, and advertising partners such as Google) under appropriate agreements. We may disclose information if required by law."
 msgstr ""
 
 #: src/routes/$lang/about.tsx:88
@@ -1195,20 +3834,341 @@ msgstr ""
 msgid "We may display advertisements served by third parties, including Google AdSense. These partners may use cookies or similar technologies to show relevant ads, subject to your consent choices and our Privacy Policy. We do not control the content of third-party ads and are not responsible for their practices."
 msgstr ""
 
-#: src/routes/$lang/terms-of-service.tsx:169
+#: src/routes/$lang/terms-of-service.tsx:186
 msgid "We may update these Terms of Service from time to time. Continued use of the site after changes are posted constitutes acceptance of the revised terms. We encourage you to review this page periodically."
 msgstr ""
 
-#: src/components/conversion-details.tsx:152
-msgid "Why use our {quantity} converter?"
+#: src/routes/$lang/privacy-policy.tsx:312
+msgid "We may update this Privacy Policy from time to time. The \"Last updated\" date at the top will change when we do. Continued use of the site after changes means you accept the updated policy."
+msgstr ""
+
+#: src/routes/$lang/terms-of-service.tsx:152
+msgid "We may use PostHog to collect anonymized or pseudonymized usage analytics (such as pages viewed and basic device information) so we can improve Units Converters. Analytics cookies and related processing run only after you accept non-essential cookies. Details are in our Privacy Policy. You can decline cookies at any time via Cookie settings in the footer."
+msgstr ""
+
+#: src/routes/$lang/privacy-policy.tsx:148
+msgid "We use Google AdSense to display advertisements. Google and its partners may use cookies or similar technologies to serve ads based on your prior visits to this or other websites, subject to your consent choices. You can learn more in <0>Google's Advertising policies</0> and manage ad personalization at <1>Google Ads Settings</1>."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:294
+msgid "Weather and cooking dominate Celsius and Fahrenheit use. Comfortable room temperature is about 20–22 °C (68–72 °F). Body temperature is about 37 °C (98.6 °F). Oven recipes may list both; always confirm whether a converted oven setting matches your appliance’s markings."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:914
+msgid "What history teaches converters"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1402
+msgid "What is 350 °F in Celsius?"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:638
+msgid "What Is a Light-Year? Distance, Not Time"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1075
+msgid "What is the difference between hard and soft conversion?"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:481
+msgid "What is the difference between µ and m?"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:932
+msgid "What is the Newton temperature scale used for today?"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1233
+msgid "What unit should temperature data use in a scientific archive?"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1505
+msgid "When a chart lists dose per 10,000 litres, convert your pool volume to litres, divide by 10,000, then multiply by the listed dose. Write the unit beside every intermediate number."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1069
+msgid "When a part fails inspection after a unit change, audit the conversion before auditing the operator. Many escapes are metrological, not motivational. Keep a short conversion verification coupon on first-article inspections whenever drawings change unit systems."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1337
+msgid "When a quote jumps after a “unit clarification,” ask for the area in both m² and ft². Transparent dual totals catch silent conversion errors."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1178
+msgid "When audience and standard conflict, publish both: primary unit for compliance, secondary for local clarity, with an explicit conversion note. Dual labelling beats silent assumption. Make the primary unit visually dominant so readers know which value wins if rounding differs."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:233
+msgid "When binary floats are still fine"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:154
+msgid "When comparing converter outputs, tiny last-digit differences often come from rounding policy, not from different physical constants. Check whether both tools use the international inch, the same acre definition, and the same display precision."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1043
+msgid "When converting a nominal with ± tolerance, convert the limits (upper and lower) and then restate nominal and tolerance, or convert nominal and tolerance with consistent rounding rules that never shrink the allowed zone unintentionally."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:599
+msgid "When converting area, square the length factor. When converting volume, cube it. 1 m = 100 cm implies 1 m² = 10 000 cm² and 1 m³ = 1 000 000 cm³. Applying the linear factor to an area value underconverts by ×100 in this example."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1261
+msgid "When converting from feet and inches to metric, convert the whole height to inches first, then to centimetres, and round once at the end. Rounding each step separately can invent a centimetre you did not measure."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:451
+msgid "When converting scientific length units, prefer explicit scientific notation alongside prefixed units in notebooks: 2.5 µm = 2.5 × 10⁻⁶ m. Dual writing catches transcription errors."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:835
+msgid "When estimating permeable surface for drainage fees, keep everything in m² or ft² consistently; switching mid-spreadsheet is how permit numbers go wrong."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:502
+msgid "When plans mix units, convert the drawing once into the unit your tools display. Tape measures in the US often show inches; many metric tapes show centimetres and millimetres. Dual-scale tapes help but still require attention to which edge you read."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:311
+msgid "When publishing data, state the scale in every table and plot axis. Dual-scale axes are fine for public communication if both are computed from one master dataset."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:992
+msgid "When reading older UK material, assume imperial gallons unless told otherwise. When reading US material, assume US liquid measures unless a metric cup is specified."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1446
+msgid "When renting a car abroad, note whether the trip computer shows km or miles. Resetting averages mid-trip with the wrong mental unit produces nonsense cost estimates."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:617
+msgid "When results look surprising, ask whether you converted units or accidentally converted quantities. That single question saves projects. A second quick check is geometric: does the number imply a depth, a thickness, or a coverage rate that was never stated? Missing geometry usually means someone treated area as volume."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1278
+msgid "When sharing height internationally, prefer centimetres plus an optional feet-and-inches gloss. Dual labelling prevents silent unit assumptions in email and chat."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1396
+msgid "When sharing recipes online, include both scales. Your international readers should not have to guess which “gas mark” culture you meant."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:391
+msgid "When sharing your own recipes online, publish millilitres and grams alongside cups. Future readers in every country will thank you, and you will reduce support questions that are really unit questions."
+msgstr ""
+
+#: src/components/conversion-details.tsx:398
+msgid "When should I prefer {tFrom} over {tTo}?"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:556
+msgid "When should I use kilometres instead of metres?"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:363
+msgid "When to prefer weight over volume"
+msgstr ""
+
+#: src/components/conversion-details.tsx:241
+msgid "When to use {tFrom} vs {tTo}"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:674
+msgid "When we observe a distant object, we see light that left in the past. For nearby stars, that lookback time in years is numerically close to the distance in light-years. On cosmological scales, expanding-universe effects make the relationship between distance measures and lookback time more subtle."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:684
+msgid "When writing for the public, pair light-years with a metres-or-kilometres scientific notation value once so readers can cross-check magnitudes."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:918
+msgid "When you see Newton temperature beside Newton force in a unit list, read the quantity label carefully—name collisions are a historical accident. Good converters group by quantity first so a temperature Newton never sits beside a force newton in a way that invites clicking the wrong tool."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:209
+msgid "Where floating-point errors show up in practice"
+msgstr ""
+
+#: src/routes/$lang/index.tsx:172
+msgid "Whether you are converting body height for a form, room area for flooring, oven temperature for a recipe, or pool volume for chemicals, Units Converters gives you a clear result plus context—unit descriptions, worked examples, and guides that explain the systems behind the numbers."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:201
+msgid "Which conversion factors are exact on paper"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1003
+msgid "Which cup should I use for baking?"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:706
+msgid "Which is larger, a parsec or a light-year?"
+msgstr ""
+
+#: src/routes/$lang/privacy-policy.tsx:66
+msgid "Who we are"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:168
+msgid "Why convert through a base unit instead of direct factors?"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1292
+msgid "Why did an online shop reject my height?"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1410
+msgid "Why did my cake still burn after converting correctly?"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:627
+msgid "Why did my ft² to m² conversion look too small?"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1158
+msgid "Why do biologists say microns and nanometres in the same talk?"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1007
+msgid "Why do converters list a single cup unit?"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1528
+msgid "Why do my chemical doses seem too strong?"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1083
+msgid "Why do two vendors disagree in the fourth decimal place?"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:97
+msgid "Why do US and UK gallons differ?"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:924
+msgid "Why do we still use Fahrenheit if Celsius is international?"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:243
+msgid "Why does converting back and forth change my number?"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:184
+msgid "Why Floating-Point Converters Fail (and How Decimal Math Fixes It)"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1250
+msgid "Why height forms cause so many errors"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:477
+msgid "Why is 1 km² equal to 1 000 000 m²?"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:322
+msgid "Why is a Celsius degree the same size as a kelvin?"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1351
+msgid "Why is my flooring quote different from my calculator?"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:176
+msgid "Why is temperature conversion different?"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:347
+msgid "Why kitchen volumes feel inconsistent"
+msgstr ""
+
+#: src/components/conversion-details.tsx:383
+#: src/routes/$lang/convert.$quantity.$from.to.$to.tsx:93
+msgid "Why might my calculator disagree slightly?"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:724
+msgid "Why science needs tiny length units"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:940
+msgid "Why US cups, pints, and gallons disagree with UK imperial measures—and how to convert cooking and liquid volumes without spoiling a recipe or a report."
+msgstr ""
+
+#: src/components/conversion-details.tsx:431
+msgid "Why use our {tQuantity} converter?"
 msgstr ""
 
 #: src/components/website-description.tsx:63
 msgid "Why Use Our Converter?"
 msgstr ""
 
+#: src/features/guides/data/guides.ts:900
+msgid "William Thomson (Lord Kelvin) advanced absolute thermodynamic temperature. The kelvin starts at absolute zero and uses the same degree size as Celsius. Equations of gas behaviour and statistical mechanics prefer absolute scales because ratios and absolute values behave cleanly without arbitrary offsets."
+msgstr ""
+
+#: src/components/conversion-details.tsx:185
+msgid "Worked example"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:161
+msgid "Worked habit for area: 200 ft² to m². First convert length: 1 ft = 0.3048 m, so 1 ft² = 0.092 903 04 m². Then 200 × 0.092 903 04 = 18.580 608 m². Notice the squared factor—skipping that step would be catastrophically wrong."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:160
+msgid "Worked habit: convert 12 ft to metres. Use 1 ft (international) = 0.3048 m exactly. 12 × 0.3048 = 3.6576 m. For display you might write 3.658 m or 3.66 m depending on tolerance."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:839
+msgid "Workflow for trustworthy land conversions"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1395
+msgid "Write both °C and °F on a sticky note for family recipes you reuse. Dual labels prevent weekend arguments and burnt trays."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:607
+msgid "Write m² and m³ with clear superscripts or ASCII m^2 and m^3 in plain text. A bare m next to a number that meant cubic metres will be misread later."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1335
+msgid "Write the unit on every sketch dimension. A bare “12 × 15” is ambiguous across borders. Prefer “12 ft × 15 ft” or “3.66 m × 4.57 m”."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:466
+msgid "Write units on every line of a calculation. Prefix errors hide in bare numbers. Dimensional analysis still works when prefixes are treated as part of the unit token."
+msgstr ""
+
 #: src/lib/units.ts:1206
 msgid "Yard (International)"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:858
+msgid "Yes—both are area units. One square kilometre equals 100 hectares, or about 247.1 acres. Converting through square metres or hectares keeps the arithmetic clear."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1470
+msgid "Yes—distance and speed share the same length unit in km/h vs mph. Convert carefully; small mistakes matter at highway speeds."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:319
+msgid "Yes. Absolute zero is 0 K, which equals −273.15 °C. No ordinary thermodynamic system reaches temperatures below that value."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:553
+msgid "Yes. One metre is about 1.094 yards, or roughly 3.281 feet. A metre is a little longer than a yard."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1155
+msgid "Yes. One micrometre equals 1 000 nanometres. Both equal 10⁻⁶ m and 10⁻⁹ m × 1 000 respectively."
+msgstr ""
+
+#: src/routes/$lang/convert.$quantity.$from.to.$to.tsx:87
+msgid "Yes. Units Converters is free to use for students, professionals, and everyday tasks. Results are for informational purposes."
+msgstr ""
+
+#: src/components/conversion-details.tsx:372
+msgid "Yes. Units Converters is free to use for students, professionals, and everyday tasks. Results are provided for informational purposes—always follow your industry standards for safety-critical work."
 msgstr ""
 
 #: src/lib/units.ts:1202
@@ -1219,10 +4179,34 @@ msgstr ""
 msgid "Yottametre"
 msgstr ""
 
+#: src/features/guides/data/guides.ts:173
+msgid "You always multiply by a ratio equal to one. Whether the numerical factor looks like multiplication or division depends on which way you write the ratio. If the unit you want to eliminate is in the denominator of your measurement, put it in the numerator of the factor so it cancels."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1126
+msgid "You cannot verify a 20 nm feature with a kitchen ruler. Match the instrument to the scale: electron microscopy and specialised metrology for nanometres; optical microscopy for micrometres; micrometers and CMMs for millimetres. Conversion cannot upgrade an instrument’s resolution."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:628
+msgid "You may have multiplied by 0.3048 once instead of by 0.3048 squared (about 0.0929). Area conversions must square the length factor."
+msgstr ""
+
+#: src/features/guides/data/guides.ts:1525
+msgid "You need three length measurements (or an equivalent geometry) to get volume, then convert that volume to the chemical chart’s unit."
+msgstr ""
+
+#: src/routes/$lang/privacy-policy.tsx:257
+msgid "Your rights"
+msgstr ""
+
 #: src/lib/units.ts:1203
 msgid "Zeptometre"
 msgstr ""
 
 #: src/lib/units.ts:1204
 msgid "Zettametre"
+msgstr ""
+
+#: src/features/guides/data/guides.ts:834
+msgid "Zoning documents sometimes switch units between sections. Create a one-page unit key for the project and convert every cited figure into a single working unit."
 msgstr ""

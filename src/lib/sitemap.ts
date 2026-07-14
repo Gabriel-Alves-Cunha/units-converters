@@ -1,4 +1,4 @@
-import { getAllGuideSlugs } from "#/features/guides/data/guides";
+import { getAllGuideSlugs } from "#/features/guides/data/guide-slugs";
 import { locales, type Locales } from "#/integrations/i18n/load-catalog";
 import { POPULAR_CONVERSIONS } from "#/lib/popular-conversions";
 
@@ -78,6 +78,24 @@ export function getSitemapEntries(): SitemapEntry[] {
 			};
 		}),
 	);
+}
+
+/**
+ * Explicit prerender allowlist — same URLs as the sitemap, plus sitemap.xml.
+ * Keep crawlLinks off so related-unit / language-switcher links cannot enqueue
+ * every conversion pair × locale (~12k pages).
+ */
+export function getPrerenderPages(): Array<{
+	path: string;
+	prerender: { enabled: true };
+}> {
+	return [
+		...getSitemapEntries().map((entry) => ({
+			path: entry.path,
+			prerender: { enabled: true as const },
+		})),
+		{ path: "/sitemap.xml", prerender: { enabled: true as const } },
+	];
 }
 
 function escapeXml(value: string): string {

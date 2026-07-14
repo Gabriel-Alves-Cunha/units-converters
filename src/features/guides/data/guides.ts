@@ -1536,9 +1536,7 @@ export function getGuideBySlug(slug: string): Guide | undefined {
 	return guides.find((g) => g.slug === slug);
 }
 
-export function getAllGuideSlugs(): string[] {
-	return guides.map((g) => g.slug);
-}
+export { getAllGuideSlugs } from "./guide-slugs";
 
 /** Guides that mention a quantity in related converters (for conversion-page links). */
 export function getGuidesForQuantity(quantity: Quantity, limit = 3): Guide[] {
