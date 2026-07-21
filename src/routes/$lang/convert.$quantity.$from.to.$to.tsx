@@ -112,6 +112,7 @@ export const Route = createFileRoute("/$lang/convert/$quantity/$from/to/$to")({
 				// Twitter
 				{ name: "twitter:title", content: title },
 				{ name: "twitter:description", content: description },
+
 			],
 			scripts: [
 				{
@@ -142,13 +143,7 @@ export const Route = createFileRoute("/$lang/convert/$quantity/$from/to/$to")({
 						mainEntity: faqEntities,
 					}),
 				},
-				{
-					type: "text/javascript",
-src:"https://pl30467457.effectivecpmnetwork.com/331f931ebaddc43361416b7e67b1af25/invoke.js",
-// @ts-ignore
-"data-cfasync":true,
-async:true,
-				}
+
 			] satisfies AnyRouteMatch["headScripts"],
 		};
 
@@ -462,8 +457,7 @@ function Converter() {
 					</div>
 				</form>
 
-				{/* <AdSlot slot={ADSENSE_SLOTS.convert} className="mt-4" /> */}
-				<div id="container-331f931ebaddc43361416b7e67b1af25"></div>
+				<AdSlot slot={ADSENSE_SLOTS.convert} className="mt-4" />
 			</div>
 
 			<ConversionDetails quantity={quantity} from={from} to={to} />
