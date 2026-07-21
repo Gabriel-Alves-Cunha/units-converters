@@ -1,8 +1,8 @@
 import { Trans } from "@lingui/react/macro";
 import { useLingui } from "@lingui/react";
-import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
+import { createFileRoute, Link, useNavigate, type AnyRouteMatch } from "@tanstack/react-router";
 import { Decimal } from "decimal.js";
-import { startTransition, useRef } from "react";
+import { Children, startTransition, useRef } from "react";
 import { safeParse } from "valibot";
 import { i18n } from "@lingui/core";
 import { msg } from "@lingui/core/macro";
@@ -142,7 +142,13 @@ export const Route = createFileRoute("/$lang/convert/$quantity/$from/to/$to")({
 						mainEntity: faqEntities,
 					}),
 				},
-			],
+				{
+					type: "text/javascript",
+src:"https://pl30467457.effectivecpmnetwork.com/331f931ebaddc43361416b7e67b1af25/invoke.js",
+"data-cfasync":true,
+async:true,
+				}
+			] satisfies AnyRouteMatch["headScripts"],
 		};
 
 		return head;
@@ -455,7 +461,8 @@ function Converter() {
 					</div>
 				</form>
 
-				<AdSlot slot={ADSENSE_SLOTS.convert} className="mt-4" />
+				{/* <AdSlot slot={ADSENSE_SLOTS.convert} className="mt-4" /> */}
+				<div id="container-331f931ebaddc43361416b7e67b1af25"></div>
 			</div>
 
 			<ConversionDetails quantity={quantity} from={from} to={to} />
