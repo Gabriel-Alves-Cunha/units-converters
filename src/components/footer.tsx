@@ -60,6 +60,16 @@ export function Footer() {
 				<Trans>Terms of Service</Trans>
 			</Link>
 
+			<Link
+				search={defaultSearchParams}
+				className="link underline"
+				to="/$lang/disclaimer"
+				onClick={scrollPageToTop}
+				params={{ lang }}
+			>
+				<Trans>Disclaimer</Trans>
+			</Link>
+
 			<button
 				type="button"
 				className="link underline cursor-pointer bg-transparent border-0 p-0 text-sm"

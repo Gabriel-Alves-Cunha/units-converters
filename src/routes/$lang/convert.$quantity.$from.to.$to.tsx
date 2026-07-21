@@ -1,8 +1,13 @@
 import { Trans } from "@lingui/react/macro";
 import { useLingui } from "@lingui/react";
-import { createFileRoute, Link, useNavigate, type AnyRouteMatch } from "@tanstack/react-router";
+import {
+	createFileRoute,
+	Link,
+	useNavigate,
+	type AnyRouteMatch,
+} from "@tanstack/react-router";
 import { Decimal } from "decimal.js";
-import { Children, startTransition, useRef } from "react";
+import { startTransition, useRef } from "react";
 import { safeParse } from "valibot";
 import { i18n } from "@lingui/core";
 import { msg } from "@lingui/core/macro";
@@ -112,7 +117,6 @@ export const Route = createFileRoute("/$lang/convert/$quantity/$from/to/$to")({
 				// Twitter
 				{ name: "twitter:title", content: title },
 				{ name: "twitter:description", content: description },
-
 			],
 			scripts: [
 				{
@@ -143,7 +147,6 @@ export const Route = createFileRoute("/$lang/convert/$quantity/$from/to/$to")({
 						mainEntity: faqEntities,
 					}),
 				},
-
 			] satisfies AnyRouteMatch["headScripts"],
 		};
 
@@ -195,6 +198,7 @@ function Converter() {
 	}
 
 	const { from, to, quantity } = result.output;
+	const showAds = isPopularConversion(quantity, from, to);
 
 	const quantities = Object.entries(units[quantity]);
 	const selectSize = Math.max(quantities.length / 2, 10);
@@ -457,7 +461,9 @@ function Converter() {
 					</div>
 				</form>
 
-				<AdSlot slot={ADSENSE_SLOTS.convert} className="mt-4" />
+				{showAds ? (
+					<AdSlot slot={ADSENSE_SLOTS.convert} className="mt-4" />
+				) : null}
 			</div>
 
 			<ConversionDetails quantity={quantity} from={from} to={to} />

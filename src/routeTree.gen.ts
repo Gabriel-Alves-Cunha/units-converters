@@ -15,6 +15,7 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as LangIndexRouteImport } from './routes/$lang/index'
 import { Route as LangTermsOfServiceRouteImport } from './routes/$lang/terms-of-service'
 import { Route as LangPrivacyPolicyRouteImport } from './routes/$lang/privacy-policy'
+import { Route as LangDisclaimerRouteImport } from './routes/$lang/disclaimer'
 import { Route as LangContactRouteImport } from './routes/$lang/contact'
 import { Route as LangAboutRouteImport } from './routes/$lang/about'
 import { Route as LangGuidesIndexRouteImport } from './routes/$lang/guides/index'
@@ -50,6 +51,11 @@ const LangTermsOfServiceRoute = LangTermsOfServiceRouteImport.update({
 const LangPrivacyPolicyRoute = LangPrivacyPolicyRouteImport.update({
   id: '/privacy-policy',
   path: '/privacy-policy',
+  getParentRoute: () => LangRouteRoute,
+} as any)
+const LangDisclaimerRoute = LangDisclaimerRouteImport.update({
+  id: '/disclaimer',
+  path: '/disclaimer',
   getParentRoute: () => LangRouteRoute,
 } as any)
 const LangContactRoute = LangContactRouteImport.update({
@@ -90,6 +96,7 @@ export interface FileRoutesByFullPath {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/$lang/about': typeof LangAboutRoute
   '/$lang/contact': typeof LangContactRoute
+  '/$lang/disclaimer': typeof LangDisclaimerRoute
   '/$lang/privacy-policy': typeof LangPrivacyPolicyRoute
   '/$lang/terms-of-service': typeof LangTermsOfServiceRoute
   '/$lang/': typeof LangIndexRoute
@@ -103,6 +110,7 @@ export interface FileRoutesByTo {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/$lang/about': typeof LangAboutRoute
   '/$lang/contact': typeof LangContactRoute
+  '/$lang/disclaimer': typeof LangDisclaimerRoute
   '/$lang/privacy-policy': typeof LangPrivacyPolicyRoute
   '/$lang/terms-of-service': typeof LangTermsOfServiceRoute
   '/$lang': typeof LangIndexRoute
@@ -118,6 +126,7 @@ export interface FileRoutesById {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/$lang/about': typeof LangAboutRoute
   '/$lang/contact': typeof LangContactRoute
+  '/$lang/disclaimer': typeof LangDisclaimerRoute
   '/$lang/privacy-policy': typeof LangPrivacyPolicyRoute
   '/$lang/terms-of-service': typeof LangTermsOfServiceRoute
   '/$lang/': typeof LangIndexRoute
@@ -134,6 +143,7 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/$lang/about'
     | '/$lang/contact'
+    | '/$lang/disclaimer'
     | '/$lang/privacy-policy'
     | '/$lang/terms-of-service'
     | '/$lang/'
@@ -147,6 +157,7 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/$lang/about'
     | '/$lang/contact'
+    | '/$lang/disclaimer'
     | '/$lang/privacy-policy'
     | '/$lang/terms-of-service'
     | '/$lang'
@@ -161,6 +172,7 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/$lang/about'
     | '/$lang/contact'
+    | '/$lang/disclaimer'
     | '/$lang/privacy-policy'
     | '/$lang/terms-of-service'
     | '/$lang/'
@@ -220,6 +232,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LangPrivacyPolicyRouteImport
       parentRoute: typeof LangRouteRoute
     }
+    '/$lang/disclaimer': {
+      id: '/$lang/disclaimer'
+      path: '/disclaimer'
+      fullPath: '/$lang/disclaimer'
+      preLoaderRoute: typeof LangDisclaimerRouteImport
+      parentRoute: typeof LangRouteRoute
+    }
     '/$lang/contact': {
       id: '/$lang/contact'
       path: '/contact'
@@ -268,6 +287,7 @@ declare module '@tanstack/react-router' {
 interface LangRouteRouteChildren {
   LangAboutRoute: typeof LangAboutRoute
   LangContactRoute: typeof LangContactRoute
+  LangDisclaimerRoute: typeof LangDisclaimerRoute
   LangPrivacyPolicyRoute: typeof LangPrivacyPolicyRoute
   LangTermsOfServiceRoute: typeof LangTermsOfServiceRoute
   LangIndexRoute: typeof LangIndexRoute
@@ -280,6 +300,7 @@ interface LangRouteRouteChildren {
 const LangRouteRouteChildren: LangRouteRouteChildren = {
   LangAboutRoute: LangAboutRoute,
   LangContactRoute: LangContactRoute,
+  LangDisclaimerRoute: LangDisclaimerRoute,
   LangPrivacyPolicyRoute: LangPrivacyPolicyRoute,
   LangTermsOfServiceRoute: LangTermsOfServiceRoute,
   LangIndexRoute: LangIndexRoute,

@@ -123,9 +123,18 @@ function AboutPage() {
 				<p>
 					<Trans>
 						Units Converters is developed and maintained by{" "}
-						<strong>Voyager Tecnologias LTDA</strong>. We are a small team
-						passionate about building high-quality digital utilities that solve
-						everyday problems with technical excellence.
+						<strong>Voyager Tecnologias LTDA</strong>, a Brazilian technology
+						company. We are a small team passionate about building high-quality
+						digital utilities that solve everyday problems with technical
+						excellence.
+					</Trans>
+				</p>
+
+				<p>
+					<Trans>
+						Questions about the product, accuracy reports, or partnerships can
+						be sent through our Contact page. We aim to reply within two
+						business days.
 					</Trans>
 				</p>
 			</section>

@@ -49,10 +49,6 @@ export const Route = createRootRouteWithContext<MyRouterContext>()({
 				{
 					title: `Units Converters${import.meta.env.DEV ? " — Dev" : ""}`,
 				},
-				{
-					name: "monetag",
-					content: "314e660eefc31e55b0e4293ad07677a9",
-				},
 			],
 			links: [
 				{

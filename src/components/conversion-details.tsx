@@ -4,9 +4,11 @@ import { Link, useParams } from "@tanstack/react-router";
 import { Decimal } from "decimal.js";
 
 import { AdSlot } from "#/components/ads/ad-slot";
+import { getConversionPairContent } from "#/features/convert/data/conversion-pair-content";
 import { getGuidesForQuantity } from "#/features/guides/data/guides";
 import { ADSENSE_SLOTS } from "#/lib/adsense";
 import { defaultSearchParams } from "#/lib/global-params-params";
+import { isPopularConversion } from "#/lib/popular-conversions";
 import {
 	type Quantity,
 	type UnitName,
@@ -42,6 +44,8 @@ export function ConversionDetails({
 	const tFrom = i18n._(UnitNamesWithTranslations[from]);
 	const tTo = i18n._(UnitNamesWithTranslations[to]);
 	const tQuantity = i18n._(QuantitiesWithTranslations[quantity]);
+	const isPopular = isPopularConversion(quantity, from, to);
+	const pairContent = getConversionPairContent(quantity, from, to);
 
 	const fromDescription = fromUnit.description
 		? i18n._(fromUnit.description)
@@ -178,7 +182,9 @@ export function ConversionDetails({
 				)}
 			</div>
 
-			<AdSlot slot={ADSENSE_SLOTS.conversionDetails} className="my-2" />
+			{isPopular ? (
+				<AdSlot slot={ADSENSE_SLOTS.conversionDetails} className="my-2" />
+			) : null}
 
 			<div className="flex flex-col gap-4">
 				<h3 className="text-2xl font-semibold text-primary">
@@ -243,22 +249,45 @@ export function ConversionDetails({
 					</Trans>
 				</h3>
 
-				<p className="text-muted-foreground">
-					<Trans>
-						Choose <strong>{tFrom}</strong> when your source data, standard, or
-						instrument already reports that unit. Switch to{" "}
-						<strong>{tTo}</strong> when collaborating with teams, tools, or
-						documents that expect a different convention for {tQuantity}.
-					</Trans>
-				</p>
+				{pairContent ? (
+					<p className="text-muted-foreground">
+						{i18n._(pairContent.whenToUse)}
+					</p>
+				) : (
+					<p className="text-muted-foreground">
+						<Trans>
+							Choose <strong>{tFrom}</strong> when your source data, standard,
+							or instrument already reports that unit. Switch to{" "}
+							<strong>{tTo}</strong> when collaborating with teams, tools, or
+							documents that expect a different convention for {tQuantity}.
+						</Trans>
+					</p>
+				)}
 
-				<p className="text-muted-foreground">
-					<Trans>
-						Mixing systems mid-project is a common source of error. Convert once
-						at a clear boundary, label the unit on every number, and keep the
-						rest of the workflow in a single system whenever possible.
-					</Trans>
-				</p>
+				{pairContent ? (
+					<>
+						<h4 className="text-lg font-medium text-foreground">
+							<Trans>Common mistakes</Trans>
+						</h4>
+						<p className="text-muted-foreground">
+							{i18n._(pairContent.commonMistakes)}
+						</p>
+						<h4 className="text-lg font-medium text-foreground">
+							<Trans>Real-world example</Trans>
+						</h4>
+						<p className="text-muted-foreground">
+							{i18n._(pairContent.realWorldExample)}
+						</p>
+					</>
+				) : (
+					<p className="text-muted-foreground">
+						<Trans>
+							Mixing systems mid-project is a common source of error. Convert
+							once at a clear boundary, label the unit on every number, and keep
+							the rest of the workflow in a single system whenever possible.
+						</Trans>
+					</p>
+				)}
 			</div>
 
 			{relatedGuides.length > 0 ? (

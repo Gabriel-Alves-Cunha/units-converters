@@ -2,7 +2,15 @@ import { getAllGuideSlugs } from "#/features/guides/data/guide-slugs";
 import { locales, type Locales } from "#/integrations/i18n/load-catalog";
 import { POPULAR_CONVERSIONS } from "#/lib/popular-conversions";
 
-const QUANTITIES = ["Length", "Temperature", "Area", "Volume"] as const;
+const QUANTITIES = [
+	"Length",
+	"Temperature",
+	"Area",
+	"Volume",
+	"Weight",
+	"Speed",
+	"Time",
+] as const;
 
 const STATIC_PATHS = [
 	"",
@@ -10,6 +18,7 @@ const STATIC_PATHS = [
 	"/contact",
 	"/privacy-policy",
 	"/terms-of-service",
+	"/disclaimer",
 	"/guides",
 ] as const;
 

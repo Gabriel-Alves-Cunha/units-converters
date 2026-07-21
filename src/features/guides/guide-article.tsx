@@ -3,7 +3,10 @@ import { useLingui } from "@lingui/react";
 import { Link, useParams } from "@tanstack/react-router";
 
 import { AdSlot } from "#/components/ads/ad-slot";
+import { MediaNetSlot } from "#/components/ads/medianet-slot";
+import { AffiliateCta } from "#/components/affiliate-cta";
 import type { Guide } from "#/features/guides/data/guides";
+import { COMPANY } from "#/lib/company";
 import { ADSENSE_SLOTS } from "#/lib/adsense";
 import { defaultSearchParams } from "#/lib/global-params-params";
 import { UnitNamesWithTranslations } from "#/lib/units";
@@ -11,6 +14,30 @@ import { scrollPageToTop } from "#/lib/utils";
 
 interface GuideArticleProps {
 	guide: Guide;
+}
+
+function affiliateQueryForGuide(slug: string): string {
+	if (
+		slug.includes("cooking") ||
+		slug.includes("grams") ||
+		slug.includes("oven")
+	) {
+		return "kitchen scale grams";
+	}
+	if (
+		slug.includes("carpet") ||
+		slug.includes("room-area") ||
+		slug.includes("flooring")
+	) {
+		return "laser distance measure";
+	}
+	if (slug.includes("pool")) {
+		return "pool volume test kit";
+	}
+	if (slug.includes("shipping") || slug.includes("kilograms")) {
+		return "digital luggage scale";
+	}
+	return "unit conversion measuring tools";
 }
 
 export function GuideArticle({ guide }: GuideArticleProps) {
@@ -41,9 +68,17 @@ export function GuideArticle({ guide }: GuideArticleProps) {
 				<p className="text-xl text-muted-foreground">
 					{i18n._(guide.description)}
 				</p>
+
+				<p className="text-sm text-muted-foreground">
+					<Trans>
+						By the Units Converters editorial team · {COMPANY.legalName}
+					</Trans>
+				</p>
 			</header>
 
 			<AdSlot slot={ADSENSE_SLOTS.guide} className="my-2" />
+			{/* Media.net only when configured — do not enable during AdSense review */}
+			<MediaNetSlot className="my-2" />
 
 			{guide.sections.map((section, sectionIndex) => (
 				<section key={sectionIndex} className="space-y-4">
@@ -122,6 +157,8 @@ export function GuideArticle({ guide }: GuideArticleProps) {
 					</div>
 				</section>
 			) : null}
+
+			<AffiliateCta searchQuery={affiliateQueryForGuide(guide.slug)} />
 
 			<div className="pt-4 border-t">
 				<Link

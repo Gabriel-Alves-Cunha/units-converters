@@ -24,6 +24,20 @@ export const GUIDE_SLUGS = [
 	"oven-temperature-baking",
 	"travel-distance-km-miles",
 	"pool-volume-chemicals",
+	"kilograms-vs-pounds-everyday",
+	"shipping-weight-vs-volume-weight",
+	"mph-to-kmh-road-trips",
+	"knots-explained-boats-planes",
+	"seconds-minutes-hours-precision",
+	"julian-year-vs-calendar-year",
+	"carpet-area-calculator-workflow",
+	"grams-ounces-kitchen-scale",
+	"stone-weight-uk-us",
+	"airspeed-units-explained",
+	"time-zones-vs-duration-units",
+	"density-mass-volume-triangle",
+	"treadmill-pace-min-per-km",
+	"fuel-economy-units-basics",
 ] as const;
 
 export type GuideSlug = (typeof GUIDE_SLUGS)[number];

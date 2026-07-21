@@ -141,7 +141,7 @@ function PrivacyPolicyPage() {
 
 			<section className="space-y-4">
 				<h3 className="text-2xl font-semibold text-primary">
-					<Trans>Google AdSense</Trans>
+					<Trans>Google AdSense and other advertising</Trans>
 				</h3>
 
 				<p>
@@ -168,6 +168,16 @@ function PrivacyPolicyPage() {
 							Google Ads Settings
 						</a>
 						.
+					</Trans>
+				</p>
+
+				<p>
+					<Trans>
+						We may also use contextual networks such as Media.net, and optional
+						affiliate links (for example Amazon Associates) on guide pages.
+						Affiliate partners may set cookies when you follow those links. See
+						our Disclaimer for commission disclosure. These partners only load
+						after you accept cookies where consent is required.
 					</Trans>
 				</p>
 			</section>

@@ -248,6 +248,182 @@ export const POPULAR_CONVERSIONS: ConversionPair[] = [
 		from: "Litre",
 		to: "Hectolitre",
 	},
+
+	// Weight
+	{
+		quantity: "Weight",
+		from: "Kilogram",
+		to: "Pound (Avoirdupois)",
+	},
+	{
+		quantity: "Weight",
+		from: "Pound (Avoirdupois)",
+		to: "Kilogram",
+	},
+	{
+		quantity: "Weight",
+		from: "Gram",
+		to: "Ounce (Avoirdupois)",
+	},
+	{
+		quantity: "Weight",
+		from: "Ounce (Avoirdupois)",
+		to: "Gram",
+	},
+	{
+		quantity: "Weight",
+		from: "Kilogram",
+		to: "Stone",
+	},
+	{
+		quantity: "Weight",
+		from: "Stone",
+		to: "Kilogram",
+	},
+	{
+		quantity: "Weight",
+		from: "Tonne (Metric)",
+		to: "Pound (Avoirdupois)",
+	},
+	{
+		quantity: "Weight",
+		from: "Pound (Avoirdupois)",
+		to: "Tonne (Metric)",
+	},
+	{
+		quantity: "Weight",
+		from: "Gram",
+		to: "Kilogram",
+	},
+	{
+		quantity: "Weight",
+		from: "Kilogram",
+		to: "Gram",
+	},
+	{
+		quantity: "Weight",
+		from: "Milligram",
+		to: "Gram",
+	},
+	{
+		quantity: "Weight",
+		from: "Gram",
+		to: "Milligram",
+	},
+
+	// Speed
+	{
+		quantity: "Speed",
+		from: "Kilometre per hour",
+		to: "Mile per hour",
+	},
+	{
+		quantity: "Speed",
+		from: "Mile per hour",
+		to: "Kilometre per hour",
+	},
+	{
+		quantity: "Speed",
+		from: "Metre per second",
+		to: "Kilometre per hour",
+	},
+	{
+		quantity: "Speed",
+		from: "Kilometre per hour",
+		to: "Metre per second",
+	},
+	{
+		quantity: "Speed",
+		from: "Mile per hour",
+		to: "Foot per second",
+	},
+	{
+		quantity: "Speed",
+		from: "Foot per second",
+		to: "Mile per hour",
+	},
+	{
+		quantity: "Speed",
+		from: "Knot",
+		to: "Kilometre per hour",
+	},
+	{
+		quantity: "Speed",
+		from: "Kilometre per hour",
+		to: "Knot",
+	},
+	{
+		quantity: "Speed",
+		from: "Metre per second",
+		to: "Mile per hour",
+	},
+	{
+		quantity: "Speed",
+		from: "Mile per hour",
+		to: "Metre per second",
+	},
+
+	// Time
+	{
+		quantity: "Time",
+		from: "Minute",
+		to: "Second",
+	},
+	{
+		quantity: "Time",
+		from: "Second",
+		to: "Minute",
+	},
+	{
+		quantity: "Time",
+		from: "Hour",
+		to: "Minute",
+	},
+	{
+		quantity: "Time",
+		from: "Minute",
+		to: "Hour",
+	},
+	{
+		quantity: "Time",
+		from: "Day",
+		to: "Hour",
+	},
+	{
+		quantity: "Time",
+		from: "Hour",
+		to: "Day",
+	},
+	{
+		quantity: "Time",
+		from: "Week",
+		to: "Day",
+	},
+	{
+		quantity: "Time",
+		from: "Day",
+		to: "Week",
+	},
+	{
+		quantity: "Time",
+		from: "Year (Julian)",
+		to: "Day",
+	},
+	{
+		quantity: "Time",
+		from: "Day",
+		to: "Year (Julian)",
+	},
+	{
+		quantity: "Time",
+		from: "Hour",
+		to: "Second",
+	},
+	{
+		quantity: "Time",
+		from: "Second",
+		to: "Hour",
+	},
 ];
 
 function pairKey(quantity: Quantity, from: UnitName, to: UnitName): string {

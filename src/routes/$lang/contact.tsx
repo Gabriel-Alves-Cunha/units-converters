@@ -8,6 +8,7 @@ import {
 	loadCatalog,
 	loadDefaultCatalog,
 } from "#/integrations/i18n/load-catalog";
+import { COMPANY } from "#/lib/company";
 import { defaultSearchParams } from "#/lib/global-params-params";
 
 export const Route = createFileRoute("/$lang/contact")({
@@ -48,9 +49,8 @@ function ContactPage() {
 
 				<p className="text-xl text-muted-foreground">
 					<Trans>
-						Units Converters is operated by{" "}
-						<strong>Voyager Tecnologias LTDA</strong>, based in Brazil. We'd
-						love to hear from you.
+						Units Converters is operated by <strong>{COMPANY.legalName}</strong>
+						, based in {COMPANY.country}. We&apos;d love to hear from you.
 					</Trans>
 				</p>
 			</section>
@@ -65,15 +65,15 @@ function ContactPage() {
 						<strong>
 							<Trans>Company:</Trans>
 						</strong>{" "}
-						Voyager Tecnologias LTDA
+						{COMPANY.legalName}
 					</li>
 
 					<li>
 						<strong>
 							<Trans>Email:</Trans>
 						</strong>{" "}
-						<a className="link" href="mailto:voyagertecnologias@gmail.com">
-							voyagertecnologias@gmail.com
+						<a className="link" href={`mailto:${COMPANY.email}`}>
+							{COMPANY.email}
 						</a>
 					</li>
 
@@ -81,9 +81,42 @@ function ContactPage() {
 						<strong>
 							<Trans>Location:</Trans>
 						</strong>{" "}
-						<Trans>Based in Brazil</Trans>
+						{COMPANY.region}
+					</li>
+
+					{COMPANY.cnpj ? (
+						<li>
+							<strong>
+								<Trans>CNPJ:</Trans>
+							</strong>{" "}
+							{COMPANY.cnpj}
+						</li>
+					) : null}
+
+					{COMPANY.address ? (
+						<li>
+							<strong>
+								<Trans>Address:</Trans>
+							</strong>{" "}
+							{COMPANY.address}
+						</li>
+					) : null}
+
+					<li>
+						<strong>
+							<Trans>Response time:</Trans>
+						</strong>{" "}
+						<Trans>We aim to reply within 2 business days.</Trans>
 					</li>
 				</ul>
+
+				<p className="text-sm text-muted-foreground">
+					<Trans>
+						For privacy requests, conversion feedback, or partnership inquiries,
+						email is the fastest channel. Include the page URL and locale if you
+						are reporting a content issue.
+					</Trans>
+				</p>
 			</section>
 
 			<section className="space-y-4">

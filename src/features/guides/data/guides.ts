@@ -1530,6 +1530,1060 @@ export const guides: Guide[] = [
 			},
 		],
 	},
+	{
+		slug: "kilograms-vs-pounds-everyday",
+		title: msg`Kilograms vs Pounds in Everyday Life`,
+		description: msg`Convert body weight, luggage, and grocery labels between kilograms and pounds with exact factors, mental shortcuts, and habits that prevent airport and gym mistakes.`,
+		relatedConverters: [
+			{ quantity: "Weight", from: "Kilogram", to: "Pound (Avoirdupois)" },
+			{ quantity: "Weight", from: "Pound (Avoirdupois)", to: "Kilogram" },
+			{ quantity: "Weight", from: "Gram", to: "Ounce (Avoirdupois)" },
+			{ quantity: "Weight", from: "Kilogram", to: "Stone" },
+		],
+		sections: [
+			{
+				heading: msg`Same mass, different everyday labels`,
+				paragraphs: [
+					msg`Kilograms and pounds both describe mass (weight under ordinary gravity). A suitcase that tips a scale at 23 kg is the same object whether a US tag says about 50.7 lb. The physics does not change; the number and the unit do. Confusion starts when people treat the numbers as interchangeable, round too early, or mix stone, pounds, and kilograms on one form.`,
+					msg`One international avoirdupois pound equals exactly 0.45359237 kg by definition. That means 1 kg is about 2.2046226218 lb. For luggage and gym work, two or three decimal places on the conversion factor are enough; for legal trade and shipping manifests, use the exact factor and round only at the end.`,
+					msg`Countries that use metric post body weight and baggage limits in kilograms. US gyms, some airlines’ US-facing pages, and older medical charts still speak in pounds. If you travel, train, or shop across those systems, convert once into a single “home unit,” then keep every note in that unit until you must publish the other.`,
+				],
+			},
+			{
+				heading: msg`Luggage and airline limits`,
+				paragraphs: [
+					msg`Many international economy limits sit at 23 kg (often marketed as 50 lb). That marketing round is slightly generous: 23 × 2.2046226218 ≈ 50.71 lb. If your home scale only shows pounds, do not pack to a flat 50 lb and assume you are safe—you may already be over. Convert the airline’s kilogram limit into pounds with a proper converter, then leave a buffer for scale disagreement between home and the check-in desk.`,
+					msg`Carry-on limits are often lower and sometimes stated only in kilograms. Soft bags compress; hard cases do not. Weigh the packed bag, not the empty shell plus a guess. If you own a scale in pounds only, convert the limit first, write both numbers on a sticky note in the bag, and re-check after last-minute additions (duty-free bottles are a classic overage).`,
+					msg`Freight and courier services may use kilograms worldwide even when the shipper thinks in pounds. Dimensional weight is a separate rule (volume-based billing). Convert actual scale weight correctly first; then apply the carrier’s dimensional-weight formula in the unit the carrier specifies.`,
+				],
+			},
+			{
+				heading: msg`Body weight, gym plates, and health forms`,
+				paragraphs: [
+					msg`Clinic forms may ask for kilograms while your bathroom scale shows pounds, or the reverse. Convert the reading you actually measured; do not “feel” a number in the other unit. A 2–3 lb morning fluctuation is normal; a unit mix-up of 2.2× is a medical-record disaster.`,
+					msg`Gym plates in metric gyms are often 1.25, 2.5, 5, 10, 15, and 20 kg. US customary gyms use 2.5, 5, 10, 25, 35, and 45 lb plates. A “20 kg plate” is about 44.1 lb—not a 45 lb plate. When following a program written in the other system, convert working weights, then choose the nearest plate combination and log what you actually lifted.`,
+					msg`Stone appears in UK everyday speech (for example, 11 st 4 lb). If a form wants kilograms, convert the full stone-and-pounds value to pounds first, then to kilograms—or use a stone↔kilogram converter and add the leftover pounds carefully. Never paste “11.4” into a kilogram field when you meant 11 stone 4 pounds.`,
+				],
+			},
+			{
+				heading: msg`Groceries, parcels, and kitchen intuition`,
+				paragraphs: [
+					msg`Packaged food in metric markets lists net weight in grams or kilograms; US labels use ounces and pounds. A 500 g block of cheese is about 1.10 lb; a 1 lb package is about 454 g. For recipes, prefer grams on a digital scale—volume cups vary by packing, but mass does not.`,
+					msg`Parcel shops and post offices price by weight tiers. Crossing a tier by 50 g because you mixed oz and g is an expensive lesson. Keep the shipping label’s unit visible while you pack: if the rate card is in kilograms, convert ounces to grams or kilograms before you seal the box.`,
+					msg`Mental anchors help day to day: 1 kg ≈ 2.2 lb; 5 kg ≈ 11 lb; 10 kg ≈ 22 lb; 20 kg ≈ 44 lb; 100 g ≈ 3.5 oz. Use anchors for sanity checks, then confirm important values with an exact conversion.`,
+				],
+			},
+			{
+				heading: msg`A reliable conversion workflow`,
+				paragraphs: [
+					msg`Decide the authoritative measurement (what the scale showed) and its unit. Convert to the destination unit with an exact factor. Round once for display according to the context—whole pounds for casual speech, one decimal for luggage, more for lab work.`,
+					msg`When two people share numbers (coach and athlete, shipper and warehouse), agree on one unit for the shared log. Publish a dual label only at the interface (airport sign, product page), not inside every intermediate calculation.`,
+					msg`Our kilogram ↔ pound converter pages include common luggage and body-weight tables so you can sanity-check a result in seconds before you argue with a check-in agent or a spreadsheet.`,
+				],
+			},
+			{
+				heading: msg`Common mistakes to avoid`,
+				paragraphs: [
+					msg`Using 2.2 as if it were exact for legal or shipping work. It is a handy approximation, not the definition. Multiplying by 2.2 and also adding a “safety pound” without knowing which scale unit you started from compounds error.`,
+					msg`Confusing mass with force in technical settings (lbf vs lb mass). Everyday baggage and body weight ignore that distinction; engineering specs may not. Read the symbol on the datasheet.`,
+					msg`Mixing troy ounces (precious metals) with avoirdupois ounces (food and freight). This site’s everyday ounce unit is avoirdupois. Gold and silver use a different ounce—do not convert jewellery the same way you convert flour.`,
+				],
+			},
+		],
+		faqs: [
+			{
+				question: msg`How many pounds are in one kilogram?`,
+				answer: msg`One kilogram equals about 2.2046226218 avoirdupois pounds. For quick estimates, use 2.2 lb per kg, then refine with an exact converter when limits are tight.`,
+			},
+			{
+				question: msg`Is 23 kg the same as 50 lb for airline bags?`,
+				answer: msg`Airlines often market 23 kg as “50 lb,” but 23 kg is about 50.71 lb. Pack below the kilogram limit after converting with an exact factor, and leave a buffer for scale differences.`,
+			},
+			{
+				question: msg`Should I convert stone or pounds for a metric form?`,
+				answer: msg`Convert the full value you know. If you know stone and pounds, combine them (or convert via kilograms) so leftover pounds are not dropped. Forms that want kg should receive a single kilogram number.`,
+			},
+		],
+	},
+	{
+		slug: "shipping-weight-vs-volume-weight",
+		title: msg`Shipping Weight vs Volume Weight`,
+		description: msg`Learn how carriers bill the higher of actual weight and dimensional (volume) weight, convert kilograms and pounds correctly, and measure boxes so quotes match invoices.`,
+		relatedConverters: [
+			{ quantity: "Weight", from: "Kilogram", to: "Pound (Avoirdupois)" },
+			{ quantity: "Weight", from: "Pound (Avoirdupois)", to: "Kilogram" },
+			{ quantity: "Weight", from: "Tonne (Metric)", to: "Kilogram" },
+			{ quantity: "Volume", from: "Cubic Metre", to: "Litre" },
+		],
+		sections: [
+			{
+				heading: msg`Two numbers decide the invoice`,
+				paragraphs: [
+					msg`Carriers care about two constraints: how heavy a parcel is, and how much space it occupies on a truck or aircraft. Actual (scale) weight is what a calibrated scale reads in kilograms or pounds. Dimensional weight—also called volumetric weight—is a billing weight computed from the package’s outer dimensions using the carrier’s divisor formula.`,
+					msg`You almost always pay on the greater of actual weight and dimensional weight. A box of pillows can be light on the scale and expensive on the invoice because volume weight wins. A small dense part can be heavy and tiny—actual weight wins. Unit conversion mistakes on either side change which number wins.`,
+					msg`Before you convert anything, write down three facts: outer length, width, and height (with units), scale weight (with units), and the carrier’s dimensional divisor and rounding rules from the rate card you are using today—not a blog post from five years ago.`,
+				],
+			},
+			{
+				heading: msg`Measuring the box before you convert`,
+				paragraphs: [
+					msg`Use outer dimensions, including bulges and protruding handles. Soft packs are measured as the rectangular envelope they occupy. Convert all three sides into one length unit before multiplying. Mixing centimetres and inches in the same product is a classic quote killer.`,
+					msg`Volume for shipping math is usually the rectangular product L × W × H, not the true geometric volume of an irregular shape. Carriers bill the rectangular cuboid. Convert that cuboid into the unit the divisor expects (often cm³ or in³), then apply the formula.`,
+					msg`If your warehouse stores dimensions in millimetres and the carrier wants centimetres, divide each side by 10 before multiplying—or convert after computing mm³ into cm³ carefully. Keep a single spreadsheet column unit and validate with a known sample box.`,
+				],
+			},
+			{
+				heading: msg`Actual weight: kilograms and pounds`,
+				paragraphs: [
+					msg`International carriers usually quote chargeable weight in kilograms. US domestic services often speak in pounds. Convert scale readings with the exact pound–kilogram relationship before comparing to dimensional weight. Comparing 10 lb to a dimensional weight of 5 kg without converting is meaningless.`,
+					msg`Tare the scale (subtract pallet or container weight) when the rate applies to net shipment weight. For multi-piece shipments, know whether the carrier sums chargeable weights per piece or allows shipment-level aggregation—those rules change optimization tactics.`,
+					msg`Metric tonnes appear on freight, not parcels. One metric tonne is 1,000 kg (about 2,204.62 lb). Do not confuse it with a US ton (short ton) or UK long ton when reading ocean quotes.`,
+				],
+			},
+			{
+				heading: msg`Dimensional weight formulas in practice`,
+				paragraphs: [
+					msg`A typical pattern is: dimensional weight = (L × W × H) / divisor, with L, W, H in centimetres or inches and the result in kilograms or pounds matching the divisor’s definition. Divisors differ by air vs ground and by carrier. Always use the divisor printed for your service level.`,
+					msg`Rounding rules matter as much as the divisor. Some carriers round each dimension up to the next centimetre; others round the final chargeable weight up to the next half kilogram. Convert units first, then apply rounding in the order the tariff states.`,
+					msg`Volumetric litres and cubic metres help warehouse planning (1 m³ = 1,000 L) but do not replace the carrier’s dimensional-weight formula. Use volume converters for storage and cube utilization; use the tariff formula for billing weight.`,
+				],
+			},
+			{
+				heading: msg`Packaging choices that change chargeable weight`,
+				paragraphs: [
+					msg`Right-sizing the carton often saves more money than negotiating a tiny rate discount. Empty space increases dimensional weight. Lightweight void fill can still lose if the box stays huge. Dense goods in a snug carton usually bill near actual weight.`,
+					msg`When you redesign packaging, re-measure and re-convert. A 2 cm reduction on one side changes volume by a percent equal to that side’s relative change—worth calculating before you order 10,000 cartons.`,
+					msg`For exports, customs may care about net and gross mass in kilograms even when your commercial invoice was drafted in pounds. Keep both actual mass and package cube documented so logistics and compliance teams share one truth.`,
+				],
+			},
+			{
+				heading: msg`Checklist before you buy a label`,
+				paragraphs: [
+					msg`Measure outer L, W, H in one unit. Weigh on a trusted scale. Convert weight into the carrier’s billing unit. Compute dimensional weight with the correct divisor. Take the maximum. Add any oversize fees that ignore weight entirely.`,
+					msg`Sanity-check with a dual display: show chargeable kilograms and pounds on the packing slip. Dual labels catch unit bugs when US and EU sites share one catalogue.`,
+					msg`Use our kilogram ↔ pound tools for the mass side and cubic metre ↔ litre tools when you reason about cube. Then apply the carrier formula—converters handle units; tariffs handle money.`,
+				],
+			},
+		],
+		faqs: [
+			{
+				question: msg`What is dimensional weight?`,
+				answer: msg`Dimensional (volumetric) weight is a billing weight derived from package dimensions using a carrier divisor. You typically pay on the higher of actual scale weight and dimensional weight.`,
+			},
+			{
+				question: msg`Should I convert to kilograms or pounds first?`,
+				answer: msg`Convert into the unit the carrier’s rate card uses for chargeable weight, then compare actual and dimensional weight in that same unit.`,
+			},
+			{
+				question: msg`Does cubic metres equal shipping weight?`,
+				answer: msg`No. Cubic metres measure volume. Shipping cost uses actual mass and a dimensional-weight formula. Volume helps you compute dimensional weight but is not the invoice by itself.`,
+			},
+		],
+	},
+	{
+		slug: "mph-to-kmh-road-trips",
+		title: msg`mph to km/h for Road Trips`,
+		description: msg`Convert miles per hour and kilometres per hour for foreign road signs, rental cars, and trip planning—plus the distance and time links that keep ETA math honest.`,
+		relatedConverters: [
+			{ quantity: "Speed", from: "Mile per hour", to: "Kilometre per hour" },
+			{ quantity: "Speed", from: "Kilometre per hour", to: "Mile per hour" },
+			{ quantity: "Speed", from: "Metre per second", to: "Kilometre per hour" },
+			{ quantity: "Length", from: "Mile (International)", to: "Kilometre" },
+		],
+		sections: [
+			{
+				heading: msg`Speed limits are unit limits`,
+				paragraphs: [
+					msg`A number on a white sign means nothing until you know whether it is mph or km/h. Driving 100 in a 100 km/h zone is not the same as driving 100 in a 100 mph zone—the second case is roughly 161 km/h. Tourists who “just match the number” cause genuine danger.`,
+					msg`Exact relationship: 1 mph = 1.609344 km/h because the international mile is exactly 1.609344 km and the hour is the same in both units. Conversely, 1 km/h ≈ 0.621371192 mph. For dashboard glances, many drivers remember “multiply mph by 1.6” or “multiply km/h by 0.62,” then refine when planning.`,
+					msg`Rental cars may display the other unit, or both. Learn how to switch the cluster before you leave the airport road. Navigation apps usually localize speed limits, but a paper map or temporary work-zone sign might not match your mental default.`,
+				],
+			},
+			{
+				heading: msg`Planning ETA when distance units also flip`,
+				paragraphs: [
+					msg`Trip time is distance divided by average speed—only when both use consistent length units. Mixing a 120 km leg with a 60 mph average without converting yields nonsense. Convert either all distances to miles and speeds to mph, or all to kilometres and km/h.`,
+					msg`Average speed on a road trip is far below the posted limit. Use a realistic average (including fuel stops) in one unit system. Convert the posted limit separately when you want to know “how fast am I allowed to go,” not “how fast will I average.”`,
+					msg`Our mile ↔ kilometre guides cover distance; this guide focuses on the speed pair. You will often need both pages open when building an itinerary across borders.`,
+				],
+			},
+			{
+				heading: msg`Common highway anchors`,
+				paragraphs: [
+					msg`Useful pairs to memorize for signs: 30 mph ≈ 48 km/h (urban); 50 mph ≈ 80 km/h; 60 mph ≈ 97 km/h; 70 mph ≈ 113 km/h; 80 mph ≈ 129 km/h. In the other direction: 50 km/h ≈ 31 mph; 80 km/h ≈ 50 mph; 100 km/h ≈ 62 mph; 120 km/h ≈ 75 mph; 130 km/h ≈ 81 mph.`,
+					msg`School zones and temporary limits are where unit mistakes hurt most because the absolute speeds are lower but enforcement and child safety margins are tight. Convert the posted number before you “nudge a little over.”`,
+					msg`Adaptive cruise control and speed-limit assist features depend on map data units. If the car was configured for another market, verify the shown limit against roadside signs once, especially after firmware or language changes.`,
+				],
+			},
+			{
+				heading: msg`mph, km/h, and metres per second`,
+				paragraphs: [
+					msg`Science and some vehicle test reports use metres per second. 1 m/s = 3.6 km/h exactly. That bridge is handy: convert m/s → km/h by multiplying by 3.6, then to mph if needed. Crash-test and physics problems almost never want mph as an intermediate.`,
+					msg`Dashcams and OBD apps may log SI units internally and display your preference. When exporting a CSV for insurance or coaching, note the unit column. A silent m/s vs km/h swap makes you look ten times too slow or too fast.`,
+					msg`Foot per second appears in some US engineering contexts. For road trips you rarely need it; stick to mph and km/h unless a technical report forces the issue.`,
+				],
+			},
+			{
+				heading: msg`Weather, tires, and “feels like” speed`,
+				paragraphs: [
+					msg`Unit conversion does not change stopping distance physics, but mixed mental models do. If you are used to thinking “60 mph needs X metres to stop,” rebuild that intuition in km/h before mountain descents abroad.`,
+					msg`Tire speed ratings and placards may list km/h even on US cars. Convert before comparing to your planned cruise speed in mph. The rating is a limit, not a suggestion to drive that fast.`,
+					msg`Keep a single sticky note on the dash for the first day abroad: “limits are km/h” or “limits are mph,” plus two anchor conversions you actually saw on the route.`,
+				],
+			},
+			{
+				heading: msg`Workflow for a border-crossing day`,
+				paragraphs: [
+					msg`Set the instrument cluster and phone navigation to the local unit. Convert any handwritten pace notes from home. Recalculate ETA with distance and average speed in one system. Recheck the first three posted limits against your display.`,
+					msg`When sharing driving shifts with someone from another country, call out both units for the first hour (“90 km/h, about 56 mph”). Shared speech prevents one driver from “correcting” the other into a ticket.`,
+					msg`Use the mile-per-hour ↔ kilometre-per-hour converter for exact values when a work zone lists an unusual number. Anchors are for glance checks; exact math is for planning and disputes.`,
+				],
+			},
+		],
+		faqs: [
+			{
+				question: msg`How do I convert mph to km/h quickly?`,
+				answer: msg`Multiply mph by 1.609344 for an exact value. For a mental estimate, multiply by 1.6. Example: 70 mph ≈ 112.7 km/h.`,
+			},
+			{
+				question: msg`Is 100 on the sign mph or km/h?`,
+				answer: msg`It depends on the country. In most of the world, highway “100” means 100 km/h (about 62 mph). In the United States, “100” would be mph if used—always read local unit conventions.`,
+			},
+			{
+				question: msg`How is m/s related to km/h?`,
+				answer: msg`Multiply metres per second by 3.6 to get kilometres per hour. Divide km/h by 3.6 to get m/s.`,
+			},
+		],
+	},
+	{
+		slug: "knots-explained-boats-planes",
+		title: msg`Knots Explained for Boats and Planes`,
+		description: msg`Understand the knot as a speed unit tied to the nautical mile, convert knots to km/h and mph, and avoid mixing statute miles with nautical miles in navigation.`,
+		relatedConverters: [
+			{ quantity: "Speed", from: "Knot", to: "Kilometre per hour" },
+			{ quantity: "Speed", from: "Knot", to: "Mile per hour" },
+			{ quantity: "Speed", from: "Kilometre per hour", to: "Knot" },
+			{
+				quantity: "Length",
+				from: "Nautical Mile (International)",
+				to: "Kilometre",
+			},
+		],
+		sections: [
+			{
+				heading: msg`A knot is a nautical mile per hour`,
+				paragraphs: [
+					msg`One knot means one nautical mile per hour. The international nautical mile is exactly 1,852 metres, so 1 knot = 1.852 km/h exactly. In statute (land) miles, 1 knot ≈ 1.15078 mph. Mariners and aviators use knots so speed and chart distance share the same mile definition.`,
+					msg`If you convert boat speed into km/h but leave chart legs in nautical miles—or worse, statute miles—your ETA will be wrong. Keep the chain consistent: nautical miles with knots, kilometres with km/h, statute miles with mph.`,
+					msg`Historical note: the name comes from counting knots in a line paid out over a sandglass interval. Modern instruments use sensors and GNSS; the unit definition is now fixed by the international nautical mile.`,
+				],
+			},
+			{
+				heading: msg`Boating: SOG, STW, and wind`,
+				paragraphs: [
+					msg`Speed through water (STW) and speed over ground (SOG) can differ because of current. Instruments may show knots for both. When you convert to km/h for a guest display, label which speed you converted—current-adjusted SOG is what gets you to the marina on time.`,
+					msg`Wind reports in marine forecasts often use knots. A “20-knot wind” is about 37 km/h or 23 mph. Small-craft advice thresholds are written in knots in many countries; convert only after you understand the category boundaries.`,
+					msg`Tide atlases and racing handicaps assume nautical miles and knots. Converting a race course to statute miles without converting the rating math breaks comparisons between seasons and fleets.`,
+				],
+			},
+			{
+				heading: msg`Aviation: airspeed in knots`,
+				paragraphs: [
+					msg`Pilots quote indicated, calibrated, true, and ground speed—often in knots. Those types already differ by instrument and atmosphere effects; unit conversion is a separate step. Convert only when talking to audiences that expect km/h or mph, and name which airspeed type you mean.`,
+					msg`Jet streams and ATIS winds are typically in knots. Airport visibility and runway lengths may use metres or feet—different quantities. Do not treat a wind of 15 kt like 15 km/h; that underestimates wind by nearly half.`,
+					msg`Flight-planning tools can switch display units. Before a cross-country lesson or sim session, verify the unit field. A silent switch from knots to mph changes every performance number you memorized.`,
+				],
+			},
+			{
+				heading: msg`Converting knots cleanly`,
+				paragraphs: [
+					msg`To km/h: multiply knots by 1.852. To mph: multiply knots by 1.150779448 (approximately). Reverse: divide km/h by 1.852 to get knots. Use a converter when filing plans or writing procedures; use 1.85 as a glance factor only for casual talk.`,
+					msg`Related length conversion: 1 international nautical mile = 1.852 km ≈ 1.15078 statute miles. If you convert speed but not distance—or the reverse—you invent a fake average speed.`,
+					msg`Metres per second sometimes appear in research or metric-only instrument logs: 1 kn = 1.852 km/h = 0.514444… m/s. Prefer knots in operational marine/aviation communication unless a local procedure says otherwise.`,
+				],
+			},
+			{
+				heading: msg`Common mix-ups with land units`,
+				paragraphs: [
+					msg`Car drivers often think in mph or km/h and underestimate boat/aircraft speeds quoted in knots because the numbers look “smaller.” Fifteen knots is not a jogging pace—it is about 28 km/h over ground if SOG matches.`,
+					msg`News articles sometimes convert knots to mph incorrectly by using 1.6 (the statute mile factor) instead of about 1.15. When accuracy matters, re-convert from the original knot value.`,
+					msg`GPS apps on phones may default to mph based on locale even on a boat. Switch the app to knots or nautical miles when navigating on water so the display matches charts.`,
+				],
+			},
+			{
+				heading: msg`Practical checklist`,
+				paragraphs: [
+					msg`Identify whether the source value is knots. Convert with 1.852 to km/h when talking to metric land audiences. Keep internal logs in knots if your charts are nautical. Dual-label passenger briefings (“8 knots, about 15 km/h”) when helpful.`,
+					msg`For passage planning: distance in nautical miles ÷ speed in knots = hours. That simple formula is why the unit exists. Change either unit without the other and the formula collapses.`,
+					msg`Use our knot ↔ km/h and knot ↔ mph pages for exact tables, and the nautical mile ↔ kilometre page when converting chart distances for mixed crews.`,
+				],
+			},
+		],
+		faqs: [
+			{
+				question: msg`How many km/h is one knot?`,
+				answer: msg`Exactly 1.852 km/h, because the international nautical mile is exactly 1,852 metres and a knot is one nautical mile per hour.`,
+			},
+			{
+				question: msg`Is a knot the same as a mph?`,
+				answer: msg`No. One knot is about 1.15 statute miles per hour. Knots pair with nautical miles; mph pairs with statute (land) miles.`,
+			},
+			{
+				question: msg`Why do pilots and sailors prefer knots?`,
+				answer: msg`Charts and distances are often in nautical miles. Using knots keeps speed and distance in the same mile definition, so time = distance ÷ speed stays simple.`,
+			},
+		],
+	},
+	{
+		slug: "seconds-minutes-hours-precision",
+		title: msg`Seconds, Minutes, and Hours: Precision That Matters`,
+		description: msg`Convert seconds, minutes, hours, and days without off-by-sixty errors, choose appropriate precision for sports and science, and keep timestamps consistent.`,
+		relatedConverters: [
+			{ quantity: "Time", from: "Second", to: "Minute" },
+			{ quantity: "Time", from: "Minute", to: "Hour" },
+			{ quantity: "Time", from: "Hour", to: "Day" },
+			{ quantity: "Time", from: "Second", to: "Hour" },
+		],
+		sections: [
+			{
+				heading: msg`Time units nest by sixty—and then by twenty-four`,
+				paragraphs: [
+					msg`Exactly 60 seconds make a minute; 60 minutes make an hour; 24 hours make a day in ordinary civil usage. Those ratios are exact for conversion between these units. Mistakes come from treating decimal hours like sexagesimal minutes—writing 1.30 h when you mean 1 h 30 min (which is 1.5 h).`,
+					msg`Digital tools often store seconds (or milliseconds) as the base and format displays as hh:mm:ss. When you convert, prefer going through seconds for multi-step work: hours → seconds → minutes, rather than chaining rounded intermediate displays.`,
+					msg`A week is exactly 7 days in these converters. Months and calendar years are not fixed-length in the same way—use dedicated month/year units when that is what you mean, not 30 × day guesses baked into hour math.`,
+				],
+			},
+			{
+				heading: msg`Decimal hours vs hours and minutes`,
+				paragraphs: [
+					msg`Payroll and aviation sometimes use decimal hours (1.5 h). Sports and media use 1:30. To convert decimal hours to minutes, multiply the fractional part by 60. To convert hh:mm to decimal hours, divide minutes by 60. Never read the minutes field as a decimal fraction.`,
+					msg`Spreadsheets aggravate this: formatting a cell as time versus number changes what “1.5” means. When exchanging files, store an explicit unit column (“hours decimal” or “seconds”) instead of relying on cell format alone.`,
+					msg`For durations over 24 hours, decide whether to display total hours (36 h) or days plus hours (1 d 12 h). Converting total seconds into either presentation is fine—just label the result so readers know which form you chose.`,
+				],
+			},
+			{
+				heading: msg`Precision in sport and lab timing`,
+				paragraphs: [
+					msg`Track races may publish times to 0.01 s while road races use whole seconds. Converting a 3:45 marathon split into decimal minutes for pace math is useful; inventing hundredths the watch never measured is not. Preserve the precision you actually recorded.`,
+					msg`Scientific experiments often need milliseconds or microseconds. Convert 0.0025 s to milliseconds (2.5 ms) carefully: multiply seconds by 1,000 for milliseconds, by 1,000,000 for microseconds. Off-by-thousand errors are common when SI prefixes and sexagesimal time mix.`,
+					msg`Metronomes, frame rates, and sample rates link time to counts (beats per minute, frames per second). Convert the time unit first, then compute rates. Swapping BPM math with raw seconds without conversion produces unusable tempos.`,
+				],
+			},
+			{
+				heading: msg`Elapsed duration is not a clock time`,
+				paragraphs: [
+					msg`“2 hours 15 minutes” is a duration. “14:15” is a clock reading. Converters that change seconds into hours answer duration questions. Time-zone shifts and DST change clock labels without changing how long a process took.`,
+					msg`If a log says a job finished at 01:10 after starting at 23:50, the duration is 80 minutes (or 1 h 20 min), including the midnight crossing. Convert that duration with time units; do not subtract the clock faces as decimal numbers without handling day rollover.`,
+					msg`ISO-8601 durations (PT1H30M) encode units explicitly. When APIs return raw seconds, document that contract. Silent disagreement between “seconds since start” and “minutes since start” is a frequent integration bug.`,
+				],
+			},
+			{
+				heading: msg`Worked conversion patterns`,
+				paragraphs: [
+					msg`Minutes to seconds: multiply by 60. Hours to seconds: multiply by 3,600. Days to hours: multiply by 24. Reverse with division. For mixed inputs like 2 h 15 min 40 s, convert each part to seconds, add, then convert to the target unit once.`,
+					msg`Pace and speed link time to length (min/km, km/h). Convert the time portion with time units, convert the length portion with length units, then recombine. Changing only one side breaks the rate.`,
+					msg`Use our second ↔ minute ↔ hour tools for clean steps, and keep a notepad line with units on every intermediate value when the calculation feeds payroll, dosing intervals, or race results.`,
+				],
+			},
+			{
+				heading: msg`Rounding and reporting`,
+				paragraphs: [
+					msg`Round durations in the unit you publish. If you report minutes, compute from exact seconds first, then round minutes. Rounding each unit field separately can create impossible times like 2 h 60 min.`,
+					msg`For public schedules, whole minutes are usually enough. For lab notebooks, keep enough digits to match instrument resolution. Matching precision to purpose beats always showing six decimals.`,
+					msg`When in doubt, store seconds as integers (or milliseconds as integers) and format for humans at the edge. Integer bases avoid decimal-hour ambiguity entirely.`,
+				],
+			},
+		],
+		faqs: [
+			{
+				question: msg`How many seconds are in an hour?`,
+				answer: msg`Exactly 3,600 seconds: 60 seconds per minute times 60 minutes per hour.`,
+			},
+			{
+				question: msg`Is 1.30 hours the same as 1 hour 30 minutes?`,
+				answer: msg`No. 1.30 hours means 1 hour + 0.30 × 60 = 18 minutes. 1 hour 30 minutes is 1.5 hours. Do not read mm as a decimal fraction.`,
+			},
+			{
+				question: msg`Should I convert days using 24 hours?`,
+				answer: msg`For ordinary duration conversions between day, hour, minute, and second as defined here, yes—1 day = 24 hours. Calendar date arithmetic and leap seconds are separate problems.`,
+			},
+		],
+	},
+	{
+		slug: "julian-year-vs-calendar-year",
+		title: msg`Julian Year vs Calendar Year`,
+		description: msg`Learn why astronomy uses a Julian year of 365.25 days, how that differs from Gregorian calendar years, and when to convert days and years with each definition.`,
+		relatedConverters: [
+			{ quantity: "Time", from: "Year (Julian)", to: "Day" },
+			{ quantity: "Time", from: "Day", to: "Year (Julian)" },
+			{ quantity: "Time", from: "Year (Julian)", to: "Hour" },
+			{ quantity: "Time", from: "Week", to: "Day" },
+		],
+		sections: [
+			{
+				heading: msg`Two meanings of “year”`,
+				paragraphs: [
+					msg`In everyday speech, a year is what calendars do: birthdays, fiscal periods, and school terms follow Gregorian rules with leap days. In astronomy and many scientific constants, a Julian year is a fixed duration of exactly 365.25 days, each day 86,400 seconds—exactly 31,557,600 seconds.`,
+					msg`The Julian year is a unit of time duration, not a calendar system. Saying “4 Julian years” means a specific span of seconds. Saying “the year 2026” names a civil date range. Mixing those meanings breaks orbital periods, age estimates, and light-travel explanations.`,
+					msg`The light-year as a length unit is defined using the Julian year: distance light travels in vacuum in one Julian year. That is why astronomy documentation is careful about which year it means.`,
+				],
+			},
+			{
+				heading: msg`Gregorian mean year vs Julian year`,
+				paragraphs: [
+					msg`The Gregorian calendar’s mean year is 365.2425 days (97 leap days per 400 years). That is about 0.0075 days (roughly 11 minutes) shorter than 365.25. Over one year the difference is tiny for casual talk; over millennia or precise ephemerides it accumulates.`,
+					msg`For civil history—“how many calendar years between these two dates?”—use calendar arithmetic or a mean Gregorian year if you only need an approximation. For converting a physics duration labeled as Julian years, divide or multiply with 365.25 days per Julian year.`,
+					msg`Julian calendar dates (the historical calendar Julius Caesar introduced) are yet another topic. “Julian year” as a 365.25-day unit should not be confused with Julian calendar day numbering or Julian Day Count (JD), though the shared adjective confuses newcomers.`,
+				],
+			},
+			{
+				heading: msg`Converting Julian years to days and hours`,
+				paragraphs: [
+					msg`1 Julian year = 365.25 days = 8,766 hours = 525,960 minutes = 31,557,600 seconds. Those relationships are exact under the definition used here. Converters that implement Year (Julian) should match these figures.`,
+					msg`Example: 2.5 Julian years = 2.5 × 365.25 = 913.125 days. Example: 10,000 days ÷ 365.25 ≈ 27.378 Julian years. Keep enough decimals when the result feeds another scientific formula.`,
+					msg`Weeks remain 7 days. Converting weeks to Julian years is just weeks → days → Julian years. There is no special “Julian week.”`,
+				],
+			},
+			{
+				heading: msg`When scientists choose Julian years`,
+				paragraphs: [
+					msg`Orbital periods, pulsar timing educational examples, and stellar age order-of-magnitude charts often prefer a fixed year so plots do not depend on calendar reform history. Simulation timesteps labeled in years usually mean this fixed unit unless stated otherwise.`,
+					msg`Planetary fact sheets may list periods in days or in years—check the footnote. If a year is undefined, ask whether they mean 365.25 d, 365.2425 d, or Earth’s actual orbital period (which differs slightly from both).`,
+					msg`Software libraries sometimes offer Julian century (36,525 days) for older astronomical formulas. That is 100 Julian years. Convert through days if your tool only exposes years and days.`,
+				],
+			},
+			{
+				heading: msg`Age, birthdays, and why they diverge`,
+				paragraphs: [
+					msg`Human age in years is a civil concept tied to calendar dates, not a pure second count divided by 31,557,600. Leap days, time zones, and local midnight rules affect birthday boundaries. Do not convert a person’s age with Julian years unless you are doing a physics-style duration exercise and say so.`,
+					msg`Fossil and geological “millions of years” are long durations; the difference between Gregorian mean and Julian year is negligible next to dating uncertainty. Still, be consistent inside one paper or dataset.`,
+					msg`Contract law and finance use calendar or business-day conventions. Scientific converters do not replace those legal definitions.`,
+				],
+			},
+			{
+				heading: msg`Practical guidance`,
+				paragraphs: [
+					msg`If the text mentions light-years, astronomical constants, or SI-style durations, interpret “year” as Julian unless another convention is stated. If the text mentions birthdays, tax years, or history timelines, use calendar rules.`,
+					msg`Convert using Year (Julian) ↔ Day when you need transparent second-based duration. Document the choice in your notebook: “years mean Julian years (365.25 d).”`,
+					msg`Our Julian year ↔ day converter pages exist specifically to keep that definition visible—use them when reconciling catalogue values or teaching why a light-year is a length.`,
+				],
+			},
+		],
+		faqs: [
+			{
+				question: msg`How many days are in a Julian year?`,
+				answer: msg`Exactly 365.25 days, defined as 31,557,600 seconds. That fixed length is why astronomy prefers it for duration math.`,
+			},
+			{
+				question: msg`Is a Julian year the same as a leap year?`,
+				answer: msg`No. A leap year is a calendar year with an extra day. A Julian year is a constant duration equal to the average length of a year in the old Julian leap pattern (365.25 days).`,
+			},
+			{
+				question: msg`Which year does a light-year use?`,
+				answer: msg`The conventional light-year uses the Julian year: the distance light travels in vacuum in 365.25 days of 86,400 seconds each.`,
+			},
+		],
+	},
+	{
+		slug: "carpet-area-calculator-workflow",
+		title: msg`Carpet Area Calculator Workflow`,
+		description: msg`Measure rooms, convert square metres and square feet, add waste, and order carpet or flooring without mixing length and area units.`,
+		relatedConverters: [
+			{ quantity: "Area", from: "Square Metre", to: "Square Foot" },
+			{ quantity: "Area", from: "Square Foot", to: "Square Metre" },
+			{ quantity: "Length", from: "Meter", to: "Foot (International)" },
+			{ quantity: "Area", from: "Square Metre", to: "Acre" },
+		],
+		sections: [
+			{
+				heading: msg`Area first, then conversion`,
+				paragraphs: [
+					msg`Carpet and flooring are sold by area—square metres or square feet—not by a single length. The reliable workflow is: measure length and width in one unit → multiply for area → convert area if the seller uses another unit → add waste → round up to pack coverage.`,
+					msg`If you convert metres to feet on only one side of a rectangle before multiplying, the area is wrong. If you convert both sides to feet and multiply, you get square feet directly. If you multiply in metres, convert with an area converter. Pick one path and stay on it.`,
+					msg`Write units on the sketch: “3.20 m × 4.10 m” or “10 ft 6 in × 13 ft 5 in.” Bare numbers cause expensive callbacks.`,
+				],
+			},
+			{
+				heading: msg`Measuring real rooms`,
+				paragraphs: [
+					msg`Split L-shaped rooms into rectangles. Measure closets if carpet continues inside. Note doorways and transitions where material stops. For stairs, treat treads and risers with the installer’s method—stair carpet is often estimated separately from floor area.`,
+					msg`Measure twice. Wall-to-wall carpet needs the clear floor span, not the exterior building footprint. Baseboards and undercut doors affect fitting but not the geometric area you start from.`,
+					msg`Irregular bays: approximate with rectangles and triangles, sum areas in one unit, then convert once. Rounding each polygon before summing can leave you short by a square metre you will notice at the seam.`,
+				],
+			},
+			{
+				heading: msg`Square metres ↔ square feet`,
+				paragraphs: [
+					msg`1 m² ≈ 10.7639 ft². 1 ft² ≈ 0.092903 m². Those factors are squares of the metre–foot length relationship. That is why a “10% longer room” is not a “10% larger carpet order” when you also change width.`,
+					msg`US retailers quote ft²; many international and commercial specs use m². Keep a project sheet with both columns. Convert the net area, then apply waste in your working unit, then convert again only if packaging demands it.`,
+					msg`Large commercial spaces sometimes mention acres for campuses, not for a single room. One acre is 4,046.8564224 m². Do not use acre converters for a bedroom—use m²/ft².`,
+				],
+			},
+			{
+				heading: msg`Waste, pattern match, and roll width`,
+				paragraphs: [
+					msg`Waste factors of 5–15% are common; patterned carpet can need more for matching. Apply waste after you trust net area. Converting units does not replace waste judgment.`,
+					msg`Broadloom rolls have fixed widths. Installers compute cuts from room dimensions and roll width—not from area alone. Still, purchasing starts from credible total area so the quote’s square footage matches your sketch.`,
+					msg`Tile and plank sold in boxes list coverage area per box. Divide required area (with waste) by coverage per box in the same unit, then round up whole boxes.`,
+				],
+			},
+			{
+				heading: msg`From sketch to order form`,
+				paragraphs: [
+					msg`Create a line per room: raw L, raw W, unit, net area, waste %, order area, seller unit. Sum order areas. Compare to the installer’s takeoff. Differences larger than a few percent deserve a phone call before payment.`,
+					msg`When an overseas seller lists m² and your contractor thinks in ft², send both totals. Dual reporting catches silent conversion errors faster than arguing about a single number.`,
+					msg`Use our square metre ↔ square foot converter for the area step and metre ↔ foot for checking individual wall lengths on mixed drawings.`,
+				],
+			},
+			{
+				heading: msg`Mistakes that empty the truck`,
+				paragraphs: [
+					msg`Treating linear metres of skirting like square metres of carpet. Treating roll width as area. Forgetting hallways. Using interior paint-area estimates (which subtract windows) for flooring (which usually should not).`,
+					msg`Ordering from room perimeter instead of area. Perimeter helps trim length; it does not equal carpet area.`,
+					msg`Updating one dimension after furniture plans change but forgetting to recompute area and reconvert. Build the habit: any geometry change triggers a full pass through the workflow.`,
+				],
+			},
+		],
+		faqs: [
+			{
+				question: msg`How do I convert room m² to ft² for carpet?`,
+				answer: msg`Compute area in square metres, then multiply by about 10.7639—or use an area converter. Do not convert only one wall length to feet.`,
+			},
+			{
+				question: msg`When do I add waste factor?`,
+				answer: msg`After you trust net area. Add 5–15% (more for patterns), then convert to the seller’s unit if needed and round up to packaging.`,
+			},
+			{
+				question: msg`Can I order carpet from length × width in mixed units?`,
+				answer: msg`No. Convert lengths into one system first, or convert the finished area with an area converter. Mixed units in the product L × W are invalid.`,
+			},
+		],
+	},
+	{
+		slug: "grams-ounces-kitchen-scale",
+		title: msg`Grams and Ounces on a Kitchen Scale`,
+		description: msg`Weigh ingredients in grams and ounces, convert between metric and US kitchen units, and know when mass beats cup volume for baking accuracy.`,
+		relatedConverters: [
+			{ quantity: "Weight", from: "Gram", to: "Ounce (Avoirdupois)" },
+			{ quantity: "Weight", from: "Ounce (Avoirdupois)", to: "Gram" },
+			{ quantity: "Weight", from: "Kilogram", to: "Pound (Avoirdupois)" },
+			{ quantity: "Weight", from: "Milligram", to: "Gram" },
+		],
+		sections: [
+			{
+				heading: msg`Why bakers prefer weight`,
+				paragraphs: [
+					msg`A cup of flour can vary by tens of grams depending on scooping and humidity. A 120 g portion does not. Grams and ounces measure mass; cups measure volume. When a recipe lists weight, trust the scale and convert units—do not re-approximate with cups unless you accept variability.`,
+					msg`Digital kitchen scales often toggle between g and oz (and sometimes lb:oz). Learn your scale’s tare button and unit button before you cream butter. Switching units mid-recipe without zeroing is a common way to double salt.`,
+					msg`Avoirdupois ounces are the everyday food ounce: 1 oz = 28.349523125 g exactly by the international pound definition. Troy ounces are for precious metals—ignore them in the kitchen.`,
+				],
+			},
+			{
+				heading: msg`Grams, kilograms, and milligrams`,
+				paragraphs: [
+					msg`Recipes use grams for most ingredients. Kilograms appear for large dough batches (1 kg flour). Milligrams appear in nutrition labels and caffeine or supplement contexts—1,000 mg = 1 g. Do not dose medicine from a kitchen scale unless the device and procedure are appropriate; this guide is about cooking units.`,
+					msg`Prefer whole grams for home baking. Tenths of a gram help for yeast or salt in small loaves if your scale resolves them. Converting 0.25 oz of yeast to grams (about 7.1 g) is clearer than leaving fractional ounces on a sticky note.`,
+					msg`Batch scaling: convert everything to grams, multiply by the scale factor, then convert back to ounces only if your audience insists. Scaling in mixed units invites rounding drift.`,
+				],
+			},
+			{
+				heading: msg`Ounces and pounds in US recipes`,
+				paragraphs: [
+					msg`US recipes may list 8 oz of chocolate or 1 lb of butter. Remember 16 oz = 1 lb. Convert pounds to grams via ounces or use a kilogram ↔ pound converter for large amounts: 1 lb ≈ 453.592 g.`,
+					msg`Fluid ounces measure volume, not mass. “8 fl oz of milk” is not the same measurement type as “8 oz of flour” by weight. Thick syrups and flour cannot be swapped between fl oz and oz without density.`,
+					msg`When a US recipe says “ounces” for solids, it usually means weight ounces. When it says “fluid ounces” or uses cup marks on a jug, it means volume. Read the word “fluid” carefully.`,
+				],
+			},
+			{
+				heading: msg`Practical conversion habits`,
+				paragraphs: [
+					msg`Exact kitchen factor: grams = ounces × 28.349523125. Ounces = grams ÷ 28.349523125. For mental checks, 30 g ≈ 1 oz is rough; 28 g ≈ 1 oz is better.`,
+					msg`Tare the bowl, add the first ingredient to its target weight, tare again, add the next. Working entirely in grams reduces unit toggling. If the recipe is in ounces, either convert the whole recipe before starting or keep the scale in oz for that session—do not mix mid-bowl.`,
+					msg`Print or note dual totals for shared family recipes: “butter 113 g (4 oz).” Dual labels prevent weekend arguments and burnt cookies.`,
+				],
+			},
+			{
+				heading: msg`Nutrition labels and package net weights`,
+				paragraphs: [
+					msg`Package net weight may show grams and ounces together. Serving sizes sometimes mix mL and g. Convert only within the same quantity type. Calories per ounce change when you confuse weight ounces with fluid ounces of a drink.`,
+					msg`Imported goods may show only metric net weight. US cooks can convert g → oz for intuition, but baking is usually easier if you stay in grams once you own a metric scale.`,
+					msg`Portioning meal prep: convert the weekly protein target to grams, divide into containers, and ignore ounces until you publish a US-facing blog post.`,
+				],
+			},
+			{
+				heading: msg`When volume is still fine`,
+				paragraphs: [
+					msg`Water and many thin liquids have density near 1 g/mL, so millilitres and grams are roughly interchangeable for rough work. Oils, honey, and packed brown sugar are not. When accuracy matters, weigh.`,
+					msg`Spices in pinches stay volumetric by nature. Convert spice weights only for large commercial batches.`,
+					msg`Use our gram ↔ ounce and kilogram ↔ pound converters to rebuild a US recipe into metric mise en place before the oven preheats.`,
+				],
+			},
+		],
+		faqs: [
+			{
+				question: msg`How many grams are in an ounce?`,
+				answer: msg`One avoirdupois ounce is exactly 28.349523125 grams. For cooking estimates, many people use 28 g ≈ 1 oz.`,
+			},
+			{
+				question: msg`Are fluid ounces the same as ounces on a scale?`,
+				answer: msg`No. Fluid ounces measure volume; scale ounces measure mass. Convert volume and mass separately, using density if you must bridge them.`,
+			},
+			{
+				question: msg`Should I bake in grams or ounces?`,
+				answer: msg`Grams are usually clearer for small ingredients and metric recipes. Ounces are fine if the whole recipe and your scale stay in ounces. Pick one system per bake.`,
+			},
+		],
+	},
+	{
+		slug: "stone-weight-uk-us",
+		title: msg`Stone Weight: UK Speech vs US Scales`,
+		description: msg`Convert British stone and pounds to kilograms and pounds, read UK body-weight phrases correctly, and avoid decimal-stone mistakes on forms.`,
+		relatedConverters: [
+			{ quantity: "Weight", from: "Stone", to: "Kilogram" },
+			{ quantity: "Weight", from: "Kilogram", to: "Stone" },
+			{ quantity: "Weight", from: "Stone", to: "Pound (Avoirdupois)" },
+			{ quantity: "Weight", from: "Pound (Avoirdupois)", to: "Kilogram" },
+		],
+		sections: [
+			{
+				heading: msg`What a stone is`,
+				paragraphs: [
+					msg`One stone equals exactly 14 avoirdupois pounds. Using the international pound, 1 stone = 6.35029318 kg. UK everyday speech still describes adult body weight in stone and pounds (“11 stone 4”), even though medical records increasingly prefer kilograms.`,
+					msg`US bathroom scales and forms almost never use stone. If you move between the UK and US, you will translate between stone↔lb and stone↔kg often. Freight and science do not use stone—keep it in the body-weight and informal UK context.`,
+					msg`Because 14 lb make a stone, leftover pounds always run from 0 to 13 in normal speech. Saying “11.4 stone” casually might mean 11 st 4 lb to a listener—or 11.4 × 14 lb to a spreadsheet. Those disagree. Prefer “11 st 4 lb” in writing.`,
+				],
+			},
+			{
+				heading: msg`Converting stone and pounds to kilograms`,
+				paragraphs: [
+					msg`Method A: convert stone to pounds (× 14), add leftover pounds, convert total pounds to kilograms. Method B: convert stone to kilograms (× 6.35029318) and convert leftover pounds to kilograms (× 0.45359237), then add. Both match if you use exact factors.`,
+					msg`Example: 11 st 4 lb → (11 × 14) + 4 = 158 lb → about 71.67 kg. Round for the form’s rules (often whole kilograms in casual contexts, one decimal in clinics).`,
+					msg`Reverse: kilograms to stone for conversation—divide kg by 6.35029318 to get decimal stone, then split into whole stone and remaining pounds carefully—or convert kg → lb first, then divide by 14 for stone and remainder.`,
+				],
+			},
+			{
+				heading: msg`US pounds-only world`,
+				paragraphs: [
+					msg`US friends and apps expect a single pound figure. Convert UK stone-and-pounds to total pounds before sharing. 11 st 4 lb = 158 lb, not “11.4 lb.” That error is an order of magnitude wrong and alarms health apps.`,
+					msg`Gym programs written in pounds need working weights in pounds. Convert body weight only if the program indexes loads to body weight; otherwise convert the prescribed plate weights, not your nickname weight in stone.`,
+					msg`Airline baggage is kilograms or pounds—not stone. Never put stone on a shipping label.`,
+				],
+			},
+			{
+				heading: msg`Medical and passport-adjacent forms`,
+				paragraphs: [
+					msg`NHS-style contexts may accept stones and pounds or kilograms depending on the form. Enter exactly the format requested. If it wants kilograms, convert fully; do not type stone into a kg box.`,
+					msg`Pediatric and athletic charts may use kilograms internationally. Convert once from a measured scale reading. Re-weigh rather than eternally converting an old stone value after training cycles.`,
+					msg`When a US telehealth portal rejects a weight, check whether it expects lb and you typed kg (or the reverse). Unit mismatch looks like physiologically impossible input.`,
+				],
+			},
+			{
+				heading: msg`Mental anchors`,
+				paragraphs: [
+					msg`10 st ≈ 63.5 kg ≈ 140 lb; 11 st ≈ 69.9 kg ≈ 154 lb; 12 st ≈ 76.2 kg ≈ 168 lb; 14 st ≈ 88.9 kg ≈ 196 lb. Anchors help conversation; exact converters help forms.`,
+					msg`Half-stone changes (7 lb ≈ 3.2 kg) are common in fitness talk. Convert the change the same way you convert absolute weight.`,
+					msg`If your scale shows kg but your coach talks stone, keep training logs in kilograms and convert only for the coach’s summary. One source of truth beats dual editing every session.`,
+				],
+			},
+			{
+				heading: msg`Workflow worth repeating`,
+				paragraphs: [
+					msg`Measure in whatever the scale displays. Convert to the audience’s unit with stone↔kg or lb↔kg tools. Write the compound UK form only for humans who expect it. Store metric in spreadsheets.`,
+					msg`Label every number: “72.1 kg (11 st 4 lb).” Dual labels prevent the 11.4 disaster.`,
+					msg`Use our stone ↔ kilogram and stone ↔ pound pages when you need exact splits instead of guessing leftover pounds.`,
+				],
+			},
+		],
+		faqs: [
+			{
+				question: msg`How many pounds are in a stone?`,
+				answer: msg`Exactly 14 avoirdupois pounds. One stone is also exactly 6.35029318 kilograms via the international pound.`,
+			},
+			{
+				question: msg`Does the US use stone for body weight?`,
+				answer: msg`Almost never in everyday US forms or scales. Convert stone to pounds or kilograms when talking to US audiences or software.`,
+			},
+			{
+				question: msg`Is 12.5 stone the same as 12 st 5 lb?`,
+				answer: msg`Not reliably. Decimal stone means fraction of 14 lb (12.5 st = 12 st 7 lb). Spoken “twelve stone five” means 12 st 5 lb. Prefer explicit stone and pounds.`,
+			},
+		],
+	},
+	{
+		slug: "airspeed-units-explained",
+		title: msg`Airspeed Units Explained`,
+		description: msg`Convert knots, miles per hour, kilometres per hour, and metres per second for aviation and meteorology—without confusing airspeed types or nautical vs statute miles.`,
+		relatedConverters: [
+			{ quantity: "Speed", from: "Knot", to: "Kilometre per hour" },
+			{ quantity: "Speed", from: "Knot", to: "Mile per hour" },
+			{ quantity: "Speed", from: "Metre per second", to: "Kilometre per hour" },
+			{ quantity: "Speed", from: "Mile per hour", to: "Kilometre per hour" },
+		],
+		sections: [
+			{
+				heading: msg`Airspeed is a speed—with extra labels`,
+				paragraphs: [
+					msg`Pilots talk about indicated airspeed (IAS), calibrated airspeed (CAS), true airspeed (TAS), and ground speed (GS). Those labels describe corrections for instrument error, altitude, and wind. Unit conversion (knots vs km/h) is separate: convert only after you know which airspeed type you are quoting.`,
+					msg`Operational aviation prefers knots worldwide for airspeeds and winds. Popular articles may convert to mph or km/h for readers. Meteorology sometimes uses metres per second for wind. Know your audience before you change the number.`,
+					msg`This guide focuses on unit conversion among knots, mph, km/h, and m/s. It does not replace performance charts or training on IAS/TAS relationships.`,
+				],
+			},
+			{
+				heading: msg`Knots as the aviation default`,
+				paragraphs: [
+					msg`Airspeeds and ATIS winds are typically in knots. One knot = 1.852 km/h = about 1.15078 mph. When a POH lists V-speeds in knots, convert for a passenger explanation if you want—but memorize and fly the knot values you trained with.`,
+					msg`Ground speed from GNSS is also often shown in knots in cockpit devices. A car-oriented app on a tablet may default to mph; switch units so your ETAs match sectional-chart thinking in nautical miles.`,
+					msg`Nautical miles and knots travel together. If you convert speed to km/h, convert distance to kilometres too before dividing for time.`,
+				],
+			},
+			{
+				heading: msg`km/h, mph, and m/s in reports`,
+				paragraphs: [
+					msg`Some civil documents and metric-country outreach use km/h. Convert knots → km/h by multiplying by 1.852. Example: 90 kt ≈ 166.7 km/h. For mph, multiply knots by about 1.15078.`,
+					msg`Metres per second appear in scientific wind data and some European forecasts: 1 m/s = 3.6 km/h ≈ 1.94384 kt. A “10 m/s wind” is about 19.4 kt—not 10 kt.`,
+					msg`Foot per second is rare in aviation ops but shows up in some engineering notes. Convert via m/s or mph using a speed converter rather than inventing factors mid-briefing.`,
+				],
+			},
+			{
+				heading: msg`Wind shear of the mental kind`,
+				paragraphs: [
+					msg`Students sometimes convert a wind of 15 kt to “15 mph” by changing the label without changing the number. That understates wind. Always run the factor.`,
+					msg`News may say “gusts of 80 mph” while METARs use knots. Re-convert from the authoritative METAR when briefing. Dual-unit sticky notes help in mixed classrooms.`,
+					msg`Helicopter and ultralight communities sometimes speak mph in certain countries. Check the unit column on every performance table—especially when PDFs were scanned from mixed sources.`,
+				],
+			},
+			{
+				heading: msg`Linking speed to distance and time`,
+				paragraphs: [
+					msg`Rule of thumb planning: time (hours) ≈ distance / speed when units match. Nautical miles with knots; kilometres with km/h; statute miles with mph. Crossing those streams is the main arithmetic failure in amateur flight planning.`,
+					msg`Climb and descent rates use feet per minute—a vertical speed unit, not a horizontal airspeed unit. Do not convert fpm with knot converters.`,
+					msg`Use knot ↔ km/h and m/s ↔ km/h tools to translate forecasts and stories, then return to knots for cockpit flows if that is your training standard.`,
+				],
+			},
+			{
+				heading: msg`Practical checklist`,
+				paragraphs: [
+					msg`Identify the airspeed type (IAS/TAS/GS) and the unit. Convert the unit only. Keep type labels attached (“TAS 140 kt ≈ 259 km/h”).`,
+					msg`Align chart distance units with speed units before ETA math. Verify tablet app unit settings before navigation practice.`,
+					msg`When teaching mixed audiences, give knots first (ops truth) and a converted gloss second (public truth).`,
+				],
+			},
+		],
+		faqs: [
+			{
+				question: msg`Why doesn’t this guide use Mach?`,
+				answer: msg`Mach is a ratio to local speed of sound, not a fixed SI-style speed unit like knots or km/h. This converter set focuses on absolute speed units; use performance charts for Mach.`,
+			},
+			{
+				question: msg`How do I convert knots to km/h?`,
+				answer: msg`Multiply knots by 1.852. Example: 100 kt = 185.2 km/h.`,
+			},
+			{
+				question: msg`Is ground speed the same as airspeed?`,
+				answer: msg`No. Ground speed includes wind. You can convert either into km/h or mph, but they remain different physical quantities.`,
+			},
+		],
+	},
+	{
+		slug: "time-zones-vs-duration-units",
+		title: msg`Time Zones vs Duration Units`,
+		description: msg`Separate clock labels (time zones, DST) from duration units (seconds, hours, days) so meeting math and layover math stop disagreeing.`,
+		relatedConverters: [
+			{ quantity: "Time", from: "Hour", to: "Minute" },
+			{ quantity: "Time", from: "Minute", to: "Second" },
+			{ quantity: "Time", from: "Hour", to: "Day" },
+			{ quantity: "Time", from: "Day", to: "Week" },
+		],
+		sections: [
+			{
+				heading: msg`Clocks label moments; durations measure spans`,
+				paragraphs: [
+					msg`A time zone changes how we label the same instant (“15:00 UTC” vs “11:00 EDT”). A duration unit measures how much time elapses between two instants (3 hours, 180 minutes). Converting 3 hours to minutes never requires a time zone. Scheduling a call across zones never changes how long 3 hours lasts.`,
+					msg`Confusion starts when people subtract clock faces in local labels without converting both instants to a common timeline. 22:00 in Paris to 08:00 next day in New York is not “10 hours” of subtraction on the printed numbers alone—you must interpret zones and dates.`,
+					msg`Use duration converters for spans. Use time-zone tools or explicit UTC offsets for wall-clock labels. This guide trains you to pick the right tool.`,
+				],
+			},
+			{
+				heading: msg`Duration conversions that stay honest`,
+				paragraphs: [
+					msg`Hours, minutes, seconds, days, and weeks convert among themselves as pure spans: 1 h = 60 min = 3,600 s; 1 d = 24 h; 1 wk = 7 d. Those factors do not care whether you are in Tokyo or Toronto.`,
+					msg`Layover math: if landing is at one local time and departure at another, convert both to UTC (or another single offset), subtract to get a duration in seconds or minutes, then format. Do not convert time zones by “adding duration units” blindly.`,
+					msg`Work shifts logged as “7.5 hours” are durations. Convert to minutes (450) for payroll systems that want minutes. Time-zone entry only matters for when the shift started, not for how long 7.5 hours is.`,
+				],
+			},
+			{
+				heading: msg`Where time zones actually matter`,
+				paragraphs: [
+					msg`Meeting invites, flight itineraries, and “call me at 3 pm” messages need zone labels (CET, EST, UTC+9, etc.). Ambiguous “3 pm” is social debt. Ambiguous duration (“in 3 hours”) is relative to “now” and still needs a shared understanding of the starting instant.`,
+					msg`Daylight saving shifts change civil labels by an hour on specific dates. The underlying duration of a movie does not become 59 minutes because DST started—though a civil midnight-to-midnight “day” can be 23 or 25 hours on transition dates.`,
+					msg`APIs should store instants in UTC or with explicit offsets, and store durations in seconds. Display layers apply zones. Mixing display strings into arithmetic is the bug.`,
+				],
+			},
+			{
+				heading: msg`Travel examples`,
+				paragraphs: [
+					msg`A flight that leaves at 17:00 and lands at 19:00 local at the destination may last 8–12 hours depending on zones. Always trust block time (a duration) from the airline for “how long you sit,” and local times for “when to be at the gate.”`,
+					msg`Jet lag feelings track circadian clocks, not unit converters. Still, computing elapsed awake time uses duration units: hours since last sleep, minutes of layover.`,
+					msg`Train timetables that cross borders print local times per station. Differences require zone-aware subtraction; the resulting travel time is a duration you can convert to minutes for comparisons.`,
+				],
+			},
+			{
+				heading: msg`Software and spreadsheet pitfalls`,
+				paragraphs: [
+					msg`Spreadsheets store datetimes as serial numbers in a timezone-agnostic cell unless you add conventions. Duration cells formatted as time may wrap at 24 hours. Prefer an integer “total minutes” column for long spans.`,
+					msg`Programming libraries distinguish Instant/ZonedDateTime from Duration/Period. Convert seconds with duration tools; convert zones with zone databases (IANA). Do not roll your own offset table from memory.`,
+					msg`Logging “job took 2:30” without saying h:mm vs hh:mm:ss recreates decimal-hour bugs. ISO-8601 durations (PT2H30M) fix the ambiguity.`,
+				],
+			},
+			{
+				heading: msg`Practical rule of thumb`,
+				paragraphs: [
+					msg`If the question is “how long,” use second/minute/hour/day converters. If the question is “what time is it there,” use zone conversion. If the question is both—“how long until 09:00 in another city”—convert the target instant, then subtract from now as a duration.`,
+					msg`Label outputs: “duration 2 h 15 min” vs “09:00 JST.” Clear nouns prevent Slack threads from inventing physics.`,
+					msg`Use our hour ↔ minute ↔ second pages for the span half of the problem; keep a trustworthy world-clock for the label half.`,
+				],
+			},
+		],
+		faqs: [
+			{
+				question: msg`Do I need a time zone to convert hours to minutes?`,
+				answer: msg`No. One hour is always 60 minutes as a duration. Time zones only change clock labels for moments in time.`,
+			},
+			{
+				question: msg`Why is my flight longer than landing time minus takeoff time?`,
+				answer: msg`Those printed times are local. Zones and date changes hide the true duration. Use the airline’s block time or convert both instants to UTC before subtracting.`,
+			},
+			{
+				question: msg`Can a day have other than 24 hours?`,
+				answer: msg`As a duration unit in simple converters, 1 day = 24 hours. Civil clock days can be 23 or 25 hours across daylight-saving transitions.`,
+			},
+		],
+	},
+	{
+		slug: "density-mass-volume-triangle",
+		title: msg`Density, Mass, and Volume: The Triangle`,
+		description: msg`Use density = mass / volume with consistent weight and volume units, convert kilograms, grams, litres, and cubic metres, and avoid cup-vs-gram mistakes.`,
+		relatedConverters: [
+			{ quantity: "Weight", from: "Kilogram", to: "Gram" },
+			{ quantity: "Volume", from: "Litre", to: "Cubic Metre" },
+			{ quantity: "Weight", from: "Pound (Avoirdupois)", to: "Kilogram" },
+			{ quantity: "Volume", from: "Litre", to: "Cubic Centimetre" },
+		],
+		sections: [
+			{
+				heading: msg`One relationship, three roles`,
+				paragraphs: [
+					msg`Density links mass and volume: density = mass / volume, mass = density × volume, volume = mass / density. Unit converters do not invent density for you—they make the mass and volume numbers consistent so the triangle arithmetic works.`,
+					msg`If mass is in kilograms, volume should be in cubic metres for SI density (kg/m³), or you may use g and cm³ (numerically equal to kg/L for the same substance). Mixing lb with litres without converting produces a density nobody else can use.`,
+					msg`Everyday liquids often quote g/mL or kg/L. Water is about 1 g/mL near room temperature—handy, not magical. Oils and syrups differ; always use the density for the material and temperature you care about.`,
+				],
+			},
+			{
+				heading: msg`Get mass units straight`,
+				paragraphs: [
+					msg`Convert pounds to kilograms or grams before combining with metric volumes. 1 lb ≈ 453.592 g. Kitchen scales that show ounces need the same care: convert oz → g, then apply density.`,
+					msg`Large industrial batches may use metric tonnes (1 t = 1,000 kg) and cubic metres. Convert tonne → kg if your density table is in kg/m³.`,
+					msg`Do not treat weight-on-Earth vs mass distinctions here unless you are in an engineering mechanics context. Kitchen and shipping “weight” numbers plug into the triangle as mass values for practical purposes.`,
+				],
+			},
+			{
+				heading: msg`Get volume units straight`,
+				paragraphs: [
+					msg`1 m³ = 1,000 L = 1,000,000 mL. Those metric relationships are exact. Convert volume into the unit that matches your density’s denominator before multiplying.`,
+					msg`US cups and fluid ounces are volumes, not masses. A “cup of flour” cannot enter mass = density × volume until you know flour’s bulk density—and that bulk density varies with packing. Prefer weighing flour.`,
+					msg`Cubic feet appear in US tanks and fridges. Convert ft³ → m³ or litres before using a metric density table.`,
+				],
+			},
+			{
+				heading: msg`Worked patterns`,
+				paragraphs: [
+					msg`Example: 2.5 L of a liquid with density 0.92 kg/L → mass = 2.5 × 0.92 = 2.3 kg. Convert to pounds only after: ≈ 5.07 lb.`,
+					msg`Example: 500 g of material at 0.8 g/mL → volume = 500 / 0.8 = 625 mL. Convert to litres (0.625 L) if the tank chart uses litres.`,
+					msg`Keep a paper trail: density value + source + temperature, mass with unit, volume with unit, then the computed third quantity. Unitless triangles are how lab notebooks go wrong.`,
+				],
+			},
+			{
+				heading: msg`Shipping and cooking crossovers`,
+				paragraphs: [
+					msg`Shipping cares about mass and dimensional volume separately for billing. Density explains why pillows bill on volume and steel bills on mass, but the carrier formula still wins for price.`,
+					msg`Cooking syrups: converting a recipe from “grams of honey” to tablespoons requires density (or a tested volumetric equivalent). Guessing from water’s density over-pours honey.`,
+					msg`Pool chemicals and fertilizers often dose by mass per volume of water. Convert the pool volume to litres, convert product mass to grams, then apply the label—not the other way around.`,
+				],
+			},
+			{
+				heading: msg`Practical checklist`,
+				paragraphs: [
+					msg`Identify which variable you know. Convert mass and volume into a consistent pair. Apply the triangle. Convert the answer into the display unit last.`,
+					msg`If a density table uses g/cm³ and your volume is litres, remember 1 g/cm³ = 1 kg/L numerically for the same density value—still convert volume carefully (1 L = 1,000 cm³).`,
+					msg`Use kilogram/gram and litre/cubic metre converters to sanitize inputs; look up density from a material datasheet, not from wishful arithmetic.`,
+				],
+			},
+		],
+		faqs: [
+			{
+				question: msg`Is density a unit you can convert like kilometres?`,
+				answer: msg`Density is a derived quantity (mass per volume). You convert its mass and volume parts into consistent units; you do not treat density as a simple length-style unit on this site.`,
+			},
+			{
+				question: msg`Why can’t I convert cups of flour with water’s density?`,
+				answer: msg`Flour’s bulk density is not water’s, and it changes with packing. Weigh flour in grams instead of trusting a water-based volume bridge.`,
+			},
+			{
+				question: msg`What volume unit pairs with kilograms for SI density?`,
+				answer: msg`Cubic metres give kg/m³. For liquids, kg/L is common and equals g/mL numerically for the same density value.`,
+			},
+		],
+	},
+	{
+		slug: "treadmill-pace-min-per-km",
+		title: msg`Treadmill Pace: min/km and Speed Units`,
+		description: msg`Convert between running pace (minutes per kilometre) and speed in km/h or mph, set treadmills correctly, and compare race paces across metric and US displays.`,
+		relatedConverters: [
+			{ quantity: "Speed", from: "Kilometre per hour", to: "Mile per hour" },
+			{ quantity: "Speed", from: "Mile per hour", to: "Kilometre per hour" },
+			{ quantity: "Speed", from: "Metre per second", to: "Kilometre per hour" },
+			{ quantity: "Length", from: "Kilometre", to: "Mile (International)" },
+		],
+		sections: [
+			{
+				heading: msg`Pace is an inverse speed`,
+				paragraphs: [
+					msg`Runners quote pace as time per distance—minutes per kilometre or minutes per mile. Treadmills usually show speed in km/h or mph. They describe the same motion differently: pace = time / distance; speed = distance / time. Converting requires reciprocals, not a single multiply of the displayed number.`,
+					msg`Example bridge: speed (km/h) = 60 ÷ pace (min/km). Pace (min/km) = 60 ÷ speed (km/h). For miles: speed (mph) = 60 ÷ pace (min/mile). Always track whether the pace distance is a kilometre or a mile.`,
+					msg`A “5:00 min/km” pace is 12 km/h. A “8:00 min/mile” pace is 7.5 mph. Those are different efforts—convert carefully before you race your training partners’ screenshots.`,
+				],
+			},
+			{
+				heading: msg`Treadmill buttons and silent unit switches`,
+				paragraphs: [
+					msg`Gym treadmills may default to mph in the US and km/h elsewhere. Hitting “10” intending 10 km/h on an mph treadmill is an all-out sprint (~16 km/h). Check the unit indicator every time you start a belt on travel.`,
+					msg`Some consoles let you display pace. Confirm whether that pace is per mile or per kilometre. A 6:00 pace sounds easy per mile and brutal per kilometre.`,
+					msg`Calibration and belt wear affect true speed slightly. Unit conversion assumes the console’s number is correct; performance testing may need an external check.`,
+				],
+			},
+			{
+				heading: msg`Converting metric and US training plans`,
+				paragraphs: [
+					msg`Plans written in min/km need min/mile for US races (or the reverse). Convert distance first (1 mile = 1.609344 km), then scale the pace time: min/mile ≈ min/km × 1.609344. Example: 5:00 /km ≈ 8:03 /mile.`,
+					msg`Alternatively, convert pace to a speed in km/h, convert speed to mph, then convert mph back to min/mile. Use whichever chain produces fewer rounding steps for you.`,
+					msg`Interval workouts that mix “400 m repeats” with “mph recovery jogs” need both length and speed converters. Write every line with units before you lace up.`,
+				],
+			},
+			{
+				heading: msg`From m/s and race mathematics`,
+				paragraphs: [
+					msg`Sports science may log m/s. Multiply by 3.6 for km/h, then convert to pace with 60 / (km/h). Example: 3.33 m/s ≈ 12 km/h ≈ 5:00 min/km.`,
+					msg`Race finish time ≈ pace × distance when units match. Convert a marathon distance to kilometres or miles to match your pace unit before multiplying. A marathon is 42.195 km or 26.21875 miles—not 42 miles.`,
+					msg`Splits on odd distances (5K, 10K, half) are easier in the distance unit printed on the bib. Convert published pace after you fix the distance language.`,
+				],
+			},
+			{
+				heading: msg`Incline, effort, and why units still matter`,
+				paragraphs: [
+					msg`Incline changes effort at the same belt speed. Converting km/h to mph does not adjust for grade. Keep incline notes beside speed/pace notes.`,
+					msg`Heart-rate or power targets are independent of unit labels, but the treadmill prescription you programmed is not. Log the unit you actually used.`,
+					msg`Group classes calling “level 8.0” without units are ambiguous across equipment. Ask “km/h or mph?” once and save the workout.`,
+				],
+			},
+			{
+				heading: msg`Practical workflow`,
+				paragraphs: [
+					msg`Decide your coaching unit (min/km or min/mile). Convert the session into treadmill speed in the console’s unit. After the run, convert back to pace for the training log so weeks stay comparable.`,
+					msg`Dual-label key sessions: “5:30 /km (8:51 /mile) ≈ 10.9 km/h (6.8 mph).” The first time takes a minute; the clarity lasts a season.`,
+					msg`Use km/h ↔ mph converters for the speed side and kilometre ↔ mile for distance; apply the 60/pace bridge for the reciprocal relationship.`,
+				],
+			},
+		],
+		faqs: [
+			{
+				question: msg`How do I convert min/km to km/h?`,
+				answer: msg`Divide 60 by the pace in minutes per kilometre. Example: 6:00 min/km → 60/6 = 10 km/h. Convert seconds into decimal minutes first (5:30 → 5.5).`,
+			},
+			{
+				question: msg`How do I convert min/km to min/mile?`,
+				answer: msg`Multiply the min/km pace by 1.609344. Example: 5:00 /km ≈ 8:03 /mile. Or convert via km/h ↔ mph and back to pace.`,
+			},
+			{
+				question: msg`Why did 10 on the treadmill feel impossibly fast?`,
+				answer: msg`The console was likely in mph while you expected km/h (or the reverse). Check the unit label before you trust the number.`,
+			},
+		],
+	},
+	{
+		slug: "fuel-economy-units-basics",
+		title: msg`Fuel Economy Units Basics`,
+		description: msg`Understand L/100 km vs mpg thinking through speed, distance, and volume—convert trip length and pace correctly before you compare car efficiency figures.`,
+		relatedConverters: [
+			{ quantity: "Length", from: "Kilometre", to: "Mile (International)" },
+			{ quantity: "Speed", from: "Kilometre per hour", to: "Mile per hour" },
+			{ quantity: "Volume", from: "Litre", to: "Cubic Metre" },
+			{ quantity: "Speed", from: "Mile per hour", to: "Kilometre per hour" },
+		],
+		sections: [
+			{
+				heading: msg`Economy combines volume and distance`,
+				paragraphs: [
+					msg`Fuel economy answers “how much fuel per distance” (L/100 km) or “how much distance per fuel” (mpg). Those are inverse styles: lower L/100 km is better; higher mpg is better. You cannot convert them by treating the number like a simple length.`,
+					msg`This site’s converters handle the building blocks—kilometres vs miles, litres vs other volumes, km/h vs mph for trip pace. Use them to sanitize inputs, then apply a proper economy formula or a dedicated economy calculator when comparing L/100 km to mpg.`,
+					msg`US mpg usually means US gallons; UK historical mpg used imperial gallons. Always note which gallon. Metric countries lean on L/100 km or km/L.`,
+				],
+			},
+			{
+				heading: msg`Trip math before economy math`,
+				paragraphs: [
+					msg`Record fuel volume added and distance driven in consistent units. Convert miles → kilometres (× 1.609344) if your odometer and pump disagree across a border rental. Convert gallons → litres if the receipt and the car computer disagree.`,
+					msg`L/100 km ≈ (litres used × 100) / kilometres driven. km/L ≈ kilometres / litres. Those formulas only work after unit cleanup.`,
+					msg`Partial fill-ups and forgotten top-ups ruin the dataset faster than unit mistakes. Start economy tests from full-to-full when you can.`,
+				],
+			},
+			{
+				heading: msg`Speed, distance, and why pace shows up`,
+				paragraphs: [
+					msg`Highway efficiency depends on speed. Comparing a US road trip logged in mph with a European test cycle talked about in km/h needs speed conversion so you compare similar driving, not just similar labels.`,
+					msg`Average speed = distance / time. Convert distance and speed into one system before judging whether a tank was “mostly highway.” A 70 mph cruise is about 113 km/h—not a European “70” zone.`,
+					msg`Idle time burns fuel with zero distance, wrecking L/100 km. Duration units (hours of idle) explain the hit; speed converters do not erase it.`,
+				],
+			},
+			{
+				heading: msg`mpg and L/100 km conceptual bridge`,
+				paragraphs: [
+					msg`Rough intuition: more miles per gallon means fewer litres per 100 km. Exact conversion needs both the mile–kilometre factor and the gallon–litre factor for the correct gallon. Do not invert the number alone (mpg → 1/mpg) and call it L/100 km.`,
+					msg`Example directionality: about 8 L/100 km is roughly 29–30 US mpg (order of magnitude check). Always recompute with exact factors for claims or regulations.`,
+					msg`Car stickers from different markets may already be converted—or may use different test cycles entirely. Unit conversion cannot fix a cycle mismatch (WLTP vs older cycles).`,
+				],
+			},
+			{
+				heading: msg`Volume units at the pump`,
+				paragraphs: [
+					msg`Litres dominate most of the world. US pumps use US gallons (≈ 3.785 L). Confusing imperial gallons (≈ 4.546 L) with US gallons skews mpg badly.`,
+					msg`Cubic metres appear in industrial fuel gas, not petrol stations (1 m³ = 1,000 L). Convert bulk deliveries carefully before computing fleet economy.`,
+					msg`Trip computers may let you switch L/100 km ↔ mpg. After switching, reset averages; old samples mixed under another unit display still confuse humans even if the computer converted correctly.`,
+				],
+			},
+			{
+				heading: msg`Practical checklist`,
+				paragraphs: [
+					msg`Pick economy style (L/100 km or mpg). Convert distance and fuel volume into the units that formula needs. Convert highway pace with km/h ↔ mph when comparing trips across countries. Only then compute or convert the economy figure with the correct gallon definition.`,
+					msg`Label every log line: distance unit, volume unit, economy style. Dual-display dashboards are fine; dual-meaning spreadsheets are not.`,
+					msg`Use kilometre ↔ mile and km/h ↔ mph pages to clean trip data, and litre ↔ cubic metre when bulk fuel deliveries show up in m³. Apply a dedicated L/100 km ↔ mpg formula when you need the economy number itself.`,
+				],
+			},
+		],
+		faqs: [
+			{
+				question: msg`Is higher mpg always better than lower L/100 km?`,
+				answer: msg`They run in opposite directions: higher mpg is better; lower L/100 km is better. Convert with proper factors before comparing a US mpg sticker to a metric L/100 km sticker.`,
+			},
+			{
+				question: msg`Can I convert mpg by flipping the number?`,
+				answer: msg`No. You need both distance (mile↔km) and volume (gallon↔litre) factors, and you must know whether the gallon is US or imperial.`,
+			},
+			{
+				question: msg`Why convert speed when talking about fuel economy?`,
+				answer: msg`Economy depends strongly on driving speed. Converting km/h ↔ mph lets you compare trips or test conditions fairly before you compare L/100 km or mpg results.`,
+			},
+		],
+	},
 ];
 
 export function getGuideBySlug(slug: string): Guide | undefined {

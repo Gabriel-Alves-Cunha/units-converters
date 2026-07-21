@@ -3,6 +3,18 @@ import * as v from "valibot";
 import { msg } from "@lingui/core/macro";
 import type { MessageDescriptor } from "@lingui/core";
 
+import {
+	SpeedUnitNameEnum,
+	TimeUnitNameEnum,
+	WeightUnitNameEnum,
+	speedUnitTranslations,
+	speedUnits,
+	timeUnitTranslations,
+	timeUnits,
+	weightUnitTranslations,
+	weightUnits,
+} from "#/lib/units-mass-motion";
+
 export type UnitDefinition = {
 	symbol: string;
 	fromBaseUnit(input: Decimal): Decimal; // function to convert from the base unit to this unit
@@ -1042,6 +1054,10 @@ export const units = {
 			},
 		},
 	} satisfies Record<keyof typeof VolumeUnitNameEnum, UnitDefinition>,
+
+	Weight: weightUnits,
+	Speed: speedUnits,
+	Time: timeUnits,
 } as const;
 
 const LengthUnitNameEnum = {
@@ -1153,11 +1169,17 @@ const UnitNameEnum = {
 	...LengthUnitNameEnum,
 	...VolumeUnitNameEnum,
 	...AreaUnitNameEnum,
+	...WeightUnitNameEnum,
+	...SpeedUnitNameEnum,
+	...TimeUnitNameEnum,
 } as const;
 
 export const UnitNameSchema = v.enum(UnitNameEnum);
 
 export const UnitNamesWithTranslations: Record<UnitName, MessageDescriptor> = {
+	...weightUnitTranslations,
+	...speedUnitTranslations,
+	...timeUnitTranslations,
 	// Temperature
 	Celsius: msg`Celsius`,
 	Fahrenheit: msg`Fahrenheit`,
@@ -1262,13 +1284,19 @@ export type UnitName =
 	| keyof typeof AreaUnitNameEnum
 	| keyof typeof LengthUnitNameEnum
 	| keyof typeof VolumeUnitNameEnum
-	| keyof typeof TemperatureUnitNameEnum;
+	| keyof typeof TemperatureUnitNameEnum
+	| keyof typeof WeightUnitNameEnum
+	| keyof typeof SpeedUnitNameEnum
+	| keyof typeof TimeUnitNameEnum;
 
 export const QuantityEnum = {
 	Temperature: "Temperature",
 	Volume: "Volume",
 	Length: "Length",
 	Area: "Area",
+	Weight: "Weight",
+	Speed: "Speed",
+	Time: "Time",
 } as const;
 
 export const QuantitySchema = v.enum(QuantityEnum);
@@ -1278,6 +1306,9 @@ export const QuantitiesWithTranslations: Record<Quantity, MessageDescriptor> = {
 	Volume: msg`Volume`,
 	Length: msg`Length`,
 	Area: msg`Area`,
+	Weight: msg`Weight`,
+	Speed: msg`Speed`,
+	Time: msg`Time`,
 };
 
 export type Quantity = keyof typeof QuantityEnum;

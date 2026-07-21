@@ -33,6 +33,9 @@ const QUANTITY_INTROS: Record<Quantity, ReturnType<typeof msg>> = {
 	Temperature: msg`Temperature scales describe how hot or cold something is. Celsius and Fahrenheit dominate daily life; Kelvin is the SI scientific scale. Convert between them with exact formulas—not floating-point shortcuts—and read the FAQs on each pair page.`,
 	Area: msg`Area measures surface: rooms in square metres or square feet, land in hectares and acres. Pick a starting unit below, then convert to any other area unit without rounding drift. Guides on flooring and land units pair well with these tools.`,
 	Volume: msg`Volume covers capacity and three-dimensional space—litres in the kitchen, cubic metres in construction and pools, and fine scientific units. Convert carefully when recipes or chemical charts mix cups, millilitres, and cubic metres.`,
+	Weight: msg`Weight (mass) covers kilograms, grams, pounds, ounces, stone, and related units for luggage, cooking, shipping, and body weight. Convert with exact factors and keep one home unit for logs and forms.`,
+	Speed: msg`Speed links distance and time—km/h and mph on roads, knots at sea and in the air, and metres per second in science. Convert carefully so trip planning, forecasts, and instrument displays stay consistent.`,
+	Time: msg`Time duration units run from seconds and minutes to hours, days, weeks, and Julian years. Use them for elapsed spans—not time-zone clock labels—and avoid decimal-hour mix-ups with hours-and-minutes notation.`,
 };
 
 const QUANTITY_TIPS: Record<Quantity, ReturnType<typeof msg>> = {
@@ -40,6 +43,9 @@ const QUANTITY_TIPS: Record<Quantity, ReturnType<typeof msg>> = {
 	Temperature: msg`Tip: Kelvin never uses a degree symbol in SI writing (K, not °K). A change of 1 K equals a change of 1 °C. For baking, convert the recipe first, then adjust for fan ovens.`,
 	Area: msg`Tip: do not confuse square metres of floor with litres of paint—area and volume are different quantity types. Convert area only after length × width in a single system.`,
 	Volume: msg`Tip: for baking accuracy, prefer weighing ingredients in grams over converting cup volumes when you can. For pools and tanks, confirm geometry before converting to litres.`,
+	Weight: msg`Tip: convert through kilograms when mixing metric and customary weight. Stone is 14 pounds—do not paste decimal stone into a kilogram form. Kitchen ounces are avoirdupois, not troy.`,
+	Speed: msg`Tip: knots pair with nautical miles; mph pairs with statute miles. Convert road signs before matching the number. Check whether a treadmill shows km/h or mph before you trust a “10.”`,
+	Time: msg`Tip: 1.30 hours is not 1 hour 30 minutes. Convert mixed h:mm:ss through total seconds, then format once. Julian years (365.25 days) are not calendar birthday years.`,
 };
 
 export const Route = createFileRoute("/$lang/category/$quantity")({
