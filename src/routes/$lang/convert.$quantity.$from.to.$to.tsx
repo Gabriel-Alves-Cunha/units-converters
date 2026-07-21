@@ -145,6 +145,7 @@ export const Route = createFileRoute("/$lang/convert/$quantity/$from/to/$to")({
 				{
 					type: "text/javascript",
 src:"https://pl30467457.effectivecpmnetwork.com/331f931ebaddc43361416b7e67b1af25/invoke.js",
+// @ts-ignore
 "data-cfasync":true,
 async:true,
 				}
